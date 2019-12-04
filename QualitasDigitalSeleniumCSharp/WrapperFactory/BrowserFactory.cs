@@ -27,40 +27,40 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
                 }
                 return driver;
             }
-            private set
-            {
-                driver = value;
-            }
+            private set => driver = value;
         }
 
         public static void InitBrowser(WebDriver webDriver)
         {
-            if (Driver != null)
-            {
-                return;
-            }
+            if (driver != null) return;
 
             string path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
 
             switch (webDriver)
             {
                 case WebDriver.Chrome:
-                    driver = new ChromeDriver(path);
+                    Driver = new ChromeDriver(path);
+                    Drivers.Add("Chrome", Driver);
                     break;
                 case WebDriver.Firefox:
-                    driver = new FirefoxDriver(path);
+                    Driver = new FirefoxDriver(path);
+                    Drivers.Add("Firefox", Driver);
                     break;
                 case WebDriver.InternetExplorer:
-                    driver = new InternetExplorerDriver(path);
+                    Driver = new InternetExplorerDriver(path);
+                    Drivers.Add("InternetExplorer", Driver);
                     break;
                 case WebDriver.Edge:
-                    driver = new EdgeDriver(path);
+                    Driver = new EdgeDriver(path);
+                    Drivers.Add("Edge", Driver);
                     break;
                 case WebDriver.Opera:
-                    driver = new OperaDriver(path);
+                    Driver = new OperaDriver(path);
+                    Drivers.Add("Opera", Driver);
                     break;
                 case WebDriver.Safari:
-                    driver = new SafariDriver(path);
+                    Driver = new SafariDriver(path);
+                    Drivers.Add("Safari", Driver);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(webDriver), webDriver, null);
@@ -88,8 +88,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
             InternetExplorer,
             Edge,
             Opera,
-            Safari,
-            RemoteWebDriver
+            Safari
         }
     }
 }

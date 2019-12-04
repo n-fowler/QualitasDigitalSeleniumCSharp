@@ -10,7 +10,6 @@ namespace QualitasDigitalSeleniumCSharp.TestCases
         #region Fields
 
         private BrowserFactory.WebDriver webDriverEnum = BrowserFactory.WebDriver.Chrome;
-        private string pageUrl = "https://www.qualitasdigital.com";
 
         #endregion Fields
 
@@ -20,9 +19,11 @@ namespace QualitasDigitalSeleniumCSharp.TestCases
         public void HomePageLoad()
         {
             BrowserFactory.InitBrowser(webDriverEnum);
-            BrowserFactory.GoTo(pageUrl);
+            BrowserFactory.GoTo(Page.Home.url);
 
             Assert.IsTrue(Page.Home.LogoImage.Displayed, "homePage.LogoImage.Displayed");
+
+            BrowserFactory.CloseAllDrivers();
         }
 
         [TestCase()]
