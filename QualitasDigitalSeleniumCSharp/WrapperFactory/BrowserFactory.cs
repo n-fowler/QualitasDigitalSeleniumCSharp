@@ -249,6 +249,108 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         #endregion Advanced Browser Operations
 
         #region Advanced Browser Configurations
+
+        public static void UseFirefoxProfile(string userName)
+        {
+            FirefoxProfileManager profileManager = new FirefoxProfileManager();
+            FirefoxProfile profile = profileManager.GetProfile(userName);
+            FirefoxOptions options = new FirefoxOptions { Profile = profile };
+            driver = new FirefoxDriver(options);
+        }
+
+        public static void SetFirefoxHttpProxy(int networkProxyType = 1, string networkProxyHttp = "myproxy.com", int networkProxyHttpPort = 3239)
+        {
+            FirefoxProfile profile = new FirefoxProfile();
+            profile.SetPreference("network.proxy.type", networkProxyType);
+            profile.SetPreference("network.proxy.http", networkProxyHttp);
+            profile.SetPreference("network.proxy.http_port", networkProxyHttpPort);
+            FirefoxOptions options = new FirefoxOptions { Profile = profile };
+            driver = new FirefoxDriver(options);
+        }
+
+        public static void SetChromeHttpProxy(ProxyKind proxyKind = ProxyKind.Manual, bool isAutoDetect = false, string httpProxy = "", string sslProxy = "127.0.0.1:3239")
+        {
+            ChromeOptions options = new ChromeOptions();
+            Proxy proxy = new Proxy
+            {
+                Kind = proxyKind,
+                IsAutoDetect = isAutoDetect,
+                HttpProxy = httpProxy,
+                SslProxy = sslProxy
+            };
+            options.Proxy = proxy;
+            options.AddArgument("ignore-certificate-errors");
+            driver = new ChromeDriver(options);
+        }
+
+        public static void AcceptAllCertificatesFirefox()
+        {
+            FirefoxProfile profile = new FirefoxProfile
+            {
+                AcceptUntrustedCertificates = true,
+                AssumeUntrustedCertificateIssuer = false
+            };
+            FirefoxOptions options = new FirefoxOptions { Profile = profile };
+            driver = new FirefoxDriver(options);
+        }
+
+        public static void AcceptAllCertificatesChrome()
+        {
+            ChromeOptions options = new ChromeOptions { AcceptInsecureCertificates = true };
+            driver = new ChromeDriver(options);
+        }
+
+        public static void SetChromeOptions()
+        {
+            throw new NotImplementedException();
+        }
+
+        public static void DisableJavascriptFirefox(string userName)
+        {
+            FirefoxProfileManager profileManager = new FirefoxProfileManager();
+            FirefoxProfile profile = profileManager.GetProfile(userName);
+            profile.SetPreference("javascript.enabled", false);
+            FirefoxOptions options = new FirefoxOptions { Profile = profile };
+            driver = new FirefoxDriver(options);
+        }
+
+        public static void SetDefaultPageLoadTimeout(int timeout)
+        {
+            driver.Manage().Timeouts().PageLoad = new TimeSpan(timeout);
+        }
+
+        public static void StartFirefoxWithPlugins(string pluginPath = @"C:extensionsLocationextension.xpi")
+        {
+            FirefoxProfile profile = new FirefoxProfile();
+            profile.AddExtension(pluginPath);
+            FirefoxOptions options = new FirefoxOptions { Profile = profile };
+            driver = new FirefoxDriver(options);
+        }
+
+        public static void StartChromeUnpacked()
+        {
+            throw new NotImplementedException();
+        }
+
+        public static void StartChromePacked()
+        {
+            throw new NotImplementedException();
+        }
+
+        public static void ChangeDefaultSaveLocation(string downloadFolderPath = @"c:temp", int browserDownloadFolderList = 2, bool browserDownloadManagerAlertOnExeOpen = false)
+        {
+            FirefoxProfile profile = new FirefoxProfile();
+            profile.SetPreference("browser.download.folderList", browserDownloadFolderList);
+            profile.SetPreference("browser.download.dir", downloadFolderPath);
+            profile.SetPreference("browser.download.manager.alertOnEXEOpen", browserDownloadManagerAlertOnExeOpen);
+            profile.SetPreference("browser.helperApps.neverAsk.saveToDisk",
+                @"application/msword, application/binary, application/ris, text/csv, image/png, application/pdf,
+            text / html, text / plain, application / zip, application / x - zip, application / x - zip - compressed, application / download,
+            application / octet - stream");
+            FirefoxOptions options = new FirefoxOptions { Profile = profile };
+            driver = new FirefoxDriver(options);
+        }
+
         #endregion Advanced Browser Configurations
     }
 }
