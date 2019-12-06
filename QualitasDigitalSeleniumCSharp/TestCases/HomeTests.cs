@@ -20,7 +20,7 @@ namespace QualitasDigitalSeleniumCSharp.TestCases
         private void SetUp()
         {
             BrowserFactory.InitBrowser(webDriverEnum);
-            BrowserFactory.GoTo(Page.Home.url);
+            BrowserFactory.GoToPage(Page.Home.url);
         }
 
         private void TearDown()

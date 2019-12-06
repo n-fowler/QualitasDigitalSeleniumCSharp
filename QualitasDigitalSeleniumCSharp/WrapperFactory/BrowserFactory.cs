@@ -5,9 +5,12 @@ using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
 using OpenQA.Selenium.Opera;
 using OpenQA.Selenium.Safari;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 
 namespace QualitasDigitalSeleniumCSharp.WrapperFactory
@@ -67,10 +70,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
             }
         }
 
-        public static void GoTo(string url)
-        {
-            Driver.Url = url;
-        }
+
 
         public static void CloseAllDrivers()
         {
@@ -92,9 +92,160 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         }
 
         #region Basic Browser Operations
+
+        public static void GoToPage(string url)
+        {
+            driver.Navigate().GoToUrl(url);
+        }
+
+        public static string GetPageTitle()
+        {
+            return driver.Title;
+        }
+
+        public static string GetPageUrl()
+        {
+            return driver.Url;
+        }
+
+        public static string GetPageSource()
+        {
+            return driver.PageSource;
+        }
+
         #endregion Basic Browser Operations
 
         #region Advanced Browser Operations
+
+        public static void AcceptPopup()
+        {
+            IAlert alert = driver.SwitchTo().Alert();
+            alert.Accept();
+        }
+
+        public static void DismissPopup()
+        {
+            IAlert alert = driver.SwitchTo().Alert();
+            alert.Dismiss();
+        }
+
+        public static void SwitchToFirstTab()
+        {
+            ReadOnlyCollection<string> windowHandles = driver.WindowHandles;
+            string firstTab = windowHandles.First();
+            driver.SwitchTo().Window(firstTab);
+        }
+
+        public static void SwitchToLastTab()
+        {
+            ReadOnlyCollection<string> windowHandles = driver.WindowHandles;
+            string lastTab = windowHandles.Last();
+            driver.SwitchTo().Window(lastTab);
+        }
+
+        public static void SwitchToNextTab()
+        {
+            ReadOnlyCollection<string> windowHandles = driver.WindowHandles;
+            int currentIndex = windowHandles.IndexOf(driver.CurrentWindowHandle);
+
+            if (currentIndex < windowHandles.Count - 1)
+            {
+                driver.SwitchTo().Window(windowHandles[currentIndex + 1]);
+            }
+        }
+
+        public static void SwitchToPreviousTab()
+        {
+            ReadOnlyCollection<string> windowHandles = driver.WindowHandles;
+            int currentIndex = windowHandles.IndexOf(driver.CurrentWindowHandle);
+
+            if (currentIndex > 0)
+            {
+                driver.SwitchTo().Window(windowHandles[currentIndex - 1]);
+            }
+        }
+
+        public static void GoBack()
+        {
+            driver.Navigate().Back();
+        }
+
+        public static void GoForward()
+        {
+            driver.Navigate().Forward();
+        }
+
+        public static void Refresh()
+        {
+            driver.Navigate().Refresh();
+        }
+
+        public static void FocusLink(string link)
+        {
+            ((IJavaScriptExecutor)driver).ExecuteScript("arguments[0].focus();", link);
+        }
+
+        public static void MaximizeWindow()
+        {
+            driver.Manage().Window.Maximize();
+        }
+
+        public static void AddCookie(string key, string value)
+        {
+            Cookie cookie = new Cookie("key", "value");
+            driver.Manage().Cookies.AddCookie(cookie);
+        }
+
+        public static ReadOnlyCollection<Cookie> GetCookies()
+        {
+            return driver.Manage().Cookies.AllCookies;
+        }
+
+        public static void DeleteCookie(string name)
+        {
+            driver.Manage().Cookies.DeleteCookieNamed(name);
+        }
+
+        public static void DeleteCookies()
+        {
+            driver.Manage().Cookies.DeleteAllCookies();
+        }
+
+        public static void TakeScreenshot(string path)
+        {
+            Screenshot screenshot = ((ITakesScreenshot)driver).GetScreenshot();
+            screenshot.SaveAsFile(path, ScreenshotImageFormat.Png);
+        }
+
+        public static void WaitForPageLoad(int timeout = 30)
+        {
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeout));
+            wait.Until((x) =>
+            {
+                return ((IJavaScriptExecutor)driver).ExecuteScript("return document.readyState").Equals("complete");
+            });
+        }
+
+        public static void SwitchToFrameByIndex(int index)
+        {
+            driver.SwitchTo().Frame(index);
+        }
+
+        public static void SwitchToFrameByName(string name)
+        {
+            driver.SwitchTo().Frame(name);
+        }
+
+        public static void SwitchToFrameByElement(IWebElement element)
+        {
+            driver.SwitchTo().Frame(element);
+        }
+
+        public static void SwitchToDefaultFrame()
+        {
+            driver.SwitchTo().DefaultContent();
+        }
+
         #endregion Advanced Browser Operations
 
         #region Advanced Browser Configurations
