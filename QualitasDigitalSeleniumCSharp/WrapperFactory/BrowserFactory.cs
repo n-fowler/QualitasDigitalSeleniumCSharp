@@ -90,5 +90,14 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
             Opera,
             Safari
         }
+
+        #region Basic Browser Operations
+        #endregion Basic Browser Operations
+
+        #region Advanced Browser Operations
+        #endregion Advanced Browser Operations
+
+        #region Advanced Browser Configurations
+        #endregion Advanced Browser Configurations
     }
 }

@@ -1,5 +1,8 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
+using OpenQA.Selenium.Internal;
 using OpenQA.Selenium.Support.UI;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
@@ -190,15 +193,28 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         #endregion Basic Element Operations
 
         #region Advanced Element Operations
+
+        public static void DragAndDrop(this IWebElement element, int xPos, int yPos)
+        {
+            IWebDriver driver = ((IWrapsDriver)element).WrappedDriver;
+            Actions move = new Actions(driver);
+            move.DragAndDropToOffset(element, xPos, yPos).Perform();
+        }
+
+        public static void ScrollTo(this IWebElement element)
+        {
+            string js = $"window.scroll(0, {element.Location.Y});";
+            IWebDriver driver = ((IWrapsDriver)element).WrappedDriver;
+            ((IJavaScriptExecutor)driver).ExecuteScript(js);
+        }
+
+        public static void WaitForVisibility(this IWebElement element, string cssSelector, int timeLimit = 30)
+        {
+            IWebDriver driver = ((IWrapsDriver)element).WrappedDriver;
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeLimit));
+            wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(By.CssSelector(cssSelector)));
+        }
+
         #endregion Advanced Element Operations
-
-        #region Basic Browser Operations
-        #endregion Basic Browser Operations
-
-        #region Advanced Browser Operations
-        #endregion Advanced Browser Operations
-
-        #region Advanced Browser Configurations
-        #endregion Advanced Browser Configurations
     }
 }
