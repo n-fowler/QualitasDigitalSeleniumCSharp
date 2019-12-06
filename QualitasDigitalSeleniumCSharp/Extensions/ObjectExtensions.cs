@@ -188,5 +188,17 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         }
 
         #endregion Basic Element Operations
+
+        #region Advanced Element Operations
+        #endregion Advanced Element Operations
+
+        #region Basic Browser Operations
+        #endregion Basic Browser Operations
+
+        #region Advanced Browser Operations
+        #endregion Advanced Browser Operations
+
+        #region Advanced Browser Configurations
+        #endregion Advanced Browser Configurations
     }
 }
