@@ -216,5 +216,220 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         }
 
         #endregion Advanced Element Operations
+
+        #region CSS Selectors
+
+        public static IReadOnlyCollection<IWebElement> GetAllElements(this IWebDriver driver)
+        {
+            return driver.FindElementsByCssSelector("*");
+        }
+
+        /// <summary>
+        /// Gets all elements by hierarchy using a css selector.  EX: div, p | div p | div > p | div + p | p ~ ul
+        /// </summary>
+        /// <param name="driver"></param>
+        /// <param name="hierarchy"></param>
+        /// <returns></returns>
+        public static IReadOnlyCollection<IWebElement> GetElementsByTagHierarchy(this IWebDriver driver, string hierarchy)
+        {
+            return driver.FindElementsByCssSelector(hierarchy);
+        }
+
+        public static IReadOnlyCollection<IWebElement> GetElementsWithTargetAttribute(this IWebDriver driver, string attribute)
+        {
+            return driver.FindElementsByCssSelector($"[{attribute}]");
+        }
+
+        public static IReadOnlyCollection<IWebElement> GetElementsWithBlankTargetAttribute(this IWebDriver driver)
+        {
+            return driver.FindElementsByCssSelector($"[target = _blank]");
+        }
+
+        public static IReadOnlyCollection<IWebElement> GetElementsWithAttributeContainingValue(this IWebDriver driver, string attribute, string value)
+        {
+            return driver.FindElementsByCssSelector($"[{attribute}~={value}]");
+        }
+
+        public static IReadOnlyCollection<IWebElement> GetElementsWithAttributeStartingWithValue(this IWebDriver driver, string attribute, string value)
+        {
+            return driver.FindElementsByCssSelector($"[{attribute}|={value}]");
+        }
+
+        public static IReadOnlyCollection<IWebElement> GetElementsWithTagAndAttributeStartingWithValue(this IWebDriver driver, string tag, string attribute, string value)
+        {
+            return driver.FindElementsByCssSelector($"{tag}[{attribute}^='{value}']");
+        }
+
+        public static IReadOnlyCollection<IWebElement> GetElementsWithTagAndAttributeEndingWithValue(this IWebDriver driver, string tag, string attribute, string value)
+        {
+            return driver.FindElementsByCssSelector($"{tag}[{attribute}$='{value}']");
+        }
+
+        public static IReadOnlyCollection<IWebElement> GetElementsWithTagAndAttributeContainingValue(this IWebDriver driver, string tag, string attribute, string value)
+        {
+            return driver.FindElementsByCssSelector($"{tag}[{attribute}*='{value}']");
+        }
+
+        public static IReadOnlyCollection<IWebElement> GetActiveWebLink(this IWebDriver driver)
+        {
+            return driver.FindElementsByCssSelector("a:active");
+        }
+
+        public static IReadOnlyCollection<IWebElement> GetElementsWithCheckedState(this IWebDriver driver)
+        {
+            return driver.FindElementsByCssSelector("input:checked");
+        }
+
+        public static IReadOnlyCollection<IWebElement> GetElementsWithDefaultState(this IWebDriver driver)
+        {
+            return driver.FindElementsByCssSelector("input:default");
+        }
+
+        public static IReadOnlyCollection<IWebElement> GetElementsWithDisabledState(this IWebDriver driver)
+        {
+            return driver.FindElementsByCssSelector("input:disabled");
+        }
+
+        public static IReadOnlyCollection<IWebElement> GetElementsByTagAndNoChildren(this IWebDriver driver, string tag)
+        {
+            return driver.FindElementsByCssSelector($"{tag}:empty");
+        }
+
+        public static IReadOnlyCollection<IWebElement> GetElementsWithEnabledState(this IWebDriver driver)
+        {
+            return driver.FindElementsByCssSelector("input:enabled");
+        }
+
+        public static IReadOnlyCollection<IWebElement> GetElementsByTagAndFirstChild(this IWebDriver driver, string tag)
+        {
+            return driver.FindElementsByCssSelector($"{tag}:first-child");
+        }
+
+        public static IReadOnlyCollection<IWebElement> GetElementsByTagAndFirstTypeOfParent(this IWebDriver driver, string tag)
+        {
+            return driver.FindElementsByCssSelector($"{tag}:first-of-type");
+        }
+
+        public static IReadOnlyCollection<IWebElement> GetElementByFocus(this IWebDriver driver)
+        {
+            return driver.FindElementsByCssSelector("input:focus");
+        }
+
+        public static IReadOnlyCollection<IWebElement> GetElementsWithValueInRange(this IWebDriver driver)
+        {
+            return driver.FindElementsByCssSelector("input:in-range");
+        }
+
+        public static IReadOnlyCollection<IWebElement> GetElementsWithIndeterminateState(this IWebDriver driver)
+        {
+            return driver.FindElementsByCssSelector("input:indeterminate");
+        }
+
+        public static IReadOnlyCollection<IWebElement> GetElementsWithInvalidValue(this IWebDriver driver)
+        {
+            return driver.FindElementsByCssSelector("input:invalid");
+        }
+
+        public static IReadOnlyCollection<IWebElement> GetElementsByTagAndLastChild(this IWebDriver driver, string tag)
+        {
+            return driver.FindElementsByCssSelector($"{tag}:last-child");
+        }
+
+        public static IReadOnlyCollection<IWebElement> GetElementsByTagAndLastTypeOfParent(this IWebDriver driver, string tag)
+        {
+            return driver.FindElementsByCssSelector($"{tag}:last-of-type");
+        }
+
+        public static IReadOnlyCollection<IWebElement> GetUnvisitedLinks(this IWebDriver driver)
+        {
+            return driver.FindElementsByCssSelector("a:link");
+        }
+
+        public static IReadOnlyCollection<IWebElement> GetElementsByNotTag(this IWebDriver driver, string tag)
+        {
+            return driver.FindElementsByCssSelector($":not({tag})");
+        }
+
+        public static IReadOnlyCollection<IWebElement> GetElementsByTagAndChildIndex(this IWebDriver driver, string tag)
+        {
+            return driver.FindElementsByCssSelector($"{tag}:nth-child(2)");
+        }
+
+        public static IReadOnlyCollection<IWebElement> GetElementsByTagAndReversedChildIndex(this IWebDriver driver, string tag)
+        {
+            return driver.FindElementsByCssSelector($"{tag}:nth-last-child(2)");
+        }
+
+        public static IReadOnlyCollection<IWebElement> GetElementsBySameTagAndChildIndex(this IWebDriver driver, string tag)
+        {
+            return driver.FindElementsByCssSelector($"{tag}:nth-of-type(2)");
+        }
+
+        public static IReadOnlyCollection<IWebElement> GetElementsBySameTagAndReversedChildIndex(this IWebDriver driver, string tag)
+        {
+            return driver.FindElementsByCssSelector($"{tag}:nth-last-of-type(2)");
+        }
+
+        public static IReadOnlyCollection<IWebElement> GetElementsBySameTagAndOnlyChildOfType(this IWebDriver driver, string tag)
+        {
+            return driver.FindElementsByCssSelector($"{tag}:only-of-type");
+        }
+
+        public static IReadOnlyCollection<IWebElement> GetElementsByTagAndOnlyChild(this IWebDriver driver, string tag)
+        {
+            return driver.FindElementsByCssSelector($"{tag}:only-child");
+        }
+
+        public static IReadOnlyCollection<IWebElement> GetElementsWithoutRequiredAttribute(this IWebDriver driver)
+        {
+            return driver.FindElementsByCssSelector("input:optional");
+        }
+
+        public static IReadOnlyCollection<IWebElement> GetElementsWithValueOutOfRange(this IWebDriver driver)
+        {
+            return driver.FindElementsByCssSelector("input:out-of-range");
+        }
+
+        public static IReadOnlyCollection<IWebElement> GetElementsWithPlaceholderValue(this IWebDriver driver)
+        {
+            return driver.FindElementsByCssSelector("input::placeholder");
+        }
+
+        public static IReadOnlyCollection<IWebElement> GetElementsWithReadOnlyAttribute(this IWebDriver driver)
+        {
+            return driver.FindElementsByCssSelector("input:read-only");
+        }
+
+        public static IReadOnlyCollection<IWebElement> GetElementsWithoutReadOnlyAttribute(this IWebDriver driver)
+        {
+            return driver.FindElementsByCssSelector("input:read-write");
+        }
+
+        public static IReadOnlyCollection<IWebElement> GetElementsWithRequiredAttribute(this IWebDriver driver)
+        {
+            return driver.FindElementsByCssSelector("input:required");
+        }
+
+        public static IReadOnlyCollection<IWebElement> GetElementAtRoot(this IWebDriver driver)
+        {
+            return driver.FindElementsByCssSelector(":root");
+        }
+
+        public static IReadOnlyCollection<IWebElement> GetElementSelectedByUser(this IWebDriver driver)
+        {
+            return driver.FindElementsByCssSelector("::selection");
+        }
+
+        public static IReadOnlyCollection<IWebElement> GetElementsWithValidValue(this IWebDriver driver)
+        {
+            return driver.FindElementsByCssSelector("input:valid");
+        }
+
+        public static IReadOnlyCollection<IWebElement> GetVisitedWebLinks(this IWebDriver driver)
+        {
+            return driver.FindElementsByCssSelector("a:visited");
+        }
+
+        #endregion CSS Selectors
     }
 }
