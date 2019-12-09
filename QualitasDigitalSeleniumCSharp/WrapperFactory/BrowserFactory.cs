@@ -34,9 +34,9 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         }
 
         /// <summary>
-        /// 
+        /// Initializes the driver based on the supplied WebDriver enum
         /// </summary>
-        /// <param name="webDriver"></param>
+        /// <param name="webDriver">The Browser enum</param>
         public static void InitBrowser(WebDriver webDriver)
         {
             if (driver != null) return;
@@ -75,7 +75,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         }
 
         /// <summary>
-        /// 
+        /// Close all active drivers for the session
         /// </summary>
         public static void CloseAllDrivers()
         {
@@ -87,7 +87,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         }
 
         /// <summary>
-        /// 
+        /// Set the Browser to be used for the WebDriver
         /// </summary>
         public enum WebDriver
         {
@@ -102,7 +102,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         #region Basic Browser Operations
 
         /// <summary>
-        /// 
+        /// Go to page by URL
         /// </summary>
         /// <param name="url"></param>
         public static void GoToPage(string url)
@@ -111,7 +111,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         }
 
         /// <summary>
-        /// 
+        /// Gets the title of the current page
         /// </summary>
         /// <returns></returns>
         public static string GetPageTitle()
@@ -120,7 +120,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         }
 
         /// <summary>
-        /// 
+        /// Gets the url of the current page
         /// </summary>
         /// <returns></returns>
         public static string GetPageUrl()
@@ -129,7 +129,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         }
 
         /// <summary>
-        /// 
+        /// Gets the source code of the current page
         /// </summary>
         /// <returns></returns>
         public static string GetPageSource()
@@ -142,7 +142,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         #region Advanced Browser Operations
 
         /// <summary>
-        /// 
+        /// Accepts the current popup
         /// </summary>
         public static void AcceptPopup()
         {
@@ -151,7 +151,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         }
 
         /// <summary>
-        /// 
+        /// Dismisses the current popup
         /// </summary>
         public static void DismissPopup()
         {
@@ -160,7 +160,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         }
 
         /// <summary>
-        /// 
+        /// Switches to the first browser tab
         /// </summary>
         public static void SwitchToFirstTab()
         {
@@ -170,7 +170,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         }
 
         /// <summary>
-        /// 
+        /// Switches to the last browser tab
         /// </summary>
         public static void SwitchToLastTab()
         {
@@ -180,7 +180,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         }
 
         /// <summary>
-        /// 
+        /// Switches to the next browser tab unless you're already at the end
         /// </summary>
         public static void SwitchToNextTab()
         {
@@ -194,7 +194,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         }
 
         /// <summary>
-        /// 
+        /// Switches to the previous browser tab unless you're already at the beginning
         /// </summary>
         public static void SwitchToPreviousTab()
         {
@@ -208,7 +208,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         }
 
         /// <summary>
-        /// 
+        /// Uses the browser back button
         /// </summary>
         public static void GoBack()
         {
@@ -216,7 +216,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         }
 
         /// <summary>
-        /// 
+        /// Uses the browser forward button
         /// </summary>
         public static void GoForward()
         {
@@ -224,7 +224,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         }
 
         /// <summary>
-        /// 
+        /// Uses the browser refresh button
         /// </summary>
         public static void Refresh()
         {
@@ -232,16 +232,16 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         }
 
         /// <summary>
-        /// 
+        /// Scrolls to a hyperlink and focuses it
         /// </summary>
-        /// <param name="link"></param>
+        /// <param name="link">The hyperlink</param>
         public static void FocusLink(string link)
         {
             ((IJavaScriptExecutor)driver).ExecuteScript("arguments[0].focus();", link);
         }
 
         /// <summary>
-        /// 
+        /// Maximizes the browser window
         /// </summary>
         public static void MaximizeWindow()
         {
@@ -249,7 +249,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         }
 
         /// <summary>
-        /// 
+        /// Adds a cookie key and value to the driver
         /// </summary>
         /// <param name="key"></param>
         /// <param name="value"></param>
@@ -260,25 +260,25 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         }
 
         /// <summary>
-        /// 
+        /// Gets all cookies
         /// </summary>
-        /// <returns></returns>
+        /// <returns>ReadOnlyCollection of type Cookie</returns>
         public static ReadOnlyCollection<Cookie> GetCookies()
         {
             return driver.Manage().Cookies.AllCookies;
         }
 
         /// <summary>
-        /// 
+        /// Deletes a cookie by name
         /// </summary>
-        /// <param name="name"></param>
+        /// <param name="name">The name of the cookie</param>
         public static void DeleteCookie(string name)
         {
             driver.Manage().Cookies.DeleteCookieNamed(name);
         }
 
         /// <summary>
-        /// 
+        /// Deletes all cookies
         /// </summary>
         public static void DeleteCookies()
         {
@@ -286,9 +286,9 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         }
 
         /// <summary>
-        /// 
+        /// Takes a screenshot and saves it at the supplied path
         /// </summary>
-        /// <param name="path"></param>
+        /// <param name="path">The path to save the image at</param>
         public static void TakeScreenshot(string path)
         {
             Screenshot screenshot = ((ITakesScreenshot)driver).GetScreenshot();
@@ -296,47 +296,44 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         }
 
         /// <summary>
-        /// 
+        /// Waits for the page to load using document ready state and the supplied timeout
         /// </summary>
-        /// <param name="timeout"></param>
+        /// <param name="timeout">The number of seconds to wait</param>
         public static void WaitForPageLoad(int timeout = 30)
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeout));
-            wait.Until((x) =>
-            {
-                return ((IJavaScriptExecutor)driver).ExecuteScript("return document.readyState").Equals("complete");
-            });
+            wait.Until((x) => ((IJavaScriptExecutor)driver).ExecuteScript("return document.readyState").Equals("complete"));
         }
 
         /// <summary>
-        /// 
+        /// Switches to an iframe by index
         /// </summary>
-        /// <param name="index"></param>
+        /// <param name="index">the index of the iframe</param>
         public static void SwitchToFrameByIndex(int index)
         {
             driver.SwitchTo().Frame(index);
         }
 
         /// <summary>
-        /// 
+        /// Switches to an iframe by its name
         /// </summary>
-        /// <param name="name"></param>
+        /// <param name="name">the name of the iframe</param>
         public static void SwitchToFrameByName(string name)
         {
             driver.SwitchTo().Frame(name);
         }
 
         /// <summary>
-        /// 
+        /// Switches to an iframe by element
         /// </summary>
-        /// <param name="element"></param>
+        /// <param name="element">the element for the iframe</param>
         public static void SwitchToFrameByElement(IWebElement element)
         {
             driver.SwitchTo().Frame(element);
         }
 
         /// <summary>
-        /// 
+        /// Switches to the default iframe
         /// </summary>
         public static void SwitchToDefaultFrame()
         {
@@ -348,9 +345,9 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         #region Advanced Browser Configurations
 
         /// <summary>
-        /// 
+        /// Sets the firefox profile by username
         /// </summary>
-        /// <param name="userName"></param>
+        /// <param name="userName">the username to use</param>
         public static void UseFirefoxProfile(string userName)
         {
             FirefoxProfileManager profileManager = new FirefoxProfileManager();
@@ -360,7 +357,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         }
 
         /// <summary>
-        /// 
+        /// Create a firefox profile and set the network proxy settings
         /// </summary>
         /// <param name="networkProxyType"></param>
         /// <param name="networkProxyHttp"></param>
@@ -376,7 +373,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         }
 
         /// <summary>
-        /// 
+        /// Create a chrome options and set the network proxy settings
         /// </summary>
         /// <param name="proxyKind"></param>
         /// <param name="isAutoDetect"></param>
@@ -398,7 +395,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         }
 
         /// <summary>
-        /// 
+        /// Accept all certificates for firefox
         /// </summary>
         public static void AcceptAllCertificatesFirefox()
         {
@@ -412,7 +409,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         }
 
         /// <summary>
-        /// 
+        /// Accept all certificates for chrome
         /// </summary>
         public static void AcceptAllCertificatesChrome()
         {
@@ -421,7 +418,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         }
 
         /// <summary>
-        /// 
+        /// Set Chrome options, currently not implemented
         /// </summary>
         public static void SetChromeOptions()
         {
@@ -429,7 +426,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         }
 
         /// <summary>
-        /// 
+        /// Disables javascript for Firefox within options
         /// </summary>
         /// <param name="userName"></param>
         public static void DisableJavascriptFirefox(string userName)
@@ -442,7 +439,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         }
 
         /// <summary>
-        /// 
+        /// Set the default page load timeout for the driver
         /// </summary>
         /// <param name="timeout"></param>
         public static void SetDefaultPageLoadTimeout(int timeout)
@@ -451,7 +448,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         }
 
         /// <summary>
-        /// 
+        /// start firefox with plugins at the specified path
         /// </summary>
         /// <param name="pluginPath"></param>
         public static void StartFirefoxWithPlugins(string pluginPath = @"C:extensionsLocationextension.xpi")
@@ -463,7 +460,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         }
 
         /// <summary>
-        /// 
+        /// Start chrome unpacked, currently not implemented
         /// </summary>
         public static void StartChromeUnpacked()
         {
@@ -471,7 +468,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         }
 
         /// <summary>
-        /// 
+        /// Start chrome packed, currently not implemented
         /// </summary>
         public static void StartChromePacked()
         {
@@ -479,7 +476,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         }
 
         /// <summary>
-        /// 
+        /// Set the default download save location for firefox
         /// </summary>
         /// <param name="downloadFolderPath"></param>
         /// <param name="browserDownloadFolderList"></param>
