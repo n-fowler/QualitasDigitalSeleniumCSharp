@@ -1,0 +1,833 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>QualitasDigitalSeleniumCSharp</name>
+    </assembly>
+    <members>
+        <member name="T:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions">
+            <summary>
+            Extends the functionality of the driver and web element classes
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.FindElementByClassName(OpenQA.Selenium.IWebDriver,System.String)">
+            <summary>
+            Uses the driver to find an element by class name
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <param name="className">The class name</param>
+            <returns>Returns a selenium web element</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.FindElementByCssSelector(OpenQA.Selenium.IWebDriver,System.String)">
+            <summary>
+            Uses the driver to find an element by css selector string
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <param name="cssSelector">The css selector string</param>
+            <returns>Returns a selenium web element</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.FindElementById(OpenQA.Selenium.IWebDriver,System.String)">
+            <summary>
+            Uses the driver to find an element by id
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <param name="id">The id</param>
+            <returns>Returns a selenium web element</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.FindElementByLinkText(OpenQA.Selenium.IWebDriver,System.String)">
+            <summary>
+            Uses the driver to find an element by link text
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <param name="linkText">The link text</param>
+            <returns>Returns a selenium web element</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.FindElementByName(OpenQA.Selenium.IWebDriver,System.String)">
+            <summary>
+            Uses the driver to find an element by name
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <param name="name">The name</param>
+            <returns>Returns a selenium web element</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.FindElementByPartialLinkText(OpenQA.Selenium.IWebDriver,System.String)">
+            <summary>
+            Uses the driver to find an element containing the link text
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <param name="partialLinkText">The partial link text</param>
+            <returns>Returns a selenium web element</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.FindElementByTagName(OpenQA.Selenium.IWebDriver,System.String)">
+            <summary>
+            Uses the driver to find an element by tag name
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <param name="tagName">The tag name</param>
+            <returns>Returns a selenium web element</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.FindElementByXPath(OpenQA.Selenium.IWebDriver,System.String)">
+            <summary>
+            Uses the driver to find an element by xpath
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <param name="xPath">The xpath</param>
+            <returns>Returns a selenium web element</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.FindElementsByClassName(OpenQA.Selenium.IWebDriver,System.String)">
+            <summary>
+            Uses the driver to find elements by the class name
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <param name="className">The class name</param>
+            <returns>Returns a read only collection of selenium web elements</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.FindElementsByCssSelector(OpenQA.Selenium.IWebDriver,System.String)">
+            <summary>
+            Uses the driver to find elements by the css selector string
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <param name="cssSelector">The css selector string</param>
+            <returns>Returns a read only collection of selenium web elements</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.FindElementsById(OpenQA.Selenium.IWebDriver,System.String)">
+            <summary>
+            Uses the driver to find elements by the id
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <param name="id">The id</param>
+            <returns>Returns a read only collection of selenium web elements</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.FindElementsByLinkText(OpenQA.Selenium.IWebDriver,System.String)">
+            <summary>
+            Uses the driver to find elements by the link text
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <param name="linkText">The link text</param>
+            <returns>Returns a read only collection of selenium web elements</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.FindElementsByName(OpenQA.Selenium.IWebDriver,System.String)">
+            <summary>
+            Uses the driver to find elements by the name
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <param name="name">The name</param>
+            <returns>Returns a read only collection of selenium web elements</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.FindElementsByPartialLinkText(OpenQA.Selenium.IWebDriver,System.String)">
+            <summary>
+            Uses the driver to find elements containing the link text
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <param name="partialLinkText">The partial link text</param>
+            <returns>Returns a read only collection of selenium web elements</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.FindElementsByTagName(OpenQA.Selenium.IWebDriver,System.String)">
+            <summary>
+            Uses the driver to find elements by the tag name
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <param name="tagName">The tag name</param>
+            <returns>Returns a read only collection of selenium web elements</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.FindElementsByXPath(OpenQA.Selenium.IWebDriver,System.String)">
+            <summary>
+            Uses the driver to find elements by the xpath
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <param name="xPath">The xpath</param>
+            <returns>Returns a read only collection of selenium web elements</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.ClickWhenReady(OpenQA.Selenium.IWebElement)">
+            <summary>
+            Clicks the web element.
+            </summary>
+            <param name="element">The web element</param>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.EnterText(OpenQA.Selenium.IWebElement,System.String)">
+            <summary>
+            Enters text into supported elements
+            </summary>
+            <param name="element">The web element</param>
+            <param name="value">The value</param>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.ClearElement(OpenQA.Selenium.IWebElement)">
+            <summary>
+            Clears the content of the element
+            </summary>
+            <param name="element">The web element</param>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.SubmitElement(OpenQA.Selenium.IWebElement)">
+            <summary>
+            Performs a submit operation for the element
+            </summary>
+            <param name="element">The web element</param>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetInnertext(OpenQA.Selenium.IWebElement)">
+            <summary>
+            Gets the innertext of the element
+            </summary>
+            <param name="element">The web element</param>
+            <returns>returns a string with innertext</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.IsEnabled(OpenQA.Selenium.IWebElement)">
+            <summary>
+            Gets the enabled state of the element
+            </summary>
+            <param name="element">The web element</param>
+            <returns>returns a boolean for enabled state</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.IsDisplayed(OpenQA.Selenium.IWebElement)">
+            <summary>
+            Gets the displayed state of the element
+            </summary>
+            <param name="element">The web element</param>
+            <returns>returns a boolean for displayed state</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.IsSelected(OpenQA.Selenium.IWebElement)">
+            <summary>
+            Gets the selected state of the element
+            </summary>
+            <param name="element">The web element</param>
+            <returns>returns a boolean for selected state</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.SelectByIndex(OpenQA.Selenium.IWebElement,System.Int32)">
+            <summary>
+            Selects an option from a Select Element by index
+            </summary>
+            <param name="element">The web element</param>
+            <param name="index">The index</param>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.DeselectByIndex(OpenQA.Selenium.IWebElement,System.Int32)">
+            <summary>
+            Deselects an option from a Select Element by index
+            </summary>
+            <param name="element">The web element</param>
+            <param name="index">The index</param>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.SelectByText(OpenQA.Selenium.IWebElement,System.String)">
+            <summary>
+            Selects an option from a Select Element by text
+            </summary>
+            <param name="element">The web element</param>
+            <param name="text">The option text value</param>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.DeselectByText(OpenQA.Selenium.IWebElement,System.String)">
+            <summary>
+            Deselects an option from a Select Element by text
+            </summary>
+            <param name="element">The web element</param>
+            <param name="text">The option text value</param>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.SelectByValue(OpenQA.Selenium.IWebElement,System.String)">
+            <summary>
+            Selects an option from a Select Element by value
+            </summary>
+            <param name="element">The web element</param>
+            <param name="value">The value</param>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.DeselectByValue(OpenQA.Selenium.IWebElement,System.String)">
+            <summary>
+            Deslects an option from a Select Element by value
+            </summary>
+            <param name="element">The web element</param>
+            <param name="value">The value</param>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.DeselectAll(OpenQA.Selenium.IWebElement)">
+            <summary>
+            Deselects all options from a Select Element
+            </summary>
+            <param name="element">The web element</param>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetSelectedOption(OpenQA.Selenium.IWebElement)">
+            <summary>
+            Gets the currently selected option from a Select Element
+            </summary>
+            <param name="element">The web element</param>
+            <returns>returns a Select web element</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetAllSelectedOptions(OpenQA.Selenium.IWebElement)">
+            <summary>
+            Gets all currently selected options from a Select Element
+            </summary>
+            <param name="element">The web element</param>
+            <returns>returns a list of Select web elements</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.IsMultipleSelect(OpenQA.Selenium.IWebElement)">
+            <summary>
+            Gets the multiple select state of the Select Element
+            </summary>
+            <param name="element">The web element</param>
+            <returns>returns a bool for the multiple select state</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.DragAndDrop(OpenQA.Selenium.IWebElement,System.Int32,System.Int32)">
+            <summary>
+            Drags and Drops an element to a position on the screen
+            </summary>
+            <param name="element">The web element</param>
+            <param name="xPos">the x coordinate</param>
+            <param name="yPos">the y coordinate</param>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.ScrollTo(OpenQA.Selenium.IWebElement)">
+            <summary>
+            Scrolls to a web element using javascript
+            </summary>
+            <param name="element">The web element</param>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.WaitForVisibility(OpenQA.Selenium.IWebElement,System.String,System.Int32)">
+            <summary>
+            Wait for the visibility of an element
+            </summary>
+            <param name="element">The web element</param>
+            <param name="cssSelector">The css selector string</param>
+            <param name="timeLimit">the time limit in seconds</param>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetAllElements(OpenQA.Selenium.IWebDriver)">
+            <summary>
+            Gets all elements by css selector
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <returns>Returns a read only collection of selenium web elements</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsByTagHierarchy(OpenQA.Selenium.IWebDriver,System.String)">
+            <summary>
+            Gets all elements by hierarchy using a css selector.  EX: div, p | div p | div > p | div + p | p ~ ul
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <param name="hierarchy">The hierarchy string</param>
+            <returns>Returns a read only collection of selenium web elements</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithTargetAttribute(OpenQA.Selenium.IWebDriver,System.String)">
+            <summary>
+            Gets all elements with a target attribute
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <param name="attribute">the target attribute</param>
+            <returns>Returns a read only collection of selenium web elements</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithBlankTargetAttribute(OpenQA.Selenium.IWebDriver)">
+            <summary>
+            Gets all elements with the blank target attribute
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <returns>Returns a read only collection of selenium web elements</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithAttributeContainingValue(OpenQA.Selenium.IWebDriver,System.String,System.String)">
+            <summary>
+            Gets all elements with an attribute containing a specified value
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <param name="attribute">The attribute</param>
+            <param name="value">The value</param>
+            <returns>Returns a read only collection of selenium web elements</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithAttributeStartingWithValue(OpenQA.Selenium.IWebDriver,System.String,System.String)">
+            <summary>
+            Gets all elements with an attribute starting with a specified value
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <param name="attribute">The attribute</param>
+            <param name="value">The value</param>
+            <returns>Returns a read only collection of selenium web elements</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithTagAndAttributeStartingWithValue(OpenQA.Selenium.IWebDriver,System.String,System.String,System.String)">
+            <summary>
+            Gets all elements with a tag and attribute starting with a specified value
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <param name="tag">the tag</param>
+            <param name="attribute">The attribute</param>
+            <param name="value">The value</param>
+            <returns>Returns a read only collection of selenium web elements</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithTagAndAttributeEndingWithValue(OpenQA.Selenium.IWebDriver,System.String,System.String,System.String)">
+            <summary>
+            Gets all elements with a tag and attribute ending with a specified value
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <param name="tag">The tag</param>
+            <param name="attribute">The attribute</param>
+            <param name="value">The value</param>
+            <returns>Returns a read only collection of selenium web elements</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithTagAndAttributeContainingValue(OpenQA.Selenium.IWebDriver,System.String,System.String,System.String)">
+            <summary>
+            Gets all elements with a tag and attribute containing a specified value
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <param name="tag">The tag</param>
+            <param name="attribute">The attribute</param>
+            <param name="value">The value</param>
+            <returns>Returns a read only collection of selenium web elements</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetActiveWebLink(OpenQA.Selenium.IWebDriver)">
+            <summary>
+            Gets all elements that are active web links
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <returns>Returns a read only collection of selenium web elements</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithCheckedState(OpenQA.Selenium.IWebDriver)">
+            <summary>
+            Gets all elements that have a checked state
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <returns>Returns a read only collection of selenium web elements</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithDefaultState(OpenQA.Selenium.IWebDriver)">
+            <summary>
+            Gets all elements that have a default state
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <returns>Returns a read only collection of selenium web elements</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithDisabledState(OpenQA.Selenium.IWebDriver)">
+            <summary>
+            Gets all elements that have a disabled state
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <returns>Returns a read only collection of selenium web elements</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsByTagAndNoChildren(OpenQA.Selenium.IWebDriver,System.String)">
+            <summary>
+            Gets all elements by tag that have no children
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <param name="tag">The tag</param>
+            <returns>Returns a read only collection of selenium web elements</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithEnabledState(OpenQA.Selenium.IWebDriver)">
+            <summary>
+            Gets all elements with an enabled state
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <returns>Returns a read only collection of selenium web elements</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsByTagAndFirstChild(OpenQA.Selenium.IWebDriver,System.String)">
+            <summary>
+            Gets all elements by tag that have a first child
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <param name="tag"></param>
+            <returns>Returns a read only collection of selenium web elements</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsByTagAndFirstTypeOfParent(OpenQA.Selenium.IWebDriver,System.String)">
+            <summary>
+            Gets all elements by tag that have a first of type parent
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <param name="tag">The tag</param>
+            <returns>Returns a read only collection of selenium web elements</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementByFocus(OpenQA.Selenium.IWebDriver)">
+            <summary>
+            Gets all elements that are focused
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <returns>Returns a read only collection of selenium web elements</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithValueInRange(OpenQA.Selenium.IWebDriver)">
+            <summary>
+            Gets all elements with a value that's in range
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <returns>Returns a read only collection of selenium web elements</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithIndeterminateState(OpenQA.Selenium.IWebDriver)">
+            <summary>
+            Gets all elements with an indeterminate state
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <returns>Returns a read only collection of selenium web elements</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithInvalidValue(OpenQA.Selenium.IWebDriver)">
+            <summary>
+            Gets all elements with an invalid value
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <returns>Returns a read only collection of selenium web elements</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsByTagAndLastChild(OpenQA.Selenium.IWebDriver,System.String)">
+            <summary>
+            Gets all elements by tag that have a last child
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <param name="tag">The tag</param>
+            <returns>Returns a read only collection of selenium web elements</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsByTagAndLastTypeOfParent(OpenQA.Selenium.IWebDriver,System.String)">
+            <summary>
+            Gets all elements by tag that have a last of type
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <param name="tag">The tag</param>
+            <returns>Returns a read only collection of selenium web elements</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetUnvisitedLinks(OpenQA.Selenium.IWebDriver)">
+            <summary>
+            Gets all elements that are links with an unvisited state
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <returns>Returns a read only collection of selenium web elements</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsByNotTag(OpenQA.Selenium.IWebDriver,System.String)">
+            <summary>
+            Gets all elements that lack a specific tag
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <param name="tag">The tag</param>
+            <returns>Returns a read only collection of selenium web elements</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsByTagAndChildIndex(OpenQA.Selenium.IWebDriver,System.String)">
+            <summary>
+            Gets all elements by tag and child index
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <param name="tag">The tag</param>
+            <returns>Returns a read only collection of selenium web elements</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsByTagAndReversedChildIndex(OpenQA.Selenium.IWebDriver,System.String)">
+            <summary>
+            Gets all elements by tag and the index of the reversed child
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <param name="tag">The tag</param>
+            <returns>Returns a read only collection of selenium web elements</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsBySameTagAndChildIndex(OpenQA.Selenium.IWebDriver,System.String)">
+            <summary>
+            Gets all elements by tag and the index of the child of type
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <param name="tag">The tag</param>
+            <returns>Returns a read only collection of selenium web elements</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsBySameTagAndReversedChildIndex(OpenQA.Selenium.IWebDriver,System.String)">
+            <summary>
+            Gets all elements by tag and the index of the last child of type
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <param name="tag">The tag</param>
+            <returns>Returns a read only collection of selenium web elements</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsBySameTagAndOnlyChildOfType(OpenQA.Selenium.IWebDriver,System.String)">
+            <summary>
+            Gets all elements by tag and the index of the only child of type
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <param name="tag">The tag</param>
+            <returns>Returns a read only collection of selenium web elements</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsByTagAndOnlyChild(OpenQA.Selenium.IWebDriver,System.String)">
+            <summary>
+            Gets all elements by tag that have an only child
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <param name="tag">The tag</param>
+            <returns>Returns a read only collection of selenium web elements</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithoutRequiredAttribute(OpenQA.Selenium.IWebDriver)">
+            <summary>
+            Gets all elements without the required attribute
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <returns>Returns a read only collection of selenium web elements</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithValueOutOfRange(OpenQA.Selenium.IWebDriver)">
+            <summary>
+            Gets all elements that have an out of range value
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <returns>Returns a read only collection of selenium web elements</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithPlaceholderValue(OpenQA.Selenium.IWebDriver)">
+            <summary>
+            Gets all elements that have a placeholder value
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <returns>Returns a read only collection of selenium web elements</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithReadOnlyAttribute(OpenQA.Selenium.IWebDriver)">
+            <summary>
+            Gets all elements that have the read only attribute
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <returns>Returns a read only collection of selenium web elements</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithoutReadOnlyAttribute(OpenQA.Selenium.IWebDriver)">
+            <summary>
+            Gets all elements thatlack the read only attribute
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <returns>Returns a read only collection of selenium web elements</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithRequiredAttribute(OpenQA.Selenium.IWebDriver)">
+            <summary>
+            Gets all elements with the required attribute
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <returns>Returns a read only collection of selenium web elements</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementAtRoot(OpenQA.Selenium.IWebDriver)">
+            <summary>
+            Gets all elements at the root
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <returns>Returns a read only collection of selenium web elements</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsSelectedByUser(OpenQA.Selenium.IWebDriver)">
+            <summary>
+            Gets all elements selected by the user
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <returns>Returns a read only collection of selenium web elements</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithValidValue(OpenQA.Selenium.IWebDriver)">
+            <summary>
+            Gets all elements with a valid value
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <returns>Returns a read only collection of selenium web elements</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetVisitedWebLinks(OpenQA.Selenium.IWebDriver)">
+            <summary>
+            Gets all visited web links
+            </summary>
+            <param name="driver">The driver for this session</param>
+            <returns>Returns a read only collection of selenium web elements</returns>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.HomePage.NavToggleOpen">
+            <summary>
+            Navigation Section
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.InitBrowser(QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.WebDriver)">
+            <summary>
+            Initializes the driver based on the supplied WebDriver enum
+            </summary>
+            <param name="webDriver">The Browser enum</param>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.CloseAllDrivers">
+            <summary>
+            Close all active drivers for the session
+            </summary>
+        </member>
+        <member name="T:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.WebDriver">
+            <summary>
+            Set the Browser to be used for the WebDriver
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.GoToPage(System.String)">
+            <summary>
+            Go to page by URL
+            </summary>
+            <param name="url"></param>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.GetPageTitle">
+            <summary>
+            Gets the title of the current page
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.GetPageUrl">
+            <summary>
+            Gets the url of the current page
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.GetPageSource">
+            <summary>
+            Gets the source code of the current page
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.AcceptPopup">
+            <summary>
+            Accepts the current popup
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.DismissPopup">
+            <summary>
+            Dismisses the current popup
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.SwitchToFirstTab">
+            <summary>
+            Switches to the first browser tab
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.SwitchToLastTab">
+            <summary>
+            Switches to the last browser tab
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.SwitchToNextTab">
+            <summary>
+            Switches to the next browser tab unless you're already at the end
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.SwitchToPreviousTab">
+            <summary>
+            Switches to the previous browser tab unless you're already at the beginning
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.GoBack">
+            <summary>
+            Uses the browser back button
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.GoForward">
+            <summary>
+            Uses the browser forward button
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.Refresh">
+            <summary>
+            Uses the browser refresh button
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.FocusLink(System.String)">
+            <summary>
+            Scrolls to a hyperlink and focuses it
+            </summary>
+            <param name="link">The hyperlink</param>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.MaximizeWindow">
+            <summary>
+            Maximizes the browser window
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.AddCookie(System.String,System.String)">
+            <summary>
+            Adds a cookie key and value to the driver
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.GetCookies">
+            <summary>
+            Gets all cookies
+            </summary>
+            <returns>ReadOnlyCollection of type Cookie</returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.DeleteCookie(System.String)">
+            <summary>
+            Deletes a cookie by name
+            </summary>
+            <param name="name">The name of the cookie</param>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.DeleteCookies">
+            <summary>
+            Deletes all cookies
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.TakeScreenshot(System.String)">
+            <summary>
+            Takes a screenshot and saves it at the supplied path
+            </summary>
+            <param name="path">The path to save the image at</param>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.WaitForPageLoad(System.Int32)">
+            <summary>
+            Waits for the page to load using document ready state and the supplied timeout
+            </summary>
+            <param name="timeout">The number of seconds to wait</param>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.SwitchToFrameByIndex(System.Int32)">
+            <summary>
+            Switches to an iframe by index
+            </summary>
+            <param name="index">the index of the iframe</param>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.SwitchToFrameByName(System.String)">
+            <summary>
+            Switches to an iframe by its name
+            </summary>
+            <param name="name">the name of the iframe</param>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.SwitchToFrameByElement(OpenQA.Selenium.IWebElement)">
+            <summary>
+            Switches to an iframe by element
+            </summary>
+            <param name="element">the element for the iframe</param>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.SwitchToDefaultFrame">
+            <summary>
+            Switches to the default iframe
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.UseFirefoxProfile(System.String)">
+            <summary>
+            Sets the firefox profile by username
+            </summary>
+            <param name="userName">the username to use</param>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.SetFirefoxHttpProxy(System.Int32,System.String,System.Int32)">
+            <summary>
+            Create a firefox profile and set the network proxy settings
+            </summary>
+            <param name="networkProxyType"></param>
+            <param name="networkProxyHttp"></param>
+            <param name="networkProxyHttpPort"></param>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.SetChromeHttpProxy(OpenQA.Selenium.ProxyKind,System.Boolean,System.String,System.String)">
+            <summary>
+            Create a chrome options and set the network proxy settings
+            </summary>
+            <param name="proxyKind"></param>
+            <param name="isAutoDetect"></param>
+            <param name="httpProxy"></param>
+            <param name="sslProxy"></param>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.AcceptAllCertificatesFirefox">
+            <summary>
+            Accept all certificates for firefox
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.AcceptAllCertificatesChrome">
+            <summary>
+            Accept all certificates for chrome
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.SetChromeOptions">
+            <summary>
+            Set Chrome options, currently not implemented
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.DisableJavascriptFirefox(System.String)">
+            <summary>
+            Disables javascript for Firefox within options
+            </summary>
+            <param name="userName"></param>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.SetDefaultPageLoadTimeout(System.Int32)">
+            <summary>
+            Set the default page load timeout for the driver
+            </summary>
+            <param name="timeout"></param>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.StartFirefoxWithPlugins(System.String)">
+            <summary>
+            start firefox with plugins at the specified path
+            </summary>
+            <param name="pluginPath"></param>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.StartChromeUnpacked">
+            <summary>
+            Start chrome unpacked, currently not implemented
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.StartChromePacked">
+            <summary>
+            Start chrome packed, currently not implemented
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.ChangeDefaultSaveLocation(System.String,System.Int32,System.Boolean)">
+            <summary>
+            Set the default download save location for firefox
+            </summary>
+            <param name="downloadFolderPath"></param>
+            <param name="browserDownloadFolderList"></param>
+            <param name="browserDownloadManagerAlertOnExeOpen"></param>
+        </member>
+    </members>
+</doc>

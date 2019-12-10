@@ -7,7 +7,10 @@ using System.Collections.Generic;
 
 namespace QualitasDigitalSeleniumCSharp.Extensions
 {
-    public static class ObjectExtensions
+    /// <summary>
+    /// Extends the functionality of the driver and web element classes
+    /// </summary>
+    public static class SeleniumExtensions
     {
         #region Find Element
 
