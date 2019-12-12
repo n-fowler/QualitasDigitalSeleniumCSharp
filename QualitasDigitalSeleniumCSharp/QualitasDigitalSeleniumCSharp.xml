@@ -297,6 +297,13 @@
             <param name="element">The web element</param>
             <returns>returns a string with innertext</returns>
         </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetHref(OpenQA.Selenium.IWebElement)">
+            <summary>
+            Gets the href of the element
+            </summary>
+            <param name="element">The web element</param>
+            <returns></returns>
+        </member>
         <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.IsEnabled(OpenQA.Selenium.IWebElement)">
             <summary>
             Gets the enabled state of the element
@@ -1090,9 +1097,30 @@
             Navigation section schedule button
             </summary>
         </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.HomePage.SearchButton">
+            <summary>
+            Home Page search button
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.HomePage.SearchTextBox">
+            <summary>
+            Home Page search text box
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.HomePage.SearchResultText">
+            <summary>
+            Home Page search result text
+            </summary>
+        </member>
         <member name="M:QualitasDigitalSeleniumCSharp.PageObjects.HomePage.GetLinkTexts">
             <summary>
             Navigation section get link text
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.PageObjects.HomePage.GetLinkUrls">
+            <summary>
+            Navigation Section get link urls
             </summary>
             <returns></returns>
         </member>

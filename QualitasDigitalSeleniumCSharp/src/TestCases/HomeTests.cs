@@ -1,5 +1,4 @@
 ﻿using NUnit.Framework;
-using OpenQA.Selenium;
 using QualitasDigitalSeleniumCSharp.Extensions;
 using QualitasDigitalSeleniumCSharp.PageObjects;
 using QualitasDigitalSeleniumCSharp.WrapperFactory;
@@ -43,7 +42,7 @@ namespace QualitasDigitalSeleniumCSharp.TestCases
             try
             {
                 SetUp();
-
+                BrowserFactory.WaitForPageLoad(10);
                 Assert.IsTrue(Page.Home.LogoImage.Displayed, "homePage.LogoImage.Displayed");
             }
             finally
@@ -77,12 +76,12 @@ namespace QualitasDigitalSeleniumCSharp.TestCases
                 };
 
                 List<string> actualLinkTexts = Page.Home.GetLinkTexts();
-
                 Assert.AreEqual(expectedLinkTexts, actualLinkTexts);
 
+                //Verify all expected link urls
                 List<string> expectedPageUrls = new List<string>
                 {
-                    "https://qualitasdigital.com",
+                    "https://www.qualitasdigital.com/",
                     "https://www.qualitasdigital.com/about-us",
                     "https://www.qualitasdigital.com/pricing-services",
                     "https://www.qualitasdigital.com/faq",
@@ -92,22 +91,15 @@ namespace QualitasDigitalSeleniumCSharp.TestCases
                     "https://www.qualitasdigital.com/contact-us"
                 };
 
-                List<string> actualPageUrls = new List<string>();
-
-                //Click all links and validate navigation
-                foreach (IWebElement webElement in Page.Home.NavCollection)
-                {
-                    //Click the nav link
-                    webElement.ClickWhenReady();
-
-                    //Store the updated page url
-                    actualPageUrls.Add(BrowserFactory.GetPageUrl());
-
-                    //Open the navigation
-                    Page.Home.NavToggle.ClickWithJavascriptById();
-                }
-
+                List<string> actualPageUrls = Page.Home.GetLinkUrls();
                 Assert.AreEqual(expectedPageUrls, actualPageUrls);
+
+                //Verify navigation body text
+                const string expectedNavigationBodyText = @"Qualitas Digital brings Software Quality Automation within reach. Our solutions help you bridge the gap between where you are and where you want to be. We help you create Quality Automation programs that scale without the high overhead of a purely manual approach.  Take advantage of a free consultation today.";
+                Assert.AreEqual(expectedNavigationBodyText, Page.Home.NavBodyText.GetInnertext());
+
+                //Verify navigation schedule button
+                Assert.IsTrue(Page.Home.NavScheduleButton.IsDisplayed(), "Page.Home.NavScheduleButton.IsDisplayed()");
             }
             finally
             {
@@ -122,6 +114,24 @@ namespace QualitasDigitalSeleniumCSharp.TestCases
             try
             {
                 SetUp();
+
+                //Open search
+                Page.Home.SearchButton.ClickWhenReady();
+
+                //Validate placeholder text of "Search"
+                Assert.AreEqual("Search", Page.Home.SearchTextBox.GetAttribute("placeholder"));
+
+                //enter abc
+                Page.Home.SearchTextBox.EnterText("abc");
+
+                //Hit enter
+                Page.Home.SearchTextBox.SubmitElement();
+
+                //Verify the page update
+                Assert.AreEqual("https://www.qualitasdigital.com/search?q=abc", BrowserFactory.GetPageUrl());
+
+                //Verify result of "Your search did not match any documents."
+                Assert.AreEqual("Your search did not match any documents.", Page.Home.SearchResultText.GetInnertext());
             }
             finally
             {

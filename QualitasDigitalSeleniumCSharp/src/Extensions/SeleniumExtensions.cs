@@ -426,7 +426,17 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <returns>returns a string with innertext</returns>
         public static string GetInnertext(this IWebElement element)
         {
-            return element.Text;
+            return element.GetAttribute("innerText");
+        }
+
+        /// <summary>
+        /// Gets the href of the element
+        /// </summary>
+        /// <param name="element">The web element</param>
+        /// <returns></returns>
+        public static string GetHref(this IWebElement element)
+        {
+            return element.GetAttribute("href");
         }
 
         /// <summary>

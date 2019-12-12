@@ -50,6 +50,21 @@ namespace QualitasDigitalSeleniumCSharp.PageObjects
         /// </summary>
         public IWebElement NavScheduleButton => driver.FindElementById("block-d013aff45daaf1868f5b");
 
+        /// <summary>
+        /// Home Page search button
+        /// </summary>
+        public IWebElement SearchButton => driver.FindElementByClassName("header-search");
+
+        /// <summary>
+        /// Home Page search text box
+        /// </summary>
+        public IWebElement SearchTextBox => driver.FindElementByClassName("header-search-form-input");
+
+        /// <summary>
+        /// Home Page search result text
+        /// </summary>
+        public IWebElement SearchResultText => driver.FindElementByClassName("sqs-search-page-notice");
+
         #endregion Elements
 
         #region Methods
@@ -64,7 +79,7 @@ namespace QualitasDigitalSeleniumCSharp.PageObjects
 
             foreach (IWebElement webElement in NavCollection)
             {
-                string text = webElement.FindElementByTagName("a").FindElementByTagName("span").GetAttribute("innerText");
+                string text = webElement.FindElementByTagName("a").FindElementByTagName("span").GetInnertext();
 
                 if (!string.IsNullOrEmpty(text))
                 {
@@ -73,6 +88,27 @@ namespace QualitasDigitalSeleniumCSharp.PageObjects
             }
 
             return navLinkTexts;
+        }
+
+        /// <summary>
+        /// Navigation Section get link urls
+        /// </summary>
+        /// <returns></returns>
+        public List<string> GetLinkUrls()
+        {
+            List<string> navLinkUrls = new List<string>();
+
+            foreach (IWebElement webElement in NavCollection)
+            {
+                string text = webElement.FindElementByTagName("a").GetHref();
+
+                if (!string.IsNullOrEmpty(text))
+                {
+                    navLinkUrls.Add(text);
+                }
+            }
+
+            return navLinkUrls;
         }
 
         #endregion Methods
