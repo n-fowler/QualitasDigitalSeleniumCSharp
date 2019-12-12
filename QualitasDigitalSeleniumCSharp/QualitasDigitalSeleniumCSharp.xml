@@ -1112,13 +1112,168 @@
             Home Page search result text
             </summary>
         </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.PageObjects.HomePage.GetLinkTexts">
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.HomePage.PrimarySectionTitle">
+            <summary>
+            Primary section title text
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.HomePage.PrimarySectionImage">
+            <summary>
+            Primary section Image
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.HomePage.PrimarySectionBodyText">
+            <summary>
+            Primary section body text
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.HomePage.PrimarySectionScheduleButton">
+            <summary>
+            Primary section schedule a free consultation button
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.HomePage.OurServicesSection">
+            <summary>
+            Our services section
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.HomePage.OurServicesSectionTitle">
+            <summary>
+            Our services section title
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.HomePage.OurServicesSectionBodyText">
+            <summary>
+            Our services section body text
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.HomePage.OurServicesSectionLink">
+            <summary>
+            Our services section link
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.HomePage.OurCommitmentSection">
+            <summary>
+            Our commitment section
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.HomePage.OurCommitmentSectionTitle">
+            <summary>
+            Our commitment section title
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.HomePage.OurCommitmentSectionBodyText">
+            <summary>
+            Our commitment section body text
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.HomePage.OurCommitmentSectionLink">
+            <summary>
+            Our commitment section link
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.HomePage.MonthlyArticlesSection">
+            <summary>
+            Monthly articles section
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.HomePage.MonthlyArticlesSectionTitle">
+            <summary>
+            Monthly articles section title
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.HomePage.MonthlyArticlesSectionBodyText">
+            <summary>
+            Monthly articles section body text
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.HomePage.MonthlyArticlesSectionLink">
+            <summary>
+            Monthly articles section link
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.HomePage.SecondarySection">
+            <summary>
+            Secondary section
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.HomePage.SecondarySectionTitle">
+            <summary>
+            Secondary section title
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.HomePage.SecondarySectionImage">
+            <summary>
+            Secondary section image
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.HomePage.SecondarySectionBodyText">
+            <summary>
+            Secondary section body text
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.HomePage.SecondarySectionAboutUsButton">
+            <summary>
+            Secondary section about us button
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.HomePage.MidPageTitle">
+            <summary>
+            Mid page title
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.HomePage.TertiarySection">
+            <summary>
+            Tertiary section
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.HomePage.TertiarySectionTitle">
+            <summary>
+            Tertiary section title
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.HomePage.TertiarySectionImage">
+            <summary>
+            Tertiary section image
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.HomePage.TertiarySectionBodyText">
+            <summary>
+            Tertiary section body text
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.HomePage.TertiarySectionClientTestimonialsButton">
+            <summary>
+            Tertiary section client testimonials button
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.HomePage.FooterTitle">
+            <summary>
+            Footer title
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.HomePage.FooterScheduleButton">
+            <summary>
+            Footer schedule button
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.HomePage.FooterLinksSection">
+            <summary>
+            Footer links section
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.HomePage.FooterLinksCollection">
+            <summary>
+            Footer links collection
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.PageObjects.HomePage.GetLinkTexts(System.Collections.Generic.List{OpenQA.Selenium.IWebElement})">
             <summary>
             Navigation section get link text
             </summary>
             <returns></returns>
         </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.PageObjects.HomePage.GetLinkUrls">
+        <member name="M:QualitasDigitalSeleniumCSharp.PageObjects.HomePage.GetLinkUrls(System.Collections.Generic.List{OpenQA.Selenium.IWebElement})">
             <summary>
             Navigation Section get link urls
             </summary>
@@ -1139,6 +1294,16 @@
             HomePage Tests
             </summary>
         </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.HomeTests.SetUp">
+            <summary>
+            The test setup method
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.HomeTests.TearDown">
+            <summary>
+            The test tear down method
+            </summary>
+        </member>
         <member name="M:QualitasDigitalSeleniumCSharp.TestCases.HomeTests.HomePageLoad">
             <summary></summary>
         </member>
@@ -1149,9 +1314,6 @@
             <summary></summary>
         </member>
         <member name="M:QualitasDigitalSeleniumCSharp.TestCases.HomeTests.HomePageContent">
-            <summary></summary>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.HomeTests.HomePageLinks">
             <summary></summary>
         </member>
         <member name="T:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory">

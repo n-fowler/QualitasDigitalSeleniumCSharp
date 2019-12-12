@@ -78,7 +78,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
             }
 
             MaximizeWindow();
-            SetImplicitWait(10);
+            SetImplicitWait(30);
         }
 
         /// <summary>

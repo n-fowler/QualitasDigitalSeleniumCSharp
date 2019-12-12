@@ -65,6 +65,161 @@ namespace QualitasDigitalSeleniumCSharp.PageObjects
         /// </summary>
         public IWebElement SearchResultText => driver.FindElementByClassName("sqs-search-page-notice");
 
+        /// <summary>
+        /// Primary section title text
+        /// </summary>
+        public IWebElement PrimarySectionTitle => driver.FindElementById("block-a50c2484babd68ea94ea").FindElementByTagName("div").FindElementByTagName("h1");
+
+        /// <summary>
+        /// Primary section Image
+        /// </summary>
+        public IWebElement PrimarySectionImage => driver.FindElementById("yui_3_17_2_1_1576170431981_59").FindElementByTagName("img");
+
+        /// <summary>
+        /// Primary section body text
+        /// </summary>
+        public IWebElement PrimarySectionBodyText => driver.FindElementById("block-f99a4c371dd091271df7").FindElementByTagName("div").FindElementByTagName("p");
+
+        /// <summary>
+        /// Primary section schedule a free consultation button
+        /// </summary>
+        public IWebElement PrimarySectionScheduleButton => driver.FindElementById("yui_3_17_2_1_1576170431981_122");
+
+        /// <summary>
+        /// Our services section
+        /// </summary>
+        public IWebElement OurServicesSection => driver.FindElementById("block-9b7a80e3167ce3d3995a");
+
+        /// <summary>
+        /// Our services section title
+        /// </summary>
+        public IWebElement OurServicesSectionTitle => OurServicesSection.FindElementByTagName("div").FindElementByTagName("h2");
+
+        /// <summary>
+        /// Our services section body text
+        /// </summary>
+        public IWebElement OurServicesSectionBodyText => OurServicesSection.FindElementByTagName("div").FindElementsByTagName("p").ToList()[0];
+
+        /// <summary>
+        /// Our services section link
+        /// </summary>
+        public IWebElement OurServicesSectionLink => OurServicesSection.FindElementByTagName("div").FindElementsByTagName("p").ToList()[1];
+
+        /// <summary>
+        /// Our commitment section
+        /// </summary>
+        public IWebElement OurCommitmentSection => driver.FindElementById("block-2429c8770ce968f657a8");
+
+        /// <summary>
+        /// Our commitment section title
+        /// </summary>
+        public IWebElement OurCommitmentSectionTitle => OurCommitmentSection.FindElementByTagName("div").FindElementByTagName("h2");
+
+        /// <summary>
+        /// Our commitment section body text
+        /// </summary>
+        public IWebElement OurCommitmentSectionBodyText => OurCommitmentSection.FindElementByTagName("div").FindElementsByTagName("p").ToList()[0];
+
+        /// <summary>
+        /// Our commitment section link
+        /// </summary>
+        public IWebElement OurCommitmentSectionLink => OurCommitmentSection.FindElementByTagName("div").FindElementsByTagName("p").ToList()[1];
+
+        /// <summary>
+        /// Monthly articles section
+        /// </summary>
+        public IWebElement MonthlyArticlesSection => driver.FindElementById("block-5c47022b53cd95d3d039");
+
+        /// <summary>
+        /// Monthly articles section title
+        /// </summary>
+        public IWebElement MonthlyArticlesSectionTitle => MonthlyArticlesSection.FindElementByTagName("div").FindElementByTagName("h2");
+
+        /// <summary>
+        /// Monthly articles section body text
+        /// </summary>
+        public IWebElement MonthlyArticlesSectionBodyText => MonthlyArticlesSection.FindElementByTagName("div").FindElementsByTagName("p").ToList()[0];
+
+        /// <summary>
+        /// Monthly articles section link
+        /// </summary>
+        public IWebElement MonthlyArticlesSectionLink => MonthlyArticlesSection.FindElementByTagName("div").FindElementsByTagName("p").ToList()[1];
+
+        /// <summary>
+        /// Secondary section
+        /// </summary>
+        public IWebElement SecondarySection => driver.FindElementById("block-98c1d846f408c7fae1f8");
+
+        /// <summary>
+        /// Secondary section title
+        /// </summary>
+        public IWebElement SecondarySectionTitle => SecondarySection.FindElementByClassName("image-title-wrapper");
+
+        /// <summary>
+        /// Secondary section image
+        /// </summary>
+        public IWebElement SecondarySectionImage => SecondarySection.FindElementById("yui_3_17_2_1_1576170431981_79").FindElementByTagName("img");
+
+        /// <summary>
+        /// Secondary section body text
+        /// </summary>
+        public IWebElement SecondarySectionBodyText => SecondarySection.FindElementByClassName("image-subtitle-wrapper");
+
+        /// <summary>
+        /// Secondary section about us button
+        /// </summary>
+        public IWebElement SecondarySectionAboutUsButton => SecondarySection.FindElementByClassName("image-button-wrapper");
+
+        /// <summary>
+        /// Mid page title
+        /// </summary>
+        public IWebElement MidPageTitle => driver.FindElementById("block-036c44c036644d931bc6").FindElementByTagName("div").FindElementByTagName("h1");
+
+        /// <summary>
+        /// Tertiary section
+        /// </summary>
+        public IWebElement TertiarySection => driver.FindElementById("block-6863d26509d4596a922e");
+
+        /// <summary>
+        /// Tertiary section title
+        /// </summary>
+        public IWebElement TertiarySectionTitle => TertiarySection.FindElementByClassName("image-title-wrapper");
+
+        /// <summary>
+        /// Tertiary section image
+        /// </summary>
+        public IWebElement TertiarySectionImage => TertiarySection.FindElementByClassName("yui_3_17_2_1_1576170431981_96").FindElementByTagName("img");
+
+        /// <summary>
+        /// Tertiary section body text
+        /// </summary>
+        public IWebElement TertiarySectionBodyText => TertiarySection.FindElementByClassName("image-subtitle-wrapper");
+
+        /// <summary>
+        /// Tertiary section client testimonials button
+        /// </summary>
+        public IWebElement TertiarySectionClientTestimonialsButton => TertiarySection.FindElementById("image-button-wrapper");
+
+        /// <summary>
+        /// Footer title
+        /// </summary>
+        public IWebElement FooterTitle => driver.FindElementById("block-5694a211d5b58deead3e").FindElementByTagName("div").FindElementByTagName("h1");
+
+        /// <summary>
+        /// Footer schedule button
+        /// </summary>
+        public IWebElement FooterScheduleButton => driver.FindElementById("yui_3_17_2_1_1576170431981_129").FindElementByTagName("a");
+
+        /// <summary>
+        /// Footer links section
+        /// </summary>
+        public IWebElement FooterLinksSection => driver.FindElementById("mainNavigation");
+
+        /// <summary>
+        /// Footer links collection
+        /// </summary>
+        public List<IWebElement> FooterLinksCollection => FooterLinksSection.FindElementsById("nav-link--collection").ToList();
+
         #endregion Elements
 
         #region Methods
@@ -73,11 +228,11 @@ namespace QualitasDigitalSeleniumCSharp.PageObjects
         /// Navigation section get link text
         /// </summary>
         /// <returns></returns>
-        public List<string> GetLinkTexts()
+        public List<string> GetLinkTexts(List<IWebElement> linkElements)
         {
             List<string> navLinkTexts = new List<string>();
 
-            foreach (IWebElement webElement in NavCollection)
+            foreach (IWebElement webElement in linkElements)
             {
                 string text = webElement.FindElementByTagName("a").FindElementByTagName("span").GetInnertext();
 
@@ -94,11 +249,11 @@ namespace QualitasDigitalSeleniumCSharp.PageObjects
         /// Navigation Section get link urls
         /// </summary>
         /// <returns></returns>
-        public List<string> GetLinkUrls()
+        public List<string> GetLinkUrls(List<IWebElement> linkElements)
         {
             List<string> navLinkUrls = new List<string>();
 
-            foreach (IWebElement webElement in NavCollection)
+            foreach (IWebElement webElement in linkElements)
             {
                 string text = webElement.FindElementByTagName("a").GetHref();
 

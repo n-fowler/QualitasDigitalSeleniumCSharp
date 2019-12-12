@@ -20,13 +20,20 @@ namespace QualitasDigitalSeleniumCSharp.TestCases
 
         #region Shared
 
-        private void SetUp()
+        /// <summary>
+        /// The test setup method
+        /// </summary>
+        [OneTimeSetUp]
+        public void SetUp()
         {
             BrowserFactory.InitBrowser(webDriverEnum);
-            BrowserFactory.GoToPage(HomePage.Url);
         }
 
-        private void TearDown()
+        /// <summary>
+        /// The test tear down method
+        /// </summary>
+        [OneTimeTearDown]
+        public void TearDown()
         {
             BrowserFactory.CloseAllDrivers();
         }
@@ -36,135 +43,135 @@ namespace QualitasDigitalSeleniumCSharp.TestCases
         #region Tests
 
         /// <summary></summary>
-        [TestCase()]
+        [Test]
         public void HomePageLoad()
         {
-            try
-            {
-                SetUp();
-                BrowserFactory.WaitForPageLoad(10);
-                Assert.IsTrue(Page.Home.LogoImage.Displayed, "homePage.LogoImage.Displayed");
-            }
-            finally
-            {
-                TearDown();
-            }
+            BrowserFactory.GoToPage(HomePage.Url);
+            BrowserFactory.WaitForPageLoad(10);
+            Assert.IsTrue(Page.Home.LogoImage.Displayed, "homePage.LogoImage.Displayed");
         }
 
         /// <summary></summary>
-        [TestCase()]
+        [Test]
         public void HomePageNavigation()
         {
-            try
+            BrowserFactory.GoToPage(HomePage.Url);
+
+            //Open navigation
+            Page.Home.NavToggle.ClickWithJavascriptById();
+
+            //Verify all expected link texts
+            List<string> expectedLinkTexts = new List<string>
             {
-                SetUp();
+                "Home",
+                "About Us",
+                "Pricing + Services",
+                "FAQ",
+                "News + Notes",
+                "Testimonials",
+                "Schedule Consultation",
+                "Contact Us"
+            };
 
-                //Open navigation
-                Page.Home.NavToggle.ClickWithJavascriptById();
+            List<string> actualLinkTexts = Page.Home.GetLinkTexts(Page.Home.NavCollection);
+            Assert.AreEqual(expectedLinkTexts, actualLinkTexts);
 
-                //Verify all expected link texts
-                List<string> expectedLinkTexts = new List<string>
-                {
-                    "Home",
-                    "About Us",
-                    "Pricing + Services",
-                    "FAQ",
-                    "News + Notes",
-                    "Testimonials",
-                    "Schedule Consultation",
-                    "Contact Us"
-                };
-
-                List<string> actualLinkTexts = Page.Home.GetLinkTexts();
-                Assert.AreEqual(expectedLinkTexts, actualLinkTexts);
-
-                //Verify all expected link urls
-                List<string> expectedPageUrls = new List<string>
-                {
-                    "https://www.qualitasdigital.com/",
-                    "https://www.qualitasdigital.com/about-us",
-                    "https://www.qualitasdigital.com/pricing-services",
-                    "https://www.qualitasdigital.com/faq",
-                    "https://www.qualitasdigital.com/news-notes-qualitas",
-                    "https://www.qualitasdigital.com/testimonials",
-                    "https://www.qualitasdigital.com/schedule-consultation",
-                    "https://www.qualitasdigital.com/contact-us"
-                };
-
-                List<string> actualPageUrls = Page.Home.GetLinkUrls();
-                Assert.AreEqual(expectedPageUrls, actualPageUrls);
-
-                //Verify navigation body text
-                const string expectedNavigationBodyText = @"Qualitas Digital brings Software Quality Automation within reach. Our solutions help you bridge the gap between where you are and where you want to be. We help you create Quality Automation programs that scale without the high overhead of a purely manual approach.  Take advantage of a free consultation today.";
-                Assert.AreEqual(expectedNavigationBodyText, Page.Home.NavBodyText.GetInnertext());
-
-                //Verify navigation schedule button
-                Assert.IsTrue(Page.Home.NavScheduleButton.IsDisplayed(), "Page.Home.NavScheduleButton.IsDisplayed()");
-            }
-            finally
+            //Verify all expected link urls
+            List<string> expectedPageUrls = new List<string>
             {
-                TearDown();
-            }
+                "https://www.qualitasdigital.com/",
+                "https://www.qualitasdigital.com/about-us",
+                "https://www.qualitasdigital.com/pricing-services",
+                "https://www.qualitasdigital.com/faq",
+                "https://www.qualitasdigital.com/news-notes-qualitas",
+                "https://www.qualitasdigital.com/testimonials",
+                "https://www.qualitasdigital.com/schedule-consultation",
+                "https://www.qualitasdigital.com/contact-us"
+            };
+
+            List<string> actualPageUrls = Page.Home.GetLinkUrls(Page.Home.NavCollection);
+            Assert.AreEqual(expectedPageUrls, actualPageUrls);
+
+            //Verify navigation body text
+            const string expectedNavigationBodyText = @"Qualitas Digital brings Software Quality Automation within reach. Our solutions help you bridge the gap between where you are and where you want to be. We help you create Quality Automation programs that scale without the high overhead of a purely manual approach.  Take advantage of a free consultation today.";
+            Assert.AreEqual(expectedNavigationBodyText, Page.Home.NavBodyText.GetInnertext());
+
+            //Verify navigation schedule button
+            Assert.IsTrue(Page.Home.NavScheduleButton.IsDisplayed(), "Page.Home.NavScheduleButton.IsDisplayed()");
         }
 
         /// <summary></summary>
-        [TestCase()]
+        [Test]
         public void HomePageSearch()
         {
-            try
-            {
-                SetUp();
+            BrowserFactory.GoToPage(HomePage.Url);
 
-                //Open search
-                Page.Home.SearchButton.ClickWhenReady();
+            //Open search
+            Page.Home.SearchButton.ClickWhenReady();
 
-                //Validate placeholder text of "Search"
-                Assert.AreEqual("Search", Page.Home.SearchTextBox.GetAttribute("placeholder"));
+            //Validate placeholder text of "Search"
+            Assert.AreEqual("Search", Page.Home.SearchTextBox.GetAttribute("placeholder"));
 
-                //enter abc
-                Page.Home.SearchTextBox.EnterText("abc");
+            //enter abc
+            Page.Home.SearchTextBox.EnterText("abc");
 
-                //Hit enter
-                Page.Home.SearchTextBox.SubmitElement();
+            //Hit enter
+            Page.Home.SearchTextBox.SubmitElement();
 
-                //Verify the page update
-                Assert.AreEqual("https://www.qualitasdigital.com/search?q=abc", BrowserFactory.GetPageUrl());
+            //Verify the page update
+            Assert.AreEqual("https://www.qualitasdigital.com/search?q=abc", BrowserFactory.GetPageUrl());
 
-                //Verify result of "Your search did not match any documents."
-                Assert.AreEqual("Your search did not match any documents.", Page.Home.SearchResultText.GetInnertext());
-            }
-            finally
-            {
-                TearDown();
-            }
+            //Verify result of "Your search did not match any documents."
+            Assert.AreEqual("Your search did not match any documents.", Page.Home.SearchResultText.GetInnertext());
         }
 
         /// <summary></summary>
-        [TestCase()]
+        [Test]
         public void HomePageContent()
         {
-            try
-            {
-                SetUp();
-            }
-            finally
-            {
-                TearDown();
-            }
-        }
+            BrowserFactory.GoToPage(HomePage.Url);
 
-        /// <summary></summary>
-        [TestCase()]
-        public void HomePageLinks()
-        {
-            try
-            {
-                SetUp();
-            }
-            finally
-            {
-                TearDown();
-            }
+            //Validate primary section
+            Assert.AreEqual("Putting the Quality in Software Quality Automation", Page.Home.PrimarySectionTitle.GetInnertext());
+            Assert.AreEqual("", Page.Home.PrimarySectionImage.GetInnertext());
+            Assert.AreEqual("", Page.Home.PrimarySectionBodyText.GetInnertext());
+            Assert.AreEqual("", Page.Home.PrimarySectionScheduleButton.GetHref());
+
+            //Validate Our Services section
+            Assert.AreEqual("", Page.Home.OurServicesSectionTitle.GetInnertext());
+            Assert.AreEqual("", Page.Home.OurServicesSectionBodyText.GetInnertext());
+            Assert.AreEqual("", Page.Home.OurServicesSectionLink.GetHref());
+
+            //Validate Our Commitment section
+            Assert.AreEqual("", Page.Home.OurCommitmentSectionTitle.GetInnertext());
+            Assert.AreEqual("", Page.Home.OurCommitmentSectionBodyText.GetInnertext());
+            Assert.AreEqual("", Page.Home.OurCommitmentSectionLink.GetHref());
+
+            //Validate Monthly Articles section
+            Assert.AreEqual("", Page.Home.MonthlyArticlesSectionTitle.GetInnertext());
+            Assert.AreEqual("", Page.Home.MonthlyArticlesSectionBodyText.GetInnertext());
+            Assert.AreEqual("", Page.Home.MonthlyArticlesSectionLink.GetHref());
+
+            //Validate secondary section
+            Assert.AreEqual("", Page.Home.SecondarySectionTitle.GetInnertext());
+            Assert.AreEqual("", Page.Home.SecondarySectionImage.GetInnertext());
+            Assert.AreEqual("", Page.Home.SecondarySectionBodyText.GetInnertext());
+            Assert.AreEqual("", Page.Home.SecondarySectionAboutUsButton.GetHref());
+
+            //Validate mid page title
+            Assert.AreEqual("", Page.Home.MidPageTitle.GetInnertext());
+
+            //Validate tertiary section
+            Assert.AreEqual("", Page.Home.TertiarySectionTitle.GetInnertext());
+            Assert.AreEqual("", Page.Home.TertiarySectionImage.GetInnertext());
+            Assert.AreEqual("", Page.Home.TertiarySectionBodyText.GetInnertext());
+            Assert.AreEqual("", Page.Home.TertiarySectionClientTestimonialsButton.GetHref());
+
+            //Validate footer
+            Assert.AreEqual("", Page.Home.FooterTitle.GetInnertext());
+            Assert.AreEqual("", Page.Home.FooterScheduleButton.GetInnertext());
+            Assert.AreEqual("", Page.Home.GetLinkTexts(Page.Home.FooterLinksCollection));
+            Assert.AreEqual("", Page.Home.GetLinkUrls(Page.Home.FooterLinksCollection));
         }
 
         #endregion Tests
