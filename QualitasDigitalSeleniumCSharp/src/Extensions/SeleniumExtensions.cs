@@ -12,7 +12,7 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
     /// </summary>
     public static class SeleniumExtensions
     {
-        #region Find Element
+        #region Find Element (IWebDriver)
 
         /// <summary>
         /// Uses the driver to find an element by class name
@@ -102,9 +102,101 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
             return driver.FindElement(By.XPath(xPath));
         }
 
-        #endregion Find Element
+        #endregion Find Element (IWebDriver)
 
-        #region Find Elements
+        #region Find Element (IWebElement)
+
+        /// <summary>
+        /// Uses the driver to find an element by class name
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <param name="className">The class name</param>
+        /// <returns>Returns a selenium web element</returns>
+        public static IWebElement FindElementByClassName(this IWebElement webElement, string className)
+        {
+            return webElement.FindElement(By.ClassName(className));
+        }
+
+        /// <summary>
+        /// Uses the driver to find an element by css selector string
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <param name="cssSelector">The css selector string</param>
+        /// <returns>Returns a selenium web element</returns>
+        public static IWebElement FindElementByCssSelector(this IWebElement webElement, string cssSelector)
+        {
+            return webElement.FindElement(By.CssSelector(cssSelector));
+        }
+
+        /// <summary>
+        /// Uses the driver to find an element by id
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <param name="id">The id</param>
+        /// <returns>Returns a selenium web element</returns>
+        public static IWebElement FindElementById(this IWebElement webElement, string id)
+        {
+            return webElement.FindElement(By.Id(id));
+        }
+
+        /// <summary>
+        /// Uses the driver to find an element by link text
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <param name="linkText">The link text</param>
+        /// <returns>Returns a selenium web element</returns>
+        public static IWebElement FindElementByLinkText(this IWebElement webElement, string linkText)
+        {
+            return webElement.FindElement(By.LinkText(linkText));
+        }
+
+        /// <summary>
+        /// Uses the driver to find an element by name
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <param name="name">The name</param>
+        /// <returns>Returns a selenium web element</returns>
+        public static IWebElement FindElementByName(this IWebElement webElement, string name)
+        {
+            return webElement.FindElement(By.Name(name));
+        }
+
+        /// <summary>
+        /// Uses the driver to find an element containing the link text
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <param name="partialLinkText">The partial link text</param>
+        /// <returns>Returns a selenium web element</returns>
+        public static IWebElement FindElementByPartialLinkText(this IWebElement webElement, string partialLinkText)
+        {
+            return webElement.FindElement(By.PartialLinkText(partialLinkText));
+        }
+
+        /// <summary>
+        /// Uses the driver to find an element by tag name
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <param name="tagName">The tag name</param>
+        /// <returns>Returns a selenium web element</returns>
+        public static IWebElement FindElementByTagName(this IWebElement webElement, string tagName)
+        {
+            return webElement.FindElement(By.TagName(tagName));
+        }
+
+        /// <summary>
+        /// Uses the driver to find an element by xpath
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <param name="xPath">The xpath</param>
+        /// <returns>Returns a selenium web element</returns>
+        public static IWebElement FindElementByXPath(this IWebElement webElement, string xPath)
+        {
+            return webElement.FindElement(By.XPath(xPath));
+        }
+
+        #endregion Find Element (IWebDriver)
+
+        #region Find Elements (IWebDriver)
 
         /// <summary>
         /// Uses the driver to find elements by the class name
@@ -194,9 +286,101 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
             return driver.FindElements(By.XPath(xPath));
         }
 
-        #endregion Find Elements
+        #endregion Find Elements (IWebDriver)
 
-        #region Basic Element Operations
+        #region Find Elements (IWebElement)
+
+        /// <summary>
+        /// Uses the driver to find elements by the class name
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <param name="className">The class name</param>
+        /// <returns>Returns a read only collection of selenium web elements</returns>
+        public static IReadOnlyCollection<IWebElement> FindElementsByClassName(this IWebElement webElement, string className)
+        {
+            return webElement.FindElements(By.ClassName(className));
+        }
+
+        /// <summary>
+        /// Uses the driver to find elements by the css selector string
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <param name="cssSelector">The css selector string</param>
+        /// <returns>Returns a read only collection of selenium web elements</returns>
+        public static IReadOnlyCollection<IWebElement> FindElementsByCssSelector(this IWebElement webElement, string cssSelector)
+        {
+            return webElement.FindElements(By.CssSelector(cssSelector));
+        }
+
+        /// <summary>
+        /// Uses the driver to find elements by the id
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <param name="id">The id</param>
+        /// <returns>Returns a read only collection of selenium web elements</returns>
+        public static IReadOnlyCollection<IWebElement> FindElementsById(this IWebElement webElement, string id)
+        {
+            return webElement.FindElements(By.Id(id));
+        }
+
+        /// <summary>
+        /// Uses the driver to find elements by the link text
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <param name="linkText">The link text</param>
+        /// <returns>Returns a read only collection of selenium web elements</returns>
+        public static IReadOnlyCollection<IWebElement> FindElementsByLinkText(this IWebElement webElement, string linkText)
+        {
+            return webElement.FindElements(By.LinkText(linkText));
+        }
+
+        /// <summary>
+        /// Uses the driver to find elements by the name
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <param name="name">The name</param>
+        /// <returns>Returns a read only collection of selenium web elements</returns>
+        public static IReadOnlyCollection<IWebElement> FindElementsByName(this IWebElement webElement, string name)
+        {
+            return webElement.FindElements(By.Name(name));
+        }
+
+        /// <summary>
+        /// Uses the driver to find elements containing the link text
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <param name="partialLinkText">The partial link text</param>
+        /// <returns>Returns a read only collection of selenium web elements</returns>
+        public static IReadOnlyCollection<IWebElement> FindElementsByPartialLinkText(this IWebElement webElement, string partialLinkText)
+        {
+            return webElement.FindElements(By.PartialLinkText(partialLinkText));
+        }
+
+        /// <summary>
+        /// Uses the driver to find elements by the tag name
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <param name="tagName">The tag name</param>
+        /// <returns>Returns a read only collection of selenium web elements</returns>
+        public static IReadOnlyCollection<IWebElement> FindElementsByTagName(this IWebElement webElement, string tagName)
+        {
+            return webElement.FindElements(By.TagName(tagName));
+        }
+
+        /// <summary>
+        /// Uses the driver to find elements by the xpath
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <param name="xPath">The xpath</param>
+        /// <returns>Returns a read only collection of selenium web elements</returns>
+        public static IReadOnlyCollection<IWebElement> FindElementsByXPath(this IWebElement webElement, string xPath)
+        {
+            return webElement.FindElements(By.XPath(xPath));
+        }
+
+        #endregion Find Elements (IWebElement)
+
+        #region Basic Element Operations (IWebElement)
 
         /// <summary>
         /// Clicks the web element.
@@ -374,9 +558,9 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
             return new SelectElement(element).IsMultiple;
         }
 
-        #endregion Basic Element Operations
+        #endregion Basic Element Operations (IWebElement)
 
-        #region Advanced Element Operations
+        #region Advanced Element Operations (IWebElement)
 
         /// <summary>
         /// Drags and Drops an element to a position on the screen
@@ -403,6 +587,17 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         }
 
         /// <summary>
+        /// Clicks an element using javascript and the element id
+        /// </summary>
+        /// <param name="element">The web element</param>
+        public static void ClickWithJavascriptById(this IWebElement element)
+        {
+            string js = $"document.getElementById('{element.GetAttribute("id")}').click();";
+            IWebDriver driver = ((IWrapsDriver)element).WrappedDriver;
+            ((IJavaScriptExecutor)driver).ExecuteScript(js);
+        }
+
+        /// <summary>
         /// Wait for the visibility of an element
         /// </summary>
         /// <param name="element">The web element</param>
@@ -415,9 +610,21 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
             wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(By.CssSelector(cssSelector)));
         }
 
-        #endregion Advanced Element Operations
+        /// <summary>
+        /// Wait for the visibility of an element
+        /// </summary>
+        /// <param name="element">The web element</param>
+        /// <param name="timeLimit">the time limit in seconds</param>
+        public static void WaitForClickable(this IWebElement element, int timeLimit = 30)
+        {
+            IWebDriver driver = ((IWrapsDriver)element).WrappedDriver;
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeLimit));
+            wait.Until(ExpectedConditions.ElementToBeClickable(element));
+        }
 
-        #region CSS Selectors
+        #endregion Advanced Element Operations (IWebElement)
+
+        #region CSS Selectors (IWebDriver)
 
         /// <summary>
         /// Gets all elements by css selector
@@ -856,6 +1063,447 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
             return driver.FindElementsByCssSelector("a:visited");
         }
 
-        #endregion CSS Selectors
+        #endregion CSS Selectors (IWebDriver)
+
+        #region CSS Selectors (IWebElement)
+
+        /// <summary>
+        /// Gets all elements by css selector
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <returns>Returns a read only collection of selenium web elements</returns>
+        public static IReadOnlyCollection<IWebElement> GetAllElements(this IWebElement webElement)
+        {
+            return webElement.FindElementsByCssSelector("*");
+        }
+
+        /// <summary>
+        /// Gets all elements by hierarchy using a css selector.  EX: div, p | div p | div > p | div + p | p ~ ul
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <param name="hierarchy">The hierarchy string</param>
+        /// <returns>Returns a read only collection of selenium web elements</returns>
+        public static IReadOnlyCollection<IWebElement> GetElementsByTagHierarchy(this IWebElement webElement, string hierarchy)
+        {
+            return webElement.FindElementsByCssSelector(hierarchy);
+        }
+
+        /// <summary>
+        /// Gets all elements with a target attribute
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <param name="attribute">the target attribute</param>
+        /// <returns>Returns a read only collection of selenium web elements</returns>
+        public static IReadOnlyCollection<IWebElement> GetElementsWithTargetAttribute(this IWebElement webElement, string attribute)
+        {
+            return webElement.FindElementsByCssSelector($"[{attribute}]");
+        }
+
+        /// <summary>
+        /// Gets all elements with the blank target attribute
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <returns>Returns a read only collection of selenium web elements</returns>
+        public static IReadOnlyCollection<IWebElement> GetElementsWithBlankTargetAttribute(this IWebElement webElement)
+        {
+            return webElement.FindElementsByCssSelector($"[target = _blank]");
+        }
+
+        /// <summary>
+        /// Gets all elements with an attribute containing a specified value
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <param name="attribute">The attribute</param>
+        /// <param name="value">The value</param>
+        /// <returns>Returns a read only collection of selenium web elements</returns>
+        public static IReadOnlyCollection<IWebElement> GetElementsWithAttributeContainingValue(this IWebElement webElement, string attribute, string value)
+        {
+            return webElement.FindElementsByCssSelector($"[{attribute}~={value}]");
+        }
+
+        /// <summary>
+        /// Gets all elements with an attribute starting with a specified value
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <param name="attribute">The attribute</param>
+        /// <param name="value">The value</param>
+        /// <returns>Returns a read only collection of selenium web elements</returns>
+        public static IReadOnlyCollection<IWebElement> GetElementsWithAttributeStartingWithValue(this IWebElement webElement, string attribute, string value)
+        {
+            return webElement.FindElementsByCssSelector($"[{attribute}|={value}]");
+        }
+
+        /// <summary>
+        /// Gets all elements with a tag and attribute starting with a specified value
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <param name="tag">the tag</param>
+        /// <param name="attribute">The attribute</param>
+        /// <param name="value">The value</param>
+        /// <returns>Returns a read only collection of selenium web elements</returns>
+        public static IReadOnlyCollection<IWebElement> GetElementsWithTagAndAttributeStartingWithValue(this IWebElement webElement, string tag, string attribute, string value)
+        {
+            return webElement.FindElementsByCssSelector($"{tag}[{attribute}^='{value}']");
+        }
+
+        /// <summary>
+        /// Gets all elements with a tag and attribute ending with a specified value
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <param name="tag">The tag</param>
+        /// <param name="attribute">The attribute</param>
+        /// <param name="value">The value</param>
+        /// <returns>Returns a read only collection of selenium web elements</returns>
+        public static IReadOnlyCollection<IWebElement> GetElementsWithTagAndAttributeEndingWithValue(this IWebElement webElement, string tag, string attribute, string value)
+        {
+            return webElement.FindElementsByCssSelector($"{tag}[{attribute}$='{value}']");
+        }
+
+        /// <summary>
+        /// Gets all elements with a tag and attribute containing a specified value
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <param name="tag">The tag</param>
+        /// <param name="attribute">The attribute</param>
+        /// <param name="value">The value</param>
+        /// <returns>Returns a read only collection of selenium web elements</returns>
+        public static IReadOnlyCollection<IWebElement> GetElementsWithTagAndAttributeContainingValue(this IWebElement webElement, string tag, string attribute, string value)
+        {
+            return webElement.FindElementsByCssSelector($"{tag}[{attribute}*='{value}']");
+        }
+
+        /// <summary>
+        /// Gets all elements that are active web links
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <returns>Returns a read only collection of selenium web elements</returns>
+        public static IReadOnlyCollection<IWebElement> GetActiveWebLink(this IWebElement webElement)
+        {
+            return webElement.FindElementsByCssSelector("a:active");
+        }
+
+        /// <summary>
+        /// Gets all elements that have a checked state
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <returns>Returns a read only collection of selenium web elements</returns>
+        public static IReadOnlyCollection<IWebElement> GetElementsWithCheckedState(this IWebElement webElement)
+        {
+            return webElement.FindElementsByCssSelector("input:checked");
+        }
+
+        /// <summary>
+        /// Gets all elements that have a default state
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <returns>Returns a read only collection of selenium web elements</returns>
+        public static IReadOnlyCollection<IWebElement> GetElementsWithDefaultState(this IWebElement webElement)
+        {
+            return webElement.FindElementsByCssSelector("input:default");
+        }
+
+        /// <summary>
+        /// Gets all elements that have a disabled state
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <returns>Returns a read only collection of selenium web elements</returns>
+        public static IReadOnlyCollection<IWebElement> GetElementsWithDisabledState(this IWebElement webElement)
+        {
+            return webElement.FindElementsByCssSelector("input:disabled");
+        }
+
+        /// <summary>
+        /// Gets all elements by tag that have no children
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <param name="tag">The tag</param>
+        /// <returns>Returns a read only collection of selenium web elements</returns>
+        public static IReadOnlyCollection<IWebElement> GetElementsByTagAndNoChildren(this IWebElement webElement, string tag)
+        {
+            return webElement.FindElementsByCssSelector($"{tag}:empty");
+        }
+
+        /// <summary>
+        /// Gets all elements with an enabled state
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <returns>Returns a read only collection of selenium web elements</returns>
+        public static IReadOnlyCollection<IWebElement> GetElementsWithEnabledState(this IWebElement webElement)
+        {
+            return webElement.FindElementsByCssSelector("input:enabled");
+        }
+
+        /// <summary>
+        /// Gets all elements by tag that have a first child
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <param name="tag"></param>
+        /// <returns>Returns a read only collection of selenium web elements</returns>
+        public static IReadOnlyCollection<IWebElement> GetElementsByTagAndFirstChild(this IWebElement webElement, string tag)
+        {
+            return webElement.FindElementsByCssSelector($"{tag}:first-child");
+        }
+
+        /// <summary>
+        /// Gets all elements by tag that have a first of type parent
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <param name="tag">The tag</param>
+        /// <returns>Returns a read only collection of selenium web elements</returns>
+        public static IReadOnlyCollection<IWebElement> GetElementsByTagAndFirstTypeOfParent(this IWebElement webElement, string tag)
+        {
+            return webElement.FindElementsByCssSelector($"{tag}:first-of-type");
+        }
+
+        /// <summary>
+        /// Gets all elements that are focused
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <returns>Returns a read only collection of selenium web elements</returns>
+        public static IReadOnlyCollection<IWebElement> GetElementByFocus(this IWebElement webElement)
+        {
+            return webElement.FindElementsByCssSelector("input:focus");
+        }
+
+        /// <summary>
+        /// Gets all elements with a value that's in range
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <returns>Returns a read only collection of selenium web elements</returns>
+        public static IReadOnlyCollection<IWebElement> GetElementsWithValueInRange(this IWebElement webElement)
+        {
+            return webElement.FindElementsByCssSelector("input:in-range");
+        }
+
+        /// <summary>
+        /// Gets all elements with an indeterminate state
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <returns>Returns a read only collection of selenium web elements</returns>
+        public static IReadOnlyCollection<IWebElement> GetElementsWithIndeterminateState(this IWebElement webElement)
+        {
+            return webElement.FindElementsByCssSelector("input:indeterminate");
+        }
+
+        /// <summary>
+        /// Gets all elements with an invalid value
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <returns>Returns a read only collection of selenium web elements</returns>
+        public static IReadOnlyCollection<IWebElement> GetElementsWithInvalidValue(this IWebElement webElement)
+        {
+            return webElement.FindElementsByCssSelector("input:invalid");
+        }
+
+        /// <summary>
+        /// Gets all elements by tag that have a last child
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <param name="tag">The tag</param>
+        /// <returns>Returns a read only collection of selenium web elements</returns>
+        public static IReadOnlyCollection<IWebElement> GetElementsByTagAndLastChild(this IWebElement webElement, string tag)
+        {
+            return webElement.FindElementsByCssSelector($"{tag}:last-child");
+        }
+
+        /// <summary>
+        /// Gets all elements by tag that have a last of type
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <param name="tag">The tag</param>
+        /// <returns>Returns a read only collection of selenium web elements</returns>
+        public static IReadOnlyCollection<IWebElement> GetElementsByTagAndLastTypeOfParent(this IWebElement webElement, string tag)
+        {
+            return webElement.FindElementsByCssSelector($"{tag}:last-of-type");
+        }
+
+        /// <summary>
+        /// Gets all elements that are links with an unvisited state
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <returns>Returns a read only collection of selenium web elements</returns>
+        public static IReadOnlyCollection<IWebElement> GetUnvisitedLinks(this IWebElement webElement)
+        {
+            return webElement.FindElementsByCssSelector("a:link");
+        }
+
+        /// <summary>
+        /// Gets all elements that lack a specific tag
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <param name="tag">The tag</param>
+        /// <returns>Returns a read only collection of selenium web elements</returns>
+        public static IReadOnlyCollection<IWebElement> GetElementsByNotTag(this IWebElement webElement, string tag)
+        {
+            return webElement.FindElementsByCssSelector($":not({tag})");
+        }
+
+        /// <summary>
+        /// Gets all elements by tag and child index
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <param name="tag">The tag</param>
+        /// <returns>Returns a read only collection of selenium web elements</returns>
+        public static IReadOnlyCollection<IWebElement> GetElementsByTagAndChildIndex(this IWebElement webElement, string tag)
+        {
+            return webElement.FindElementsByCssSelector($"{tag}:nth-child(2)");
+        }
+
+        /// <summary>
+        /// Gets all elements by tag and the index of the reversed child
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <param name="tag">The tag</param>
+        /// <returns>Returns a read only collection of selenium web elements</returns>
+        public static IReadOnlyCollection<IWebElement> GetElementsByTagAndReversedChildIndex(this IWebElement webElement, string tag)
+        {
+            return webElement.FindElementsByCssSelector($"{tag}:nth-last-child(2)");
+        }
+
+        /// <summary>
+        /// Gets all elements by tag and the index of the child of type
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <param name="tag">The tag</param>
+        /// <returns>Returns a read only collection of selenium web elements</returns>
+        public static IReadOnlyCollection<IWebElement> GetElementsBySameTagAndChildIndex(this IWebElement webElement, string tag)
+        {
+            return webElement.FindElementsByCssSelector($"{tag}:nth-of-type(2)");
+        }
+
+        /// <summary>
+        /// Gets all elements by tag and the index of the last child of type
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <param name="tag">The tag</param>
+        /// <returns>Returns a read only collection of selenium web elements</returns>
+        public static IReadOnlyCollection<IWebElement> GetElementsBySameTagAndReversedChildIndex(this IWebElement webElement, string tag)
+        {
+            return webElement.FindElementsByCssSelector($"{tag}:nth-last-of-type(2)");
+        }
+
+        /// <summary>
+        /// Gets all elements by tag and the index of the only child of type
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <param name="tag">The tag</param>
+        /// <returns>Returns a read only collection of selenium web elements</returns>
+        public static IReadOnlyCollection<IWebElement> GetElementsBySameTagAndOnlyChildOfType(this IWebElement webElement, string tag)
+        {
+            return webElement.FindElementsByCssSelector($"{tag}:only-of-type");
+        }
+
+        /// <summary>
+        /// Gets all elements by tag that have an only child
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <param name="tag">The tag</param>
+        /// <returns>Returns a read only collection of selenium web elements</returns>
+        public static IReadOnlyCollection<IWebElement> GetElementsByTagAndOnlyChild(this IWebElement webElement, string tag)
+        {
+            return webElement.FindElementsByCssSelector($"{tag}:only-child");
+        }
+
+        /// <summary>
+        /// Gets all elements without the required attribute
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <returns>Returns a read only collection of selenium web elements</returns>
+        public static IReadOnlyCollection<IWebElement> GetElementsWithoutRequiredAttribute(this IWebElement webElement)
+        {
+            return webElement.FindElementsByCssSelector("input:optional");
+        }
+
+        /// <summary>
+        /// Gets all elements that have an out of range value
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <returns>Returns a read only collection of selenium web elements</returns>
+        public static IReadOnlyCollection<IWebElement> GetElementsWithValueOutOfRange(this IWebElement webElement)
+        {
+            return webElement.FindElementsByCssSelector("input:out-of-range");
+        }
+
+        /// <summary>
+        /// Gets all elements that have a placeholder value
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <returns>Returns a read only collection of selenium web elements</returns>
+        public static IReadOnlyCollection<IWebElement> GetElementsWithPlaceholderValue(this IWebElement webElement)
+        {
+            return webElement.FindElementsByCssSelector("input::placeholder");
+        }
+
+        /// <summary>
+        /// Gets all elements that have the read only attribute
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <returns>Returns a read only collection of selenium web elements</returns>
+        public static IReadOnlyCollection<IWebElement> GetElementsWithReadOnlyAttribute(this IWebElement webElement)
+        {
+            return webElement.FindElementsByCssSelector("input:read-only");
+        }
+
+        /// <summary>
+        /// Gets all elements thatlack the read only attribute
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <returns>Returns a read only collection of selenium web elements</returns>
+        public static IReadOnlyCollection<IWebElement> GetElementsWithoutReadOnlyAttribute(this IWebElement webElement)
+        {
+            return webElement.FindElementsByCssSelector("input:read-write");
+        }
+
+        /// <summary>
+        /// Gets all elements with the required attribute
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <returns>Returns a read only collection of selenium web elements</returns>
+        public static IReadOnlyCollection<IWebElement> GetElementsWithRequiredAttribute(this IWebElement webElement)
+        {
+            return webElement.FindElementsByCssSelector("input:required");
+        }
+
+        /// <summary>
+        /// Gets all elements at the root
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <returns>Returns a read only collection of selenium web elements</returns>
+        public static IReadOnlyCollection<IWebElement> GetElementAtRoot(this IWebElement webElement)
+        {
+            return webElement.FindElementsByCssSelector(":root");
+        }
+
+        /// <summary>
+        /// Gets all elements selected by the user
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <returns>Returns a read only collection of selenium web elements</returns>
+        public static IReadOnlyCollection<IWebElement> GetElementsSelectedByUser(this IWebElement webElement)
+        {
+            return webElement.FindElementsByCssSelector("::selection");
+        }
+
+        /// <summary>
+        /// Gets all elements with a valid value
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <returns>Returns a read only collection of selenium web elements</returns>
+        public static IReadOnlyCollection<IWebElement> GetElementsWithValidValue(this IWebElement webElement)
+        {
+            return webElement.FindElementsByCssSelector("input:valid");
+        }
+
+        /// <summary>
+        /// Gets all visited web links
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <returns>Returns a read only collection of selenium web elements</returns>
+        public static IReadOnlyCollection<IWebElement> GetVisitedWebLinks(this IWebElement webElement)
+        {
+            return webElement.FindElementsByCssSelector("a:visited");
+        }
+
+        #endregion CSS Selectors (IWebElement)
     }
 }

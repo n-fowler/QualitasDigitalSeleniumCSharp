@@ -15,11 +15,15 @@ using System.Reflection;
 
 namespace QualitasDigitalSeleniumCSharp.WrapperFactory
 {
+    /// <summary>
+    /// The Browser Factory for easy driver initialization
+    /// </summary>
     public static class BrowserFactory
     {
         private static readonly IDictionary<string, IWebDriver> Drivers = new Dictionary<string, IWebDriver>();
         private static IWebDriver driver;
 
+        /// <summary></summary>
         public static IWebDriver Driver
         {
             get
@@ -72,6 +76,9 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
                 default:
                     throw new ArgumentOutOfRangeException(nameof(webDriver), webDriver, null);
             }
+
+            MaximizeWindow();
+            SetImplicitWait(10);
         }
 
         /// <summary>
@@ -84,6 +91,8 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
                 Drivers[key].Close();
                 Drivers[key].Quit();
             }
+
+            Drivers.Clear();
         }
 
         /// <summary>
@@ -91,11 +100,17 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         /// </summary>
         public enum WebDriver
         {
+            /// <summary>The Chrome Browser</summary>
             Chrome,
+            /// <summary>The Firefox Browser</summary>
             Firefox,
+            /// <summary>The Internet Explorer Browser</summary>
             InternetExplorer,
+            /// <summary>The Edge Browser</summary>
             Edge,
+            /// <summary>The Opera Browser</summary>
             Opera,
+            /// <summary>The Safari Browser</summary>
             Safari
         }
 
@@ -243,9 +258,18 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         /// <summary>
         /// Maximizes the browser window
         /// </summary>
-        public static void MaximizeWindow()
+        private static void MaximizeWindow()
         {
             driver.Manage().Window.Maximize();
+        }
+
+        /// <summary>
+        /// Sets the implicit wait for element visibility and presence
+        /// </summary>
+        /// <param name="seconds">The number of seconds to wait</param>
+        private static void SetImplicitWait(int seconds)
+        {
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(seconds);
         }
 
         /// <summary>

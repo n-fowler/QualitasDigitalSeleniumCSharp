@@ -1,11 +1,15 @@
 ﻿using NUnit.Framework;
+using OpenQA.Selenium;
+using QualitasDigitalSeleniumCSharp.Extensions;
 using QualitasDigitalSeleniumCSharp.PageObjects;
 using QualitasDigitalSeleniumCSharp.WrapperFactory;
-using System;
 using System.Collections.Generic;
 
 namespace QualitasDigitalSeleniumCSharp.TestCases
 {
+    /// <summary>
+    /// HomePage Tests
+    /// </summary>
     [TestFixture]
     public class HomeTests
     {
@@ -20,7 +24,7 @@ namespace QualitasDigitalSeleniumCSharp.TestCases
         private void SetUp()
         {
             BrowserFactory.InitBrowser(webDriverEnum);
-            BrowserFactory.GoToPage(Page.Home.url);
+            BrowserFactory.GoToPage(HomePage.Url);
         }
 
         private void TearDown()
@@ -32,6 +36,7 @@ namespace QualitasDigitalSeleniumCSharp.TestCases
 
         #region Tests
 
+        /// <summary></summary>
         [TestCase()]
         public void HomePageLoad()
         {
@@ -41,16 +46,13 @@ namespace QualitasDigitalSeleniumCSharp.TestCases
 
                 Assert.IsTrue(Page.Home.LogoImage.Displayed, "homePage.LogoImage.Displayed");
             }
-            catch (Exception e)
-            {
-                //Logging goes here
-            }
             finally
             {
                 TearDown();
             }
         }
 
+        /// <summary></summary>
         [TestCase()]
         public void HomePageNavigation()
         {
@@ -59,13 +61,7 @@ namespace QualitasDigitalSeleniumCSharp.TestCases
                 SetUp();
 
                 //Open navigation
-                Page.Home.NavToggleOpen.Click();
-
-                //Close the nav toggle
-                Page.Home.NavToggleClose.Click();
-
-                //Reopen navigation
-                Page.Home.NavToggleOpen.Click();
+                Page.Home.NavToggle.ClickWithJavascriptById();
 
                 //Verify all expected link texts
                 List<string> expectedLinkTexts = new List<string>
@@ -82,11 +78,36 @@ namespace QualitasDigitalSeleniumCSharp.TestCases
 
                 List<string> actualLinkTexts = Page.Home.GetLinkTexts();
 
+                Assert.AreEqual(expectedLinkTexts, actualLinkTexts);
+
+                List<string> expectedPageUrls = new List<string>
+                {
+                    "https://qualitasdigital.com",
+                    "https://www.qualitasdigital.com/about-us",
+                    "https://www.qualitasdigital.com/pricing-services",
+                    "https://www.qualitasdigital.com/faq",
+                    "https://www.qualitasdigital.com/news-notes-qualitas",
+                    "https://www.qualitasdigital.com/testimonials",
+                    "https://www.qualitasdigital.com/schedule-consultation",
+                    "https://www.qualitasdigital.com/contact-us"
+                };
+
+                List<string> actualPageUrls = new List<string>();
+
                 //Click all links and validate navigation
-            }
-            catch (Exception e)
-            {
-                //Logging goes here
+                foreach (IWebElement webElement in Page.Home.NavCollection)
+                {
+                    //Click the nav link
+                    webElement.ClickWhenReady();
+
+                    //Store the updated page url
+                    actualPageUrls.Add(BrowserFactory.GetPageUrl());
+
+                    //Open the navigation
+                    Page.Home.NavToggle.ClickWithJavascriptById();
+                }
+
+                Assert.AreEqual(expectedPageUrls, actualPageUrls);
             }
             finally
             {
@@ -94,6 +115,7 @@ namespace QualitasDigitalSeleniumCSharp.TestCases
             }
         }
 
+        /// <summary></summary>
         [TestCase()]
         public void HomePageSearch()
         {
@@ -101,16 +123,13 @@ namespace QualitasDigitalSeleniumCSharp.TestCases
             {
                 SetUp();
             }
-            catch (Exception e)
-            {
-                //Logging goes here
-            }
             finally
             {
                 TearDown();
             }
         }
 
+        /// <summary></summary>
         [TestCase()]
         public void HomePageContent()
         {
@@ -118,26 +137,19 @@ namespace QualitasDigitalSeleniumCSharp.TestCases
             {
                 SetUp();
             }
-            catch (Exception e)
-            {
-                //Logging goes here
-            }
             finally
             {
                 TearDown();
             }
         }
 
+        /// <summary></summary>
         [TestCase()]
         public void HomePageLinks()
         {
             try
             {
                 SetUp();
-            }
-            catch (Exception e)
-            {
-                //Logging goes here
             }
             finally
             {

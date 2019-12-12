@@ -1,42 +1,75 @@
 ﻿using OpenQA.Selenium;
+using QualitasDigitalSeleniumCSharp.Extensions;
 using QualitasDigitalSeleniumCSharp.WrapperFactory;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace QualitasDigitalSeleniumCSharp.PageObjects
 {
+    /// <summary>
+    /// The HomePage Page Object
+    /// </summary>
     public class HomePage
     {
         private IWebDriver driver = BrowserFactory.Driver;
-        public string url = "http://www.qualitasdigital.com";
+
+        /// <summary>
+        /// The HomePage Url
+        /// </summary>
+        public const string Url = "http://www.qualitasdigital.com";
 
         #region Elements
 
-        public IWebElement LogoImage => driver.FindElement(By.ClassName("logo-image"));
+        /// <summary>
+        /// The Logo Image element
+        /// </summary>
+        public IWebElement LogoImage => driver.FindElementByClassName("logo-image");
 
         /// <summary>
-        /// Navigation Section
+        /// Navigation section expansion toggle open
         /// </summary>
-        public IWebElement NavToggleOpen => driver.FindElement(By.ClassName("nav-toggle-label-icon"));
+        public IWebElement NavToggle => driver.FindElementById("navToggle");
 
-        public IWebElement NavToggleClose => driver.FindElement(By.Id("navCloseToggle"));
+        /// <summary>
+        /// Navigation section parent
+        /// </summary>
+        public IWebElement NavSection => driver.FindElementById("mainNavigation");
 
-        public IReadOnlyCollection<IWebElement> NavCollection => driver.FindElements(By.ClassName("nav-link--collection"));
+        /// <summary>
+        /// Navigation section link collection
+        /// </summary>
+        public List<IWebElement> NavCollection => NavSection.FindElementsByClassName("nav-link--collection").ToList();
 
-        public IWebElement NavBodyText => driver.FindElement(By.Id("block-5aa025203dc65c6e55e9"));
+        /// <summary>
+        /// Navigation section body text
+        /// </summary>
+        public IWebElement NavBodyText => driver.FindElementById("block-5aa025203dc65c6e55e9");
 
-        public IWebElement NavScheduleButton => driver.FindElement(By.Id("block-d013aff45daaf1868f5b"));
+        /// <summary>
+        /// Navigation section schedule button
+        /// </summary>
+        public IWebElement NavScheduleButton => driver.FindElementById("block-d013aff45daaf1868f5b");
 
         #endregion Elements
 
         #region Methods
 
+        /// <summary>
+        /// Navigation section get link text
+        /// </summary>
+        /// <returns></returns>
         public List<string> GetLinkTexts()
         {
             List<string> navLinkTexts = new List<string>();
 
             foreach (IWebElement webElement in NavCollection)
             {
+                string text = webElement.FindElementByTagName("a").FindElementByTagName("span").GetAttribute("innerText");
 
+                if (!string.IsNullOrEmpty(text))
+                {
+                    navLinkTexts.Add(text);
+                }
             }
 
             return navLinkTexts;
