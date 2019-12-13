@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using QualitasDigitalSeleniumCSharp.Extensions;
+using QualitasDigitalSeleniumCSharp.src.TestData;
 using QualitasDigitalSeleniumCSharp.WrapperFactory;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,9 +32,14 @@ namespace QualitasDigitalSeleniumCSharp.PageObjects
         public IWebElement NavToggle => driver.FindElementById("navToggle");
 
         /// <summary>
+        /// Navigation section side tray
+        /// </summary>
+        public IWebElement NavTray => driver.FindElementById("sideTrayWrapper");
+
+        /// <summary>
         /// Navigation section parent
         /// </summary>
-        public IWebElement NavSection => driver.FindElementById("mainNavigation");
+        public IWebElement NavSection => NavTray.FindElementById("mainNavigation");
 
         /// <summary>
         /// Navigation section link collection
@@ -73,7 +79,7 @@ namespace QualitasDigitalSeleniumCSharp.PageObjects
         /// <summary>
         /// Primary section Image
         /// </summary>
-        public IWebElement PrimarySectionImage => driver.FindElementById("yui_3_17_2_1_1576170431981_59").FindElementByTagName("img");
+        public IWebElement PrimarySectionImage => driver.GetElementsWithTagAndAttributeStartAndEndingWithValues("div", "id", Globals.SitePrefix, "59").First().FindElementByTagName("img");
 
         /// <summary>
         /// Primary section body text
@@ -83,7 +89,7 @@ namespace QualitasDigitalSeleniumCSharp.PageObjects
         /// <summary>
         /// Primary section schedule a free consultation button
         /// </summary>
-        public IWebElement PrimarySectionScheduleButton => driver.FindElementById("yui_3_17_2_1_1576170431981_122");
+        public IWebElement PrimarySectionScheduleButton => driver.GetElementsWithTagAndAttributeStartAndEndingWithValues("div", "id", Globals.SitePrefix, "122").First().FindElementByTagName("a");
 
         /// <summary>
         /// Our services section
@@ -103,7 +109,7 @@ namespace QualitasDigitalSeleniumCSharp.PageObjects
         /// <summary>
         /// Our services section link
         /// </summary>
-        public IWebElement OurServicesSectionLink => OurServicesSection.FindElementByTagName("div").FindElementsByTagName("p").ToList()[1];
+        public IWebElement OurServicesSectionLink => OurServicesSection.FindElementByTagName("div").FindElementsByTagName("p").ToList()[1].FindElementByTagName("a");
 
         /// <summary>
         /// Our commitment section
@@ -123,7 +129,7 @@ namespace QualitasDigitalSeleniumCSharp.PageObjects
         /// <summary>
         /// Our commitment section link
         /// </summary>
-        public IWebElement OurCommitmentSectionLink => OurCommitmentSection.FindElementByTagName("div").FindElementsByTagName("p").ToList()[1];
+        public IWebElement OurCommitmentSectionLink => OurCommitmentSection.FindElementByTagName("div").FindElementsByTagName("p").ToList()[1].FindElementByTagName("a");
 
         /// <summary>
         /// Monthly articles section
@@ -143,7 +149,7 @@ namespace QualitasDigitalSeleniumCSharp.PageObjects
         /// <summary>
         /// Monthly articles section link
         /// </summary>
-        public IWebElement MonthlyArticlesSectionLink => MonthlyArticlesSection.FindElementByTagName("div").FindElementsByTagName("p").ToList()[1];
+        public IWebElement MonthlyArticlesSectionLink => MonthlyArticlesSection.FindElementByTagName("div").FindElementsByTagName("p").ToList()[1].FindElementByTagName("a");
 
         /// <summary>
         /// Secondary section
@@ -158,7 +164,7 @@ namespace QualitasDigitalSeleniumCSharp.PageObjects
         /// <summary>
         /// Secondary section image
         /// </summary>
-        public IWebElement SecondarySectionImage => SecondarySection.FindElementById("yui_3_17_2_1_1576170431981_79").FindElementByTagName("img");
+        public IWebElement SecondarySectionImage => SecondarySection.GetElementsWithTagAndAttributeStartAndEndingWithValues("div", "id", Globals.SitePrefix, "79").First().FindElementByTagName("img");
 
         /// <summary>
         /// Secondary section body text
@@ -168,7 +174,7 @@ namespace QualitasDigitalSeleniumCSharp.PageObjects
         /// <summary>
         /// Secondary section about us button
         /// </summary>
-        public IWebElement SecondarySectionAboutUsButton => SecondarySection.FindElementByClassName("image-button-wrapper");
+        public IWebElement SecondarySectionAboutUsButton => SecondarySection.FindElementByClassName("image-button-wrapper").FindElementByTagName("div").FindElementByTagName("div").FindElementByTagName("a");
 
         /// <summary>
         /// Mid page title
@@ -188,7 +194,7 @@ namespace QualitasDigitalSeleniumCSharp.PageObjects
         /// <summary>
         /// Tertiary section image
         /// </summary>
-        public IWebElement TertiarySectionImage => TertiarySection.FindElementByClassName("yui_3_17_2_1_1576170431981_96").FindElementByTagName("img");
+        public IWebElement TertiarySectionImage => TertiarySection.GetElementsWithTagAndAttributeStartAndEndingWithValues("div", "id", Globals.SitePrefix, "96").First().FindElementByTagName("img");
 
         /// <summary>
         /// Tertiary section body text
@@ -198,7 +204,7 @@ namespace QualitasDigitalSeleniumCSharp.PageObjects
         /// <summary>
         /// Tertiary section client testimonials button
         /// </summary>
-        public IWebElement TertiarySectionClientTestimonialsButton => TertiarySection.FindElementById("image-button-wrapper");
+        public IWebElement TertiarySectionClientTestimonialsButton => TertiarySection.FindElementByClassName("image-button-wrapper").FindElementByTagName("div").FindElementByTagName("div").FindElementByTagName("a");
 
         /// <summary>
         /// Footer title
@@ -208,17 +214,22 @@ namespace QualitasDigitalSeleniumCSharp.PageObjects
         /// <summary>
         /// Footer schedule button
         /// </summary>
-        public IWebElement FooterScheduleButton => driver.FindElementById("yui_3_17_2_1_1576170431981_129").FindElementByTagName("a");
+        public IWebElement FooterScheduleButton => driver.GetElementsWithTagAndAttributeStartAndEndingWithValues("div", "id", Globals.SitePrefix, "129").First().FindElementByTagName("a");
+
+        /// <summary>
+        /// Footer section navigation
+        /// </summary>
+        public IWebElement FooterNav => driver.FindElementById("footerNavWrapper");
 
         /// <summary>
         /// Footer links section
         /// </summary>
-        public IWebElement FooterLinksSection => driver.FindElementById("mainNavigation");
+        public IWebElement FooterLinksSection => FooterNav.FindElementById("mainNavigation");
 
         /// <summary>
         /// Footer links collection
         /// </summary>
-        public List<IWebElement> FooterLinksCollection => FooterLinksSection.FindElementsById("nav-link--collection").ToList();
+        public List<IWebElement> FooterLinksCollection => FooterLinksSection.FindElementsByClassName("nav-link--collection").ToList();
 
         #endregion Elements
 

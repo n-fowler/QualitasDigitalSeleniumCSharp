@@ -440,6 +440,16 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         }
 
         /// <summary>
+        /// Gets the src of the element
+        /// </summary>
+        /// <param name="element">The web element</param>
+        /// <returns></returns>
+        public static string GetSrc(this IWebElement element)
+        {
+            return element.GetAttribute("src");
+        }
+
+        /// <summary>
         /// Gets the enabled state of the element
         /// </summary>
         /// <param name="element">The web element</param>
@@ -726,6 +736,20 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         public static IReadOnlyCollection<IWebElement> GetElementsWithTagAndAttributeEndingWithValue(this IWebDriver driver, string tag, string attribute, string value)
         {
             return driver.FindElementsByCssSelector($"{tag}[{attribute}$='{value}']");
+        }
+
+        /// <summary>
+        /// Gets all elements with a tag and attribute starting with one value and ending with a second value
+        /// </summary>
+        /// <param name="driver">The driver for this session</param>
+        /// <param name="tag">The tag</param>
+        /// <param name="attribute">The attribute</param>
+        /// <param name="startsWith">The beginning of the value</param>
+        /// <param name="endsWith">The end of the value</param>
+        /// <returns></returns>
+        public static IReadOnlyCollection<IWebElement> GetElementsWithTagAndAttributeStartAndEndingWithValues(this IWebDriver driver, string tag, string attribute, string startsWith, string endsWith)
+        {
+            return driver.FindElementsByCssSelector($"{tag}[{attribute}^='{startsWith}'][{attribute}$='{endsWith}']");
         }
 
         /// <summary>
@@ -1167,6 +1191,20 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         public static IReadOnlyCollection<IWebElement> GetElementsWithTagAndAttributeEndingWithValue(this IWebElement webElement, string tag, string attribute, string value)
         {
             return webElement.FindElementsByCssSelector($"{tag}[{attribute}$='{value}']");
+        }
+
+        /// <summary>
+        /// Gets all elements with a tag and attribute starting with one value and ending with a second value
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <param name="tag">The tag</param>
+        /// <param name="attribute">The attribute</param>
+        /// <param name="startsWith">The beginning of the value</param>
+        /// <param name="endsWith">The end of the value</param>
+        /// <returns></returns>
+        public static IReadOnlyCollection<IWebElement> GetElementsWithTagAndAttributeStartAndEndingWithValues(this IWebElement webElement, string tag, string attribute, string startsWith, string endsWith)
+        {
+            return webElement.FindElementsByCssSelector($"{tag}[{attribute}^='{startsWith}'][{attribute}$='{endsWith}']");
         }
 
         /// <summary>

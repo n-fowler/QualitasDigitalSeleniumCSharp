@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using QualitasDigitalSeleniumCSharp.Extensions;
 using QualitasDigitalSeleniumCSharp.PageObjects;
+using QualitasDigitalSeleniumCSharp.src.TestData;
 using QualitasDigitalSeleniumCSharp.WrapperFactory;
 using System.Collections.Generic;
 
@@ -132,46 +133,64 @@ namespace QualitasDigitalSeleniumCSharp.TestCases
             BrowserFactory.GoToPage(HomePage.Url);
 
             //Validate primary section
-            Assert.AreEqual("Putting the Quality in Software Quality Automation", Page.Home.PrimarySectionTitle.GetInnertext());
-            Assert.AreEqual("", Page.Home.PrimarySectionImage.GetInnertext());
-            Assert.AreEqual("", Page.Home.PrimarySectionBodyText.GetInnertext());
-            Assert.AreEqual("", Page.Home.PrimarySectionScheduleButton.GetHref());
+            Assert.AreEqual(HomePageTestData.PrimarySectionTitle, Page.Home.PrimarySectionTitle.GetInnertext());
+            Assert.AreEqual(HomePageTestData.PrimarySectionImageSrc, Page.Home.PrimarySectionImage.GetSrc());
+            Assert.AreEqual(HomePageTestData.PrimarySectionBodyText, Page.Home.PrimarySectionBodyText.GetInnertext());
+            Assert.AreEqual(HomePageTestData.PrimarySectionScheduleButtonLink, Page.Home.PrimarySectionScheduleButton.GetHref());
 
             //Validate Our Services section
-            Assert.AreEqual("", Page.Home.OurServicesSectionTitle.GetInnertext());
-            Assert.AreEqual("", Page.Home.OurServicesSectionBodyText.GetInnertext());
-            Assert.AreEqual("", Page.Home.OurServicesSectionLink.GetHref());
+            Assert.AreEqual(HomePageTestData.OurServicesSectionTitle, Page.Home.OurServicesSectionTitle.GetInnertext());
+            Assert.AreEqual(HomePageTestData.OurServicesSectionBodyText, Page.Home.OurServicesSectionBodyText.GetInnertext());
+            Assert.AreEqual(HomePageTestData.OurServicesSectionLink, Page.Home.OurServicesSectionLink.GetHref());
 
             //Validate Our Commitment section
-            Assert.AreEqual("", Page.Home.OurCommitmentSectionTitle.GetInnertext());
-            Assert.AreEqual("", Page.Home.OurCommitmentSectionBodyText.GetInnertext());
-            Assert.AreEqual("", Page.Home.OurCommitmentSectionLink.GetHref());
+            Assert.AreEqual(HomePageTestData.OurCommitmentSectionTitle, Page.Home.OurCommitmentSectionTitle.GetInnertext());
+            Assert.AreEqual(HomePageTestData.OurCommitmentSectionBodyText, Page.Home.OurCommitmentSectionBodyText.GetInnertext());
+            Assert.AreEqual(HomePageTestData.OurCommitmentSectionLink, Page.Home.OurCommitmentSectionLink.GetHref());
 
             //Validate Monthly Articles section
-            Assert.AreEqual("", Page.Home.MonthlyArticlesSectionTitle.GetInnertext());
-            Assert.AreEqual("", Page.Home.MonthlyArticlesSectionBodyText.GetInnertext());
-            Assert.AreEqual("", Page.Home.MonthlyArticlesSectionLink.GetHref());
+            Assert.AreEqual(HomePageTestData.MonthlyArticlesSectionTitle, Page.Home.MonthlyArticlesSectionTitle.GetInnertext());
+            Assert.AreEqual(HomePageTestData.MonthlyArticlesSectionBodyText, Page.Home.MonthlyArticlesSectionBodyText.GetInnertext());
+            Assert.AreEqual(HomePageTestData.MonthlyArticlesSectionLink, Page.Home.MonthlyArticlesSectionLink.GetHref());
 
             //Validate secondary section
-            Assert.AreEqual("", Page.Home.SecondarySectionTitle.GetInnertext());
-            Assert.AreEqual("", Page.Home.SecondarySectionImage.GetInnertext());
-            Assert.AreEqual("", Page.Home.SecondarySectionBodyText.GetInnertext());
-            Assert.AreEqual("", Page.Home.SecondarySectionAboutUsButton.GetHref());
+            Assert.AreEqual(HomePageTestData.SecondarySectionTitle, Page.Home.SecondarySectionTitle.GetInnertext());
+            Assert.AreEqual(HomePageTestData.SecondarySectionImageSrc, Page.Home.SecondarySectionImage.GetSrc());
+            Assert.AreEqual(HomePageTestData.SecondarySectionBodyText, Page.Home.SecondarySectionBodyText.GetInnertext().Replace("\r", "").Replace("\n", ""));
+            Assert.AreEqual(HomePageTestData.SecondarySectionAboutUsButtonLink, Page.Home.SecondarySectionAboutUsButton.GetHref());
 
             //Validate mid page title
-            Assert.AreEqual("", Page.Home.MidPageTitle.GetInnertext());
+            Assert.AreEqual(HomePageTestData.MidPageTitle, Page.Home.MidPageTitle.GetInnertext());
 
             //Validate tertiary section
-            Assert.AreEqual("", Page.Home.TertiarySectionTitle.GetInnertext());
-            Assert.AreEqual("", Page.Home.TertiarySectionImage.GetInnertext());
-            Assert.AreEqual("", Page.Home.TertiarySectionBodyText.GetInnertext());
-            Assert.AreEqual("", Page.Home.TertiarySectionClientTestimonialsButton.GetHref());
+            Assert.AreEqual(HomePageTestData.TertiarySectionTitle, Page.Home.TertiarySectionTitle.GetInnertext());
+            Assert.AreEqual(HomePageTestData.TertiarySectionImageSrc, Page.Home.TertiarySectionImage.GetSrc());
+            Assert.AreEqual(HomePageTestData.TertiarySectionBodyText, Page.Home.TertiarySectionBodyText.GetInnertext());
+            Assert.AreEqual(HomePageTestData.TertiarySectionClientTestimonialsButtonLink, Page.Home.TertiarySectionClientTestimonialsButton.GetHref());
 
             //Validate footer
-            Assert.AreEqual("", Page.Home.FooterTitle.GetInnertext());
-            Assert.AreEqual("", Page.Home.FooterScheduleButton.GetInnertext());
-            Assert.AreEqual("", Page.Home.GetLinkTexts(Page.Home.FooterLinksCollection));
-            Assert.AreEqual("", Page.Home.GetLinkUrls(Page.Home.FooterLinksCollection));
+            Assert.AreEqual(HomePageTestData.FooterTitle, Page.Home.FooterTitle.GetInnertext());
+            Assert.AreEqual(HomePageTestData.FooterScheduleButtonLink, Page.Home.FooterScheduleButton.GetHref());
+
+            //Verify footer expected link texts
+            List<string> expectedLinkTexts = new List<string>
+            {
+                "Our Commitment",
+                "Terms + Conditions"
+            };
+
+            List<string> actualLinkTexts = Page.Home.GetLinkTexts(Page.Home.FooterLinksCollection);
+            Assert.AreEqual(expectedLinkTexts, actualLinkTexts);
+
+            //Verify footer expected link urls
+            List<string> expectedPageUrls = new List<string>
+            {
+                "https://www.qualitasdigital.com/our-commitment",
+                "https://www.qualitasdigital.com/terms-conditions"
+            };
+
+            List<string> actualPageUrls = Page.Home.GetLinkUrls(Page.Home.FooterLinksCollection);
+            Assert.AreEqual(expectedPageUrls, actualPageUrls);
         }
 
         #endregion Tests
