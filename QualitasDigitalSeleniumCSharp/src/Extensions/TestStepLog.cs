@@ -1,22 +1,26 @@
-﻿namespace QualitasDigitalSeleniumCSharp.Extensions
+﻿using OpenQA.Selenium;
+using QualitasDigitalSeleniumCSharp.src.Extensions;
+using System;
+using System.Collections.Generic;
+
+namespace QualitasDigitalSeleniumCSharp.Extensions
 {
     /// <summary>
-    /// 
+    /// a log entry for a test step
     /// </summary>
-    public class TestStepLog
+    public static class TestStepLog
     {
-        private string Step { get; set; }
-        private int Time { get; set; }
+        public static List<TestStep> TestSteps { get; set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="step"></param>
-        /// <param name="time"></param>
-        public TestStepLog(string step, int time)
+        private static TimeSpan _lastStepExecuted { get; set; }
+
+
+
+        public static void GenerateTestStep(IWebElement element, TimeSpan time)
         {
-            Step = step;
-            Time = time;
+            TestStep testStep = new TestStep();
+
+
         }
     }
 }

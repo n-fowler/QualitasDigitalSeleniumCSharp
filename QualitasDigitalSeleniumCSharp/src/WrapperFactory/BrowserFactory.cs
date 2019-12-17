@@ -5,10 +5,13 @@ using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
 using OpenQA.Selenium.Opera;
 using OpenQA.Selenium.Safari;
+using OpenQA.Selenium.Support.Events;
 using OpenQA.Selenium.Support.UI;
+using QualitasDigitalSeleniumCSharp.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -21,20 +24,21 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
     public static class BrowserFactory
     {
         private static readonly IDictionary<string, IWebDriver> Drivers = new Dictionary<string, IWebDriver>();
-        private static IWebDriver driver;
+        private static IWebDriver _driver;
+        private static Stopwatch _stopwatch = Stopwatch.StartNew();
 
         /// <summary></summary>
         public static IWebDriver Driver
         {
             get
             {
-                if (driver == null)
+                if (_driver == null)
                 {
                     throw new NullReferenceException("The WebDriver browser instance was not initialized. You should first call the method InitBrowser.");
                 }
-                return driver;
+                return _driver;
             }
-            private set => driver = value;
+            private set => _driver = value;
         }
 
         /// <summary>
@@ -43,7 +47,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         /// <param name="webDriver">The Browser enum</param>
         public static void InitBrowser(WebDriver webDriver)
         {
-            if (driver != null) return;
+            if (_driver != null) return;
 
             string path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
 
@@ -79,6 +83,17 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
 
             MaximizeWindow();
             SetImplicitWait(30);
+
+            //Declare event listeners
+            EventFiringWebDriver firingDriver = new EventFiringWebDriver(Driver);
+            firingDriver.ElementClicked += new EventHandler<WebElementEventArgs>(firingDriver_ElementClicked);
+            firingDriver.ElementValueChanged += new EventHandler<WebElementValueEventArgs>(firingDriver_ElementValueChanged);
+            firingDriver.FindElementCompleted += new EventHandler<FindElementEventArgs>(firingDriver_FindElementCompleted);
+            firingDriver.ExceptionThrown += new EventHandler<WebDriverExceptionEventArgs>(firingDriver_ExceptionThrown);
+            firingDriver.Navigated += new EventHandler<WebDriverNavigationEventArgs>(firingDriver_Navigated);
+            firingDriver.NavigatedBack += new EventHandler<WebDriverNavigationEventArgs>(firingDriver_NavigatedBack);
+            firingDriver.NavigatedForward += new EventHandler<WebDriverNavigationEventArgs>(firingDriver_NavigatedForward);
+            firingDriver.ScriptExecuted += new EventHandler<WebDriverScriptEventArgs>(firingDriver_ScriptExecuted);
         }
 
         /// <summary>
@@ -114,6 +129,50 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
             Safari
         }
 
+        #region Driver Events
+
+        private static void firingDriver_ElementClicked(object sender, WebElementEventArgs e)
+        {
+            TestStepLog.GenerateTestStep(sender as IWebElement, _stopwatch.Elapsed);
+        }
+
+        private static void firingDriver_ElementValueChanged(object sender, WebElementValueEventArgs e)
+        {
+            TestStepLog.GenerateTestStep(sender as IWebElement, _stopwatch.Elapsed);
+        }
+
+        private static void firingDriver_FindElementCompleted(object sender, FindElementEventArgs e)
+        {
+            TestStepLog.GenerateTestStep(sender as IWebElement, _stopwatch.Elapsed);
+        }
+
+        private static void firingDriver_ExceptionThrown(object sender, WebDriverExceptionEventArgs e)
+        {
+            TestStepLog.GenerateTestStep(sender as IWebElement, _stopwatch.Elapsed);
+        }
+
+        private static void firingDriver_Navigated(object sender, WebDriverNavigationEventArgs e)
+        {
+            TestStepLog.GenerateTestStep(sender as IWebElement, _stopwatch.Elapsed);
+        }
+
+        private static void firingDriver_NavigatedBack(object sender, WebDriverNavigationEventArgs e)
+        {
+            TestStepLog.GenerateTestStep(sender as IWebElement, _stopwatch.Elapsed);
+        }
+
+        private static void firingDriver_NavigatedForward(object sender, WebDriverNavigationEventArgs e)
+        {
+            TestStepLog.GenerateTestStep(sender as IWebElement, _stopwatch.Elapsed);
+        }
+
+        private static void firingDriver_ScriptExecuted(object sender, WebDriverScriptEventArgs e)
+        {
+            TestStepLog.GenerateTestStep(sender as IWebElement, _stopwatch.Elapsed);
+        }
+
+        #endregion Driver Events
+
         #region Basic Browser Operations
 
         /// <summary>
@@ -122,7 +181,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         /// <param name="url"></param>
         public static void GoToPage(string url)
         {
-            driver.Navigate().GoToUrl(url);
+            _driver.Navigate().GoToUrl(url);
         }
 
         /// <summary>
@@ -131,7 +190,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         /// <returns></returns>
         public static string GetPageTitle()
         {
-            return driver.Title;
+            return _driver.Title;
         }
 
         /// <summary>
@@ -140,7 +199,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         /// <returns></returns>
         public static string GetPageUrl()
         {
-            return driver.Url;
+            return _driver.Url;
         }
 
         /// <summary>
@@ -149,7 +208,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         /// <returns></returns>
         public static string GetPageSource()
         {
-            return driver.PageSource;
+            return _driver.PageSource;
         }
 
         #endregion Basic Browser Operations
@@ -161,7 +220,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         /// </summary>
         public static void AcceptPopup()
         {
-            IAlert alert = driver.SwitchTo().Alert();
+            IAlert alert = _driver.SwitchTo().Alert();
             alert.Accept();
         }
 
@@ -170,7 +229,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         /// </summary>
         public static void DismissPopup()
         {
-            IAlert alert = driver.SwitchTo().Alert();
+            IAlert alert = _driver.SwitchTo().Alert();
             alert.Dismiss();
         }
 
@@ -179,9 +238,9 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         /// </summary>
         public static void SwitchToFirstTab()
         {
-            ReadOnlyCollection<string> windowHandles = driver.WindowHandles;
+            ReadOnlyCollection<string> windowHandles = _driver.WindowHandles;
             string firstTab = windowHandles.First();
-            driver.SwitchTo().Window(firstTab);
+            _driver.SwitchTo().Window(firstTab);
         }
 
         /// <summary>
@@ -189,9 +248,9 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         /// </summary>
         public static void SwitchToLastTab()
         {
-            ReadOnlyCollection<string> windowHandles = driver.WindowHandles;
+            ReadOnlyCollection<string> windowHandles = _driver.WindowHandles;
             string lastTab = windowHandles.Last();
-            driver.SwitchTo().Window(lastTab);
+            _driver.SwitchTo().Window(lastTab);
         }
 
         /// <summary>
@@ -199,12 +258,12 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         /// </summary>
         public static void SwitchToNextTab()
         {
-            ReadOnlyCollection<string> windowHandles = driver.WindowHandles;
-            int currentIndex = windowHandles.IndexOf(driver.CurrentWindowHandle);
+            ReadOnlyCollection<string> windowHandles = _driver.WindowHandles;
+            int currentIndex = windowHandles.IndexOf(_driver.CurrentWindowHandle);
 
             if (currentIndex < windowHandles.Count - 1)
             {
-                driver.SwitchTo().Window(windowHandles[currentIndex + 1]);
+                _driver.SwitchTo().Window(windowHandles[currentIndex + 1]);
             }
         }
 
@@ -213,12 +272,12 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         /// </summary>
         public static void SwitchToPreviousTab()
         {
-            ReadOnlyCollection<string> windowHandles = driver.WindowHandles;
-            int currentIndex = windowHandles.IndexOf(driver.CurrentWindowHandle);
+            ReadOnlyCollection<string> windowHandles = _driver.WindowHandles;
+            int currentIndex = windowHandles.IndexOf(_driver.CurrentWindowHandle);
 
             if (currentIndex > 0)
             {
-                driver.SwitchTo().Window(windowHandles[currentIndex - 1]);
+                _driver.SwitchTo().Window(windowHandles[currentIndex - 1]);
             }
         }
 
@@ -227,7 +286,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         /// </summary>
         public static void GoBack()
         {
-            driver.Navigate().Back();
+            _driver.Navigate().Back();
         }
 
         /// <summary>
@@ -235,7 +294,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         /// </summary>
         public static void GoForward()
         {
-            driver.Navigate().Forward();
+            _driver.Navigate().Forward();
         }
 
         /// <summary>
@@ -243,7 +302,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         /// </summary>
         public static void Refresh()
         {
-            driver.Navigate().Refresh();
+            _driver.Navigate().Refresh();
         }
 
         /// <summary>
@@ -252,7 +311,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         /// <param name="link">The hyperlink</param>
         public static void FocusLink(string link)
         {
-            ((IJavaScriptExecutor)driver).ExecuteScript("arguments[0].focus();", link);
+            ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].focus();", link);
         }
 
         /// <summary>
@@ -260,7 +319,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         /// </summary>
         private static void MaximizeWindow()
         {
-            driver.Manage().Window.Maximize();
+            _driver.Manage().Window.Maximize();
         }
 
         /// <summary>
@@ -269,7 +328,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         /// <param name="seconds">The number of seconds to wait</param>
         private static void SetImplicitWait(int seconds)
         {
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(seconds);
+            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(seconds);
         }
 
         /// <summary>
@@ -280,7 +339,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         public static void AddCookie(string key, string value)
         {
             Cookie cookie = new Cookie("key", "value");
-            driver.Manage().Cookies.AddCookie(cookie);
+            _driver.Manage().Cookies.AddCookie(cookie);
         }
 
         /// <summary>
@@ -289,7 +348,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         /// <returns>ReadOnlyCollection of type Cookie</returns>
         public static ReadOnlyCollection<Cookie> GetCookies()
         {
-            return driver.Manage().Cookies.AllCookies;
+            return _driver.Manage().Cookies.AllCookies;
         }
 
         /// <summary>
@@ -298,7 +357,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         /// <param name="name">The name of the cookie</param>
         public static void DeleteCookie(string name)
         {
-            driver.Manage().Cookies.DeleteCookieNamed(name);
+            _driver.Manage().Cookies.DeleteCookieNamed(name);
         }
 
         /// <summary>
@@ -306,7 +365,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         /// </summary>
         public static void DeleteCookies()
         {
-            driver.Manage().Cookies.DeleteAllCookies();
+            _driver.Manage().Cookies.DeleteAllCookies();
         }
 
         /// <summary>
@@ -315,7 +374,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         /// <param name="path">The path to save the image at</param>
         public static void TakeScreenshot(string path)
         {
-            Screenshot screenshot = ((ITakesScreenshot)driver).GetScreenshot();
+            Screenshot screenshot = ((ITakesScreenshot)_driver).GetScreenshot();
             screenshot.SaveAsFile(path, ScreenshotImageFormat.Png);
         }
 
@@ -325,8 +384,8 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         /// <param name="timeout">The number of seconds to wait</param>
         public static void WaitForPageLoad(int timeout = 30)
         {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeout));
-            wait.Until((x) => ((IJavaScriptExecutor)driver).ExecuteScript("return document.readyState").Equals("complete"));
+            WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(timeout));
+            wait.Until((x) => ((IJavaScriptExecutor)_driver).ExecuteScript("return document.readyState").Equals("complete"));
         }
 
         /// <summary>
@@ -335,7 +394,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         /// <param name="index">the index of the iframe</param>
         public static void SwitchToFrameByIndex(int index)
         {
-            driver.SwitchTo().Frame(index);
+            _driver.SwitchTo().Frame(index);
         }
 
         /// <summary>
@@ -344,7 +403,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         /// <param name="name">the name of the iframe</param>
         public static void SwitchToFrameByName(string name)
         {
-            driver.SwitchTo().Frame(name);
+            _driver.SwitchTo().Frame(name);
         }
 
         /// <summary>
@@ -353,7 +412,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         /// <param name="element">the element for the iframe</param>
         public static void SwitchToFrameByElement(IWebElement element)
         {
-            driver.SwitchTo().Frame(element);
+            _driver.SwitchTo().Frame(element);
         }
 
         /// <summary>
@@ -361,7 +420,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         /// </summary>
         public static void SwitchToDefaultFrame()
         {
-            driver.SwitchTo().DefaultContent();
+            _driver.SwitchTo().DefaultContent();
         }
 
         #endregion Advanced Browser Operations
@@ -377,7 +436,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
             FirefoxProfileManager profileManager = new FirefoxProfileManager();
             FirefoxProfile profile = profileManager.GetProfile(userName);
             FirefoxOptions options = new FirefoxOptions { Profile = profile };
-            driver = new FirefoxDriver(options);
+            _driver = new FirefoxDriver(options);
         }
 
         /// <summary>
@@ -393,7 +452,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
             profile.SetPreference("network.proxy.http", networkProxyHttp);
             profile.SetPreference("network.proxy.http_port", networkProxyHttpPort);
             FirefoxOptions options = new FirefoxOptions { Profile = profile };
-            driver = new FirefoxDriver(options);
+            _driver = new FirefoxDriver(options);
         }
 
         /// <summary>
@@ -415,7 +474,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
             };
             options.Proxy = proxy;
             options.AddArgument("ignore-certificate-errors");
-            driver = new ChromeDriver(options);
+            _driver = new ChromeDriver(options);
         }
 
         /// <summary>
@@ -429,7 +488,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
                 AssumeUntrustedCertificateIssuer = false
             };
             FirefoxOptions options = new FirefoxOptions { Profile = profile };
-            driver = new FirefoxDriver(options);
+            _driver = new FirefoxDriver(options);
         }
 
         /// <summary>
@@ -438,7 +497,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         public static void AcceptAllCertificatesChrome()
         {
             ChromeOptions options = new ChromeOptions { AcceptInsecureCertificates = true };
-            driver = new ChromeDriver(options);
+            _driver = new ChromeDriver(options);
         }
 
         /// <summary>
@@ -459,7 +518,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
             FirefoxProfile profile = profileManager.GetProfile(userName);
             profile.SetPreference("javascript.enabled", false);
             FirefoxOptions options = new FirefoxOptions { Profile = profile };
-            driver = new FirefoxDriver(options);
+            _driver = new FirefoxDriver(options);
         }
 
         /// <summary>
@@ -468,7 +527,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         /// <param name="timeout"></param>
         public static void SetDefaultPageLoadTimeout(int timeout)
         {
-            driver.Manage().Timeouts().PageLoad = new TimeSpan(timeout);
+            _driver.Manage().Timeouts().PageLoad = new TimeSpan(timeout);
         }
 
         /// <summary>
@@ -480,7 +539,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
             FirefoxProfile profile = new FirefoxProfile();
             profile.AddExtension(pluginPath);
             FirefoxOptions options = new FirefoxOptions { Profile = profile };
-            driver = new FirefoxDriver(options);
+            _driver = new FirefoxDriver(options);
         }
 
         /// <summary>
@@ -516,7 +575,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
             text / html, text / plain, application / zip, application / x - zip, application / x - zip - compressed, application / download,
             application / octet - stream");
             FirefoxOptions options = new FirefoxOptions { Profile = profile };
-            driver = new FirefoxDriver(options);
+            _driver = new FirefoxDriver(options);
         }
 
         #endregion Advanced Browser Configurations

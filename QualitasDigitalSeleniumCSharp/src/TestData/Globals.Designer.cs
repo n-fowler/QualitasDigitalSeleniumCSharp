@@ -68,5 +68,14 @@ namespace QualitasDigitalSeleniumCSharp.src.TestData {
                 return ResourceManager.GetString("SitePrefix", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to E:\ProgramData\TestResults.
+        /// </summary>
+        internal static string TestResultsPath {
+            get {
+                return ResourceManager.GetString("TestResultsPath", resourceCulture);
+            }
+        }
     }
 }

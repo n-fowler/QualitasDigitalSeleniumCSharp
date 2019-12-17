@@ -1,54 +1,70 @@
-﻿using System.Collections.Generic;
+﻿using QualitasDigitalSeleniumCSharp.src.TestData;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 
 namespace QualitasDigitalSeleniumCSharp.Extensions
 {
     /// <summary>
-    /// 
+    /// Test Logging class for test run data, and failure details
     /// </summary>
-    public class Logging
+    public static class Logging
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        public void GetFailureScreenshot()
-        {
-            //take the screenshot
+        public static string FailureReason { get; set; }
+        public static string FailureScreenshotPath { get; set; }
+        public static int TestRunId { get; set; }
+        public static DateTime TestStartTime { get; set; }
+        public static DateTime TestEndTime { get; set; }
+        private static bool TestRunFailed { get; set; }
+        private static List<EventLogEntry> InformationEventLogs { get; set; }
+        private static List<EventLogEntry> WarningEventLogs { get; set; }
+        private static List<EventLogEntry> ErrorEventLogs { get; set; }
+        private static List<EventLogEntry> CriticalEventLogs { get; set; }
 
-            //Save it so that it can be displayed
+        /// <summary>
+        /// Retrieves the failure screenshot path
+        /// </summary>
+        public static string GetFailureScreenshotPath()
+        {
+            return File.Exists(FailureScreenshotPath) ? FailureScreenshotPath : string.Empty;
         }
 
         /// <summary>
-        /// 
+        /// Retrieves the event logs for the current test
         /// </summary>
-        public void GetFailureReason()
+        public static void PopulateEventLoggingContent()
         {
-            //Set the failure reason for the report
+            InformationEventLogs = EventLogger.GetEventLog(EventType.Information, TestStartTime, TestEndTime);
+            WarningEventLogs = EventLogger.GetEventLog(EventType.Warning, TestStartTime, TestEndTime);
+            ErrorEventLogs = EventLogger.GetEventLog(EventType.Error, TestStartTime, TestEndTime);
+            CriticalEventLogs = EventLogger.GetEventLog(EventType.Critical, TestStartTime, TestEndTime);
         }
 
         /// <summary>
-        /// 
+        /// Generates the html report for the current test
         /// </summary>
-        public void GetEventLoggingContent()
+        public static void GenerateHtmlReport()
         {
-            //Set the event logging content for the report
-            //it should be organized in sections that can be collapsed
+            //Company logo section
+
+            //Failure reason header
+
+            //Failure image section
+
+            //Event Log section
+
+            //Test steps section
         }
 
         /// <summary>
-        /// Get the test steps from the test run
+        /// Reports the test failure to the logging system
         /// </summary>
-        public List<TestStepLog> GetTestStepContent()
+        /// <param name="failureReason"></param>
+        public static void ReportTestFailure(string failureReason)
         {
-            //Set the test steps for the report
-            return null;
-        }
-
-        /// <summary>
-        /// Generate the test run report
-        /// </summary>
-        public void GenerateHtmlReport()
-        {
-
+            FailureReason = failureReason;
+            FailureScreenshotPath = $"{Globals.TestResultsPath}\\{TestRunId}\\FailureScreenshot.png";
         }
     }
 }

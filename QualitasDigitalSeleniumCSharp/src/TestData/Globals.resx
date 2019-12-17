@@ -121,4 +121,7 @@
     <value>yui_3_17_2_1</value>
     <comment>The site wide id prefix for objects such as images.</comment>
   </data>
+  <data name="TestResultsPath" xml:space="preserve">
+    <value>E:\ProgramData\TestResults</value>
+  </data>
 </root>
