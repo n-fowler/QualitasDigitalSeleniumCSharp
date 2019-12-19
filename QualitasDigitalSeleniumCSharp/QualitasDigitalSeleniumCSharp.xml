@@ -48,6 +48,31 @@
             Test Logging class for test run data, and failure details
             </summary>
         </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.Extensions.Logging.FailureReason">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.Extensions.Logging.FailureScreenshotPath">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.Extensions.Logging.TestRunId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.Extensions.Logging.TestStartTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.Extensions.Logging.TestEndTime">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="M:QualitasDigitalSeleniumCSharp.Extensions.Logging.GetFailureScreenshotPath">
             <summary>
             Retrieves the failure screenshot path
@@ -1161,6 +1186,34 @@
         <member name="T:QualitasDigitalSeleniumCSharp.Extensions.TestStepLog">
             <summary>
             a log entry for a test step
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.Extensions.TestStepLog.TestSteps">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.TestStepLog.GenerateTestStep(OpenQA.Selenium.IWebElement,System.TimeSpan)">
+            <summary>
+            
+            </summary>
+            <param name="element"></param>
+            <param name="time"></param>
+        </member>
+        <member name="T:QualitasDigitalSeleniumCSharp.src.Extensions.TestStep">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.Extensions.TestStep.Step">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.Extensions.TestStep.Time">
+            <summary>
+            
+            
             </summary>
         </member>
         <member name="T:QualitasDigitalSeleniumCSharp.src.TestData.Globals">

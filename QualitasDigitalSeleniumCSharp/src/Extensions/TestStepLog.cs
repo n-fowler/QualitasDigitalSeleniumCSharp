@@ -10,12 +10,18 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
     /// </summary>
     public static class TestStepLog
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public static List<TestStep> TestSteps { get; set; }
 
         private static TimeSpan _lastStepExecuted { get; set; }
 
-
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="element"></param>
+        /// <param name="time"></param>
         public static void GenerateTestStep(IWebElement element, TimeSpan time)
         {
             TestStep testStep = new TestStep();

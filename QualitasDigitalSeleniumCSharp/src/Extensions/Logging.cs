@@ -11,10 +11,29 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
     /// </summary>
     public static class Logging
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public static string FailureReason { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static string FailureScreenshotPath { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static int TestRunId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static DateTime TestStartTime { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static DateTime TestEndTime { get; set; }
         private static bool TestRunFailed { get; set; }
         private static List<EventLogEntry> InformationEventLogs { get; set; }

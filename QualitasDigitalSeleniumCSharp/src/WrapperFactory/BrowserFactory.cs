@@ -86,14 +86,14 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
 
             //Declare event listeners
             EventFiringWebDriver firingDriver = new EventFiringWebDriver(Driver);
-            firingDriver.ElementClicked += new EventHandler<WebElementEventArgs>(firingDriver_ElementClicked);
-            firingDriver.ElementValueChanged += new EventHandler<WebElementValueEventArgs>(firingDriver_ElementValueChanged);
-            firingDriver.FindElementCompleted += new EventHandler<FindElementEventArgs>(firingDriver_FindElementCompleted);
-            firingDriver.ExceptionThrown += new EventHandler<WebDriverExceptionEventArgs>(firingDriver_ExceptionThrown);
-            firingDriver.Navigated += new EventHandler<WebDriverNavigationEventArgs>(firingDriver_Navigated);
-            firingDriver.NavigatedBack += new EventHandler<WebDriverNavigationEventArgs>(firingDriver_NavigatedBack);
-            firingDriver.NavigatedForward += new EventHandler<WebDriverNavigationEventArgs>(firingDriver_NavigatedForward);
-            firingDriver.ScriptExecuted += new EventHandler<WebDriverScriptEventArgs>(firingDriver_ScriptExecuted);
+            firingDriver.ElementClicked += new EventHandler<WebElementEventArgs>(FiringDriver_ElementClicked);
+            firingDriver.ElementValueChanged += new EventHandler<WebElementValueEventArgs>(FiringDriver_ElementValueChanged);
+            firingDriver.FindElementCompleted += new EventHandler<FindElementEventArgs>(FiringDriver_FindElementCompleted);
+            firingDriver.ExceptionThrown += new EventHandler<WebDriverExceptionEventArgs>(FiringDriver_ExceptionThrown);
+            firingDriver.Navigated += new EventHandler<WebDriverNavigationEventArgs>(FiringDriver_Navigated);
+            firingDriver.NavigatedBack += new EventHandler<WebDriverNavigationEventArgs>(FiringDriver_NavigatedBack);
+            firingDriver.NavigatedForward += new EventHandler<WebDriverNavigationEventArgs>(FiringDriver_NavigatedForward);
+            firingDriver.ScriptExecuted += new EventHandler<WebDriverScriptEventArgs>(FiringDriver_ScriptExecuted);
         }
 
         /// <summary>
@@ -131,42 +131,42 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
 
         #region Driver Events
 
-        private static void firingDriver_ElementClicked(object sender, WebElementEventArgs e)
+        private static void FiringDriver_ElementClicked(object sender, WebElementEventArgs e)
         {
             TestStepLog.GenerateTestStep(sender as IWebElement, _stopwatch.Elapsed);
         }
 
-        private static void firingDriver_ElementValueChanged(object sender, WebElementValueEventArgs e)
+        private static void FiringDriver_ElementValueChanged(object sender, WebElementValueEventArgs e)
         {
             TestStepLog.GenerateTestStep(sender as IWebElement, _stopwatch.Elapsed);
         }
 
-        private static void firingDriver_FindElementCompleted(object sender, FindElementEventArgs e)
+        private static void FiringDriver_FindElementCompleted(object sender, FindElementEventArgs e)
         {
             TestStepLog.GenerateTestStep(sender as IWebElement, _stopwatch.Elapsed);
         }
 
-        private static void firingDriver_ExceptionThrown(object sender, WebDriverExceptionEventArgs e)
+        private static void FiringDriver_ExceptionThrown(object sender, WebDriverExceptionEventArgs e)
         {
             TestStepLog.GenerateTestStep(sender as IWebElement, _stopwatch.Elapsed);
         }
 
-        private static void firingDriver_Navigated(object sender, WebDriverNavigationEventArgs e)
+        private static void FiringDriver_Navigated(object sender, WebDriverNavigationEventArgs e)
         {
             TestStepLog.GenerateTestStep(sender as IWebElement, _stopwatch.Elapsed);
         }
 
-        private static void firingDriver_NavigatedBack(object sender, WebDriverNavigationEventArgs e)
+        private static void FiringDriver_NavigatedBack(object sender, WebDriverNavigationEventArgs e)
         {
             TestStepLog.GenerateTestStep(sender as IWebElement, _stopwatch.Elapsed);
         }
 
-        private static void firingDriver_NavigatedForward(object sender, WebDriverNavigationEventArgs e)
+        private static void FiringDriver_NavigatedForward(object sender, WebDriverNavigationEventArgs e)
         {
             TestStepLog.GenerateTestStep(sender as IWebElement, _stopwatch.Elapsed);
         }
 
-        private static void firingDriver_ScriptExecuted(object sender, WebDriverScriptEventArgs e)
+        private static void FiringDriver_ScriptExecuted(object sender, WebDriverScriptEventArgs e)
         {
             TestStepLog.GenerateTestStep(sender as IWebElement, _stopwatch.Elapsed);
         }
