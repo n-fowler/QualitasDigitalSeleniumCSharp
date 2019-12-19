@@ -25,8 +25,11 @@ var placeholderDetailArray =
     placeholderDetailFour,
     placeholderDetailFive,
     placeholderDetailSix
-];
+    ];
+
+var detailArray = [];
 
 function FillDetails(index) {
-    window.document.getElementById("EventLogDetails").value = placeholderDetailArray[index].Detail;
+    //window.document.getElementById("EventLogDetails").value = placeholderDetailArray[index].Detail;
+    window.document.getElementById("EventLogDetails").value = detailArray[index].Detail;
 }

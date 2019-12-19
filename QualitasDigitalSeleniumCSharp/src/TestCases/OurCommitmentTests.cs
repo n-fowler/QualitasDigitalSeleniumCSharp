@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace QualitasDigitalSeleniumCSharp.Pages
+﻿namespace QualitasDigitalSeleniumCSharp.TestCases
 {
     class OurCommitmentTests
     {

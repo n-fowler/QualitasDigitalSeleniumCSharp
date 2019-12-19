@@ -1,4 +1,4 @@
-﻿namespace QualitasDigitalSeleniumCSharp.Pages
+﻿namespace QualitasDigitalSeleniumCSharp.TestCases
 {
     class AboutUsTests
     {

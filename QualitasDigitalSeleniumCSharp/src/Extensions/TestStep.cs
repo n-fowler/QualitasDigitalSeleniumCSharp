@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace QualitasDigitalSeleniumCSharp.src.Extensions
+namespace QualitasDigitalSeleniumCSharp.Extensions
 {
     /// <summary>
     /// 
@@ -10,10 +10,19 @@ namespace QualitasDigitalSeleniumCSharp.src.Extensions
         /// <summary>
         /// 
         /// </summary>
-        public string Step { get; set; }
+        public string StepDescription { get; set; }
 
         /// <summary>
         /// 
+        /// </summary>
+        public string StepResult { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool StepStatus { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         public TimeSpan Time { get; set; }

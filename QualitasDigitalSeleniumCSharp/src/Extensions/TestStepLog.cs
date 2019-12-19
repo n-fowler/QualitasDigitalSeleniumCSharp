@@ -1,5 +1,4 @@
 ﻿using OpenQA.Selenium;
-using QualitasDigitalSeleniumCSharp.src.Extensions;
 using System;
 using System.Collections.Generic;
 

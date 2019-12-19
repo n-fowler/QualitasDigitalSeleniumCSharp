@@ -1,8 +1,11 @@
-﻿using QualitasDigitalSeleniumCSharp.src.TestData;
+﻿using HtmlAgilityPack;
+using QualitasDigitalSeleniumCSharp.src.TestData;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
+using System.Reflection;
 
 namespace QualitasDigitalSeleniumCSharp.Extensions
 {
@@ -65,15 +68,25 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// </summary>
         public static void GenerateHtmlReport()
         {
-            //Company logo section
+            HtmlDocument testResultReport = new HtmlDocument();
+            testResultReport.LoadHtml(ReadResource("TestResultReport"));
 
-            //Failure reason header
+            testResultReport.GetElementbyId("TestStepsTable").RemoveAllChildren();
+            for (int i = 0; i < TestStepLog.TestSteps.Count; i++)
+            {
+                string testStepRow = $@"
+                <tr>
+                    <td>{i + 1}</td>
+                    <td>{TestStepLog.TestSteps[i]}</td>
+                    <td>Step Result Placeholder</td>
+                    <td>Pass</td>
+                </tr>";
+                HtmlNode htmlNode = HtmlNode.CreateNode(testStepRow);
+                testResultReport.GetElementbyId("TestStepsTable").AppendChild(htmlNode);
+            }
 
-            //Failure image section
-
-            //Event Log section
-
-            //Test steps section
+            HtmlDocument eventLogViewer = new HtmlDocument();
+            eventLogViewer.LoadHtml(ReadResource("EventLogViewer"));
         }
 
         /// <summary>
@@ -84,6 +97,22 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         {
             FailureReason = failureReason;
             FailureScreenshotPath = $"{Globals.TestResultsPath}\\{TestRunId}\\FailureScreenshot.png";
+        }
+
+        private static string ReadResource(string name)
+        {
+            // Determine path
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            string resourcePath = name;
+            // Format: "{Namespace}.{Folder}.{filename}.{Extension}"
+            resourcePath = assembly.GetManifestResourceNames()
+                .Single(str => str.EndsWith(name));
+
+            using (Stream stream = assembly.GetManifestResourceStream(resourcePath))
+            using (StreamReader reader = new StreamReader(stream))
+            {
+                return reader.ReadToEnd();
+            }
         }
     }
 }
