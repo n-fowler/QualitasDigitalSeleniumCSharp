@@ -4,43 +4,43 @@
         "Step Number": "1",
         "Step Description": "Step Description Placeholder",
         "Step Result": "Step Result Placeholder",
-        "Pass/Fail": "Pass"
+        "Step Status": "Pass"
     },
     {
         "Step Number": "2",
         "Step Description": "Step Description Placeholder",
         "Step Result": "Step Result Placeholder",
-        "Pass/Fail": "Pass"
+        "Step Status": "Pass"
     },
     {
         "Step Number": "3",
         "Step Description": "Step Description Placeholder",
         "Step Result": "Step Result Placeholder",
-        "Pass/Fail": "Pass"
+        "Step Status": "Pass"
     },
     {
         "Step Number": "4",
         "Step Description": "Step Description Placeholder",
         "Step Result": "Step Result Placeholder",
-        "Pass/Fail": "Pass"
+        "Step Status": "Pass"
     },
     {
         "Step Number": "5",
         "Step Description": "Step Description Placeholder",
         "Step Result": "Step Result Placeholder",
-        "Pass/Fail": "Fail"
+        "Step Status": "Fail"
     },
     {
         "Step Number": "6",
         "Step Description": "Step Description Placeholder",
         "Step Result": "Step Result Placeholder",
-        "Pass/Fail": "Not Executed"
+        "Step Status": "Not Executed"
     },
     {
         "Step Number": "7",
         "Step Description": "Step Description Placeholder",
         "Step Result": "Step Result Placeholder",
-        "Pass/Fail": "Not Executed"
+        "Step Status": "Not Executed"
     }
 ];
 

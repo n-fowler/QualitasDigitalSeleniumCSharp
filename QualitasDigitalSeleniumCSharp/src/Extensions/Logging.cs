@@ -78,7 +78,12 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
             string eventLogViewerJsPath = $"{destinationTestResultPath}\\js\\EventLogViewer.js";
             string testResultReportJsPath = $"{destinationTestResultPath}\\js\\TestResultReport.js";
             ReplaceFileContent(eventLogViewerJsPath, @"/*DataHere*/", GenerateJavascriptDataForEventLog());
-            ReplaceFileContent(testResultReportJsPath, @"/*DataHere*/", GenerateJavascriptDataForTestResultReport());
+            ReplaceFileContent(testResultReportJsPath, @"/*DataHere*/", GenerateJavascriptDataForTestResultReport(TestStepLog.TestSteps));
+
+            //replace the test variable for test steps
+            string originalTestStepsVariable = @"addDataToTbody(testStepsTableBody, testStepsDataTest);";
+            string updatedTestStepsVariable = "addDataToTbody(testStepsTableBody, testStepsData);";
+            ReplaceFileContent(testResultReportJsPath, originalTestStepsVariable, updatedTestStepsVariable);
         }
 
         /// <summary>
@@ -242,9 +247,41 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
             return detailLogData;
         }
 
-        private static string GenerateJavascriptDataForTestResultReport()
+        private static string GenerateJavascriptDataForTestResultReport(List<TestStep> testSteps)
         {
-            return string.Empty;
+            string testStepsData = string.Empty;
+
+            testStepsData += "var testStepsData = [";
+
+            for (int index = 0; index < testSteps.Count; index++)
+            {
+                string stepNumberProp = "'Step Number': ";
+                string stepDescriptionProp = "'Step Description': ";
+                string stepResultProp = "'Step Result': ";
+                string stepStatusProp = "'Step Status': ";
+                string stepNumberValue = "'" + index + "'";
+                string stepDescriptionValue = "'" + testSteps[index].StepDescription + "'";
+                string stepResultValue = "'" + testSteps[index].StepResult + "'";
+                string stepStatusValue = "'" + testSteps[index].StepStatus + "'";
+
+                testStepsData += "{";
+
+                testStepsData += $"{stepNumberProp}{stepNumberValue}," +
+                                $"{stepDescriptionProp}{stepDescriptionValue}," +
+                                $"{stepResultProp}{stepResultValue}," +
+                                $"{stepStatusProp}{stepStatusValue}";
+
+                testStepsData += "}";
+
+                if (index < testSteps.Count)
+                {
+                    testStepsData += ",";
+                }
+            }
+
+            testStepsData += "];";
+
+            return testStepsData;
         }
     }
 }
