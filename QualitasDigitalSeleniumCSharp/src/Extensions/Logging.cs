@@ -1,5 +1,4 @@
-﻿using HtmlAgilityPack;
-using QualitasDigitalSeleniumCSharp.src.TestData;
+﻿using QualitasDigitalSeleniumCSharp.src.TestData;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -68,25 +67,18 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// </summary>
         public static void GenerateHtmlReport()
         {
-            HtmlDocument testResultReport = new HtmlDocument();
-            testResultReport.LoadHtml(ReadResource("TestResultReport"));
+            string binPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            string sourceTestResultPath = $"{binPath}\\src\\Web";
+            string destinationTestResultPath = $"{Globals.TestResultsPath}\\{TestRunId}\\TestResult";
 
-            testResultReport.GetElementbyId("TestStepsTable").RemoveAllChildren();
-            for (int i = 0; i < TestStepLog.TestSteps.Count; i++)
-            {
-                string testStepRow = $@"
-                <tr>
-                    <td>{i + 1}</td>
-                    <td>{TestStepLog.TestSteps[i]}</td>
-                    <td>Step Result Placeholder</td>
-                    <td>Pass</td>
-                </tr>";
-                HtmlNode htmlNode = HtmlNode.CreateNode(testStepRow);
-                testResultReport.GetElementbyId("TestStepsTable").AppendChild(htmlNode);
-            }
+            //Copy Web folder from bin to test results folder
+            DirectoryCopy(sourceTestResultPath, destinationTestResultPath, true);
 
-            HtmlDocument eventLogViewer = new HtmlDocument();
-            eventLogViewer.LoadHtml(ReadResource("EventLogViewer"));
+            //Update the data in the javascript files
+            string eventLogViewerJsPath = $"{destinationTestResultPath}\\js\\EventLogViewer.js";
+            string testResultReportJsPath = $"{destinationTestResultPath}\\js\\TestResultReport.js";
+            ReplaceFileContent(eventLogViewerJsPath, @"/*DataHere*/", GenerateJavascriptDataForEventLog());
+            ReplaceFileContent(testResultReportJsPath, @"/*DataHere*/", GenerateJavascriptDataForTestResultReport());
         }
 
         /// <summary>
@@ -97,6 +89,23 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         {
             FailureReason = failureReason;
             FailureScreenshotPath = $"{Globals.TestResultsPath}\\{TestRunId}\\FailureScreenshot.png";
+        }
+
+        private static void ReplaceFileContent(string filePath, string originalContent, string replacementContent)
+        {
+            using (StreamReader reader = new StreamReader(filePath))
+            {
+                string input = reader.ReadToEnd();
+
+                using (StreamWriter writer = new StreamWriter(filePath, true))
+                {
+                    string output = input.Replace(originalContent, replacementContent);
+                    writer.Write(output);
+                    writer.Close();
+                }
+
+                reader.Close();
+            }
         }
 
         private static string ReadResource(string name)
@@ -113,6 +122,129 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
             {
                 return reader.ReadToEnd();
             }
+        }
+
+        private static void DirectoryCopy(string sourceDirName, string destDirName, bool copySubDirs)
+        {
+            // Get the subdirectories for the specified directory.
+            DirectoryInfo dir = new DirectoryInfo(sourceDirName);
+
+            if (!dir.Exists)
+            {
+                throw new DirectoryNotFoundException(
+                    "Source directory does not exist or could not be found: "
+                    + sourceDirName);
+            }
+
+            DirectoryInfo[] dirs = dir.GetDirectories();
+            // If the destination directory doesn't exist, create it.
+            if (!Directory.Exists(destDirName))
+            {
+                Directory.CreateDirectory(destDirName);
+            }
+
+            // Get the files in the directory and copy them to the new location.
+            FileInfo[] files = dir.GetFiles();
+            foreach (FileInfo file in files)
+            {
+                string temppath = Path.Combine(destDirName, file.Name);
+                file.CopyTo(temppath, false);
+            }
+
+            // If copying subdirectories, copy them and their contents to new location.
+            if (copySubDirs)
+            {
+                foreach (DirectoryInfo subdir in dirs)
+                {
+                    string temppath = Path.Combine(destDirName, subdir.Name);
+                    DirectoryCopy(subdir.FullName, temppath, copySubDirs);
+                }
+            }
+        }
+
+        private static string GenerateJavascriptDataForEventLog()
+        {
+            string eventLogData = GetEventLogData("Critical", CriticalEventLogs);
+            eventLogData += GetEventLogData("Error", ErrorEventLogs);
+            eventLogData += GetEventLogData("Warning", WarningEventLogs);
+            eventLogData += GetEventLogData("Information", InformationEventLogs);
+
+            string eventLogDetail = GetEventLogDetailData("Critical", CriticalEventLogs);
+            eventLogDetail += GetEventLogDetailData("Error", ErrorEventLogs);
+            eventLogDetail += GetEventLogDetailData("Warning", WarningEventLogs);
+            eventLogDetail += GetEventLogDetailData("Information", InformationEventLogs);
+
+            return eventLogData + eventLogDetail;
+        }
+
+        private static string GetEventLogData(string level, List<EventLogEntry> logEntries)
+        {
+            string eventLogData = string.Empty;
+
+            eventLogData += $"var eventData{level} = [";
+
+            for (int index = 0; index < logEntries.Count; index++)
+            {
+                string levelProp = "'Level': ";
+                string dateAndTimeProp = "'DateAndTime': ";
+                string sourceProp = "'Source': ";
+                string taskCategoryProp = "'Task Category': ";
+                string levelValue = "'" + level + "'";
+                string dateAndTimeValue = "'" + logEntries[index].TimeGenerated.ToString("f") + "'";
+                string sourceValue = "'" + logEntries[index].Source + "'";
+                string taskCategoryValue = "'" + logEntries[index].Category + "'";
+
+                eventLogData += "{";
+
+                eventLogData += $"{levelProp}{levelValue}," +
+                                $"{dateAndTimeProp}{dateAndTimeValue}," +
+                                $"{sourceProp}{sourceValue}," +
+                                $"{taskCategoryProp}{taskCategoryValue}";
+
+                eventLogData += "}";
+
+                if (index < logEntries.Count)
+                {
+                    eventLogData += ",";
+                }
+            }
+
+            eventLogData += "];";
+
+            return eventLogData;
+        }
+
+        private static string GetEventLogDetailData(string level, List<EventLogEntry> logEntries)
+        {
+            string detailLogData = string.Empty;
+
+            detailLogData += $"var detailData{level} = [";
+
+            for (int index = 0; index < logEntries.Count; index++)
+            {
+                string detailsProp = "'Details': ";
+                string detailsValue = "'" + logEntries[index].Message + "'";
+
+                detailLogData += "{";
+
+                detailLogData += $"{detailsProp}{detailsValue}";
+
+                detailLogData += "}";
+
+                if (index < logEntries.Count)
+                {
+                    detailLogData += ",";
+                }
+            }
+
+            detailLogData += "];";
+
+            return detailLogData;
+        }
+
+        private static string GenerateJavascriptDataForTestResultReport()
+        {
+            return string.Empty;
         }
     }
 }

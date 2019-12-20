@@ -1,4 +1,68 @@
-﻿// Get the modal
+﻿var testStepsDataTest =
+[
+    {
+        "Step Number": "1",
+        "Step Description": "Step Description Placeholder",
+        "Step Result": "Step Result Placeholder",
+        "Pass/Fail": "Pass"
+    },
+    {
+        "Step Number": "2",
+        "Step Description": "Step Description Placeholder",
+        "Step Result": "Step Result Placeholder",
+        "Pass/Fail": "Pass"
+    },
+    {
+        "Step Number": "3",
+        "Step Description": "Step Description Placeholder",
+        "Step Result": "Step Result Placeholder",
+        "Pass/Fail": "Pass"
+    },
+    {
+        "Step Number": "4",
+        "Step Description": "Step Description Placeholder",
+        "Step Result": "Step Result Placeholder",
+        "Pass/Fail": "Pass"
+    },
+    {
+        "Step Number": "5",
+        "Step Description": "Step Description Placeholder",
+        "Step Result": "Step Result Placeholder",
+        "Pass/Fail": "Fail"
+    },
+    {
+        "Step Number": "6",
+        "Step Description": "Step Description Placeholder",
+        "Step Result": "Step Result Placeholder",
+        "Pass/Fail": "Not Executed"
+    },
+    {
+        "Step Number": "7",
+        "Step Description": "Step Description Placeholder",
+        "Step Result": "Step Result Placeholder",
+        "Pass/Fail": "Not Executed"
+    }
+];
+
+/*DataHere*/
+
+function addDataToTbody(nl, data) {
+    data.forEach((d, i) => {
+        var tr = nl.insertRow(i);
+        Object.keys(d).forEach((k, j) => {
+            var cell = tr.insertCell(j);
+            cell.innerHTML = d[k];
+        });
+        nl.appendChild(tr);
+    });
+}
+
+window.addEventListener('load', function () {
+    var testStepsTableBody = window.document.querySelector("#TestStepsTable");
+    addDataToTbody(testStepsTableBody, testStepsDataTest);
+}, false);
+
+// Get the modal
 var modal = document.getElementById("myModal");
 
 // Get the image and insert it inside the modal - use its "alt" text as a caption
@@ -31,7 +95,7 @@ function PopupCenter(url, title, w, h) {
     var left = (width - w) / 2 / systemZoom + dualScreenLeft;
     var top = (height - h) / 2 / systemZoom + dualScreenTop;
     var newWindow = window.open(url, title, 'scrollbars=yes, width=' + w / systemZoom + ', height=' + h / systemZoom + ', top=' + top + ', left=' + left);
-
+    newWindow.onload = function () { newWindow.document.getElementById('EventSource').value = title; }
     // Puts focus on the newWindow
     if (window.focus) newWindow.focus();
 }

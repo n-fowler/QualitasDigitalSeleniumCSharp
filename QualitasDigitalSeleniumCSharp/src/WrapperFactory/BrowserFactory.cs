@@ -86,14 +86,14 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
 
             //Declare event listeners
             EventFiringWebDriver firingDriver = new EventFiringWebDriver(Driver);
-            firingDriver.ElementClicked += new EventHandler<WebElementEventArgs>(FiringDriver_ElementClicked);
-            firingDriver.ElementValueChanged += new EventHandler<WebElementValueEventArgs>(FiringDriver_ElementValueChanged);
-            firingDriver.FindElementCompleted += new EventHandler<FindElementEventArgs>(FiringDriver_FindElementCompleted);
-            firingDriver.ExceptionThrown += new EventHandler<WebDriverExceptionEventArgs>(FiringDriver_ExceptionThrown);
-            firingDriver.Navigated += new EventHandler<WebDriverNavigationEventArgs>(FiringDriver_Navigated);
-            firingDriver.NavigatedBack += new EventHandler<WebDriverNavigationEventArgs>(FiringDriver_NavigatedBack);
-            firingDriver.NavigatedForward += new EventHandler<WebDriverNavigationEventArgs>(FiringDriver_NavigatedForward);
-            firingDriver.ScriptExecuted += new EventHandler<WebDriverScriptEventArgs>(FiringDriver_ScriptExecuted);
+            firingDriver.ElementClicked += FiringDriver_ElementClicked;
+            firingDriver.ElementValueChanged += FiringDriver_ElementValueChanged;
+            firingDriver.FindElementCompleted += FiringDriver_FindElementCompleted;
+            firingDriver.ExceptionThrown += FiringDriver_ExceptionThrown;
+            firingDriver.Navigated += FiringDriver_Navigated;
+            firingDriver.NavigatedBack += FiringDriver_NavigatedBack;
+            firingDriver.NavigatedForward += FiringDriver_NavigatedForward;
+            firingDriver.ScriptExecuted += FiringDriver_ScriptExecuted;
         }
 
         /// <summary>

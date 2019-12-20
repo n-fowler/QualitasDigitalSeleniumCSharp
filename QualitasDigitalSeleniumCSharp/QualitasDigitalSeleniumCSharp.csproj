@@ -13,7 +13,11 @@
   <ItemGroup>
     <None Remove="src\Web\css\EventLogViewer.css" />
     <None Remove="src\Web\css\TestResultReport.css" />
-    <None Remove="src\Web\html\EventLogViewer.html" />
+    <None Remove="src\Web\html\EventLogViewerCritical.html" />
+    <None Remove="src\Web\html\EventLogViewerError.html" />
+    <None Remove="src\Web\html\EventLogViewerInformation.html" />
+    <None Remove="src\Web\html\EventLogViewerTest.html" />
+    <None Remove="src\Web\html\EventLogViewerWarning.html" />
     <None Remove="src\Web\html\TestResultReport.html" />
     <None Remove="src\Web\js\EventLogViewer.js" />
     <None Remove="src\Web\js\TestResultReport.js" />
@@ -43,7 +47,19 @@
     <EmbeddedResource Include="src\Web\css\TestResultReport.css">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\Web\html\EventLogViewer.html">
+    <EmbeddedResource Include="src\Web\html\EventLogViewerInformation.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\Web\html\EventLogViewerWarning.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\Web\html\EventLogViewerError.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\Web\html\EventLogViewerCritical.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\Web\html\EventLogViewerTest.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="src\Web\html\TestResultReport.html">
