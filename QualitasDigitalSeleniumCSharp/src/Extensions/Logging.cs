@@ -1,4 +1,5 @@
-﻿using QualitasDigitalSeleniumCSharp.src.TestData;
+﻿using NUnit.Framework;
+using QualitasDigitalSeleniumCSharp.src.TestData;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -31,7 +32,7 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <summary>
         /// 
         /// </summary>
-        public static int TestRunId { get; set; }
+        public static string TestRunId { get; set; }
 
         /// <summary>
         /// 
@@ -95,10 +96,12 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// Reports the test failure to the logging system
         /// </summary>
         /// <param name="failureReason"></param>
+        /// <param name="stackTrace"></param>
         public static void ReportTestFailure(string failureReason, string stackTrace)
         {
             //Set test failure data
             TestRunFailed = true;
+            TestRunId = GetTestRunId();
             FailureReason = failureReason;
             FailureStacktrace = stackTrace;
             FailureScreenshotPath = SetFailureScreenshotPath($"{Globals.TestResultsPath}\\{TestRunId}\\FailureScreenshot.png");
@@ -108,6 +111,20 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
 
             //Generate the failure report
             GenerateHtmlReport();
+        }
+
+        private static string GetTestRunId()
+        {
+            string date = $"{DateTime.Now.Month}_{DateTime.Now.Day}_{DateTime.Now.Year}";
+            string time = $"{DateTime.Now.Hour}_{DateTime.Now.Minute}_{DateTime.Now.Second}";
+            string testName = "Unknown Test";
+
+            if (TestContext.CurrentContext?.Test?.MethodName != null)
+            {
+                testName = $"{TestContext.CurrentContext.Test.MethodName}";
+            }
+
+            return $"TestRunReport_{date}_{time}_{testName}";
         }
 
         private static void ReplaceFileContent(string filePath, string originalContent, string replacementContent)
