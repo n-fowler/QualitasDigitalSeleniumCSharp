@@ -11,7 +11,7 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <summary>
         /// 
         /// </summary>
-        public static List<TestStep> TestSteps { get; set; }
+        public static List<TestStep> TestSteps = new List<TestStep>();
 
         private static TimeSpan LastStepExecuted { get; set; }
 

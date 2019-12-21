@@ -53,6 +53,11 @@
             
             </summary>
         </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.Extensions.Logging.FailureStacktrace">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="P:QualitasDigitalSeleniumCSharp.Extensions.Logging.FailureScreenshotPath">
             <summary>
             
@@ -73,7 +78,7 @@
             
             </summary>
         </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.Logging.GetFailureScreenshotPath">
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.Logging.SetFailureScreenshotPath(System.String)">
             <summary>
             Retrieves the failure screenshot path
             </summary>
@@ -88,11 +93,12 @@
             Generates the html report for the current test
             </summary>
         </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.Logging.ReportTestFailure(System.String)">
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.Logging.ReportTestFailure(System.String,System.String)">
             <summary>
             Reports the test failure to the logging system
             </summary>
             <param name="failureReason"></param>
+            <param name="stackTrace"></param>
         </member>
         <member name="T:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions">
             <summary>
@@ -531,6 +537,13 @@
             Gets all Element properties, useful for logging
             </summary>
             <param name="element">The web element</param>
+            <returns></returns>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementIdentifierForTestLog(System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Gets an element identifier for the test log test steps
+            </summary>
+            <param name="propertyDictionary">The property dictionary retrieved from GetAllElementProperties</param>
             <returns></returns>
         </member>
         <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetAllElements(OpenQA.Selenium.IWebDriver)">
@@ -1183,201 +1196,49 @@
             <param name="webElement">The web element to scope to</param>
             <returns>Returns a read only collection of selenium web elements</returns>
         </member>
+        <member name="T:QualitasDigitalSeleniumCSharp.Extensions.TestStep">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.Extensions.TestStep.StepDescription">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.Extensions.TestStep.StepResult">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.Extensions.TestStep.StepStatus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.Extensions.TestStep.Time">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:QualitasDigitalSeleniumCSharp.Extensions.TestStepLog">
             <summary>
             a log entry for a test step
             </summary>
         </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.Extensions.TestStepLog.TestSteps">
+        <member name="F:QualitasDigitalSeleniumCSharp.Extensions.TestStepLog.TestSteps">
             <summary>
             
             </summary>
         </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.TestStepLog.GenerateTestStep(OpenQA.Selenium.IWebElement,System.TimeSpan)">
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.TestStepLog.GenerateTestStep(System.String,System.String,System.String,System.TimeSpan)">
             <summary>
             
             </summary>
-            <param name="element"></param>
+            <param name="stepDescription"></param>
+            <param name="stepResult"></param>
+            <param name="stepStatus"></param>
             <param name="time"></param>
-        </member>
-        <member name="T:QualitasDigitalSeleniumCSharp.src.Extensions.TestStep">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.Extensions.TestStep.Step">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.Extensions.TestStep.Time">
-            <summary>
-            
-            
-            </summary>
-        </member>
-        <member name="T:QualitasDigitalSeleniumCSharp.src.TestData.Globals">
-            <summary>
-              A strongly-typed resource class, for looking up localized strings, etc.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.Globals.ResourceManager">
-            <summary>
-              Returns the cached ResourceManager instance used by this class.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.Globals.Culture">
-            <summary>
-              Overrides the current thread's CurrentUICulture property for all
-              resource lookups using this strongly typed resource class.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.Globals.SitePrefix">
-            <summary>
-              Looks up a localized string similar to yui_3_17_2_1.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.Globals.TestResultsPath">
-            <summary>
-              Looks up a localized string similar to E:\ProgramData\TestResults.
-            </summary>
-        </member>
-        <member name="T:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData">
-            <summary>
-              A strongly-typed resource class, for looking up localized strings, etc.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.ResourceManager">
-            <summary>
-              Returns the cached ResourceManager instance used by this class.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.Culture">
-            <summary>
-              Overrides the current thread's CurrentUICulture property for all
-              resource lookups using this strongly typed resource class.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.FooterScheduleButtonLink">
-            <summary>
-              Looks up a localized string similar to https://www.qualitasdigital.com/schedule-consultation.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.FooterTitle">
-             <summary>
-               Looks up a localized string similar to Let’s talk!
-            Your first consultation is free..
-             </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.MidPageTitle">
-            <summary>
-              Looks up a localized string similar to Quality Automation shouldn’t be costly or difficult.  Let our Consultants create a road-map for your company that saves you money year after year.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.MonthlyArticlesSectionBodyText">
-            <summary>
-              Looks up a localized string similar to Keep up with the latest industry trends and discoveries by checking out our blog..
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.MonthlyArticlesSectionLink">
-            <summary>
-              Looks up a localized string similar to https://www.qualitasdigital.com/news-notes-qualitas.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.MonthlyArticlesSectionTitle">
-            <summary>
-              Looks up a localized string similar to Monthly Articles.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.OurCommitmentSectionBodyText">
-            <summary>
-              Looks up a localized string similar to We’re committed to giving you the tools you need to create and scale an automation program that reduces long term headcount, increases the quality and confidence levels of your products, at a price companies large and small can afford..
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.OurCommitmentSectionLink">
-            <summary>
-              Looks up a localized string similar to https://www.qualitasdigital.com/our-commitment.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.OurCommitmentSectionTitle">
-            <summary>
-              Looks up a localized string similar to Our Commitment to You.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.OurServicesSectionBodyText">
-            <summary>
-              Looks up a localized string similar to We offer training, coaching, and solutions that save you time and money.  Whether your company has a manual approach, a fully established automation program, or something in between, work with us and gain a competitive advantage..
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.OurServicesSectionLink">
-            <summary>
-              Looks up a localized string similar to https://www.qualitasdigital.com/pricing-services.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.OurServicesSectionTitle">
-            <summary>
-              Looks up a localized string similar to Our Services.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.PrimarySectionBodyText">
-            <summary>
-              Looks up a localized string similar to Qualitas Digital brings Software Quality Automation within reach. Our solutions help you bridge the gap between where you are and where you want to be. We help you create Quality Automation programs that scale without the high overhead of a purely manual approach. Whether you need training, coaching, or additional engineers to aid your testing efforts, we have a solution for you. Take advantage of one of our free consultations and learn more about how Qualitas Digital puts the Quality in Software Quality Au [rest of string was truncated]&quot;;.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.PrimarySectionImageSrc">
-            <summary>
-              Looks up a localized string similar to https://images.squarespace-cdn.com/content/v1/5dcc96767c939351951d2987/1574109947938-NXBEY5PQVS6J657XS2DN/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/grayscale-photo-of-computer-laptop-near-white-notebook-and-169573.jpg?format=2500w.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.PrimarySectionScheduleButtonLink">
-            <summary>
-              Looks up a localized string similar to https://www.qualitasdigital.com/schedule-consultation.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.PrimarySectionTitle">
-            <summary>
-              Looks up a localized string similar to Putting the Quality in Software Quality Automation.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.SecondarySectionAboutUsButtonLink">
-            <summary>
-              Looks up a localized string similar to https://www.qualitasdigital.com/about-us.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.SecondarySectionBodyText">
-            <summary>
-              Looks up a localized string similar to Qualitas Digital was founded to bring scaleable and efficient software quality automation programs to companies large or small. Click the about us link to learn more.Photo by Adil Gökkaya from Pexels.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.SecondarySectionImageSrc">
-            <summary>
-              Looks up a localized string similar to https://images.squarespace-cdn.com/content/v1/5dcc96767c939351951d2987/1574110334562-ACRRQK9X5RP0PMALKYYB/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/man-holding-laptop-and-smartphone-2726478.jpg?format=2500w.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.SecondarySectionTitle">
-            <summary>
-              Looks up a localized string similar to Our Firm.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.TertiarySectionBodyText">
-            <summary>
-              Looks up a localized string similar to We have the experience and know-how to help you grow your automation programs. Don’t just take our word for it, see for yourself!.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.TertiarySectionClientTestimonialsButtonLink">
-            <summary>
-              Looks up a localized string similar to https://www.qualitasdigital.com/testimonials.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.TertiarySectionImageSrc">
-            <summary>
-              Looks up a localized string similar to https://images.squarespace-cdn.com/content/v1/5dcc96767c939351951d2987/1574112242271-KTTBY3ZBBRVYURATJN31/ke17ZwdGBToddI8pDm48kIIFsYAJJX10OgNkc4SuD20UqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKce0j9vvU4chI_bB_CjBNrJapSKkBorzMUDpE1NYw5XxnDgGKGBETQKcT3bo-auxwM/20130731_Trade+100_0202.jpg?format=2500w.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.TertiarySectionTitle">
-            <summary>
-              Looks up a localized string similar to A High Quality Service.
-            </summary>
         </member>
         <member name="T:QualitasDigitalSeleniumCSharp.PageObjects.HomePage">
             <summary>
@@ -1647,6 +1508,169 @@
         </member>
         <member name="M:QualitasDigitalSeleniumCSharp.TestCases.HomeTests.HomePageContent">
             <summary></summary>
+        </member>
+        <member name="T:QualitasDigitalSeleniumCSharp.src.TestData.Globals">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.Globals.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.Globals.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.Globals.SitePrefix">
+            <summary>
+              Looks up a localized string similar to yui_3_17_2_1.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.Globals.TestResultsPath">
+            <summary>
+              Looks up a localized string similar to E:\ProgramData\TestResults.
+            </summary>
+        </member>
+        <member name="T:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.FooterScheduleButtonLink">
+            <summary>
+              Looks up a localized string similar to https://www.qualitasdigital.com/schedule-consultation.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.FooterTitle">
+             <summary>
+               Looks up a localized string similar to Let’s talk!
+            Your first consultation is free..
+             </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.MidPageTitle">
+            <summary>
+              Looks up a localized string similar to Quality Automation shouldn’t be costly or difficult.  Let our Consultants create a road-map for your company that saves you money year after year.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.MonthlyArticlesSectionBodyText">
+            <summary>
+              Looks up a localized string similar to Keep up with the latest industry trends and discoveries by checking out our blog..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.MonthlyArticlesSectionLink">
+            <summary>
+              Looks up a localized string similar to https://www.qualitasdigital.com/news-notes-qualitas.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.MonthlyArticlesSectionTitle">
+            <summary>
+              Looks up a localized string similar to Monthly Articles.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.OurCommitmentSectionBodyText">
+            <summary>
+              Looks up a localized string similar to We’re committed to giving you the tools you need to create and scale an automation program that reduces long term headcount, increases the quality and confidence levels of your products, at a price companies large and small can afford..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.OurCommitmentSectionLink">
+            <summary>
+              Looks up a localized string similar to https://www.qualitasdigital.com/our-commitment.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.OurCommitmentSectionTitle">
+            <summary>
+              Looks up a localized string similar to Our Commitment to You.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.OurServicesSectionBodyText">
+            <summary>
+              Looks up a localized string similar to We offer training, coaching, and solutions that save you time and money.  Whether your company has a manual approach, a fully established automation program, or something in between, work with us and gain a competitive advantage..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.OurServicesSectionLink">
+            <summary>
+              Looks up a localized string similar to https://www.qualitasdigital.com/pricing-services.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.OurServicesSectionTitle">
+            <summary>
+              Looks up a localized string similar to Our Services.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.PrimarySectionBodyText">
+            <summary>
+              Looks up a localized string similar to Qualitas Digital brings Software Quality Automation within reach. Our solutions help you bridge the gap between where you are and where you want to be. We help you create Quality Automation programs that scale without the high overhead of a purely manual approach. Whether you need training, coaching, or additional engineers to aid your testing efforts, we have a solution for you. Take advantage of one of our free consultations and learn more about how Qualitas Digital puts the Quality in Software Quality Au [rest of string was truncated]&quot;;.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.PrimarySectionImageSrc">
+            <summary>
+              Looks up a localized string similar to https://images.squarespace-cdn.com/content/v1/5dcc96767c939351951d2987/1574109947938-NXBEY5PQVS6J657XS2DN/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/grayscale-photo-of-computer-laptop-near-white-notebook-and-169573.jpg?format=2500w.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.PrimarySectionScheduleButtonLink">
+            <summary>
+              Looks up a localized string similar to https://www.qualitasdigital.com/schedule-consultation.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.PrimarySectionTitle">
+            <summary>
+              Looks up a localized string similar to Putting the Quality in Software Quality Automation.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.SecondarySectionAboutUsButtonLink">
+            <summary>
+              Looks up a localized string similar to https://www.qualitasdigital.com/about-us.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.SecondarySectionBodyText">
+            <summary>
+              Looks up a localized string similar to Qualitas Digital was founded to bring scaleable and efficient software quality automation programs to companies large or small. Click the about us link to learn more.Photo by Adil Gökkaya from Pexels.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.SecondarySectionImageSrc">
+            <summary>
+              Looks up a localized string similar to https://images.squarespace-cdn.com/content/v1/5dcc96767c939351951d2987/1574110334562-ACRRQK9X5RP0PMALKYYB/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/man-holding-laptop-and-smartphone-2726478.jpg?format=2500w.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.SecondarySectionTitle">
+            <summary>
+              Looks up a localized string similar to Our Firm.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.TertiarySectionBodyText">
+            <summary>
+              Looks up a localized string similar to We have the experience and know-how to help you grow your automation programs. Don’t just take our word for it, see for yourself!.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.TertiarySectionClientTestimonialsButtonLink">
+            <summary>
+              Looks up a localized string similar to https://www.qualitasdigital.com/testimonials.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.TertiarySectionImageSrc">
+            <summary>
+              Looks up a localized string similar to https://images.squarespace-cdn.com/content/v1/5dcc96767c939351951d2987/1574112242271-KTTBY3ZBBRVYURATJN31/ke17ZwdGBToddI8pDm48kIIFsYAJJX10OgNkc4SuD20UqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKce0j9vvU4chI_bB_CjBNrJapSKkBorzMUDpE1NYw5XxnDgGKGBETQKcT3bo-auxwM/20130731_Trade+100_0202.jpg?format=2500w.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.TertiarySectionTitle">
+            <summary>
+              Looks up a localized string similar to A High Quality Service.
+            </summary>
         </member>
         <member name="T:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory">
             <summary>

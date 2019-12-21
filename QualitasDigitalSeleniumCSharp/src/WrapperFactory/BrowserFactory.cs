@@ -54,27 +54,27 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
             switch (webDriver)
             {
                 case WebDriver.Chrome:
-                    Driver = new ChromeDriver(path);
+                    Driver = new ChromeDriver(path).CreateEventDriver();
                     Drivers.Add("Chrome", Driver);
                     break;
                 case WebDriver.Firefox:
-                    Driver = new FirefoxDriver(path);
+                    Driver = new FirefoxDriver(path).CreateEventDriver();
                     Drivers.Add("Firefox", Driver);
                     break;
                 case WebDriver.InternetExplorer:
-                    Driver = new InternetExplorerDriver(path);
+                    Driver = new InternetExplorerDriver(path).CreateEventDriver();
                     Drivers.Add("InternetExplorer", Driver);
                     break;
                 case WebDriver.Edge:
-                    Driver = new EdgeDriver(path);
+                    Driver = new EdgeDriver(path).CreateEventDriver();
                     Drivers.Add("Edge", Driver);
                     break;
                 case WebDriver.Opera:
-                    Driver = new OperaDriver(path);
+                    Driver = new OperaDriver(path).CreateEventDriver();
                     Drivers.Add("Opera", Driver);
                     break;
                 case WebDriver.Safari:
-                    Driver = new SafariDriver(path);
+                    Driver = new SafariDriver(path).CreateEventDriver();
                     Drivers.Add("Safari", Driver);
                     break;
                 default:
@@ -84,8 +84,13 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
             MaximizeWindow();
             SetImplicitWait(30);
 
+
+        }
+
+        private static IWebDriver CreateEventDriver(this IWebDriver driver)
+        {
             //Declare event listeners
-            EventFiringWebDriver firingDriver = new EventFiringWebDriver(Driver);
+            EventFiringWebDriver firingDriver = new EventFiringWebDriver(driver);
             firingDriver.ElementClicked += FiringDriver_ElementClicked;
             firingDriver.ElementValueChanged += FiringDriver_ElementValueChanged;
             firingDriver.FindElementCompleted += FiringDriver_FindElementCompleted;
@@ -94,6 +99,8 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
             firingDriver.NavigatedBack += FiringDriver_NavigatedBack;
             firingDriver.NavigatedForward += FiringDriver_NavigatedForward;
             firingDriver.ScriptExecuted += FiringDriver_ScriptExecuted;
+
+            return firingDriver;
         }
 
         /// <summary>
@@ -134,7 +141,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         private static void FiringDriver_ElementClicked(object sender, WebElementEventArgs e)
         {
             IWebElement element = sender as IWebElement;
-            string identifier = SeleniumExtensions.GetElementIdentifierForTestLog(element.GetAllElementProperties());
+            string identifier = SeleniumExtensions.GetElementIdentifierForTestLog(element?.GetAllElementProperties());
             string stepDescription = $"Element clicked.  Identifer: {identifier}";
             TestStepLog.GenerateTestStep(stepDescription, "", "Pass", _stopwatch.Elapsed);
         }
@@ -142,7 +149,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         private static void FiringDriver_ElementValueChanged(object sender, WebElementValueEventArgs e)
         {
             IWebElement element = sender as IWebElement;
-            string identifier = SeleniumExtensions.GetElementIdentifierForTestLog(element.GetAllElementProperties());
+            string identifier = SeleniumExtensions.GetElementIdentifierForTestLog(element?.GetAllElementProperties());
             string stepDescription = $"Element value changed.  Identifer: {identifier}";
             TestStepLog.GenerateTestStep(stepDescription, "", "Pass", _stopwatch.Elapsed);
         }
@@ -150,7 +157,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         private static void FiringDriver_FindElementCompleted(object sender, FindElementEventArgs e)
         {
             IWebElement element = sender as IWebElement;
-            string identifier = SeleniumExtensions.GetElementIdentifierForTestLog(element.GetAllElementProperties());
+            string identifier = SeleniumExtensions.GetElementIdentifierForTestLog(element?.GetAllElementProperties());
             string stepDescription = $"Element Found.  Identifer: {identifier}";
             TestStepLog.GenerateTestStep(stepDescription, "", "Pass", _stopwatch.Elapsed);
         }
@@ -163,33 +170,31 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
 
         private static void FiringDriver_Navigated(object sender, WebDriverNavigationEventArgs e)
         {
-            IWebElement element = sender as IWebElement;
-            string identifier = SeleniumExtensions.GetElementIdentifierForTestLog(element.GetAllElementProperties());
-            string stepDescription = $"Driver navigation completed.  Identifer: {identifier}";
+            IWebDriver driver = sender as IWebDriver;
+            string stepDescription = $"Driver navigation completed.  Url: {driver?.Url}";
             TestStepLog.GenerateTestStep(stepDescription, "", "Pass", _stopwatch.Elapsed);
         }
 
         private static void FiringDriver_NavigatedBack(object sender, WebDriverNavigationEventArgs e)
         {
-            IWebElement element = sender as IWebElement;
-            string identifier = SeleniumExtensions.GetElementIdentifierForTestLog(element.GetAllElementProperties());
-            string stepDescription = $"Driver navigated backwards.  Identifer: {identifier}";
+            IWebDriver driver = sender as IWebDriver;
+            string stepDescription = $"Driver navigated backwards.  Url: {driver?.Url}";
             TestStepLog.GenerateTestStep(stepDescription, "", "Pass", _stopwatch.Elapsed);
         }
 
         private static void FiringDriver_NavigatedForward(object sender, WebDriverNavigationEventArgs e)
         {
-            IWebElement element = sender as IWebElement;
-            string identifier = SeleniumExtensions.GetElementIdentifierForTestLog(element.GetAllElementProperties());
-            string stepDescription = $"Driver navigated forwards.  Identifer: {identifier}";
+            IWebDriver driver = sender as IWebDriver;
+            string stepDescription = $"Driver navigated forwards.  Url: {driver?.Url}";
             TestStepLog.GenerateTestStep(stepDescription, "", "Pass", _stopwatch.Elapsed);
         }
 
         private static void FiringDriver_ScriptExecuted(object sender, WebDriverScriptEventArgs e)
         {
-            IWebElement element = sender as IWebElement;
-            string identifier = SeleniumExtensions.GetElementIdentifierForTestLog(element.GetAllElementProperties());
-            string stepDescription = $"Driver executed script.  Identifer: {identifier}";
+
+            //TODO find way to record the script that was executed
+            IWebDriver driver = sender as IWebDriver;
+            string stepDescription = $"Driver executed script.";
             TestStepLog.GenerateTestStep(stepDescription, "", "Pass", _stopwatch.Elapsed);
         }
 

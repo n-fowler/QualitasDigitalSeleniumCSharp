@@ -106,11 +106,13 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
             FailureStacktrace = stackTrace;
             FailureScreenshotPath = SetFailureScreenshotPath($"{Globals.TestResultsPath}\\{TestRunId}\\FailureScreenshot.png");
 
+            Debugger.Break();
+
             //Populate event logs
-            PopulateEventLoggingContent();
+            //PopulateEventLoggingContent();
 
             //Generate the failure report
-            GenerateHtmlReport();
+            //GenerateHtmlReport();
         }
 
         private static string GetTestRunId()

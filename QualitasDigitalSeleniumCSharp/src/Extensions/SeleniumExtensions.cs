@@ -664,6 +664,10 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <returns></returns>
         public static string GetElementIdentifierForTestLog(Dictionary<string, object> propertyDictionary)
         {
+            if (propertyDictionary == null)
+            {
+                return "unknown value used.  Property dictionary is null";
+            }
             if (propertyDictionary.ContainsKey("id"))
             {
                 return $"id: {propertyDictionary["id"]}";
