@@ -21,6 +21,11 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <summary>
         /// 
         /// </summary>
+        public static string FailureStacktrace { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static string FailureScreenshotPath { get; set; }
 
         /// <summary>
@@ -46,7 +51,7 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <summary>
         /// Retrieves the failure screenshot path
         /// </summary>
-        public static string GetFailureScreenshotPath()
+        public static string SetFailureScreenshotPath(string path)
         {
             return File.Exists(FailureScreenshotPath) ? FailureScreenshotPath : string.Empty;
         }
@@ -90,10 +95,19 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// Reports the test failure to the logging system
         /// </summary>
         /// <param name="failureReason"></param>
-        public static void ReportTestFailure(string failureReason)
+        public static void ReportTestFailure(string failureReason, string stackTrace)
         {
+            //Set test failure data
+            TestRunFailed = true;
             FailureReason = failureReason;
-            FailureScreenshotPath = $"{Globals.TestResultsPath}\\{TestRunId}\\FailureScreenshot.png";
+            FailureStacktrace = stackTrace;
+            FailureScreenshotPath = SetFailureScreenshotPath($"{Globals.TestResultsPath}\\{TestRunId}\\FailureScreenshot.png");
+
+            //Populate event logs
+            PopulateEventLoggingContent();
+
+            //Generate the failure report
+            GenerateHtmlReport();
         }
 
         private static void ReplaceFileContent(string filePath, string originalContent, string replacementContent)

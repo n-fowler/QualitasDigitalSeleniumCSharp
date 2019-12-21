@@ -133,42 +133,64 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
 
         private static void FiringDriver_ElementClicked(object sender, WebElementEventArgs e)
         {
-            TestStepLog.GenerateTestStep(sender as IWebElement, _stopwatch.Elapsed);
+            IWebElement element = sender as IWebElement;
+            string identifier = SeleniumExtensions.GetElementIdentifierForTestLog(element.GetAllElementProperties());
+            string stepDescription = $"Element clicked.  Identifer: {identifier}";
+            TestStepLog.GenerateTestStep(stepDescription, "", "Pass", _stopwatch.Elapsed);
         }
 
         private static void FiringDriver_ElementValueChanged(object sender, WebElementValueEventArgs e)
         {
-            TestStepLog.GenerateTestStep(sender as IWebElement, _stopwatch.Elapsed);
+            IWebElement element = sender as IWebElement;
+            string identifier = SeleniumExtensions.GetElementIdentifierForTestLog(element.GetAllElementProperties());
+            string stepDescription = $"Element value changed.  Identifer: {identifier}";
+            TestStepLog.GenerateTestStep(stepDescription, "", "Pass", _stopwatch.Elapsed);
         }
 
         private static void FiringDriver_FindElementCompleted(object sender, FindElementEventArgs e)
         {
-            TestStepLog.GenerateTestStep(sender as IWebElement, _stopwatch.Elapsed);
+            IWebElement element = sender as IWebElement;
+            string identifier = SeleniumExtensions.GetElementIdentifierForTestLog(element.GetAllElementProperties());
+            string stepDescription = $"Element Found.  Identifer: {identifier}";
+            TestStepLog.GenerateTestStep(stepDescription, "", "Pass", _stopwatch.Elapsed);
         }
 
         private static void FiringDriver_ExceptionThrown(object sender, WebDriverExceptionEventArgs e)
         {
-            TestStepLog.GenerateTestStep(sender as IWebElement, _stopwatch.Elapsed);
+            TestStepLog.GenerateTestStep("An Exception was generated", e.ThrownException.Message, "Fail", _stopwatch.Elapsed);
+            Logging.ReportTestFailure(e.ThrownException.Message, e.ThrownException.StackTrace);
         }
 
         private static void FiringDriver_Navigated(object sender, WebDriverNavigationEventArgs e)
         {
-            TestStepLog.GenerateTestStep(sender as IWebElement, _stopwatch.Elapsed);
+            IWebElement element = sender as IWebElement;
+            string identifier = SeleniumExtensions.GetElementIdentifierForTestLog(element.GetAllElementProperties());
+            string stepDescription = $"Driver navigation completed.  Identifer: {identifier}";
+            TestStepLog.GenerateTestStep(stepDescription, "", "Pass", _stopwatch.Elapsed);
         }
 
         private static void FiringDriver_NavigatedBack(object sender, WebDriverNavigationEventArgs e)
         {
-            TestStepLog.GenerateTestStep(sender as IWebElement, _stopwatch.Elapsed);
+            IWebElement element = sender as IWebElement;
+            string identifier = SeleniumExtensions.GetElementIdentifierForTestLog(element.GetAllElementProperties());
+            string stepDescription = $"Driver navigated backwards.  Identifer: {identifier}";
+            TestStepLog.GenerateTestStep(stepDescription, "", "Pass", _stopwatch.Elapsed);
         }
 
         private static void FiringDriver_NavigatedForward(object sender, WebDriverNavigationEventArgs e)
         {
-            TestStepLog.GenerateTestStep(sender as IWebElement, _stopwatch.Elapsed);
+            IWebElement element = sender as IWebElement;
+            string identifier = SeleniumExtensions.GetElementIdentifierForTestLog(element.GetAllElementProperties());
+            string stepDescription = $"Driver navigated forwards.  Identifer: {identifier}";
+            TestStepLog.GenerateTestStep(stepDescription, "", "Pass", _stopwatch.Elapsed);
         }
 
         private static void FiringDriver_ScriptExecuted(object sender, WebDriverScriptEventArgs e)
         {
-            TestStepLog.GenerateTestStep(sender as IWebElement, _stopwatch.Elapsed);
+            IWebElement element = sender as IWebElement;
+            string identifier = SeleniumExtensions.GetElementIdentifierForTestLog(element.GetAllElementProperties());
+            string stepDescription = $"Driver executed script.  Identifer: {identifier}";
+            TestStepLog.GenerateTestStep(stepDescription, "", "Pass", _stopwatch.Elapsed);
         }
 
         #endregion Driver Events

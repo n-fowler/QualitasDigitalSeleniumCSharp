@@ -4,6 +4,7 @@ using OpenQA.Selenium.Internal;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace QualitasDigitalSeleniumCSharp.Extensions
 {
@@ -654,6 +655,29 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
                 "var items = {}; for (index = 0; index < arguments[0].attributes.length; ++index) { items[arguments[0].attributes[index].name] = arguments[0].attributes[index].value }; return items;";
             Dictionary<string, object> attributes = ((IJavaScriptExecutor)driver).ExecuteScript(js, element) as Dictionary<string, object>;
             return attributes;
+        }
+
+        /// <summary>
+        /// Gets an element identifier for the test log test steps
+        /// </summary>
+        /// <param name="propertyDictionary">The property dictionary retrieved from GetAllElementProperties</param>
+        /// <returns></returns>
+        public static string GetElementIdentifierForTestLog(Dictionary<string, object> propertyDictionary)
+        {
+            if (propertyDictionary.ContainsKey("id"))
+            {
+                return $"id: {propertyDictionary["id"]}";
+            }
+            if (propertyDictionary.ContainsKey("class"))
+            {
+                return $"class: {propertyDictionary["class"]}";
+            }
+            if (propertyDictionary.ContainsKey("role"))
+            {
+                return $"role: {propertyDictionary["role"]}";
+            }
+
+            return $"unknown value: {propertyDictionary.First().Value as string}";
         }
 
         #endregion Advanced Element Operations (IWebElement)

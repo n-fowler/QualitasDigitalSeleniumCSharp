@@ -20,7 +20,7 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <summary>
         /// 
         /// </summary>
-        public bool StepStatus { get; set; }
+        public string StepStatus { get; set; }
 
         /// <summary>
         /// 

@@ -1,5 +1,4 @@
-﻿using OpenQA.Selenium;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace QualitasDigitalSeleniumCSharp.Extensions
@@ -14,18 +13,34 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// </summary>
         public static List<TestStep> TestSteps { get; set; }
 
-        private static TimeSpan _lastStepExecuted { get; set; }
+        private static TimeSpan LastStepExecuted { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="element"></param>
+        /// <param name="stepDescription"></param>
+        /// <param name="stepResult"></param>
+        /// <param name="stepStatus"></param>
         /// <param name="time"></param>
-        public static void GenerateTestStep(IWebElement element, TimeSpan time)
+        public static void GenerateTestStep(string stepDescription, string stepResult, string stepStatus, TimeSpan time)
         {
-            TestStep testStep = new TestStep();
+            TestStep testStep = new TestStep
+            {
+                StepDescription = stepDescription,
+                StepResult = stepResult,
+                StepStatus = stepStatus
+            };
 
+            if (LastStepExecuted == TimeSpan.MinValue)
+            {
+                testStep.Time = time;
+            }
+            else
+            {
+                testStep.Time = time - LastStepExecuted;
+            }
 
+            TestSteps.Add(testStep);
         }
     }
 }
