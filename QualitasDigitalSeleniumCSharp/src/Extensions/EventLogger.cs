@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 
 namespace QualitasDigitalSeleniumCSharp.Extensions
 {
@@ -9,6 +10,8 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
     /// </summary>
     public static class EventLogger
     {
+        private static EventLog EventLog { get; set; }
+
         /// <summary>
         /// Gets a list of event log entries for the source specified
         /// </summary>
@@ -20,34 +23,35 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         {
             switch (eventType)
             {
-                case EventType.Critical:
-                    return GetEvents("Critical", startTime, endTime);
                 case EventType.Error:
-                    return GetEvents("Error", startTime, endTime);
+                    return GetEvents(EventLogEntryType.Error, startTime, endTime);
                 case EventType.Warning:
-                    return GetEvents("Warning", startTime, endTime);
+                    return GetEvents(EventLogEntryType.Warning, startTime, endTime);
                 case EventType.Information:
-                    return GetEvents("Information", startTime, endTime);
+                    return GetEvents(EventLogEntryType.Information, startTime, endTime);
                 default:
                     throw new ArgumentOutOfRangeException(nameof(eventType), eventType, null);
             }
         }
 
-        private static List<EventLogEntry> GetEvents(string source, DateTime startTime, DateTime endTime)
+        private static List<EventLogEntry> GetEvents(EventLogEntryType eventLogEntryType, DateTime startTime, DateTime endTime)
         {
-            EventLog eventLog = new EventLog { Log = source };
-
             List<EventLogEntry> eventLogs = new List<EventLogEntry>();
 
-            foreach (EventLogEntry eventLogEntry in eventLog.Entries)
+            if (EventLog == null)
             {
-                if (eventLogEntry.TimeGenerated >= startTime && eventLogEntry.TimeGenerated <= endTime)
+                EventLog = new EventLog("Application");
+
+                foreach (EventLogEntry eventLogEntry in EventLog.Entries)
                 {
-                    eventLogs.Add(eventLogEntry);
+                    if (eventLogEntry.TimeGenerated >= startTime && eventLogEntry.TimeGenerated <= endTime)
+                    {
+                        eventLogs.Add(eventLogEntry);
+                    }
                 }
             }
 
-            return eventLogs;
+            return eventLogs.Where(x => x.EntryType == eventLogEntryType).ToList();
         }
     }
 }

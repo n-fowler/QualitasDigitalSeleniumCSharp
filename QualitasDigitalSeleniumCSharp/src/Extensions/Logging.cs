@@ -52,9 +52,9 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <summary>
         /// Retrieves the failure screenshot path
         /// </summary>
-        public static string SetFailureScreenshotPath(string path)
+        public static void SetFailureScreenshotPath(string path)
         {
-            return File.Exists(FailureScreenshotPath) ? FailureScreenshotPath : string.Empty;
+            FailureScreenshotPath = File.Exists(FailureScreenshotPath) ? FailureScreenshotPath : string.Empty;
         }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
             InformationEventLogs = EventLogger.GetEventLog(EventType.Information, TestStartTime, TestEndTime);
             WarningEventLogs = EventLogger.GetEventLog(EventType.Warning, TestStartTime, TestEndTime);
             ErrorEventLogs = EventLogger.GetEventLog(EventType.Error, TestStartTime, TestEndTime);
-            CriticalEventLogs = EventLogger.GetEventLog(EventType.Critical, TestStartTime, TestEndTime);
+            CriticalEventLogs = new List<EventLogEntry>(); //Empty for now.  Use this later when critical errors are captured.
         }
 
         /// <summary>
@@ -101,21 +101,17 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         {
             //Set test failure data
             TestRunFailed = true;
-            TestRunId = GetTestRunId();
             FailureReason = failureReason;
             FailureStacktrace = stackTrace;
-            FailureScreenshotPath = SetFailureScreenshotPath($"{Globals.TestResultsPath}\\{TestRunId}\\FailureScreenshot.png");
-
-            Debugger.Break();
 
             //Populate event logs
-            //PopulateEventLoggingContent();
+            PopulateEventLoggingContent();
 
             //Generate the failure report
-            //GenerateHtmlReport();
+            GenerateHtmlReport();
         }
 
-        private static string GetTestRunId()
+        public static void SetTestRunId()
         {
             string date = $"{DateTime.Now.Month}_{DateTime.Now.Day}_{DateTime.Now.Year}";
             string time = $"{DateTime.Now.Hour}_{DateTime.Now.Minute}_{DateTime.Now.Second}";
@@ -126,23 +122,25 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
                 testName = $"{TestContext.CurrentContext.Test.MethodName}";
             }
 
-            return $"TestRunReport_{date}_{time}_{testName}";
+            TestRunId = $"TestRunReport_{date}_{time}_{testName}";
         }
 
+        //TODO: This method sucks and is duplicating content.  Refactor it.
         private static void ReplaceFileContent(string filePath, string originalContent, string replacementContent)
         {
+            string input;
+
             using (StreamReader reader = new StreamReader(filePath))
             {
-                string input = reader.ReadToEnd();
-
-                using (StreamWriter writer = new StreamWriter(filePath, true))
-                {
-                    string output = input.Replace(originalContent, replacementContent);
-                    writer.Write(output);
-                    writer.Close();
-                }
-
+                input = reader.ReadToEnd();
                 reader.Close();
+            }
+
+            using (StreamWriter writer = new StreamWriter(filePath, true))
+            {
+                string output = input.Replace(originalContent, replacementContent);
+                writer.Write(output);
+                writer.Close();
             }
         }
 

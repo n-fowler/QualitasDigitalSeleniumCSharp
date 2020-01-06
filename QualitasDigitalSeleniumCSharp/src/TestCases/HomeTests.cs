@@ -3,6 +3,7 @@ using QualitasDigitalSeleniumCSharp.Extensions;
 using QualitasDigitalSeleniumCSharp.PageObjects;
 using QualitasDigitalSeleniumCSharp.src.TestData;
 using QualitasDigitalSeleniumCSharp.WrapperFactory;
+using System;
 using System.Collections.Generic;
 
 namespace QualitasDigitalSeleniumCSharp.TestCases
@@ -22,21 +23,41 @@ namespace QualitasDigitalSeleniumCSharp.TestCases
         #region Shared
 
         /// <summary>
-        /// The test setup method
+        /// The one time test setup method
         /// </summary>
         [OneTimeSetUp]
-        public void SetUp()
+        public void OneTimeSetUp()
         {
             BrowserFactory.InitBrowser(webDriverEnum);
         }
 
         /// <summary>
-        /// The test tear down method
+        /// The one time test tear down method
         /// </summary>
         [OneTimeTearDown]
-        public void TearDown()
+        public void OneTimeTearDown()
         {
             BrowserFactory.CloseAllDrivers();
+        }
+
+        /// <summary>
+        /// The individual test setup method
+        /// </summary>
+        [SetUp]
+        public void SetUp()
+        {
+            Logging.SetTestRunId();
+            Logging.TestStartTime = DateTime.Now;
+        }
+
+        /// <summary>
+        /// The individual test tear down method
+        /// </summary>
+        [TearDown]
+        public void TearDown()
+        {
+            Logging.TestEndTime = DateTime.Now;
+            BrowserFactory.ReportTestStatus(TestContext.CurrentContext);
         }
 
         #endregion Shared

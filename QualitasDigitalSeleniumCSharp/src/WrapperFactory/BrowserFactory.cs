@@ -1,13 +1,15 @@
-﻿using OpenQA.Selenium;
+﻿using NUnit.Framework;
+using NUnit.Framework.Interfaces;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
 using OpenQA.Selenium.Opera;
 using OpenQA.Selenium.Safari;
-using OpenQA.Selenium.Support.Events;
 using OpenQA.Selenium.Support.UI;
 using QualitasDigitalSeleniumCSharp.Extensions;
+using QualitasDigitalSeleniumCSharp.src.TestData;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -58,27 +60,27 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
             switch (webDriver)
             {
                 case WebDriver.Chrome:
-                    Driver = new ChromeDriver(path).CreateEventDriver();
+                    Driver = new ChromeDriver(path);
                     Drivers.Add("Chrome", Driver);
                     break;
                 case WebDriver.Firefox:
-                    Driver = new FirefoxDriver(path).CreateEventDriver();
+                    Driver = new FirefoxDriver(path);
                     Drivers.Add("Firefox", Driver);
                     break;
                 case WebDriver.InternetExplorer:
-                    Driver = new InternetExplorerDriver(path).CreateEventDriver();
+                    Driver = new InternetExplorerDriver(path);
                     Drivers.Add("InternetExplorer", Driver);
                     break;
                 case WebDriver.Edge:
-                    Driver = new EdgeDriver(path).CreateEventDriver();
+                    Driver = new EdgeDriver(path);
                     Drivers.Add("Edge", Driver);
                     break;
                 case WebDriver.Opera:
-                    Driver = new OperaDriver(path).CreateEventDriver();
+                    Driver = new OperaDriver(path);
                     Drivers.Add("Opera", Driver);
                     break;
                 case WebDriver.Safari:
-                    Driver = new SafariDriver(path).CreateEventDriver();
+                    Driver = new SafariDriver(path);
                     Drivers.Add("Safari", Driver);
                     break;
                 default:
@@ -89,13 +91,25 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
             SetImplicitWait(30);
         }
 
-        private static IWebDriver CreateEventDriver(this IWebDriver driver)
+        /// <summary>
+        /// Report the test failure to the logging system
+        /// </summary>
+        /// <param name="testContext"></param>
+        public static void ReportTestStatus(TestContext testContext)
         {
-            //Declare event listeners
-            EventFiringWebDriver firingDriver = new EventFiringWebDriver(driver);
-            firingDriver.ExceptionThrown += FiringDriver_ExceptionThrown;
+            if (testContext.Result.Outcome.Status != ResultState.Failure.Status) return;
 
-            return firingDriver;
+            string directory = $"{Globals.TestResultsPath}\\{Logging.TestRunId}";
+            Directory.CreateDirectory(directory);
+
+            string fileName = "\\FailureScreenshot.png";
+            string path = directory + fileName;
+
+            Screenshot screenshot = ((ITakesScreenshot)Driver).GetScreenshot();
+            screenshot.SaveAsFile(path, ScreenshotImageFormat.Png);
+
+            Logging.SetFailureScreenshotPath(path);
+            Logging.ReportTestFailure(testContext.Result.Message, testContext.Result.StackTrace);
         }
 
         /// <summary>
@@ -130,16 +144,6 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
             /// <summary>The Safari Browser</summary>
             Safari
         }
-
-        #region Driver Events
-
-        private static void FiringDriver_ExceptionThrown(object sender, WebDriverExceptionEventArgs e)
-        {
-            TestStepLog.GenerateTestStep("An Exception was generated", e.ThrownException.Message, "Fail", Stopwatch.Elapsed);
-            Logging.ReportTestFailure(e.ThrownException.Message, e.ThrownException.StackTrace);
-        }
-
-        #endregion Driver Events
 
         #region Basic Browser Operations
 

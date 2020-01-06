@@ -1487,14 +1487,24 @@
             HomePage Tests
             </summary>
         </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.HomeTests.OneTimeSetUp">
+            <summary>
+            The one time test setup method
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.HomeTests.OneTimeTearDown">
+            <summary>
+            The one time test tear down method
+            </summary>
+        </member>
         <member name="M:QualitasDigitalSeleniumCSharp.TestCases.HomeTests.SetUp">
             <summary>
-            The test setup method
+            The individual test setup method
             </summary>
         </member>
         <member name="M:QualitasDigitalSeleniumCSharp.TestCases.HomeTests.TearDown">
             <summary>
-            The test tear down method
+            The individual test tear down method
             </summary>
         </member>
         <member name="M:QualitasDigitalSeleniumCSharp.TestCases.HomeTests.HomePageLoad">
@@ -1677,6 +1687,11 @@
             The Browser Factory for easy driver initialization
             </summary>
         </member>
+        <member name="F:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.Stopwatch">
+            <summary>
+            A stopwatch for keeping track of the execution time of tests
+            </summary>
+        </member>
         <member name="P:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.Driver">
             <summary></summary>
         </member>
@@ -1685,6 +1700,12 @@
             Initializes the driver based on the supplied WebDriver enum
             </summary>
             <param name="webDriver">The Browser enum</param>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.ReportTestStatus(NUnit.Framework.TestContext)">
+            <summary>
+            Report the test failure to the logging system
+            </summary>
+            <param name="testContext"></param>
         </member>
         <member name="M:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.CloseAllDrivers">
             <summary>
