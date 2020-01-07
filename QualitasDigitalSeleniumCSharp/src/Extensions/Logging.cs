@@ -90,6 +90,10 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
             string originalTestStepsVariable = @"addDataToTbody(testStepsTableBody, testStepsDataTest);";
             string updatedTestStepsVariable = "addDataToTbody(testStepsTableBody, testStepsData);";
             ReplaceFileContent(testResultReportJsPath, originalTestStepsVariable, updatedTestStepsVariable);
+
+            //Update the header
+            string testHeader = $"document.getElementById('header').innerHTML = 'Test Result: {TestContext.CurrentContext.Test.MethodName} - Run {TestStartTime}';";
+            ReplaceFileContent(testResultReportJsPath, @"/*HeaderHere*/", testHeader);
         }
 
         /// <summary>
@@ -125,23 +129,11 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
             TestRunId = $"TestRunReport_{date}_{time}_{testName}";
         }
 
-        //TODO: This method sucks and is duplicating content.  Refactor it.
         private static void ReplaceFileContent(string filePath, string originalContent, string replacementContent)
         {
-            string input;
-
-            using (StreamReader reader = new StreamReader(filePath))
-            {
-                input = reader.ReadToEnd();
-                reader.Close();
-            }
-
-            using (StreamWriter writer = new StreamWriter(filePath, true))
-            {
-                string output = input.Replace(originalContent, replacementContent);
-                writer.Write(output);
-                writer.Close();
-            }
+            string fileContents = File.ReadAllText(filePath);
+            fileContents = fileContents.Replace(originalContent, replacementContent);
+            File.WriteAllText(filePath, fileContents);
         }
 
         private static string ReadResource(string name)

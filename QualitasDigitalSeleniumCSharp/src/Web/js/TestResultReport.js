@@ -46,6 +46,8 @@
 
 /*DataHere*/
 
+/*HeaderHere*/
+
 function addDataToTbody(nl, data) {
     data.forEach((d, i) => {
         var tr = nl.insertRow(i);
