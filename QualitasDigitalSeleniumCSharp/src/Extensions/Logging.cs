@@ -115,6 +115,9 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
             GenerateHtmlReport();
         }
 
+        /// <summary>
+        /// Sets the test run id
+        /// </summary>
         public static void SetTestRunId()
         {
             string date = $"{DateTime.Now.Month}_{DateTime.Now.Day}_{DateTime.Now.Year}";

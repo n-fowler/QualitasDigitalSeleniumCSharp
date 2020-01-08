@@ -24,8 +24,18 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <returns>Returns a selenium web element</returns>
         public static IWebElement FindElementByClassName(this IWebDriver driver, string className)
         {
-            TestStepLog.GenerateTestStep($"FindElementByClassName: {className}", "", "", BrowserFactory.Stopwatch.Elapsed);
-            return driver.FindElement(By.ClassName(className));
+            try
+            {
+                var element = driver.FindElement(By.ClassName(className));
+                TestStepLog.GenerateTestStep($"Find Element By Class Name: {className}", "Element Found", "Success", BrowserFactory.Stopwatch.Elapsed);
+                return element;
+            }
+            catch (Exception e)
+            {
+                Logging.FailureReason = e.Message.Split(":").First();
+                TestStepLog.GenerateTestStep($"Find Element By Class Name: {className}", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                throw;
+            }
         }
 
         /// <summary>

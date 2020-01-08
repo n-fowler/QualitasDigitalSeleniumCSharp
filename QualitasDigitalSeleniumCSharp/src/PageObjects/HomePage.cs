@@ -24,7 +24,7 @@ namespace QualitasDigitalSeleniumCSharp.PageObjects
         /// <summary>
         /// The Logo Image element
         /// </summary>
-        public IWebElement LogoImage => driver.FindElementByClassName("logo-image");
+        public IWebElement LogoImage => driver.FindElementByClassName("logo-image1");
 
         /// <summary>
         /// Navigation section expansion toggle open
