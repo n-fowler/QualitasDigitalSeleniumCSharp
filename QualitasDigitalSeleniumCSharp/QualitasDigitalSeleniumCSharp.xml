@@ -100,6 +100,11 @@
             <param name="failureReason"></param>
             <param name="stackTrace"></param>
         </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.Logging.SetTestRunId">
+            <summary>
+            Sets the test run id
+            </summary>
+        </member>
         <member name="T:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions">
             <summary>
             Extends the functionality of the driver and web element classes

@@ -46,8 +46,18 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <returns>Returns a selenium web element</returns>
         public static IWebElement FindElementByCssSelector(this IWebDriver driver, string cssSelector)
         {
-            TestStepLog.GenerateTestStep($"FindElementByCssSelector: {cssSelector}", "", "", BrowserFactory.Stopwatch.Elapsed);
-            return driver.FindElement(By.CssSelector(cssSelector));
+            try
+            {
+                var element = driver.FindElement(By.CssSelector(cssSelector));
+                TestStepLog.GenerateTestStep($"Find Element By Css Selector: {cssSelector}", "Element Found", "Success", BrowserFactory.Stopwatch.Elapsed);
+                return element;
+            }
+            catch (Exception e)
+            {
+                Logging.FailureReason = e.Message.Split(":").First();
+                TestStepLog.GenerateTestStep($"Find Element By Css Selector: {cssSelector}", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                throw;
+            }
         }
 
         /// <summary>
@@ -58,8 +68,18 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <returns>Returns a selenium web element</returns>
         public static IWebElement FindElementById(this IWebDriver driver, string id)
         {
-            TestStepLog.GenerateTestStep($"FindElementById: {id}", "", "", BrowserFactory.Stopwatch.Elapsed);
-            return driver.FindElement(By.Id(id));
+            try
+            {
+                var element = driver.FindElement(By.Id(id));
+                TestStepLog.GenerateTestStep($"Find Element By Id: {id}", "Element Found", "Success", BrowserFactory.Stopwatch.Elapsed);
+                return element;
+            }
+            catch (Exception e)
+            {
+                Logging.FailureReason = e.Message.Split(":").First();
+                TestStepLog.GenerateTestStep($"Find Element By Id: {id}", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                throw;
+            }
         }
 
         /// <summary>
@@ -70,8 +90,18 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <returns>Returns a selenium web element</returns>
         public static IWebElement FindElementByLinkText(this IWebDriver driver, string linkText)
         {
-            TestStepLog.GenerateTestStep($"FindElementByLinkText: {linkText}", "", "", BrowserFactory.Stopwatch.Elapsed);
-            return driver.FindElement(By.LinkText(linkText));
+            try
+            {
+                var element = driver.FindElement(By.LinkText(linkText));
+                TestStepLog.GenerateTestStep($"Find Element By Link Text: {linkText}", "Element Found", "Success", BrowserFactory.Stopwatch.Elapsed);
+                return element;
+            }
+            catch (Exception e)
+            {
+                Logging.FailureReason = e.Message.Split(":").First();
+                TestStepLog.GenerateTestStep($"Find Element By Link Text: {linkText}", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                throw;
+            }
         }
 
         /// <summary>
@@ -82,8 +112,18 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <returns>Returns a selenium web element</returns>
         public static IWebElement FindElementByName(this IWebDriver driver, string name)
         {
-            TestStepLog.GenerateTestStep($"FindElementByName: {name}", "", "", BrowserFactory.Stopwatch.Elapsed);
-            return driver.FindElement(By.Name(name));
+            try
+            {
+                var element = driver.FindElement(By.Name(name));
+                TestStepLog.GenerateTestStep($"Find Element By Name: {name}", "Element Found", "Success", BrowserFactory.Stopwatch.Elapsed);
+                return element;
+            }
+            catch (Exception e)
+            {
+                Logging.FailureReason = e.Message.Split(":").First();
+                TestStepLog.GenerateTestStep($"Find Element By Name: {name}", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                throw;
+            }
         }
 
         /// <summary>
@@ -94,8 +134,18 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <returns>Returns a selenium web element</returns>
         public static IWebElement FindElementByPartialLinkText(this IWebDriver driver, string partialLinkText)
         {
-            TestStepLog.GenerateTestStep($"FindElementByPartialLinkText: {partialLinkText}", "", "", BrowserFactory.Stopwatch.Elapsed);
-            return driver.FindElement(By.PartialLinkText(partialLinkText));
+            try
+            {
+                var element = driver.FindElement(By.PartialLinkText(partialLinkText));
+                TestStepLog.GenerateTestStep($"Find Element By Partial Link Text: {partialLinkText}", "Element Found", "Success", BrowserFactory.Stopwatch.Elapsed);
+                return element;
+            }
+            catch (Exception e)
+            {
+                Logging.FailureReason = e.Message.Split(":").First();
+                TestStepLog.GenerateTestStep($"Find Element By Partial Link Text: {partialLinkText}", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                throw;
+            }
         }
 
         /// <summary>
@@ -106,8 +156,18 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <returns>Returns a selenium web element</returns>
         public static IWebElement FindElementByTagName(this IWebDriver driver, string tagName)
         {
-            TestStepLog.GenerateTestStep($"FindElementByTagName: {tagName}", "", "", BrowserFactory.Stopwatch.Elapsed);
-            return driver.FindElement(By.TagName(tagName));
+            try
+            {
+                var element = driver.FindElement(By.TagName(tagName));
+                TestStepLog.GenerateTestStep($"Find Element By Tag Name: {tagName}", "Element Found", "Success", BrowserFactory.Stopwatch.Elapsed);
+                return element;
+            }
+            catch (Exception e)
+            {
+                Logging.FailureReason = e.Message.Split(":").First();
+                TestStepLog.GenerateTestStep($"Find Element By Tag Name: {tagName}", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                throw;
+            }
         }
 
         /// <summary>
@@ -118,8 +178,18 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <returns>Returns a selenium web element</returns>
         public static IWebElement FindElementByXPath(this IWebDriver driver, string xPath)
         {
-            TestStepLog.GenerateTestStep($"FindElementByXPath: {xPath}", "", "", BrowserFactory.Stopwatch.Elapsed);
-            return driver.FindElement(By.XPath(xPath));
+            try
+            {
+                var element = driver.FindElement(By.XPath(xPath));
+                TestStepLog.GenerateTestStep($"Find Element By XPath: {xPath}", "Element Found", "Success", BrowserFactory.Stopwatch.Elapsed);
+                return element;
+            }
+            catch (Exception e)
+            {
+                Logging.FailureReason = e.Message.Split(":").First();
+                TestStepLog.GenerateTestStep($"Find Element By XPath: {xPath}", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                throw;
+            }
         }
 
         #endregion Find Element (IWebDriver)
@@ -134,8 +204,18 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <returns>Returns a selenium web element</returns>
         public static IWebElement FindElementByClassName(this IWebElement webElement, string className)
         {
-            TestStepLog.GenerateTestStep($"FindElementByClassName: {className}", "", "", BrowserFactory.Stopwatch.Elapsed);
-            return webElement.FindElement(By.ClassName(className));
+            try
+            {
+                var element = webElement.FindElement(By.ClassName(className));
+                TestStepLog.GenerateTestStep($"Find Element By Class Name: {className}", "Element Found", "Success", BrowserFactory.Stopwatch.Elapsed);
+                return element;
+            }
+            catch (Exception e)
+            {
+                Logging.FailureReason = e.Message.Split(":").First();
+                TestStepLog.GenerateTestStep($"Find Element By Class Name: {className}", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                throw;
+            }
         }
 
         /// <summary>
@@ -146,8 +226,18 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <returns>Returns a selenium web element</returns>
         public static IWebElement FindElementByCssSelector(this IWebElement webElement, string cssSelector)
         {
-            TestStepLog.GenerateTestStep($"FindElementByCssSelector: {cssSelector}", "", "", BrowserFactory.Stopwatch.Elapsed);
-            return webElement.FindElement(By.CssSelector(cssSelector));
+            try
+            {
+                var element = webElement.FindElement(By.CssSelector(cssSelector));
+                TestStepLog.GenerateTestStep($"Find Element By Css Selector: {cssSelector}", "Element Found", "Success", BrowserFactory.Stopwatch.Elapsed);
+                return element;
+            }
+            catch (Exception e)
+            {
+                Logging.FailureReason = e.Message.Split(":").First();
+                TestStepLog.GenerateTestStep($"Find Element By Css Selector: {cssSelector}", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                throw;
+            }
         }
 
         /// <summary>
@@ -158,8 +248,18 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <returns>Returns a selenium web element</returns>
         public static IWebElement FindElementById(this IWebElement webElement, string id)
         {
-            TestStepLog.GenerateTestStep($"FindElementById: {id}", "", "", BrowserFactory.Stopwatch.Elapsed);
-            return webElement.FindElement(By.Id(id));
+            try
+            {
+                var element = webElement.FindElement(By.Id(id));
+                TestStepLog.GenerateTestStep($"Find Element By Id: {id}", "Element Found", "Success", BrowserFactory.Stopwatch.Elapsed);
+                return element;
+            }
+            catch (Exception e)
+            {
+                Logging.FailureReason = e.Message.Split(":").First();
+                TestStepLog.GenerateTestStep($"Find Element By Id: {id}", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                throw;
+            }
         }
 
         /// <summary>
@@ -170,8 +270,18 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <returns>Returns a selenium web element</returns>
         public static IWebElement FindElementByLinkText(this IWebElement webElement, string linkText)
         {
-            TestStepLog.GenerateTestStep($"FindElementByLinkText: {linkText}", "", "", BrowserFactory.Stopwatch.Elapsed);
-            return webElement.FindElement(By.LinkText(linkText));
+            try
+            {
+                var element = webElement.FindElement(By.LinkText(linkText));
+                TestStepLog.GenerateTestStep($"Find Element By Link Text: {linkText}", "Element Found", "Success", BrowserFactory.Stopwatch.Elapsed);
+                return element;
+            }
+            catch (Exception e)
+            {
+                Logging.FailureReason = e.Message.Split(":").First();
+                TestStepLog.GenerateTestStep($"Find Element By Link Text: {linkText}", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                throw;
+            }
         }
 
         /// <summary>
@@ -182,8 +292,18 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <returns>Returns a selenium web element</returns>
         public static IWebElement FindElementByName(this IWebElement webElement, string name)
         {
-            TestStepLog.GenerateTestStep($"FindElementByName: {name}", "", "", BrowserFactory.Stopwatch.Elapsed);
-            return webElement.FindElement(By.Name(name));
+            try
+            {
+                var element = webElement.FindElement(By.Name(name));
+                TestStepLog.GenerateTestStep($"Find Element By Name: {name}", "Element Found", "Success", BrowserFactory.Stopwatch.Elapsed);
+                return element;
+            }
+            catch (Exception e)
+            {
+                Logging.FailureReason = e.Message.Split(":").First();
+                TestStepLog.GenerateTestStep($"Find Element By Name: {name}", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                throw;
+            }
         }
 
         /// <summary>
@@ -194,8 +314,18 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <returns>Returns a selenium web element</returns>
         public static IWebElement FindElementByPartialLinkText(this IWebElement webElement, string partialLinkText)
         {
-            TestStepLog.GenerateTestStep($"FindElementByPartialLinkText: {partialLinkText}", "", "", BrowserFactory.Stopwatch.Elapsed);
-            return webElement.FindElement(By.PartialLinkText(partialLinkText));
+            try
+            {
+                var element = webElement.FindElement(By.PartialLinkText(partialLinkText));
+                TestStepLog.GenerateTestStep($"Find Element By Partial Link Text: {partialLinkText}", "Element Found", "Success", BrowserFactory.Stopwatch.Elapsed);
+                return element;
+            }
+            catch (Exception e)
+            {
+                Logging.FailureReason = e.Message.Split(":").First();
+                TestStepLog.GenerateTestStep($"Find Element By Partial Link Text: {partialLinkText}", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                throw;
+            }
         }
 
         /// <summary>
@@ -206,8 +336,18 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <returns>Returns a selenium web element</returns>
         public static IWebElement FindElementByTagName(this IWebElement webElement, string tagName)
         {
-            TestStepLog.GenerateTestStep($"FindElementByTagName: {tagName}", "", "", BrowserFactory.Stopwatch.Elapsed);
-            return webElement.FindElement(By.TagName(tagName));
+            try
+            {
+                var element = webElement.FindElement(By.TagName(tagName));
+                TestStepLog.GenerateTestStep($"Find Element By Tag Name: {tagName}", "Element Found", "Success", BrowserFactory.Stopwatch.Elapsed);
+                return element;
+            }
+            catch (Exception e)
+            {
+                Logging.FailureReason = e.Message.Split(":").First();
+                TestStepLog.GenerateTestStep($"Find Element By Tag Name: {tagName}", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                throw;
+            }
         }
 
         /// <summary>
@@ -218,8 +358,18 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <returns>Returns a selenium web element</returns>
         public static IWebElement FindElementByXPath(this IWebElement webElement, string xPath)
         {
-            TestStepLog.GenerateTestStep($"FindElementByXPath: {xPath}", "", "", BrowserFactory.Stopwatch.Elapsed);
-            return webElement.FindElement(By.XPath(xPath));
+            try
+            {
+                var element = webElement.FindElement(By.XPath(xPath));
+                TestStepLog.GenerateTestStep($"Find Element By XPath: {xPath}", "Element Found", "Success", BrowserFactory.Stopwatch.Elapsed);
+                return element;
+            }
+            catch (Exception e)
+            {
+                Logging.FailureReason = e.Message.Split(":").First();
+                TestStepLog.GenerateTestStep($"Find Element By XPath: {xPath}", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                throw;
+            }
         }
 
         #endregion Find Element (IWebDriver)
@@ -234,8 +384,18 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <returns>Returns a read only collection of selenium web elements</returns>
         public static IReadOnlyCollection<IWebElement> FindElementsByClassName(this IWebDriver driver, string className)
         {
-            TestStepLog.GenerateTestStep($"FindElementsByClassName: {className}", "", "", BrowserFactory.Stopwatch.Elapsed);
-            return driver.FindElements(By.ClassName(className));
+            try
+            {
+                var element = driver.FindElements(By.ClassName(className));
+                TestStepLog.GenerateTestStep($"Find Elements By Class Name: {className}", "Element Found", "Success", BrowserFactory.Stopwatch.Elapsed);
+                return element;
+            }
+            catch (Exception e)
+            {
+                Logging.FailureReason = e.Message.Split(":").First();
+                TestStepLog.GenerateTestStep($"Find Elements By Class Name: {className}", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                throw;
+            }
         }
 
         /// <summary>
@@ -246,8 +406,18 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <returns>Returns a read only collection of selenium web elements</returns>
         public static IReadOnlyCollection<IWebElement> FindElementsByCssSelector(this IWebDriver driver, string cssSelector)
         {
-            TestStepLog.GenerateTestStep($"FindElementsByCssSelector: {cssSelector}", "", "", BrowserFactory.Stopwatch.Elapsed);
-            return driver.FindElements(By.CssSelector(cssSelector));
+            try
+            {
+                var element = driver.FindElements(By.CssSelector(cssSelector));
+                TestStepLog.GenerateTestStep($"Find Elements By Css Selector: {cssSelector}", "Element Found", "Success", BrowserFactory.Stopwatch.Elapsed);
+                return element;
+            }
+            catch (Exception e)
+            {
+                Logging.FailureReason = e.Message.Split(":").First();
+                TestStepLog.GenerateTestStep($"Find Elements By Css Selector: {cssSelector}", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                throw;
+            }
         }
 
         /// <summary>
@@ -258,8 +428,18 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <returns>Returns a read only collection of selenium web elements</returns>
         public static IReadOnlyCollection<IWebElement> FindElementsById(this IWebDriver driver, string id)
         {
-            TestStepLog.GenerateTestStep($"FindElementsById: {id}", "", "", BrowserFactory.Stopwatch.Elapsed);
-            return driver.FindElements(By.Id(id));
+            try
+            {
+                var element = driver.FindElements(By.Id(id));
+                TestStepLog.GenerateTestStep($"Find Elements By Id: {id}", "Element Found", "Success", BrowserFactory.Stopwatch.Elapsed);
+                return element;
+            }
+            catch (Exception e)
+            {
+                Logging.FailureReason = e.Message.Split(":").First();
+                TestStepLog.GenerateTestStep($"Find Elements By Id: {id}", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                throw;
+            }
         }
 
         /// <summary>
@@ -270,8 +450,18 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <returns>Returns a read only collection of selenium web elements</returns>
         public static IReadOnlyCollection<IWebElement> FindElementsByLinkText(this IWebDriver driver, string linkText)
         {
-            TestStepLog.GenerateTestStep($"FindElementsByLinkText: {linkText}", "", "", BrowserFactory.Stopwatch.Elapsed);
-            return driver.FindElements(By.LinkText(linkText));
+            try
+            {
+                var element = driver.FindElements(By.LinkText(linkText));
+                TestStepLog.GenerateTestStep($"Find Elements By Link Text: {linkText}", "Element Found", "Success", BrowserFactory.Stopwatch.Elapsed);
+                return element;
+            }
+            catch (Exception e)
+            {
+                Logging.FailureReason = e.Message.Split(":").First();
+                TestStepLog.GenerateTestStep($"Find Elements By Link Text: {linkText}", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                throw;
+            }
         }
 
         /// <summary>
@@ -282,8 +472,18 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <returns>Returns a read only collection of selenium web elements</returns>
         public static IReadOnlyCollection<IWebElement> FindElementsByName(this IWebDriver driver, string name)
         {
-            TestStepLog.GenerateTestStep($"FindElementsByName: {name}", "", "", BrowserFactory.Stopwatch.Elapsed);
-            return driver.FindElements(By.Name(name));
+            try
+            {
+                var element = driver.FindElements(By.Name(name));
+                TestStepLog.GenerateTestStep($"Find Elements By Name: {name}", "Element Found", "Success", BrowserFactory.Stopwatch.Elapsed);
+                return element;
+            }
+            catch (Exception e)
+            {
+                Logging.FailureReason = e.Message.Split(":").First();
+                TestStepLog.GenerateTestStep($"Find Elements By Name: {name}", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                throw;
+            }
         }
 
         /// <summary>
@@ -294,8 +494,18 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <returns>Returns a read only collection of selenium web elements</returns>
         public static IReadOnlyCollection<IWebElement> FindElementsByPartialLinkText(this IWebDriver driver, string partialLinkText)
         {
-            TestStepLog.GenerateTestStep($"FindElementsByPartialLinkText: {partialLinkText}", "", "", BrowserFactory.Stopwatch.Elapsed);
-            return driver.FindElements(By.PartialLinkText(partialLinkText));
+            try
+            {
+                var element = driver.FindElements(By.PartialLinkText(partialLinkText));
+                TestStepLog.GenerateTestStep($"Find Elements By Partial Link Text: {partialLinkText}", "Element Found", "Success", BrowserFactory.Stopwatch.Elapsed);
+                return element;
+            }
+            catch (Exception e)
+            {
+                Logging.FailureReason = e.Message.Split(":").First();
+                TestStepLog.GenerateTestStep($"Find Elements By Partial Link Text: {partialLinkText}", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                throw;
+            }
         }
 
         /// <summary>
@@ -306,8 +516,18 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <returns>Returns a read only collection of selenium web elements</returns>
         public static IReadOnlyCollection<IWebElement> FindElementsByTagName(this IWebDriver driver, string tagName)
         {
-            TestStepLog.GenerateTestStep($"FindElementsByTagName: {tagName}", "", "", BrowserFactory.Stopwatch.Elapsed);
-            return driver.FindElements(By.TagName(tagName));
+            try
+            {
+                var element = driver.FindElements(By.TagName(tagName));
+                TestStepLog.GenerateTestStep($"Find Elements By Tag Name: {tagName}", "Element Found", "Success", BrowserFactory.Stopwatch.Elapsed);
+                return element;
+            }
+            catch (Exception e)
+            {
+                Logging.FailureReason = e.Message.Split(":").First();
+                TestStepLog.GenerateTestStep($"Find Elements By Tag Name: {tagName}", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                throw;
+            }
         }
 
         /// <summary>
@@ -318,8 +538,18 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <returns>Returns a read only collection of selenium web elements</returns>
         public static IReadOnlyCollection<IWebElement> FindElementsByXPath(this IWebDriver driver, string xPath)
         {
-            TestStepLog.GenerateTestStep($"FindElementsByXPath: {xPath}", "", "", BrowserFactory.Stopwatch.Elapsed);
-            return driver.FindElements(By.XPath(xPath));
+            try
+            {
+                var element = driver.FindElements(By.XPath(xPath));
+                TestStepLog.GenerateTestStep($"Find Elements By XPath: {xPath}", "Element Found", "Success", BrowserFactory.Stopwatch.Elapsed);
+                return element;
+            }
+            catch (Exception e)
+            {
+                Logging.FailureReason = e.Message.Split(":").First();
+                TestStepLog.GenerateTestStep($"Find Elements By XPath: {xPath}", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                throw;
+            }
         }
 
         #endregion Find Elements (IWebDriver)
@@ -334,8 +564,18 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <returns>Returns a read only collection of selenium web elements</returns>
         public static IReadOnlyCollection<IWebElement> FindElementsByClassName(this IWebElement webElement, string className)
         {
-            TestStepLog.GenerateTestStep($"FindElementsByClassName: {className}", "", "", BrowserFactory.Stopwatch.Elapsed);
-            return webElement.FindElements(By.ClassName(className));
+            try
+            {
+                var element = webElement.FindElements(By.ClassName(className));
+                TestStepLog.GenerateTestStep($"Find Elements By Class Name: {className}", "Element Found", "Success", BrowserFactory.Stopwatch.Elapsed);
+                return element;
+            }
+            catch (Exception e)
+            {
+                Logging.FailureReason = e.Message.Split(":").First();
+                TestStepLog.GenerateTestStep($"Find Elements By Class Name: {className}", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                throw;
+            }
         }
 
         /// <summary>
@@ -346,8 +586,18 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <returns>Returns a read only collection of selenium web elements</returns>
         public static IReadOnlyCollection<IWebElement> FindElementsByCssSelector(this IWebElement webElement, string cssSelector)
         {
-            TestStepLog.GenerateTestStep($"FindElementsByCssSelector: {cssSelector}", "", "", BrowserFactory.Stopwatch.Elapsed);
-            return webElement.FindElements(By.CssSelector(cssSelector));
+            try
+            {
+                var element = webElement.FindElements(By.CssSelector(cssSelector));
+                TestStepLog.GenerateTestStep($"Find Elements By Css Selector: {cssSelector}", "Element Found", "Success", BrowserFactory.Stopwatch.Elapsed);
+                return element;
+            }
+            catch (Exception e)
+            {
+                Logging.FailureReason = e.Message.Split(":").First();
+                TestStepLog.GenerateTestStep($"Find Elements By Css Selector: {cssSelector}", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                throw;
+            }
         }
 
         /// <summary>
@@ -358,8 +608,18 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <returns>Returns a read only collection of selenium web elements</returns>
         public static IReadOnlyCollection<IWebElement> FindElementsById(this IWebElement webElement, string id)
         {
-            TestStepLog.GenerateTestStep($"FindElementsById: {id}", "", "", BrowserFactory.Stopwatch.Elapsed);
-            return webElement.FindElements(By.Id(id));
+            try
+            {
+                var element = webElement.FindElements(By.Id(id));
+                TestStepLog.GenerateTestStep($"Find Elements By Id: {id}", "Element Found", "Success", BrowserFactory.Stopwatch.Elapsed);
+                return element;
+            }
+            catch (Exception e)
+            {
+                Logging.FailureReason = e.Message.Split(":").First();
+                TestStepLog.GenerateTestStep($"Find Elements By Id: {id}", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                throw;
+            }
         }
 
         /// <summary>
@@ -370,8 +630,18 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <returns>Returns a read only collection of selenium web elements</returns>
         public static IReadOnlyCollection<IWebElement> FindElementsByLinkText(this IWebElement webElement, string linkText)
         {
-            TestStepLog.GenerateTestStep($"FindElementsByLinkText: {linkText}", "", "", BrowserFactory.Stopwatch.Elapsed);
-            return webElement.FindElements(By.LinkText(linkText));
+            try
+            {
+                var element = webElement.FindElements(By.LinkText(linkText));
+                TestStepLog.GenerateTestStep($"Find Elements By Link Text: {linkText}", "Element Found", "Success", BrowserFactory.Stopwatch.Elapsed);
+                return element;
+            }
+            catch (Exception e)
+            {
+                Logging.FailureReason = e.Message.Split(":").First();
+                TestStepLog.GenerateTestStep($"Find Elements By Link Text: {linkText}", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                throw;
+            }
         }
 
         /// <summary>
@@ -382,8 +652,18 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <returns>Returns a read only collection of selenium web elements</returns>
         public static IReadOnlyCollection<IWebElement> FindElementsByName(this IWebElement webElement, string name)
         {
-            TestStepLog.GenerateTestStep($"FindElementsByName: {name}", "", "", BrowserFactory.Stopwatch.Elapsed);
-            return webElement.FindElements(By.Name(name));
+            try
+            {
+                var element = webElement.FindElements(By.Name(name));
+                TestStepLog.GenerateTestStep($"Find Elements By Name: {name}", "Element Found", "Success", BrowserFactory.Stopwatch.Elapsed);
+                return element;
+            }
+            catch (Exception e)
+            {
+                Logging.FailureReason = e.Message.Split(":").First();
+                TestStepLog.GenerateTestStep($"Find Elements By Name: {name}", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                throw;
+            }
         }
 
         /// <summary>
@@ -394,8 +674,18 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <returns>Returns a read only collection of selenium web elements</returns>
         public static IReadOnlyCollection<IWebElement> FindElementsByPartialLinkText(this IWebElement webElement, string partialLinkText)
         {
-            TestStepLog.GenerateTestStep($"FindElementsByPartialLinkText: {partialLinkText}", "", "", BrowserFactory.Stopwatch.Elapsed);
-            return webElement.FindElements(By.PartialLinkText(partialLinkText));
+            try
+            {
+                var element = webElement.FindElements(By.PartialLinkText(partialLinkText));
+                TestStepLog.GenerateTestStep($"Find Elements By Partial Link Text: {partialLinkText}", "Element Found", "Success", BrowserFactory.Stopwatch.Elapsed);
+                return element;
+            }
+            catch (Exception e)
+            {
+                Logging.FailureReason = e.Message.Split(":").First();
+                TestStepLog.GenerateTestStep($"Find Elements By Partial Link Text: {partialLinkText}", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                throw;
+            }
         }
 
         /// <summary>
@@ -406,8 +696,18 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <returns>Returns a read only collection of selenium web elements</returns>
         public static IReadOnlyCollection<IWebElement> FindElementsByTagName(this IWebElement webElement, string tagName)
         {
-            TestStepLog.GenerateTestStep($"FindElementsByTagName: {tagName}", "", "", BrowserFactory.Stopwatch.Elapsed);
-            return webElement.FindElements(By.TagName(tagName));
+            try
+            {
+                var element = webElement.FindElements(By.TagName(tagName));
+                TestStepLog.GenerateTestStep($"Find Elements By Tag Name: {tagName}", "Element Found", "Success", BrowserFactory.Stopwatch.Elapsed);
+                return element;
+            }
+            catch (Exception e)
+            {
+                Logging.FailureReason = e.Message.Split(":").First();
+                TestStepLog.GenerateTestStep($"Find Elements By Tag Name: {tagName}", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                throw;
+            }
         }
 
         /// <summary>
@@ -418,8 +718,18 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <returns>Returns a read only collection of selenium web elements</returns>
         public static IReadOnlyCollection<IWebElement> FindElementsByXPath(this IWebElement webElement, string xPath)
         {
-            TestStepLog.GenerateTestStep($"FindElementsByXPath: {xPath}", "", "", BrowserFactory.Stopwatch.Elapsed);
-            return webElement.FindElements(By.XPath(xPath));
+            try
+            {
+                var element = webElement.FindElements(By.XPath(xPath));
+                TestStepLog.GenerateTestStep($"Find Elements By XPath: {xPath}", "Element Found", "Success", BrowserFactory.Stopwatch.Elapsed);
+                return element;
+            }
+            catch (Exception e)
+            {
+                Logging.FailureReason = e.Message.Split(":").First();
+                TestStepLog.GenerateTestStep($"Find Elements By XPath: {xPath}", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                throw;
+            }
         }
 
         #endregion Find Elements (IWebElement)
@@ -432,8 +742,17 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <param name="element">The web element</param>
         public static void ClickWhenReady(this IWebElement element)
         {
-            TestStepLog.GenerateTestStep("ClickWhenReady executed", "", "", BrowserFactory.Stopwatch.Elapsed);
-            element.Click();
+            try
+            {
+                element.Click();
+                TestStepLog.GenerateTestStep("Click When Ready", "Element was Clicked", "Success", BrowserFactory.Stopwatch.Elapsed);
+            }
+            catch (Exception e)
+            {
+                Logging.FailureReason = e.Message.Split(":").First();
+                TestStepLog.GenerateTestStep("Click When Ready", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                throw;
+            }
         }
 
         /// <summary>
@@ -443,8 +762,17 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <param name="value">The value</param>
         public static void EnterText(this IWebElement element, string value)
         {
-            TestStepLog.GenerateTestStep($"EnterText: {value}", "", "", BrowserFactory.Stopwatch.Elapsed);
-            element.SendKeys(value);
+            try
+            {
+                element.SendKeys(value);
+                TestStepLog.GenerateTestStep($"Enter Text: {value}", "Text was entered", "Success", BrowserFactory.Stopwatch.Elapsed);
+            }
+            catch (Exception e)
+            {
+                Logging.FailureReason = e.Message.Split(":").First();
+                TestStepLog.GenerateTestStep($"Enter Text: {value}", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                throw;
+            }
         }
 
         /// <summary>
@@ -453,8 +781,17 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <param name="element">The web element</param>
         public static void ClearElement(this IWebElement element)
         {
-            TestStepLog.GenerateTestStep("ClearElement executed", "", "", BrowserFactory.Stopwatch.Elapsed);
-            element.Clear();
+            try
+            {
+                element.Clear();
+                TestStepLog.GenerateTestStep("Clear Element", "Element was cleared", "Success", BrowserFactory.Stopwatch.Elapsed);
+            }
+            catch (Exception e)
+            {
+                Logging.FailureReason = e.Message.Split(":").First();
+                TestStepLog.GenerateTestStep("Clear Element", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                throw;
+            }
         }
 
         /// <summary>
@@ -463,8 +800,17 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <param name="element">The web element</param>
         public static void SubmitElement(this IWebElement element)
         {
-            TestStepLog.GenerateTestStep("SubmitElement executed", "", "", BrowserFactory.Stopwatch.Elapsed);
-            element.Submit();
+            try
+            {
+                element.Submit();
+                TestStepLog.GenerateTestStep("Submit Element", "Element was submitted", "Success", BrowserFactory.Stopwatch.Elapsed);
+            }
+            catch (Exception e)
+            {
+                Logging.FailureReason = e.Message.Split(":").First();
+                TestStepLog.GenerateTestStep("Submit Element", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                throw;
+            }
         }
 
         /// <summary>
@@ -474,8 +820,18 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <returns>returns a string with innertext</returns>
         public static string GetInnertext(this IWebElement element)
         {
-            TestStepLog.GenerateTestStep("GetInnertext executed", "", "", BrowserFactory.Stopwatch.Elapsed);
-            return element.GetAttribute("innerText");
+            try
+            {
+                var returnVal = element.GetAttribute("innerText");
+                TestStepLog.GenerateTestStep("Get Innertext from the element", "Element Innertext retrieved", "Success", BrowserFactory.Stopwatch.Elapsed);
+                return returnVal;
+            }
+            catch (Exception e)
+            {
+                Logging.FailureReason = e.Message.Split(":").First();
+                TestStepLog.GenerateTestStep("Get Innertext from the element", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                throw;
+            }
         }
 
         /// <summary>
@@ -485,8 +841,18 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <returns></returns>
         public static string GetHref(this IWebElement element)
         {
-            TestStepLog.GenerateTestStep("GetHref executed", "", "", BrowserFactory.Stopwatch.Elapsed);
-            return element.GetAttribute("href");
+            try
+            {
+                var returnVal = element.GetAttribute("href");
+                TestStepLog.GenerateTestStep("Get Href from the element", "Element Href retrieved", "Success", BrowserFactory.Stopwatch.Elapsed);
+                return returnVal;
+            }
+            catch (Exception e)
+            {
+                Logging.FailureReason = e.Message.Split(":").First();
+                TestStepLog.GenerateTestStep("Get Href from the element", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                throw;
+            }
         }
 
         /// <summary>
@@ -496,8 +862,18 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <returns></returns>
         public static string GetSrc(this IWebElement element)
         {
-            TestStepLog.GenerateTestStep("GetSrc executed", "", "", BrowserFactory.Stopwatch.Elapsed);
-            return element.GetAttribute("src");
+            try
+            {
+                var returnVal = element.GetAttribute("src");
+                TestStepLog.GenerateTestStep("Get Src from the element", "Element Src retrieved", "Success", BrowserFactory.Stopwatch.Elapsed);
+                return returnVal;
+            }
+            catch (Exception e)
+            {
+                Logging.FailureReason = e.Message.Split(":").First();
+                TestStepLog.GenerateTestStep("Get Src from the element", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                throw;
+            }
         }
 
         /// <summary>
@@ -507,8 +883,18 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <returns>returns a boolean for enabled state</returns>
         public static bool IsEnabled(this IWebElement element)
         {
-            TestStepLog.GenerateTestStep("IsEnabled executed", "", "", BrowserFactory.Stopwatch.Elapsed);
-            return element.Enabled;
+            try
+            {
+                var returnVal = element.Enabled;
+                TestStepLog.GenerateTestStep("Determine element enabled state", "Element enabled state retrieved", "Success", BrowserFactory.Stopwatch.Elapsed);
+                return returnVal;
+            }
+            catch (Exception e)
+            {
+                Logging.FailureReason = e.Message.Split(":").First();
+                TestStepLog.GenerateTestStep("Determine element enabled state", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                throw;
+            }
         }
 
         /// <summary>
@@ -518,8 +904,18 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <returns>returns a boolean for displayed state</returns>
         public static bool IsDisplayed(this IWebElement element)
         {
-            TestStepLog.GenerateTestStep("IsDisplayed executed", "", "", BrowserFactory.Stopwatch.Elapsed);
-            return element.Displayed;
+            try
+            {
+                var returnVal = element.Displayed;
+                TestStepLog.GenerateTestStep("Determine element displayed state", "Element displayed state retrieved", "Success", BrowserFactory.Stopwatch.Elapsed);
+                return returnVal;
+            }
+            catch (Exception e)
+            {
+                Logging.FailureReason = e.Message.Split(":").First();
+                TestStepLog.GenerateTestStep("Determine element displayed state", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                throw;
+            }
         }
 
         /// <summary>
@@ -529,8 +925,18 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <returns>returns a boolean for selected state</returns>
         public static bool IsSelected(this IWebElement element)
         {
-            TestStepLog.GenerateTestStep("IsSelected executed", "", "", BrowserFactory.Stopwatch.Elapsed);
-            return element.Selected;
+            try
+            {
+                var returnVal = element.Selected;
+                TestStepLog.GenerateTestStep("Determine element selected state", "Element selected state retrieved", "Success", BrowserFactory.Stopwatch.Elapsed);
+                return returnVal;
+            }
+            catch (Exception e)
+            {
+                Logging.FailureReason = e.Message.Split(":").First();
+                TestStepLog.GenerateTestStep("Determine element selected state", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                throw;
+            }
         }
 
         /// <summary>
@@ -540,8 +946,17 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <param name="index">The index</param>
         public static void SelectByIndex(this IWebElement element, int index)
         {
-            TestStepLog.GenerateTestStep($"SelectByIndex: {index}", "", "", BrowserFactory.Stopwatch.Elapsed);
-            new SelectElement(element).SelectByIndex(index);
+            try
+            {
+                new SelectElement(element).SelectByIndex(index);
+                TestStepLog.GenerateTestStep($"Select By Index: {index}", "Element selected by Index", "Success", BrowserFactory.Stopwatch.Elapsed);
+            }
+            catch (Exception e)
+            {
+                Logging.FailureReason = e.Message.Split(":").First();
+                TestStepLog.GenerateTestStep($"Select By Index: {index}", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                throw;
+            }
         }
 
         /// <summary>
@@ -551,8 +966,17 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <param name="index">The index</param>
         public static void DeselectByIndex(this IWebElement element, int index)
         {
-            TestStepLog.GenerateTestStep($"DeselectByIndex: {index}", "", "", BrowserFactory.Stopwatch.Elapsed);
-            new SelectElement(element).DeselectByIndex(index);
+            try
+            {
+                new SelectElement(element).DeselectByIndex(index);
+                TestStepLog.GenerateTestStep($"Deselect By Index: {index}", "Element deselected by Index", "Success", BrowserFactory.Stopwatch.Elapsed);
+            }
+            catch (Exception e)
+            {
+                Logging.FailureReason = e.Message.Split(":").First();
+                TestStepLog.GenerateTestStep($"Deselect By Index: {index}", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                throw;
+            }
         }
 
         /// <summary>
@@ -562,8 +986,17 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <param name="text">The option text value</param>
         public static void SelectByText(this IWebElement element, string text)
         {
-            TestStepLog.GenerateTestStep($"SelectByText: {text}", "", "", BrowserFactory.Stopwatch.Elapsed);
-            new SelectElement(element).SelectByText(text);
+            try
+            {
+                new SelectElement(element).SelectByText(text);
+                TestStepLog.GenerateTestStep($"Select By Text: {text}", "Element selected by Text", "Success", BrowserFactory.Stopwatch.Elapsed);
+            }
+            catch (Exception e)
+            {
+                Logging.FailureReason = e.Message.Split(":").First();
+                TestStepLog.GenerateTestStep($"Select By Text: {text}", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                throw;
+            }
         }
 
         /// <summary>
@@ -573,8 +1006,17 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <param name="text">The option text value</param>
         public static void DeselectByText(this IWebElement element, string text)
         {
-            TestStepLog.GenerateTestStep($"DeselectByText: {text}", "", "", BrowserFactory.Stopwatch.Elapsed);
-            new SelectElement(element).DeselectByText(text);
+            try
+            {
+                new SelectElement(element).DeselectByText(text);
+                TestStepLog.GenerateTestStep($"Deselect By Text: {text}", "Element deselected by Text", "Success", BrowserFactory.Stopwatch.Elapsed);
+            }
+            catch (Exception e)
+            {
+                Logging.FailureReason = e.Message.Split(":").First();
+                TestStepLog.GenerateTestStep($"Deselect By Text: {text}", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                throw;
+            }
         }
 
         /// <summary>
@@ -584,8 +1026,17 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <param name="value">The value</param>
         public static void SelectByValue(this IWebElement element, string value)
         {
-            TestStepLog.GenerateTestStep($"SelectByValue: {value}", "", "", BrowserFactory.Stopwatch.Elapsed);
-            new SelectElement(element).SelectByValue(value);
+            try
+            {
+                new SelectElement(element).SelectByValue(value);
+                TestStepLog.GenerateTestStep($"Select By Value: {value}", "Element selected by Value", "Success", BrowserFactory.Stopwatch.Elapsed);
+            }
+            catch (Exception e)
+            {
+                Logging.FailureReason = e.Message.Split(":").First();
+                TestStepLog.GenerateTestStep($"Select By Value: {value}", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                throw;
+            }
         }
 
         /// <summary>
@@ -595,8 +1046,17 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <param name="value">The value</param>
         public static void DeselectByValue(this IWebElement element, string value)
         {
-            TestStepLog.GenerateTestStep($"DeselectByValue: {value}", "", "", BrowserFactory.Stopwatch.Elapsed);
-            new SelectElement(element).DeselectByValue(value);
+            try
+            {
+                new SelectElement(element).DeselectByValue(value);
+                TestStepLog.GenerateTestStep($"Deselect By Value: {value}", "Element deselected by Value", "Success", BrowserFactory.Stopwatch.Elapsed);
+            }
+            catch (Exception e)
+            {
+                Logging.FailureReason = e.Message.Split(":").First();
+                TestStepLog.GenerateTestStep($"Deselect By Value: {value}", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                throw;
+            }
         }
 
         /// <summary>
@@ -605,8 +1065,17 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <param name="element">The web element</param>
         public static void DeselectAll(this IWebElement element)
         {
-            TestStepLog.GenerateTestStep("DeselectAll executed", "", "", BrowserFactory.Stopwatch.Elapsed);
-            new SelectElement(element).DeselectAll();
+            try
+            {
+                new SelectElement(element).DeselectAll();
+                TestStepLog.GenerateTestStep("Deselect all options from element", "Element deselected by Value", "Success", BrowserFactory.Stopwatch.Elapsed);
+            }
+            catch (Exception e)
+            {
+                Logging.FailureReason = e.Message.Split(":").First();
+                TestStepLog.GenerateTestStep("Deselect all options from element", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                throw;
+            }
         }
 
         /// <summary>
@@ -616,8 +1085,18 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <returns>returns a Select web element</returns>
         public static IWebElement GetSelectedOption(this IWebElement element)
         {
-            TestStepLog.GenerateTestStep("GetSelectedOption executed", "", "", BrowserFactory.Stopwatch.Elapsed);
-            return new SelectElement(element).SelectedOption;
+            try
+            {
+                var returnVal = new SelectElement(element).SelectedOption;
+                TestStepLog.GenerateTestStep("Get Selected Option", "Selected Option retrieved", "Success", BrowserFactory.Stopwatch.Elapsed);
+                return returnVal;
+            }
+            catch (Exception e)
+            {
+                Logging.FailureReason = e.Message.Split(":").First();
+                TestStepLog.GenerateTestStep("Get Selected Option", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                throw;
+            }
         }
 
         /// <summary>
