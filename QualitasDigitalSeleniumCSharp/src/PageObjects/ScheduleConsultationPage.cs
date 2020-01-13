@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace QualitasDigitalSeleniumCSharp.PageObjects
+﻿namespace QualitasDigitalSeleniumCSharp.PageObjects
 {
-    class ScheduleConsultationPage
+    /// <summary>
+    /// The ScheduleConsultation Page Object
+    /// </summary>
+    public class ScheduleConsultationPage
     {
     }
 }

@@ -70,7 +70,7 @@ namespace QualitasDigitalSeleniumCSharp.TestCases
         {
             BrowserFactory.GoToPage(HomePage.Url);
             BrowserFactory.WaitForPageLoad(10);
-            Assert.IsFalse(Page.Home.LogoImage.Displayed, "homePage.LogoImage.Displayed");
+            Assert.IsTrue(Page.Home.LogoImage.Displayed, "Page.Home.LogoImage.Displayed");
         }
 
         /// <summary></summary>

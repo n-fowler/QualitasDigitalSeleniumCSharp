@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace QualitasDigitalSeleniumCSharp.PageObjects
+﻿namespace QualitasDigitalSeleniumCSharp.PageObjects
 {
-    class FaqPage
+    /// <summary>
+    /// The Faq Page Object
+    /// </summary>
+    public class FaqPage
     {
     }
 }

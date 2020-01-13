@@ -49,13 +49,13 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
             try
             {
                 var element = driver.FindElement(By.CssSelector(cssSelector));
-                TestStepLog.GenerateTestStep($"Find Element By Css Selector: {cssSelector}", "Element Found", "Success", BrowserFactory.Stopwatch.Elapsed);
+                TestStepLog.GenerateTestStep($"Find Element By Css Selector: {cssSelector.Replace("'", "")}", "Element Found", "Success", BrowserFactory.Stopwatch.Elapsed);
                 return element;
             }
             catch (Exception e)
             {
                 Logging.FailureReason = e.Message.Split(":").First();
-                TestStepLog.GenerateTestStep($"Find Element By Css Selector: {cssSelector}", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                TestStepLog.GenerateTestStep($"Find Element By Css Selector: {cssSelector.Replace("'", "")}", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
                 throw;
             }
         }
@@ -229,13 +229,13 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
             try
             {
                 var element = webElement.FindElement(By.CssSelector(cssSelector));
-                TestStepLog.GenerateTestStep($"Find Element By Css Selector: {cssSelector}", "Element Found", "Success", BrowserFactory.Stopwatch.Elapsed);
+                TestStepLog.GenerateTestStep($"Find Element By Css Selector: {cssSelector.Replace("'", "")}", "Element Found", "Success", BrowserFactory.Stopwatch.Elapsed);
                 return element;
             }
             catch (Exception e)
             {
                 Logging.FailureReason = e.Message.Split(":").First();
-                TestStepLog.GenerateTestStep($"Find Element By Css Selector: {cssSelector}", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                TestStepLog.GenerateTestStep($"Find Element By Css Selector: {cssSelector.Replace("'", "")}", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
                 throw;
             }
         }
@@ -409,13 +409,13 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
             try
             {
                 var elements = driver.FindElements(By.CssSelector(cssSelector));
-                TestStepLog.GenerateTestStep($"Find Elements By Css Selector: {cssSelector}", "Elements Found", "Success", BrowserFactory.Stopwatch.Elapsed);
+                TestStepLog.GenerateTestStep($"Find Elements By Css Selector: {cssSelector.Replace("'", "")}", "Elements Found", "Success", BrowserFactory.Stopwatch.Elapsed);
                 return elements;
             }
             catch (Exception e)
             {
                 Logging.FailureReason = e.Message.Split(":").First();
-                TestStepLog.GenerateTestStep($"Find Elements By Css Selector: {cssSelector}", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                TestStepLog.GenerateTestStep($"Find Elements By Css Selector: {cssSelector.Replace("'", "")}", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
                 throw;
             }
         }
@@ -589,13 +589,13 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
             try
             {
                 var elements = webElement.FindElements(By.CssSelector(cssSelector));
-                TestStepLog.GenerateTestStep($"Find Elements By Css Selector: {cssSelector}", "Elements Found", "Success", BrowserFactory.Stopwatch.Elapsed);
+                TestStepLog.GenerateTestStep($"Find Elements By Css Selector: {cssSelector.Replace("'", "")}", "Elements Found", "Success", BrowserFactory.Stopwatch.Elapsed);
                 return elements;
             }
             catch (Exception e)
             {
                 Logging.FailureReason = e.Message.Split(":").First();
-                TestStepLog.GenerateTestStep($"Find Elements By Css Selector: {cssSelector}", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                TestStepLog.GenerateTestStep($"Find Elements By Css Selector: {cssSelector.Replace("'", "")}", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
                 throw;
             }
         }
@@ -1222,13 +1222,15 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
             {
                 IWebDriver driver = ((IWrapsDriver)element).WrappedDriver;
                 WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeLimit));
+#pragma warning disable 618
                 wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(By.CssSelector(cssSelector)));
-                TestStepLog.GenerateTestStep($"Wait For Visibility of element with css selector: {cssSelector}", "WaitForVisibility completed", "Success", BrowserFactory.Stopwatch.Elapsed);
+#pragma warning restore 618
+                TestStepLog.GenerateTestStep($"Wait For Visibility of element with css selector: {cssSelector.Replace("'", "")}", "WaitForVisibility completed", "Success", BrowserFactory.Stopwatch.Elapsed);
             }
             catch (Exception e)
             {
                 Logging.FailureReason = e.Message.Split(":").First();
-                TestStepLog.GenerateTestStep($"Wait For Visibility of element with css selector: {cssSelector}", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                TestStepLog.GenerateTestStep($"Wait For Visibility of element with css selector: {cssSelector.Replace("'", "")}", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
                 throw;
             }
         }
@@ -1244,7 +1246,9 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
             {
                 IWebDriver driver = ((IWrapsDriver)element).WrappedDriver;
                 WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeLimit));
+#pragma warning disable 618
                 wait.Until(ExpectedConditions.ElementToBeClickable(element));
+#pragma warning restore 618
                 TestStepLog.GenerateTestStep("Wait For Clickability of element", "WaitForVisibility completed", "Success", BrowserFactory.Stopwatch.Elapsed);
             }
             catch (Exception e)

@@ -74,10 +74,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="src\TestData\Globals.Designer.cs">
+    <Compile Update="src\LocalConfiguration\Configuration.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>Globals.resx</DependentUpon>
+      <DependentUpon>Configuration.resx</DependentUpon>
+    </Compile>
+    <Compile Update="src\TestData\AboutUsPageTestData.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AboutUsPageTestData.resx</DependentUpon>
     </Compile>
     <Compile Update="src\TestData\HomePageTestData.Designer.cs">
       <DesignTime>True</DesignTime>
@@ -87,9 +92,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="src\TestData\Globals.resx">
+    <EmbeddedResource Update="src\LocalConfiguration\Configuration.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Globals.Designer.cs</LastGenOutput>
+      <LastGenOutput>Configuration.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="src\TestData\AboutUsPageTestData.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AboutUsPageTestData.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="src\TestData\HomePageTestData.resx">
       <Generator>ResXFileCodeGenerator</Generator>

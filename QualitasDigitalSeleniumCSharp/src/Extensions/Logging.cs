@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
-using QualitasDigitalSeleniumCSharp.src.TestData;
+using QualitasDigitalSeleniumCSharp.src.LocalConfiguration;
+using QualitasDigitalSeleniumCSharp.WrapperFactory;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -75,7 +76,7 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         {
             string binPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             string sourceTestResultPath = $"{binPath}\\src\\Web";
-            string destinationTestResultPath = $"{Globals.TestResultsPath}\\{TestRunId}\\TestResult";
+            string destinationTestResultPath = $"{Configuration.LocalTestResultsPath}\\{TestRunId}\\TestResult";
 
             //Copy Web folder from bin to test results folder
             DirectoryCopy(sourceTestResultPath, destinationTestResultPath, true);
@@ -97,6 +98,15 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         }
 
         /// <summary>
+        /// Reports the test success to the logging system and clears the step log
+        /// </summary>
+        public static void ReportTestSuccess()
+        {
+            //Clear the test steps
+            TestStepLog.TestSteps.Clear();
+        }
+
+        /// <summary>
         /// Reports the test failure to the logging system
         /// </summary>
         /// <param name="failureReason"></param>
@@ -107,6 +117,12 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
             TestRunFailed = true;
             FailureReason = failureReason;
             FailureStacktrace = stackTrace;
+
+            //Add a test step with failure data if there isn't one
+            if (TestStepLog.TestSteps.Last().StepStatus != "Failure")
+            {
+                TestStepLog.GenerateTestStep("The test has failed with reason:", failureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+            }
 
             //Populate event logs
             PopulateEventLoggingContent();

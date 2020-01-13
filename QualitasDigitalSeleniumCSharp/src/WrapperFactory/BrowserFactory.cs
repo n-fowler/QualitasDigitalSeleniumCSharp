@@ -9,7 +9,7 @@ using OpenQA.Selenium.Opera;
 using OpenQA.Selenium.Safari;
 using OpenQA.Selenium.Support.UI;
 using QualitasDigitalSeleniumCSharp.Extensions;
-using QualitasDigitalSeleniumCSharp.src.TestData;
+using QualitasDigitalSeleniumCSharp.src.LocalConfiguration;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -97,9 +97,13 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         /// <param name="testContext"></param>
         public static void ReportTestStatus(TestContext testContext)
         {
-            if (testContext.Result.Outcome.Status != ResultState.Failure.Status) return;
+            if (testContext.Result.Outcome.Status != ResultState.Failure.Status)
+            {
+                Logging.ReportTestSuccess();
+                return;
+            }
 
-            string directory = $"{Globals.TestResultsPath}\\{Logging.TestRunId}";
+            string directory = $"{Configuration.LocalTestResultsPath}\\{Logging.TestRunId}";
             Directory.CreateDirectory(directory);
 
             string fileName = "\\FailureScreenshot.png";
@@ -109,7 +113,7 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
             screenshot.SaveAsFile(path, ScreenshotImageFormat.Png);
 
             Logging.SetFailureScreenshotPath(path);
-            Logging.ReportTestFailure(testContext.Result.Message, testContext.Result.StackTrace);
+            Logging.ReportTestFailure(testContext.Result.Message.Replace("\r", "").Replace("\n", ""), testContext.Result.StackTrace);
         }
 
         /// <summary>
