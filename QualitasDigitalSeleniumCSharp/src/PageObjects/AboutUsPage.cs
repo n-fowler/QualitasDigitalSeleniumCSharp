@@ -26,7 +26,7 @@ namespace QualitasDigitalSeleniumCSharp.PageObjects
         public IWebElement LogoImage => driver.FindElementByClassName("logo-image");
 
         /// <summary>
-        /// Our commitment section
+        /// The About Us Header section
         /// </summary>
         public IWebElement HeaderSection => driver.FindElementById("block-8d07de855042f0a5360c");
 

@@ -78,6 +78,7 @@ namespace QualitasDigitalSeleniumCSharp.TestCases
         public void HomePageNavigation()
         {
             BrowserFactory.GoToPage(HomePage.Url);
+            BrowserFactory.WaitForPageLoad(10);
 
             //Open navigation
             Page.Home.NavToggle.ClickWithJavascriptById();
@@ -127,6 +128,7 @@ namespace QualitasDigitalSeleniumCSharp.TestCases
         public void HomePageSearch()
         {
             BrowserFactory.GoToPage(HomePage.Url);
+            BrowserFactory.WaitForPageLoad(10);
 
             //Open search
             Page.Home.SearchButton.ClickWhenReady();
@@ -152,6 +154,7 @@ namespace QualitasDigitalSeleniumCSharp.TestCases
         public void HomePageContent()
         {
             BrowserFactory.GoToPage(HomePage.Url);
+            BrowserFactory.WaitForPageLoad(10);
 
             //Validate primary section
             Assert.AreEqual(HomePageTestData.PrimarySectionTitle, Page.Home.PrimarySectionTitle.GetInnertext());
