@@ -1322,6 +1322,187 @@
               Looks up a localized string similar to https://www.qualitasdigital.com/schedule-consultation.
             </summary>
         </member>
+        <member name="T:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.BodyEight">
+            <summary>
+              Looks up a localized string similar to We believe we are.  Our solutions reduce future costs as a result of increasing headcounts, increase the value of your employees through training, we even provide direction and structure which increase productivity..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.BodyEleven">
+            <summary>
+              Looks up a localized string similar to We are able to send samples that show an understanding of technologies we use, or training courses we conduct.  In order to protect the Intellectual Property of our clients, we don’t share code or documentation from their projects..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.BodyFifteen">
+            <summary>
+              Looks up a localized string similar to Qualitas is latin for Quality.  We put quality in our name as it’s at the core of what we do.  We strive to provide efficient and high quality services that stand the test of time..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.BodyFive">
+            <summary>
+              Looks up a localized string similar to We start with a free consultation by phone where we talk about the problems facing your company.  We ask clarifying questions to frame the problem and determine whether or not we’re the right choice for you.  Depending on your needs we have one or more follow up meetings where we go into detail about our services, and sign a consulting contract..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.BodyFour">
+            <summary>
+              Looks up a localized string similar to The value of our services.  We have the know-how and experience to assess your business, ask the right questions, and build a custom tailored solution that works for you..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.BodyFourteen">
+            <summary>
+              Looks up a localized string similar to We have references available, once we’ve reached the final phase of contract negotiation..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.BodyNine">
+            <summary>
+              Looks up a localized string similar to Once services have been rendered they are non-refundable.  Regular check ins throughout the project ensure that our work meets your standards so that there are no surprises when the invoice arrives..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.BodyOne">
+            <summary>
+              Looks up a localized string similar to We provide Quality Automation solutions that scale with your business.  Whether you’re creating something from scratch, reworking an existing automation program, or adding to what you have, we work with you to create a customized plan and implement it throughout your business..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.BodySeven">
+            <summary>
+              Looks up a localized string similar to We pride ourselves on the speed with which we design and implement solutions.  In order to maintain the longevity of the solutions we provide, we work at a pace that avoids sacrificing quality or accuracy..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.BodySix">
+            <summary>
+              Looks up a localized string similar to The contract length is entirely dependent on your needs.  Whether you need a consultant for a couple weeks to add tests for a critical feature, or you need a corporate trainer for a year, we’re ready..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.BodyTen">
+            <summary>
+              Looks up a localized string similar to Our consulting agreement includes a defacto Non-Disclosure Agreement.  We value your intellectual property and privacy and protect it the same as our own..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.BodyThirteen">
+            <summary>
+              Looks up a localized string similar to Our consultants are experts with industry experience at companies both big and small.  We’ve worked with a variety of technology stacks and continued education is a requirement.  It’s not enough for us to be proficient at one set of technologies, we are continuously evolving what we know so that we remain able to offer the best solutions possible..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.BodyThree">
+            <summary>
+              Looks up a localized string similar to The two main reasons are time and experience.  It takes time to recruit and train a new employee and verifying they have the experience you need for your business is a constant challenge.  It takes months to recoup the initial recruitment costs.  We deliver value from day one..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.BodyTwelve">
+            <summary>
+              Looks up a localized string similar to We’re located just outside of Downtown Wilmington in North Carolina.  We use phone and video calls for meetings as needed.  We drive or fly to clients outside of Wilmington regularly to complete work.  We offer a 25% discount on our rates for fully telecommuted work in addition to the money saved on travel expenses..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.BodyTwo">
+            <summary>
+              Looks up a localized string similar to We specialize within the niche of Software Quality Automation.  We have some overlap with traditional Software Automation due to the similarities between disciplines.  We can also automate your workflows and free up time that your employees can use elsewhere..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.ContactUsLink">
+            <summary>
+              Looks up a localized string similar to https://www.qualitasdigital.com/contact-us.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.FaqSubtitle">
+            <summary>
+              Looks up a localized string similar to You’ve got questions, we’ve got answers..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.FaqTitle">
+            <summary>
+              Looks up a localized string similar to Frequently Asked Questions.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.TitleEight">
+            <summary>
+              Looks up a localized string similar to ARE YOU WORTH THE MONEY?.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.TitleEleven">
+            <summary>
+              Looks up a localized string similar to CAN YOU SEND US SAMPLES OF YOUR WORK?.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.TitleFifteen">
+            <summary>
+              Looks up a localized string similar to WHAT IS THE ORIGIN OF QUALITAS DIGITAL’S NAME?.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.TitleFive">
+            <summary>
+              Looks up a localized string similar to WHAT DOES THE CONSULTING PROCESS LOOK LIKE?.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.TitleFour">
+            <summary>
+              Looks up a localized string similar to WHAT MAKES YOUR BUSINESS SPECIAL?.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.TitleFourteen">
+            <summary>
+              Looks up a localized string similar to DO YOU HAVE REFERENCES?.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.TitleNine">
+            <summary>
+              Looks up a localized string similar to WHAT IS YOUR REFUND POLICY?.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.TitleOne">
+            <summary>
+              Looks up a localized string similar to WHAT DOES QUALITAS DIGITAL DO?.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.TitleSeven">
+            <summary>
+              Looks up a localized string similar to CAN YOU WORK ANY FASTER?.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.TitleSix">
+            <summary>
+              Looks up a localized string similar to HOW LONG IS A TYPICAL CONTRACT?.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.TitleTen">
+            <summary>
+              Looks up a localized string similar to WILL YOU SIGN A NON-DISCLOSURE AGREEMENT?.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.TitleThirteen">
+            <summary>
+              Looks up a localized string similar to WHAT ARE YOUR QUALIFICATIONS?.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.TitleThree">
+            <summary>
+              Looks up a localized string similar to WHY SHOULD WE HIRE A CONSULTANT INSTEAD OF DOING IT ALL OURSELVES?.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.TitleTwelve">
+            <summary>
+              Looks up a localized string similar to WHERE ARE YOU LOCATED, AND HOW DO YOU WORK WITH CLIENTS OUTSIDE OF YOUR LOCAL AREA?.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.TitleTwo">
+            <summary>
+              Looks up a localized string similar to WHAT INDUSTRIES DO YOU SPECIALIZE IN?.
+            </summary>
+        </member>
         <member name="T:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData">
             <summary>
               A strongly-typed resource class, for looking up localized strings, etc.
@@ -1459,138 +1640,138 @@
               Looks up a localized string similar to A High Quality Service.
             </summary>
         </member>
-        <member name="T:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTest">
+        <member name="T:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData">
             <summary>
               A strongly-typed resource class, for looking up localized strings, etc.
             </summary>
         </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTest.ResourceManager">
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.ResourceManager">
             <summary>
               Returns the cached ResourceManager instance used by this class.
             </summary>
         </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTest.Culture">
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.Culture">
             <summary>
               Overrides the current thread's CurrentUICulture property for all
               resource lookups using this strongly typed resource class.
             </summary>
         </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTest.AdditionalTestCoverageBodyText">
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.AdditionalTestCoverageBodyText">
             <summary>
               Looks up a localized string similar to $100/hour- We work within your existing workflow to add additional test coverage.  This is a simple no frills option that adds immediate value to your organization..
             </summary>
         </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTest.AdditionalTestCoverageTitle">
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.AdditionalTestCoverageTitle">
             <summary>
               Looks up a localized string similar to Additional Test Coverage.
             </summary>
         </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTest.CoachingBodyText">
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.CoachingBodyText">
             <summary>
               Looks up a localized string similar to $100/hour- We meet with your team and identify areas of growth, pain points, and blockers.  We then work with your team to resolve these issues now and in the future..
             </summary>
         </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTest.CoachingTitle">
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.CoachingTitle">
             <summary>
               Looks up a localized string similar to Coaching.
             </summary>
         </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTest.DashboardsDisclaimerBodyText">
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.DashboardsDisclaimerBodyText">
             <summary>
               Looks up a localized string similar to *The SaaS Dashboard product is not publicly available at this time.  Keep an eye out for the Beta announcement!.
             </summary>
         </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTest.DashboardsOnPremiseBodyText">
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.DashboardsOnPremiseBodyText">
             <summary>
               Looks up a localized string similar to On Premise: $100/hour- We create a custom tailored dashboard that shows the business value and status of your tests.  Depending on the framework and language, we also extend your ‘out of the box’ solutions with additional functionality and value..
             </summary>
         </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTest.DashboardsSaasBodyText">
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.DashboardsSaasBodyText">
             <summary>
               Looks up a localized string similar to Software as a Service*: variable cost per user- Sign up for our SaaS Dashboard and enjoy an easy setup and always on functionality at a low cost to you..
             </summary>
         </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTest.DashboardsTitle">
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.DashboardsTitle">
             <summary>
               Looks up a localized string similar to Dashboards.
             </summary>
         </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTest.FrameworkUpdatesCustomTailoredBodyText">
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.FrameworkUpdatesCustomTailoredBodyText">
             <summary>
               Looks up a localized string similar to Custom Tailored: $150/hour- We create a framework that meets your needs.  This often includes an extensive amount of system specific logging, as well as extensions and documentation that make the framework easy for your engineers to use compared with other frameworks in the industry..
             </summary>
         </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTest.FrameworkUpdatesTitle">
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.FrameworkUpdatesTitle">
             <summary>
               Looks up a localized string similar to Framework Updates.
             </summary>
         </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTest.FrameworkUpdatesUpgradesBodyText">
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.FrameworkUpdatesUpgradesBodyText">
             <summary>
               Looks up a localized string similar to Upgrades/Replacement: $100/hour- Covers all upgrades and updates to existing frameworks such as updating automation to use functionality from a new version or replacing one framework with a different one.  We even perform language changes within existing frameworks such as moving automation from Selenium Java to Selenium C# without the loss of existing tests..
             </summary>
         </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTest.OurCommitmentLink">
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.OurCommitmentLink">
             <summary>
               Looks up a localized string similar to https://www.qualitasdigital.com/our-commitment.
             </summary>
         </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTest.PricingAndServicesSubtitle">
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.PricingAndServicesSubtitle">
             <summary>
               Looks up a localized string similar to Software Quality Automation services starting at $100/hour..
             </summary>
         </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTest.PricingAndServicesTitle">
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.PricingAndServicesTitle">
             <summary>
               Looks up a localized string similar to Pricing + Services.
             </summary>
         </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTest.ProcessAutomationBodyText">
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.ProcessAutomationBodyText">
             <summary>
               Looks up a localized string similar to $125/hour- We analyze your workflows and processes to identify ‘time wasters’ and repetitive tasks that make good candidates for automation.  We document and automate those processes so that your engineers can focus on the things that matter most to you..
             </summary>
         </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTest.ProcessAutomationTitle">
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.ProcessAutomationTitle">
             <summary>
               Looks up a localized string similar to Process Automation.
             </summary>
         </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTest.RoadmapsBodyText">
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.RoadmapsBodyText">
             <summary>
               Looks up a localized string similar to $125/hour- We create a 1,3,5 year plan that accomplishes your business objectives.  These plans include multiple versions for Management, and Engineers.  Combined with our other services, this is an effective way to realize your business objectives and communicate them throughout the company..
             </summary>
         </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTest.RoadmapsTitle">
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.RoadmapsTitle">
             <summary>
               Looks up a localized string similar to Road maps.
             </summary>
         </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTest.TechnicalCoFounderBodyText">
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.TechnicalCoFounderBodyText">
             <summary>
               Looks up a localized string similar to $250/hour- Our founder helps you create your own startup.  This includes policies and procedures for attracting and hiring talent, the selection and use of initial automation frameworks that match your desired tech stack, training for your senior executives, and quality standards that allow you to maintain a competitive advantage..
             </summary>
         </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTest.TechnicalCoFounderTitle">
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.TechnicalCoFounderTitle">
             <summary>
               Looks up a localized string similar to Technical Co-Founder.
             </summary>
         </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTest.TrainingBodyText">
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.TrainingBodyText">
             <summary>
               Looks up a localized string similar to $100/hour- Personalized training that meets your needs.  Whether you need one on one training, group based training, or a combination of the two, we offer hands on labs and classroom style instruction that brings your engineers up to speed quickly..
             </summary>
         </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTest.TrainingTitle">
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.TrainingTitle">
             <summary>
               Looks up a localized string similar to Training.
             </summary>
         </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTest.TrustedAdvisorBodyText">
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.TrustedAdvisorBodyText">
             <summary>
               Looks up a localized string similar to $200/hour- Our Founder works alongside your senior executives to scale your software quality operations.  This covers how to attract talent, the technical interview process, and managing your teams..
             </summary>
         </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTest.TrustedAdvisorTitle">
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.TrustedAdvisorTitle">
             <summary>
               Looks up a localized string similar to Trusted Advisor.
             </summary>
@@ -1663,6 +1844,201 @@
         <member name="T:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage">
             <summary>
             The Faq Page Object
+            </summary>
+        </member>
+        <member name="F:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.Url">
+            <summary>
+            Faq Url
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.LogoImage">
+            <summary>
+            The Logo Image element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.HeaderSection">
+            <summary>
+            The Header section element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.HeaderTitle">
+            <summary>
+            The Header Title element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.LeftSection">
+            <summary>
+            The Left Section element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.Subtitle">
+            <summary>
+            The Left Subtitle element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.ContactUsLink">
+            <summary>
+            The Our Commitment Link element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.CenterSection">
+            <summary>
+            The Center Section element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.TitleOne">
+            <summary>
+            The Title One element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.BodyTextOne">
+            <summary>
+            The Body Text One element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.TitleTwo">
+            <summary>
+            The Title One element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.BodyTextTwo">
+            <summary>
+            The Body Text One element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.TitleThree">
+            <summary>
+            The Title One element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.BodyTextThree">
+            <summary>
+            The Body Text One element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.TitleFour">
+            <summary>
+            The Title One element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.BodyTextFour">
+            <summary>
+            The Body Text One element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.TitleFive">
+            <summary>
+            The Title One element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.BodyTextFive">
+            <summary>
+            The Body Text One element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.TitleSix">
+            <summary>
+            The Title One element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.BodyTextSix">
+            <summary>
+            The Body Text One element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.TitleSeven">
+            <summary>
+            The Title One element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.BodyTextSeven">
+            <summary>
+            The Body Text One element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.RightSection">
+            <summary>
+            The Right Section element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.TitleEight">
+            <summary>
+            The Title One element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.BodyTextEight">
+            <summary>
+            The Body Text One element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.TitleNine">
+            <summary>
+            The Title One element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.BodyTextNine">
+            <summary>
+            The Body Text One element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.TitleTen">
+            <summary>
+            The Title One element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.BodyTextTen">
+            <summary>
+            The Body Text One element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.TitleEleven">
+            <summary>
+            The Title One element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.BodyTextEleven">
+            <summary>
+            The Body Text One element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.TitleTwelve">
+            <summary>
+            The Title One element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.BodyTextTwelve">
+            <summary>
+            The Body Text One element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.TitleThirteen">
+            <summary>
+            The Title One element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.BodyTextThirteen">
+            <summary>
+            The Body Text One element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.TitleFourteen">
+            <summary>
+            The Title One element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.BodyTextFourteen">
+            <summary>
+            The Body Text One element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.TitleFifteen">
+            <summary>
+            The Title One element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.BodyTextFifteen">
+            <summary>
+            The Body Text One element
             </summary>
         </member>
         <member name="T:QualitasDigitalSeleniumCSharp.PageObjects.HomePage">
@@ -1959,7 +2335,7 @@
         </member>
         <member name="F:QualitasDigitalSeleniumCSharp.PageObjects.PricingAndServicesPage.Url">
             <summary>
-            The AboutUs Url
+            The Pricing and Services Url
             </summary>
         </member>
         <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.PricingAndServicesPage.LogoImage">
@@ -2153,6 +2529,37 @@
         <member name="M:QualitasDigitalSeleniumCSharp.TestCases.AboutUsTests.AboutUsContent">
             <summary></summary>
         </member>
+        <member name="T:QualitasDigitalSeleniumCSharp.TestCases.FaqTests">
+            <summary>
+            Faq Tests
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.FaqTests.OneTimeSetUp">
+            <summary>
+            The one time test setup method
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.FaqTests.OneTimeTearDown">
+            <summary>
+            The one time test tear down method
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.FaqTests.SetUp">
+            <summary>
+            The individual test setup method
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.FaqTests.TearDown">
+            <summary>
+            The individual test tear down method
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.FaqTests.FaqLoad">
+            <summary></summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.FaqTests.FaqContent">
+            <summary></summary>
+        </member>
         <member name="T:QualitasDigitalSeleniumCSharp.TestCases.HomeTests">
             <summary>
             HomePage Tests
@@ -2189,6 +2596,11 @@
         </member>
         <member name="M:QualitasDigitalSeleniumCSharp.TestCases.HomeTests.HomePageContent">
             <summary></summary>
+        </member>
+        <member name="T:QualitasDigitalSeleniumCSharp.TestCases.PricingAndServicesTests">
+            <summary>
+            PricingAndServices Tests
+            </summary>
         </member>
         <member name="M:QualitasDigitalSeleniumCSharp.TestCases.PricingAndServicesTests.OneTimeSetUp">
             <summary>

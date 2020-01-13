@@ -13,7 +13,7 @@ namespace QualitasDigitalSeleniumCSharp.PageObjects
         private IWebDriver driver = BrowserFactory.Driver;
 
         /// <summary>
-        /// The AboutUs Url
+        /// The Pricing and Services Url
         /// </summary>
         public const string Url = "https://www.qualitasdigital.com/pricing-services";
 

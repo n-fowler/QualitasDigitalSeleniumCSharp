@@ -79,36 +79,36 @@ namespace QualitasDigitalSeleniumCSharp.TestCases
             BrowserFactory.WaitForPageLoad(10);
 
             //Validate header
-            Assert.AreEqual(PricingAndServicesPageTest.PricingAndServicesTitle, Page.PricingAndServices.HeaderTitle.GetInnertext());
+            Assert.AreEqual(PricingAndServicesPageTestData.PricingAndServicesTitle, Page.PricingAndServices.HeaderTitle.GetInnertext());
 
             //Validate left subsection
-            Assert.AreEqual(PricingAndServicesPageTest.PricingAndServicesSubtitle, Page.PricingAndServices.Subtitle.GetInnertext());
-            Assert.AreEqual(PricingAndServicesPageTest.OurCommitmentLink, Page.PricingAndServices.OurCommitmentLink.GetHref());
+            Assert.AreEqual(PricingAndServicesPageTestData.PricingAndServicesSubtitle, Page.PricingAndServices.Subtitle.GetInnertext());
+            Assert.AreEqual(PricingAndServicesPageTestData.OurCommitmentLink, Page.PricingAndServices.OurCommitmentLink.GetHref());
 
             //Validate middle subsection
-            Assert.AreEqual(PricingAndServicesPageTest.AdditionalTestCoverageTitle, Page.PricingAndServices.AdditionalTestCoverageTitle.GetInnertext());
-            Assert.AreEqual(PricingAndServicesPageTest.AdditionalTestCoverageBodyText, Page.PricingAndServices.AdditionalTestCoverageBodyText.GetInnertext());
-            Assert.AreEqual(PricingAndServicesPageTest.FrameworkUpdatesTitle, Page.PricingAndServices.FrameworkUpdatesTitle.GetInnertext());
-            Assert.AreEqual(PricingAndServicesPageTest.FrameworkUpdatesUpgradesBodyText, Page.PricingAndServices.FrameworkUpdatesUpgradesBodyText.GetInnertext());
-            Assert.AreEqual(PricingAndServicesPageTest.FrameworkUpdatesCustomTailoredBodyText, Page.PricingAndServices.FrameworkUpdatesCustomTailoredBodyText.GetInnertext());
-            Assert.AreEqual(PricingAndServicesPageTest.ProcessAutomationTitle, Page.PricingAndServices.ProcessAutomationTitle.GetInnertext());
-            Assert.AreEqual(PricingAndServicesPageTest.ProcessAutomationBodyText, Page.PricingAndServices.ProcessAutomationBodyText.GetInnertext());
-            Assert.AreEqual(PricingAndServicesPageTest.DashboardsTitle, Page.PricingAndServices.DashboardsTitle.GetInnertext());
-            Assert.AreEqual(PricingAndServicesPageTest.DashboardsOnPremiseBodyText, Page.PricingAndServices.DashboardsOnPremiseBodyText.GetInnertext());
-            Assert.AreEqual(PricingAndServicesPageTest.DashboardsSaasBodyText, Page.PricingAndServices.DashboardsSaasBodyText.GetInnertext());
-            Assert.AreEqual(PricingAndServicesPageTest.DashboardsDisclaimerBodyText, Page.PricingAndServices.DashboardsDisclaimerBodyText.GetInnertext());
+            Assert.AreEqual(PricingAndServicesPageTestData.AdditionalTestCoverageTitle, Page.PricingAndServices.AdditionalTestCoverageTitle.GetInnertext());
+            Assert.AreEqual(PricingAndServicesPageTestData.AdditionalTestCoverageBodyText, Page.PricingAndServices.AdditionalTestCoverageBodyText.GetInnertext());
+            Assert.AreEqual(PricingAndServicesPageTestData.FrameworkUpdatesTitle, Page.PricingAndServices.FrameworkUpdatesTitle.GetInnertext());
+            Assert.AreEqual(PricingAndServicesPageTestData.FrameworkUpdatesUpgradesBodyText, Page.PricingAndServices.FrameworkUpdatesUpgradesBodyText.GetInnertext());
+            Assert.AreEqual(PricingAndServicesPageTestData.FrameworkUpdatesCustomTailoredBodyText, Page.PricingAndServices.FrameworkUpdatesCustomTailoredBodyText.GetInnertext());
+            Assert.AreEqual(PricingAndServicesPageTestData.ProcessAutomationTitle, Page.PricingAndServices.ProcessAutomationTitle.GetInnertext());
+            Assert.AreEqual(PricingAndServicesPageTestData.ProcessAutomationBodyText, Page.PricingAndServices.ProcessAutomationBodyText.GetInnertext());
+            Assert.AreEqual(PricingAndServicesPageTestData.DashboardsTitle, Page.PricingAndServices.DashboardsTitle.GetInnertext());
+            Assert.AreEqual(PricingAndServicesPageTestData.DashboardsOnPremiseBodyText, Page.PricingAndServices.DashboardsOnPremiseBodyText.GetInnertext());
+            Assert.AreEqual(PricingAndServicesPageTestData.DashboardsSaasBodyText, Page.PricingAndServices.DashboardsSaasBodyText.GetInnertext());
+            Assert.AreEqual(PricingAndServicesPageTestData.DashboardsDisclaimerBodyText, Page.PricingAndServices.DashboardsDisclaimerBodyText.GetInnertext());
 
             //Validate right subsection
-            Assert.AreEqual(PricingAndServicesPageTest.TrainingTitle, Page.PricingAndServices.TrainingTitle.GetInnertext());
-            Assert.AreEqual(PricingAndServicesPageTest.TrainingBodyText, Page.PricingAndServices.TrainingBodyText.GetInnertext());
-            Assert.AreEqual(PricingAndServicesPageTest.CoachingTitle, Page.PricingAndServices.CoachingTitle.GetInnertext());
-            Assert.AreEqual(PricingAndServicesPageTest.CoachingBodyText, Page.PricingAndServices.CoachingBodyText.GetInnertext());
-            Assert.AreEqual(PricingAndServicesPageTest.RoadmapsTitle, Page.PricingAndServices.RoadmapsTitle.GetInnertext());
-            Assert.AreEqual(PricingAndServicesPageTest.RoadmapsBodyText, Page.PricingAndServices.RoadmapsBodyText.GetInnertext());
-            Assert.AreEqual(PricingAndServicesPageTest.TrustedAdvisorTitle, Page.PricingAndServices.TrustedAdvisorTitle.GetInnertext());
-            Assert.AreEqual(PricingAndServicesPageTest.TrustedAdvisorBodyText, Page.PricingAndServices.TrustedAdvisorBodyText.GetInnertext());
-            Assert.AreEqual(PricingAndServicesPageTest.TechnicalCoFounderTitle, Page.PricingAndServices.TechnicalCoFounderTitle.GetInnertext());
-            Assert.AreEqual(PricingAndServicesPageTest.TechnicalCoFounderBodyText, Page.PricingAndServices.TechnicalCoFounderBodyText.GetInnertext());
+            Assert.AreEqual(PricingAndServicesPageTestData.TrainingTitle, Page.PricingAndServices.TrainingTitle.GetInnertext());
+            Assert.AreEqual(PricingAndServicesPageTestData.TrainingBodyText, Page.PricingAndServices.TrainingBodyText.GetInnertext());
+            Assert.AreEqual(PricingAndServicesPageTestData.CoachingTitle, Page.PricingAndServices.CoachingTitle.GetInnertext());
+            Assert.AreEqual(PricingAndServicesPageTestData.CoachingBodyText, Page.PricingAndServices.CoachingBodyText.GetInnertext());
+            Assert.AreEqual(PricingAndServicesPageTestData.RoadmapsTitle, Page.PricingAndServices.RoadmapsTitle.GetInnertext());
+            Assert.AreEqual(PricingAndServicesPageTestData.RoadmapsBodyText, Page.PricingAndServices.RoadmapsBodyText.GetInnertext());
+            Assert.AreEqual(PricingAndServicesPageTestData.TrustedAdvisorTitle, Page.PricingAndServices.TrustedAdvisorTitle.GetInnertext());
+            Assert.AreEqual(PricingAndServicesPageTestData.TrustedAdvisorBodyText, Page.PricingAndServices.TrustedAdvisorBodyText.GetInnertext());
+            Assert.AreEqual(PricingAndServicesPageTestData.TechnicalCoFounderTitle, Page.PricingAndServices.TechnicalCoFounderTitle.GetInnertext());
+            Assert.AreEqual(PricingAndServicesPageTestData.TechnicalCoFounderBodyText, Page.PricingAndServices.TechnicalCoFounderBodyText.GetInnertext());
         }
 
         #endregion Tests

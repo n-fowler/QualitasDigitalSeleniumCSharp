@@ -84,15 +84,20 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>AboutUsPageTestData.resx</DependentUpon>
     </Compile>
+    <Compile Update="src\TestData\FaqPageTestData.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FaqPageTestData.resx</DependentUpon>
+    </Compile>
     <Compile Update="src\TestData\HomePageTestData.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>HomePageTestData.resx</DependentUpon>
     </Compile>
-    <Compile Update="src\TestData\PricingAndServicesPageTest.Designer.cs">
+    <Compile Update="src\TestData\PricingAndServicesPageTestData.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>PricingAndServicesPageTest.resx</DependentUpon>
+      <DependentUpon>PricingAndServicesPageTestData.resx</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -105,13 +110,17 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>AboutUsPageTestData.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Update="src\TestData\FaqPageTestData.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>FaqPageTestData.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Update="src\TestData\HomePageTestData.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>HomePageTestData.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Update="src\TestData\PricingAndServicesPageTest.resx">
+    <EmbeddedResource Update="src\TestData\PricingAndServicesPageTestData.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>PricingAndServicesPageTest.Designer.cs</LastGenOutput>
+      <LastGenOutput>PricingAndServicesPageTestData.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 
