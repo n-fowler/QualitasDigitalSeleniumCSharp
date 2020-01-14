@@ -7,6 +7,9 @@ using System.Linq;
 
 namespace QualitasDigitalSeleniumCSharp.TestCases
 {
+    /// <summary>
+    /// NewsAndNotes Tests
+    /// </summary>
     public class NewsAndNotesTests
     {
         #region Fields
@@ -101,7 +104,6 @@ namespace QualitasDigitalSeleniumCSharp.TestCases
             Assert.IsNotNull(entryExcerpt, "entryExcerpt != null");
             Assert.AreNotEqual("", entryExcerpt.GetInnertext(), "The entry excerpt text was empty but shouldn't have been");
         }
-
 
         #endregion Tests
     }

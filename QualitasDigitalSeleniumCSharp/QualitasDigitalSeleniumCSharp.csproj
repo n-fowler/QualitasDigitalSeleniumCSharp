@@ -99,6 +99,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>PricingAndServicesPageTestData.resx</DependentUpon>
     </Compile>
+    <Compile Update="src\TestData\TestimonialsPageData.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>TestimonialsPageData.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -121,6 +126,10 @@
     <EmbeddedResource Update="src\TestData\PricingAndServicesPageTestData.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>PricingAndServicesPageTestData.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="src\TestData\TestimonialsPageData.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TestimonialsPageData.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 

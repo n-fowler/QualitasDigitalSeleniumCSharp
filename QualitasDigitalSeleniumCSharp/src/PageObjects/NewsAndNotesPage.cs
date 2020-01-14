@@ -24,6 +24,9 @@ namespace QualitasDigitalSeleniumCSharp.PageObjects
         /// </summary>
         public IWebElement LogoImage => driver.FindElementByClassName("logo-image");
 
+        /// <summary>
+        /// The article entry element
+        /// </summary>
         public IReadOnlyCollection<IWebElement> Entries => driver.FindElementsByClassName("entry");
 
         #endregion Elements

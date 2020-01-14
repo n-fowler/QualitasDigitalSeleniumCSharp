@@ -1776,6 +1776,87 @@
               Looks up a localized string similar to Trusted Advisor.
             </summary>
         </member>
+        <member name="T:QualitasDigitalSeleniumCSharp.src.TestData.TestimonialsPageData">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.TestimonialsPageData.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.TestimonialsPageData.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.TestimonialsPageData.HighlightedReviewAuthor">
+            <summary>
+              Looks up a localized string similar to — Cy James.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.TestimonialsPageData.HighlightedReviewContent">
+            <summary>
+              Looks up a localized string similar to Qualitas Digital created an automation program for our mobile game. We needed something fast so we could develop it with confidence and they really delivered. I was impressed with the attention to detail and how they met with us every step of the way. I can’t recommend them enough!.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.TestimonialsPageData.MidPageTitle">
+            <summary>
+              Looks up a localized string similar to Others have had this to say….
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.TestimonialsPageData.ReviewFiveAuthor">
+            <summary>
+              Looks up a localized string similar to — CHARLEY SHAMALY.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.TestimonialsPageData.ReviewFiveContent">
+            <summary>
+              Looks up a localized string similar to Nick is one of those rare, detail and data oriented managers that has the wherewithal to think short term yet conceive and execute the vision to think and adapt in to the future. He is exceptionally effective at extracting value adds out of minutia to construct more streamlined processes. His managerial intelligence isn&apos;t limited to &quot;hard science&quot; so-to-speak. He has a deep and genuine concern for his people, their well-being and overall happiness whilst maintaining a fair atmosphere. He can&apos;t be recommende [rest of string was truncated]&quot;;.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.TestimonialsPageData.ReviewFourAuthor">
+            <summary>
+              Looks up a localized string similar to — MICHELLE KLEEM.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.TestimonialsPageData.ReviewFourContent">
+            <summary>
+              Looks up a localized string similar to Nick is one of those rare managers who also naturally serves as an inspiring mentor for the whole staff. He is dedicated to his work. With a background in computer science and over 2 years worth of experience as an researcher and adjudications team lead, Nick exhibits strong interpersonal skills and aptitude for accuracy. Nick is the go-to person for conflict resolution and problem solving; when issues arise in the team, he does his best to come up with a successful conclusion. Nick always has respect for o [rest of string was truncated]&quot;;.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.TestimonialsPageData.ReviewOneAuthor">
+            <summary>
+              Looks up a localized string similar to — ALEXANDRA WELCH.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.TestimonialsPageData.ReviewOneContent">
+            <summary>
+              Looks up a localized string similar to Nick was the best manager/team lead I have ever worked for. He was always willing to listen to my concerns with protocols/tasks and work toward a solution that worked for everyone. Every issue that came up was addressed quickly and professionally no matter what it was. He has creative problem solving skills that set him apart from other managers. I cannot stress enough how great it was working with Nick; he was the reason I stayed with the company for as long as I did..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.TestimonialsPageData.ReviewThreeAuthor">
+            <summary>
+              Looks up a localized string similar to — SHRUTI PANDEY.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.TestimonialsPageData.ReviewThreeContent">
+            <summary>
+              Looks up a localized string similar to Nick is a great team player, he hit the ground running as he joined our team and has been a great addition. He is well-focused, patient, and gives a 100% to any task assigned to him. There were many occasions where his exceptional problem-solving skills and technical sharpness helped immensely. He is always prompt in responding to any situation and proactive in helping out the team mates. Nick&apos;s ability to perform well under pressure, and his willingness to learn and collaborate on any tasks that come his w [rest of string was truncated]&quot;;.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.TestimonialsPageData.ReviewTwoAuthor">
+            <summary>
+              Looks up a localized string similar to — JASON LONSBERRY.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.TestimonialsPageData.ReviewTwoContent">
+            <summary>
+              Looks up a localized string similar to Nick is great to work with. Not only is he a nice guy but he&apos;s intelligent and hard-working. He picks up new concepts quickly. He&apos;s inquisitive and self-motivated. I knew if Nick was given a problem, it would be thoroughly researched and the solution carefully considered. He was an integral part of our team..
+            </summary>
+        </member>
         <member name="T:QualitasDigitalSeleniumCSharp.PageObjects.AboutUsPage">
             <summary>
             The AboutUs Page Object
@@ -2288,6 +2369,11 @@
             The Logo Image element
             </summary>
         </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.NewsAndNotesPage.Entries">
+            <summary>
+            The article entry element
+            </summary>
+        </member>
         <member name="T:QualitasDigitalSeleniumCSharp.PageObjects.OurCommitmentPage">
             <summary>
             The OurCommitment Page Object
@@ -2508,6 +2594,116 @@
             The Testimonials Page Object
             </summary>
         </member>
+        <member name="F:QualitasDigitalSeleniumCSharp.PageObjects.TestimonialsPage.Url">
+            <summary>
+            The Pricing and Services Url
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.TestimonialsPage.LogoImage">
+            <summary>
+            The Logo Image element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.TestimonialsPage.HighlightedReviewSection">
+            <summary>
+            Highlighted Review Section element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.TestimonialsPage.HighlightedReviewContent">
+            <summary>
+            Highlighted Review Content element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.TestimonialsPage.HighlightedReviewAuthor">
+            <summary>
+            Highlighted Review Author element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.TestimonialsPage.MidPageTitleSection">
+            <summary>
+            MidPage Title Section element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.TestimonialsPage.MidPageTitle">
+            <summary>
+            MidPage Title element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.TestimonialsPage.ReviewOneSection">
+            <summary>
+            Review One Section element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.TestimonialsPage.ReviewOneContent">
+            <summary>
+            Review One Content element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.TestimonialsPage.ReviewOneAuthor">
+            <summary>
+            Review One Author element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.TestimonialsPage.ReviewTwoSection">
+            <summary>
+            Review Two Section element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.TestimonialsPage.ReviewTwoContent">
+            <summary>
+            Review Two Content element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.TestimonialsPage.ReviewTwoAuthor">
+            <summary>
+            Review Two Author element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.TestimonialsPage.ReviewThreeSection">
+            <summary>
+            Review Three Section element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.TestimonialsPage.ReviewThreeContent">
+            <summary>
+            Review Three Content element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.TestimonialsPage.ReviewThreeAuthor">
+            <summary>
+            Review Three Author element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.TestimonialsPage.ReviewFourSection">
+            <summary>
+            Review Four Section element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.TestimonialsPage.ReviewFourContent">
+            <summary>
+            Review Four Content element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.TestimonialsPage.ReviewFourAuthor">
+            <summary>
+            Review Four Author element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.TestimonialsPage.ReviewFiveSection">
+            <summary>
+            Review Five Section element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.TestimonialsPage.ReviewFiveContent">
+            <summary>
+            Review Five Content element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.TestimonialsPage.ReviewFiveAuthor">
+            <summary>
+            Review Five Author element
+            </summary>
+        </member>
         <member name="T:QualitasDigitalSeleniumCSharp.TestCases.AboutUsTests">
             <summary>
             AboutUs Tests
@@ -2607,6 +2803,11 @@
         <member name="M:QualitasDigitalSeleniumCSharp.TestCases.HomeTests.HomePageContent">
             <summary></summary>
         </member>
+        <member name="T:QualitasDigitalSeleniumCSharp.TestCases.NewsAndNotesTests">
+            <summary>
+            NewsAndNotes Tests
+            </summary>
+        </member>
         <member name="M:QualitasDigitalSeleniumCSharp.TestCases.NewsAndNotesTests.OneTimeSetUp">
             <summary>
             The one time test setup method
@@ -2662,6 +2863,37 @@
             <summary></summary>
         </member>
         <member name="M:QualitasDigitalSeleniumCSharp.TestCases.PricingAndServicesTests.PricingAndServicesContent">
+            <summary></summary>
+        </member>
+        <member name="T:QualitasDigitalSeleniumCSharp.TestCases.TestimonialsTests">
+            <summary>
+            Testimonials Tests
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.TestimonialsTests.OneTimeSetUp">
+            <summary>
+            The one time test setup method
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.TestimonialsTests.OneTimeTearDown">
+            <summary>
+            The one time test tear down method
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.TestimonialsTests.SetUp">
+            <summary>
+            The individual test setup method
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.TestimonialsTests.TearDown">
+            <summary>
+            The individual test tear down method
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.TestimonialsTests.TestimonialsLoad">
+            <summary></summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.TestimonialsTests.TestimonialsContent">
             <summary></summary>
         </member>
         <member name="T:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory">
