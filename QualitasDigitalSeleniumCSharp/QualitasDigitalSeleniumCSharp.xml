@@ -2278,6 +2278,16 @@
             The NewsAndNotes Page Object
             </summary>
         </member>
+        <member name="F:QualitasDigitalSeleniumCSharp.PageObjects.NewsAndNotesPage.Url">
+            <summary>
+            The Pricing and Services Url
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.NewsAndNotesPage.LogoImage">
+            <summary>
+            The Logo Image element
+            </summary>
+        </member>
         <member name="T:QualitasDigitalSeleniumCSharp.PageObjects.OurCommitmentPage">
             <summary>
             The OurCommitment Page Object
@@ -2595,6 +2605,32 @@
             <summary></summary>
         </member>
         <member name="M:QualitasDigitalSeleniumCSharp.TestCases.HomeTests.HomePageContent">
+            <summary></summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.NewsAndNotesTests.OneTimeSetUp">
+            <summary>
+            The one time test setup method
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.NewsAndNotesTests.OneTimeTearDown">
+            <summary>
+            The one time test tear down method
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.NewsAndNotesTests.SetUp">
+            <summary>
+            The individual test setup method
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.NewsAndNotesTests.TearDown">
+            <summary>
+            The individual test tear down method
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.NewsAndNotesTests.NewsAndNotesLoad">
+            <summary></summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.NewsAndNotesTests.NewsAndNotesContent">
             <summary></summary>
         </member>
         <member name="T:QualitasDigitalSeleniumCSharp.TestCases.PricingAndServicesTests">
