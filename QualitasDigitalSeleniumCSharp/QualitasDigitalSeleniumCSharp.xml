@@ -1776,6 +1776,52 @@
               Looks up a localized string similar to Trusted Advisor.
             </summary>
         </member>
+        <member name="T:QualitasDigitalSeleniumCSharp.src.TestData.ScheduleConsultationPageData">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.ScheduleConsultationPageData.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.ScheduleConsultationPageData.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.ScheduleConsultationPageData.FaqLink">
+            <summary>
+              Looks up a localized string similar to https://www.qualitasdigital.com/faq.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.ScheduleConsultationPageData.HeaderContent">
+            <summary>
+              Looks up a localized string similar to Schedule A Consultation.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.ScheduleConsultationPageData.LeftContent">
+            <summary>
+              Looks up a localized string similar to During your thirty minute consultation we’ll go over the problems facing your company and talk about the services you’re interested in.  We’ll identify whether we’re well suited for providing them to you and talk about next steps..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.ScheduleConsultationPageData.OurCommitmentLink">
+            <summary>
+              Looks up a localized string similar to https://www.qualitasdigital.com/our-commitment.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.ScheduleConsultationPageData.ScheduleConsultationButtonLink">
+            <summary>
+              Looks up a localized string similar to https://calendly.com/qualitasdigital/free-consultation.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.ScheduleConsultationPageData.TermsAndConditionsLink">
+            <summary>
+              Looks up a localized string similar to https://www.qualitasdigital.com/terms-conditions.
+            </summary>
+        </member>
         <member name="T:QualitasDigitalSeleniumCSharp.src.TestData.TestimonialsPageData">
             <summary>
               A strongly-typed resource class, for looking up localized strings, etc.
@@ -2584,6 +2630,61 @@
             The ScheduleConsultation Page Object
             </summary>
         </member>
+        <member name="F:QualitasDigitalSeleniumCSharp.PageObjects.ScheduleConsultationPage.Url">
+            <summary>
+            The Pricing and Services Url
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.ScheduleConsultationPage.LogoImage">
+            <summary>
+            The Logo Image element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.ScheduleConsultationPage.HeaderSection">
+            <summary>
+            Header Section element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.ScheduleConsultationPage.HeaderContent">
+            <summary>
+            Header Content element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.ScheduleConsultationPage.LeftSection">
+            <summary>
+            Left Section element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.ScheduleConsultationPage.LeftContent">
+            <summary>
+            Left Content element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.ScheduleConsultationPage.OurCommitmentLink">
+            <summary>
+            Our Commitment Link element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.ScheduleConsultationPage.FaqLink">
+            <summary>
+            Faq Link element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.ScheduleConsultationPage.TermsAndConditionsLink">
+            <summary>
+            Terms And Conditions Link element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.ScheduleConsultationPage.ScheduleConsultationButton">
+            <summary>
+            Schedule Consultation Button element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.ScheduleConsultationPage.ScheduleConsultationButtonLink">
+            <summary>
+            Schedule Consultation Button Link element
+            </summary>
+        </member>
         <member name="T:QualitasDigitalSeleniumCSharp.PageObjects.TermsAndConditionsPage">
             <summary>
             The TermsAndConditions Page Object
@@ -2863,6 +2964,37 @@
             <summary></summary>
         </member>
         <member name="M:QualitasDigitalSeleniumCSharp.TestCases.PricingAndServicesTests.PricingAndServicesContent">
+            <summary></summary>
+        </member>
+        <member name="T:QualitasDigitalSeleniumCSharp.TestCases.ScheduleConsultationTests">
+            <summary>
+            Schedule Consultation Tests
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.ScheduleConsultationTests.OneTimeSetUp">
+            <summary>
+            The one time test setup method
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.ScheduleConsultationTests.OneTimeTearDown">
+            <summary>
+            The one time test tear down method
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.ScheduleConsultationTests.SetUp">
+            <summary>
+            The individual test setup method
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.ScheduleConsultationTests.TearDown">
+            <summary>
+            The individual test tear down method
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.ScheduleConsultationTests.ScheduleConsultationLoad">
+            <summary></summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.ScheduleConsultationTests.ScheduleConsultationContent">
             <summary></summary>
         </member>
         <member name="T:QualitasDigitalSeleniumCSharp.TestCases.TestimonialsTests">
