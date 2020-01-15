@@ -84,6 +84,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>AboutUsPageTestData.resx</DependentUpon>
     </Compile>
+    <Compile Update="src\TestData\ContactUsPageData.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ContactUsPageData.resx</DependentUpon>
+    </Compile>
     <Compile Update="src\TestData\FaqPageTestData.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -119,6 +124,10 @@
     <EmbeddedResource Update="src\TestData\AboutUsPageTestData.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>AboutUsPageTestData.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="src\TestData\ContactUsPageData.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ContactUsPageData.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="src\TestData\FaqPageTestData.resx">
       <Generator>ResXFileCodeGenerator</Generator>

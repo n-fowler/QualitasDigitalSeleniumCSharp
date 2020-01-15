@@ -1322,6 +1322,47 @@
               Looks up a localized string similar to https://www.qualitasdigital.com/schedule-consultation.
             </summary>
         </member>
+        <member name="T:QualitasDigitalSeleniumCSharp.src.TestData.ContactUsPageData">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.ContactUsPageData.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.ContactUsPageData.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.ContactUsPageData.FaqLink">
+            <summary>
+              Looks up a localized string similar to https://www.qualitasdigital.com/faq.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.ContactUsPageData.HeaderContent">
+            <summary>
+              Looks up a localized string similar to How Can We Help?.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.ContactUsPageData.LeftContent">
+            <summary>
+              Looks up a localized string similar to We want to hear from you.  Use the form on the right to request additional information about the services we offer..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.ContactUsPageData.OurCommitmentLink">
+            <summary>
+              Looks up a localized string similar to https://www.qualitasdigital.com/our-commitment.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.ContactUsPageData.TermsAndConditionsLink">
+            <summary>
+              Looks up a localized string similar to https://www.qualitasdigital.com/terms-conditions.
+            </summary>
+        </member>
         <member name="T:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData">
             <summary>
               A strongly-typed resource class, for looking up localized strings, etc.
@@ -1966,6 +2007,86 @@
         <member name="T:QualitasDigitalSeleniumCSharp.PageObjects.ContactUsPage">
             <summary>
             The ContactUs Page Object
+            </summary>
+        </member>
+        <member name="F:QualitasDigitalSeleniumCSharp.PageObjects.ContactUsPage.Url">
+            <summary>
+            The Pricing and Services Url
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.ContactUsPage.LogoImage">
+            <summary>
+            The Logo Image element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.ContactUsPage.HeaderSection">
+            <summary>
+            Header Section element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.ContactUsPage.HeaderContent">
+            <summary>
+            Header Content element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.ContactUsPage.LeftSection">
+            <summary>
+            Left Section element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.ContactUsPage.LeftContent">
+            <summary>
+            Left Content element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.ContactUsPage.OurCommitmentLink">
+            <summary>
+            Our Commitment Link element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.ContactUsPage.FaqLink">
+            <summary>
+            Faq Link element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.ContactUsPage.TermsAndConditionsLink">
+            <summary>
+            Terms And Conditions Link element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.ContactUsPage.FormSection">
+            <summary>
+            Form Section element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.ContactUsPage.FirstNameField">
+            <summary>
+            First Name Field element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.ContactUsPage.LastNameField">
+            <summary>
+            Last Name Field element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.ContactUsPage.EmailField">
+            <summary>
+            Email Field element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.ContactUsPage.CheckboxSection">
+            <summary>
+            Checkbox Section element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.ContactUsPage.AdditionalMessageTextArea">
+            <summary>
+            Additional Message Text Area element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.ContactUsPage.SubmitButton">
+            <summary>
+            Submit Button element
             </summary>
         </member>
         <member name="T:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage">
@@ -2834,6 +2955,37 @@
             <summary></summary>
         </member>
         <member name="M:QualitasDigitalSeleniumCSharp.TestCases.AboutUsTests.AboutUsContent">
+            <summary></summary>
+        </member>
+        <member name="T:QualitasDigitalSeleniumCSharp.TestCases.ContactUsTests">
+            <summary>
+            Contact Us Tests
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.ContactUsTests.OneTimeSetUp">
+            <summary>
+            The one time test setup method
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.ContactUsTests.OneTimeTearDown">
+            <summary>
+            The one time test tear down method
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.ContactUsTests.SetUp">
+            <summary>
+            The individual test setup method
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.ContactUsTests.TearDown">
+            <summary>
+            The individual test tear down method
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.ContactUsTests.ContactUsLoad">
+            <summary></summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.ContactUsTests.ContactUsContent">
             <summary></summary>
         </member>
         <member name="T:QualitasDigitalSeleniumCSharp.TestCases.FaqTests">
