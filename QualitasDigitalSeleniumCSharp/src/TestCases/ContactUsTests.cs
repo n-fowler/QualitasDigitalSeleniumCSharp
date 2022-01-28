@@ -101,7 +101,6 @@ namespace QualitasDigitalSeleniumCSharp.TestCases
             Assert.NotNull(Page.ContactUs.EmailField, "Page.ContactUs.EmailField != null");
 
             /*There should be a series of checkboxes with the following organization: 
-              I'm interested in help with...
                 Additional Test Coverage
                 Framework Updates
                 Process Automation
@@ -117,7 +116,6 @@ namespace QualitasDigitalSeleniumCSharp.TestCases
             var options = Page.ContactUs.CheckboxSection.FindElementsByTagName("div").ToList();
             var expectedOptions = new List<string>
             {
-                "I’m interested in help with ... *",
                 "Additional Test Coverage",
                 "Framework Updates",
                 "Process Automation",
@@ -132,18 +130,9 @@ namespace QualitasDigitalSeleniumCSharp.TestCases
 
             for (int i = 0; i < options.Count; i++)
             {
-                if (i == 0)
-                {
-                    //Verify the title
-                    Assert.AreEqual("title", options[i].GetAttribute("class"));
-                    Assert.AreEqual(expectedOptions[i], options[i].GetInnertext().Trim());
-                }
-                else
-                {
-                    //Verify the checkbox
-                    Assert.AreEqual("checkbox", options[i].FindElementByTagName("label").FindElementByTagName("input").GetProperty("type"));
-                    Assert.AreEqual(expectedOptions[i], options[i].FindElementByTagName("label").FindElementByTagName("input").GetProperty("value"));
-                }
+                //Verify the checkbox
+                Assert.AreEqual("checkbox", options[i].FindElementByTagName("label").FindElementByTagName("input").GetDomProperty("type"));
+                Assert.AreEqual(expectedOptions[i], options[i].FindElementByTagName("label").FindElementByTagName("input").GetDomProperty("value"));
             }
 
             //There should be an additional message field
@@ -151,8 +140,8 @@ namespace QualitasDigitalSeleniumCSharp.TestCases
 
             //There should be a submit button
             Assert.NotNull(Page.ContactUs.SubmitButton, "Page.ContactUs.SubmitButton != null");
-            Assert.AreEqual("submit", Page.ContactUs.SubmitButton.GetProperty("type"));
-            Assert.AreEqual("Submit", Page.ContactUs.SubmitButton.GetProperty("value"));
+            Assert.AreEqual("submit", Page.ContactUs.SubmitButton.GetDomProperty("type"));
+            Assert.AreEqual("Submit", Page.ContactUs.SubmitButton.GetDomProperty("value"));
         }
 
         #endregion Tests

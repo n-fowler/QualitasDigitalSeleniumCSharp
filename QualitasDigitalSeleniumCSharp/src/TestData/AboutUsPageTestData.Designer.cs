@@ -19,7 +19,7 @@ namespace QualitasDigitalSeleniumCSharp.src.TestData {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class AboutUsPageTestData {
@@ -70,7 +70,7 @@ namespace QualitasDigitalSeleniumCSharp.src.TestData {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to https://images.squarespace-cdn.com/content/v1/5dcc96767c939351951d2987/1574119738736-UM33SG724YZEW3FB5PLU/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/laptop-remote-working-writing-typing-7114.jpg?format=2500w.
+        ///   Looks up a localized string similar to https://images.squarespace-cdn.com/content/v1/5dcc96767c939351951d2987/1574119738736-UM33SG724YZEW3FB5PLU/laptop-remote-working-writing-typing-7114.jpg?format=1500w.
         /// </summary>
         internal static string AboutUsImageSrc {
             get {

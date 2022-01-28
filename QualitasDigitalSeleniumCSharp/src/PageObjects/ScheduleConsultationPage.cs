@@ -63,7 +63,7 @@ namespace QualitasDigitalSeleniumCSharp.PageObjects
         /// <summary>
         /// Schedule Consultation Button element
         /// </summary>
-        public IWebElement ScheduleConsultationButton => driver.GetElementsWithTagAndAttributeStartAndEndingWithValues("div", "id", Configuration.SitePrefix, "68").First();
+        public IWebElement ScheduleConsultationButton => driver.GetElementsWithTagAndAttributeStartAndEndingWithValues("div", "id", Configuration.SitePrefix, "76").First();
 
         /// <summary>
         /// Schedule Consultation Button Link element

@@ -1299,7 +1299,7 @@
         </member>
         <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.AboutUsPageTestData.AboutUsImageSrc">
             <summary>
-              Looks up a localized string similar to https://images.squarespace-cdn.com/content/v1/5dcc96767c939351951d2987/1574119738736-UM33SG724YZEW3FB5PLU/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/laptop-remote-working-writing-typing-7114.jpg?format=2500w.
+              Looks up a localized string similar to https://images.squarespace-cdn.com/content/v1/5dcc96767c939351951d2987/1574119738736-UM33SG724YZEW3FB5PLU/laptop-remote-working-writing-typing-7114.jpg?format=1500w.
             </summary>
         </member>
         <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.AboutUsPageTestData.AboutUsTitle">
@@ -1628,7 +1628,7 @@
         </member>
         <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.PrimarySectionImageSrc">
             <summary>
-              Looks up a localized string similar to https://images.squarespace-cdn.com/content/v1/5dcc96767c939351951d2987/1574109947938-NXBEY5PQVS6J657XS2DN/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/grayscale-photo-of-computer-laptop-near-white-notebook-and-169573.jpg?format=2500w.
+              Looks up a localized string similar to https://images.squarespace-cdn.com/content/v1/5dcc96767c939351951d2987/1574109947938-NXBEY5PQVS6J657XS2DN/grayscale-photo-of-computer-laptop-near-white-notebook-and-169573.jpg?format=2500w.
             </summary>
         </member>
         <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.PrimarySectionScheduleButtonLink">
@@ -1653,7 +1653,7 @@
         </member>
         <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.SecondarySectionImageSrc">
             <summary>
-              Looks up a localized string similar to https://images.squarespace-cdn.com/content/v1/5dcc96767c939351951d2987/1574110334562-ACRRQK9X5RP0PMALKYYB/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/man-holding-laptop-and-smartphone-2726478.jpg?format=2500w.
+              Looks up a localized string similar to https://images.squarespace-cdn.com/content/v1/5dcc96767c939351951d2987/1574110334562-ACRRQK9X5RP0PMALKYYB/man-holding-laptop-and-smartphone-2726478.jpg?format=1500w.
             </summary>
         </member>
         <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.SecondarySectionTitle">
@@ -1673,7 +1673,7 @@
         </member>
         <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.TertiarySectionImageSrc">
             <summary>
-              Looks up a localized string similar to https://images.squarespace-cdn.com/content/v1/5dcc96767c939351951d2987/1574112242271-KTTBY3ZBBRVYURATJN31/ke17ZwdGBToddI8pDm48kIIFsYAJJX10OgNkc4SuD20UqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKce0j9vvU4chI_bB_CjBNrJapSKkBorzMUDpE1NYw5XxnDgGKGBETQKcT3bo-auxwM/20130731_Trade+100_0202.jpg?format=2500w.
+              Looks up a localized string similar to https://images.squarespace-cdn.com/content/v1/5dcc96767c939351951d2987/1574112242271-KTTBY3ZBBRVYURATJN31/20130731_Trade+100_0202.jpg?format=1500w.
             </summary>
         </member>
         <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.TertiarySectionTitle">
@@ -2541,11 +2541,6 @@
             The article entry element
             </summary>
         </member>
-        <member name="T:QualitasDigitalSeleniumCSharp.PageObjects.OurCommitmentPage">
-            <summary>
-            The OurCommitment Page Object
-            </summary>
-        </member>
         <member name="T:QualitasDigitalSeleniumCSharp.PageObjects.Page">
             <summary>
             A generic page object implementation
@@ -2804,11 +2799,6 @@
         <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.ScheduleConsultationPage.ScheduleConsultationButtonLink">
             <summary>
             Schedule Consultation Button Link element
-            </summary>
-        </member>
-        <member name="T:QualitasDigitalSeleniumCSharp.PageObjects.TermsAndConditionsPage">
-            <summary>
-            The TermsAndConditions Page Object
             </summary>
         </member>
         <member name="T:QualitasDigitalSeleniumCSharp.PageObjects.TestimonialsPage">
@@ -3403,7 +3393,7 @@
         </member>
         <member name="M:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.AcceptAllCertificatesFirefox">
             <summary>
-            Accept all certificates for firefox
+            Accept all certificates for firefox, currently not implemented
             </summary>
         </member>
         <member name="M:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.AcceptAllCertificatesChrome">

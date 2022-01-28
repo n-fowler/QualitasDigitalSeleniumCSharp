@@ -19,7 +19,7 @@ namespace QualitasDigitalSeleniumCSharp.src.TestData {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class HomePageTestData {
@@ -179,7 +179,7 @@ namespace QualitasDigitalSeleniumCSharp.src.TestData {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to https://images.squarespace-cdn.com/content/v1/5dcc96767c939351951d2987/1574109947938-NXBEY5PQVS6J657XS2DN/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/grayscale-photo-of-computer-laptop-near-white-notebook-and-169573.jpg?format=2500w.
+        ///   Looks up a localized string similar to https://images.squarespace-cdn.com/content/v1/5dcc96767c939351951d2987/1574109947938-NXBEY5PQVS6J657XS2DN/grayscale-photo-of-computer-laptop-near-white-notebook-and-169573.jpg?format=2500w.
         /// </summary>
         internal static string PrimarySectionImageSrc {
             get {
@@ -224,7 +224,7 @@ namespace QualitasDigitalSeleniumCSharp.src.TestData {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to https://images.squarespace-cdn.com/content/v1/5dcc96767c939351951d2987/1574110334562-ACRRQK9X5RP0PMALKYYB/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/man-holding-laptop-and-smartphone-2726478.jpg?format=2500w.
+        ///   Looks up a localized string similar to https://images.squarespace-cdn.com/content/v1/5dcc96767c939351951d2987/1574110334562-ACRRQK9X5RP0PMALKYYB/man-holding-laptop-and-smartphone-2726478.jpg?format=1500w.
         /// </summary>
         internal static string SecondarySectionImageSrc {
             get {
@@ -260,7 +260,7 @@ namespace QualitasDigitalSeleniumCSharp.src.TestData {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to https://images.squarespace-cdn.com/content/v1/5dcc96767c939351951d2987/1574112242271-KTTBY3ZBBRVYURATJN31/ke17ZwdGBToddI8pDm48kIIFsYAJJX10OgNkc4SuD20UqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKce0j9vvU4chI_bB_CjBNrJapSKkBorzMUDpE1NYw5XxnDgGKGBETQKcT3bo-auxwM/20130731_Trade+100_0202.jpg?format=2500w.
+        ///   Looks up a localized string similar to https://images.squarespace-cdn.com/content/v1/5dcc96767c939351951d2987/1574112242271-KTTBY3ZBBRVYURATJN31/20130731_Trade+100_0202.jpg?format=1500w.
         /// </summary>
         internal static string TertiarySectionImageSrc {
             get {

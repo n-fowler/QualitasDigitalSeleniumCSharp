@@ -83,7 +83,7 @@ namespace QualitasDigitalSeleniumCSharp.PageObjects
         /// <summary>
         /// Checkbox Section element
         /// </summary>
-        public IWebElement CheckboxSection => FormSection.GetElementsWithTagAndAttributeStartAndEndingWithValues("div", "id", "checkbox-" + Configuration.SitePrefix, "22390").First();
+        public IWebElement CheckboxSection => FormSection.GetElementsWithTagAndAttributeStartAndEndingWithValues("fieldset", "id", "checkbox-" + Configuration.SitePrefix, "22390").First();
 
         /// <summary>
         /// Additional Message Text Area element

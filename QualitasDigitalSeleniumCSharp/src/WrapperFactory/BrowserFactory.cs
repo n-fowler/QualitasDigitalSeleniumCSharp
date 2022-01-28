@@ -53,8 +53,6 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         /// <param name="webDriver">The Browser enum</param>
         public static void InitBrowser(WebDriver webDriver)
         {
-            if (_driver != null) return;
-
             string path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
 
             switch (webDriver)
@@ -477,17 +475,11 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         }
 
         /// <summary>
-        /// Accept all certificates for firefox
+        /// Accept all certificates for firefox, currently not implemented
         /// </summary>
         public static void AcceptAllCertificatesFirefox()
         {
-            FirefoxProfile profile = new FirefoxProfile
-            {
-                AcceptUntrustedCertificates = true,
-                AssumeUntrustedCertificateIssuer = false
-            };
-            FirefoxOptions options = new FirefoxOptions { Profile = profile };
-            _driver = new FirefoxDriver(options);
+            throw new NotImplementedException();
         }
 
         /// <summary>

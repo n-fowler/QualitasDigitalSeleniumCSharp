@@ -3,6 +3,7 @@ using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Internal;
 using OpenQA.Selenium.Support.UI;
 using QualitasDigitalSeleniumCSharp.WrapperFactory;
+using SeleniumExtras.WaitHelpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
