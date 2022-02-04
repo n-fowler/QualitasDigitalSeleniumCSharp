@@ -84,7 +84,7 @@ namespace QualitasDigitalSeleniumCSharp.TestCases
             Assert.AreEqual(ContactUsPageData.HeaderContent, Page.ContactUs.HeaderContent.GetInnertext());
 
             //Validate left section
-            Assert.AreEqual(ContactUsPageData.LeftContent, Page.ContactUs.LeftContent.GetInnertext());
+            Assert.AreEqual(ContactUsPageData.LeftContent, Page.ContactUs.SidebarContent.GetInnertext());
             Assert.AreEqual(ContactUsPageData.OurCommitmentLink, Page.ContactUs.OurCommitmentLink.GetHref());
             Assert.AreEqual(ContactUsPageData.FaqLink, Page.ContactUs.FaqLink.GetHref());
             Assert.AreEqual(ContactUsPageData.TermsAndConditionsLink, Page.ContactUs.TermsAndConditionsLink.GetHref());

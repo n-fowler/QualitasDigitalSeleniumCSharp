@@ -4,6 +4,7 @@ using QualitasDigitalSeleniumCSharp.PageObjects;
 using QualitasDigitalSeleniumCSharp.src.TestData;
 using QualitasDigitalSeleniumCSharp.WrapperFactory;
 using System;
+using System.Collections.Generic;
 
 namespace QualitasDigitalSeleniumCSharp.TestCases
 {
@@ -79,46 +80,57 @@ namespace QualitasDigitalSeleniumCSharp.TestCases
             BrowserFactory.WaitForPageLoad(10);
 
             //Validate header
-            Assert.AreEqual(FaqPageTestData.FaqTitle, Page.Faq.HeaderTitle.GetInnertext());
+            Assert.AreEqual(FaqPageTestData.FaqTitle, Page.Faq.HeaderContent.GetInnertext());
 
             //Validate left subsection
-            Assert.AreEqual(FaqPageTestData.FaqSubtitle, Page.Faq.Subtitle.GetInnertext());
+            Assert.AreEqual(FaqPageTestData.FaqSubtitle, Page.Faq.SidebarContent.GetInnertext());
             Assert.AreEqual(FaqPageTestData.ContactUsLink, Page.Faq.ContactUsLink.GetHref());
 
             //Validate middle subsection
-            Assert.AreEqual(FaqPageTestData.TitleOne, Page.Faq.TitleOne.GetInnertext());
-            Assert.AreEqual(FaqPageTestData.BodyOne, Page.Faq.BodyTextOne.GetInnertext());
-            Assert.AreEqual(FaqPageTestData.TitleTwo, Page.Faq.TitleTwo.GetInnertext());
-            Assert.AreEqual(FaqPageTestData.BodyTwo, Page.Faq.BodyTextTwo.GetInnertext());
-            Assert.AreEqual(FaqPageTestData.TitleThree, Page.Faq.TitleThree.GetInnertext());
-            Assert.AreEqual(FaqPageTestData.BodyThree, Page.Faq.BodyTextThree.GetInnertext());
-            Assert.AreEqual(FaqPageTestData.TitleFour, Page.Faq.TitleFour.GetInnertext());
-            Assert.AreEqual(FaqPageTestData.BodyFour, Page.Faq.BodyTextFour.GetInnertext());
-            Assert.AreEqual(FaqPageTestData.TitleFive, Page.Faq.TitleFive.GetInnertext());
-            Assert.AreEqual(FaqPageTestData.BodyFive, Page.Faq.BodyTextFive.GetInnertext());
-            Assert.AreEqual(FaqPageTestData.TitleSix, Page.Faq.TitleSix.GetInnertext());
-            Assert.AreEqual(FaqPageTestData.BodySix, Page.Faq.BodyTextSix.GetInnertext());
-            Assert.AreEqual(FaqPageTestData.TitleSeven, Page.Faq.TitleSeven.GetInnertext());
-            Assert.AreEqual(FaqPageTestData.BodySeven, Page.Faq.BodyTextSeven.GetInnertext());
+            var faqPageExpectedTitles = new List<string>
+            {
+                FaqPageTestData.TitleOne,
+                FaqPageTestData.TitleTwo,
+                FaqPageTestData.TitleThree,
+                FaqPageTestData.TitleFour,
+                FaqPageTestData.TitleFive,
+                FaqPageTestData.TitleSix,
+                FaqPageTestData.TitleSeven,
+                FaqPageTestData.TitleEight,
+                FaqPageTestData.TitleNine,
+                FaqPageTestData.TitleTen,
+                FaqPageTestData.TitleEleven,
+                FaqPageTestData.TitleTwelve,
+                FaqPageTestData.TitleThirteen,
+                FaqPageTestData.TitleFourteen,
+                FaqPageTestData.TitleFifteen
+            };
 
+            var faqPageExpectedBodies = new List<string>
+            {
+                FaqPageTestData.BodyOne,
+                FaqPageTestData.BodyTwo,
+                FaqPageTestData.BodyThree,
+                FaqPageTestData.BodyFour,
+                FaqPageTestData.BodyFive,
+                FaqPageTestData.BodySix,
+                FaqPageTestData.BodySeven,
+                FaqPageTestData.BodyEight,
+                FaqPageTestData.BodyNine,
+                FaqPageTestData.BodyTen,
+                FaqPageTestData.BodyEleven,
+                FaqPageTestData.BodyTwelve,
+                FaqPageTestData.BodyThirteen,
+                FaqPageTestData.BodyFourteen,
+                FaqPageTestData.BodyFifteen,
+                string.Empty //Section has one empty body
+            };
 
-            //Validate right subsection
-            Assert.AreEqual(FaqPageTestData.TitleEight, Page.Faq.TitleEight.GetInnertext());
-            Assert.AreEqual(FaqPageTestData.BodyEight, Page.Faq.BodyTextEight.GetInnertext());
-            Assert.AreEqual(FaqPageTestData.TitleNine, Page.Faq.TitleNine.GetInnertext());
-            Assert.AreEqual(FaqPageTestData.BodyNine, Page.Faq.BodyTextNine.GetInnertext());
-            Assert.AreEqual(FaqPageTestData.TitleTen, Page.Faq.TitleTen.GetInnertext());
-            Assert.AreEqual(FaqPageTestData.BodyTen, Page.Faq.BodyTextTen.GetInnertext());
-            Assert.AreEqual(FaqPageTestData.TitleEleven, Page.Faq.TitleEleven.GetInnertext());
-            Assert.AreEqual(FaqPageTestData.BodyEleven, Page.Faq.BodyTextEleven.GetInnertext());
-            Assert.AreEqual(FaqPageTestData.TitleTwelve, Page.Faq.TitleTwelve.GetInnertext());
-            Assert.AreEqual(FaqPageTestData.BodyTwelve, Page.Faq.BodyTextTwelve.GetInnertext());
-            Assert.AreEqual(FaqPageTestData.TitleThirteen, Page.Faq.TitleThirteen.GetInnertext());
-            Assert.AreEqual(FaqPageTestData.BodyThirteen, Page.Faq.BodyTextThirteen.GetInnertext());
-            Assert.AreEqual(FaqPageTestData.TitleFourteen, Page.Faq.TitleFourteen.GetInnertext());
-            Assert.AreEqual(FaqPageTestData.BodyFourteen, Page.Faq.BodyTextFourteen.GetInnertext());
-            Assert.AreEqual(FaqPageTestData.TitleFifteen, Page.Faq.TitleFifteen.GetInnertext());
-            Assert.AreEqual(FaqPageTestData.BodyFifteen, Page.Faq.BodyTextFifteen.GetInnertext());
+            var faqPageActualTitles = FaqPage.GetFaqPageTitles();
+            var faqPageActualBodies = FaqPage.GetFaqPageBodies();
+
+            CollectionAssert.AreEqual(faqPageExpectedTitles, faqPageActualTitles);
+            CollectionAssert.AreEqual(faqPageExpectedBodies, faqPageActualBodies);
         }
 
         #endregion Tests

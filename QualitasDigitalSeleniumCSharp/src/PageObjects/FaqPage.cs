@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using QualitasDigitalSeleniumCSharp.Extensions;
 using QualitasDigitalSeleniumCSharp.WrapperFactory;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace QualitasDigitalSeleniumCSharp.PageObjects
@@ -25,29 +26,24 @@ namespace QualitasDigitalSeleniumCSharp.PageObjects
         public IWebElement LogoImage => driver.FindElementByClassName("logo-image");
 
         /// <summary>
-        /// The Header section element
-        /// </summary>
-        public IWebElement HeaderSection => driver.FindElementById("block-0872d1f64aa73dc210a0");
-
-        /// <summary>
         /// The Header Title element
         /// </summary>
-        public IWebElement HeaderTitle => HeaderSection.FindElementByTagName("div").FindElementByTagName("h1");
+        public IWebElement HeaderContent => driver.FindElementByXPath("//*[@id='block-0872d1f64aa73dc210a0']/div/h1");
 
         /// <summary>
-        /// The Left Section element
+        /// The Sidebar Content element
         /// </summary>
-        public IWebElement LeftSection => driver.FindElementById("block-5a5c2d60498a7ac2f90c");
+        public IWebElement SidebarContent => driver.FindElementByXPath("//*[@id='block-5a5c2d60498a7ac2f90c']/div/h2");
 
         /// <summary>
-        /// The Left Subtitle element
+        /// The Sidebar Links Element
         /// </summary>
-        public IWebElement Subtitle => LeftSection.FindElementByTagName("div").FindElementByTagName("h2");
+        public List<IWebElement> SidebarLinks => driver.FindElementsByXPath("//*[@id='block-5a5c2d60498a7ac2f90c']/div/p/a").ToList();
 
         /// <summary>
         /// The Our Commitment Link element
         /// </summary>
-        public IWebElement ContactUsLink => LeftSection.FindElementByTagName("div").FindElementsByTagName("p").ToList()[0].FindElementsByTagName("a").ToList()[0];
+        public IWebElement ContactUsLink => SidebarLinks[0];
 
         /// <summary>
         /// The Center Section element
@@ -55,160 +51,71 @@ namespace QualitasDigitalSeleniumCSharp.PageObjects
         public IWebElement CenterSection => driver.FindElementById("block-07ad9bb3be93b9c67b17");
 
         /// <summary>
-        /// The Title One element
+        /// The left title elements
         /// </summary>
-        public IWebElement TitleOne => CenterSection.FindElementByTagName("div").FindElementsByTagName("h3").ToList()[0];
+        public List<IWebElement> LeftTitles => driver.FindElementsByXPath("//*[@id='block-07ad9bb3be93b9c67b17']/div/h3").ToList();
 
         /// <summary>
-        /// The Body Text One element
+        /// The left body elements
         /// </summary>
-        public IWebElement BodyTextOne => CenterSection.FindElementByTagName("div").FindElementsByTagName("p").ToList()[0];
+        public List<IWebElement> LeftBodies => driver.FindElementsByXPath("//*[@id='block-07ad9bb3be93b9c67b17']/div/p").ToList();
 
         /// <summary>
-        /// The Title One element
+        /// The right title elements
         /// </summary>
-        public IWebElement TitleTwo => CenterSection.FindElementByTagName("div").FindElementsByTagName("h3").ToList()[1];
+        public List<IWebElement> RightTitles => driver.FindElementsByXPath("//*[@id='block-156845d943225c44b8dd']/div/h3").ToList();
 
         /// <summary>
-        /// The Body Text One element
+        /// The right body elements
         /// </summary>
-        public IWebElement BodyTextTwo => CenterSection.FindElementByTagName("div").FindElementsByTagName("p").ToList()[1];
-
-        /// <summary>
-        /// The Title One element
-        /// </summary>
-        public IWebElement TitleThree => CenterSection.FindElementByTagName("div").FindElementsByTagName("h3").ToList()[2];
-
-        /// <summary>
-        /// The Body Text One element
-        /// </summary>
-        public IWebElement BodyTextThree => CenterSection.FindElementByTagName("div").FindElementsByTagName("p").ToList()[2];
-
-        /// <summary>
-        /// The Title One element
-        /// </summary>
-        public IWebElement TitleFour => CenterSection.FindElementByTagName("div").FindElementsByTagName("h3").ToList()[3];
-
-        /// <summary>
-        /// The Body Text One element
-        /// </summary>
-        public IWebElement BodyTextFour => CenterSection.FindElementByTagName("div").FindElementsByTagName("p").ToList()[3];
-
-        /// <summary>
-        /// The Title One element
-        /// </summary>
-        public IWebElement TitleFive => CenterSection.FindElementByTagName("div").FindElementsByTagName("h3").ToList()[4];
-
-        /// <summary>
-        /// The Body Text One element
-        /// </summary>
-        public IWebElement BodyTextFive => CenterSection.FindElementByTagName("div").FindElementsByTagName("p").ToList()[4];
-
-        /// <summary>
-        /// The Title One element
-        /// </summary>
-        public IWebElement TitleSix => CenterSection.FindElementByTagName("div").FindElementsByTagName("h3").ToList()[5];
-
-        /// <summary>
-        /// The Body Text One element
-        /// </summary>
-        public IWebElement BodyTextSix => CenterSection.FindElementByTagName("div").FindElementsByTagName("p").ToList()[5];
-
-        /// <summary>
-        /// The Title One element
-        /// </summary>
-        public IWebElement TitleSeven => CenterSection.FindElementByTagName("div").FindElementsByTagName("h3").ToList()[6];
-
-        /// <summary>
-        /// The Body Text One element
-        /// </summary>
-        public IWebElement BodyTextSeven => CenterSection.FindElementByTagName("div").FindElementsByTagName("p").ToList()[6];
-
-        /// <summary>
-        /// The Right Section element
-        /// </summary>
-        public IWebElement RightSection => driver.FindElementById("block-156845d943225c44b8dd");
-
-        /// <summary>
-        /// The Title One element
-        /// </summary>
-        public IWebElement TitleEight => RightSection.FindElementByTagName("div").FindElementsByTagName("h3").ToList()[0];
-
-        /// <summary>
-        /// The Body Text One element
-        /// </summary>
-        public IWebElement BodyTextEight => RightSection.FindElementByTagName("div").FindElementsByTagName("p").ToList()[0];
-
-        /// <summary>
-        /// The Title One element
-        /// </summary>
-        public IWebElement TitleNine => RightSection.FindElementByTagName("div").FindElementsByTagName("h3").ToList()[1];
-
-        /// <summary>
-        /// The Body Text One element
-        /// </summary>
-        public IWebElement BodyTextNine => RightSection.FindElementByTagName("div").FindElementsByTagName("p").ToList()[1];
-
-        /// <summary>
-        /// The Title One element
-        /// </summary>
-        public IWebElement TitleTen => RightSection.FindElementByTagName("div").FindElementsByTagName("h3").ToList()[2];
-
-        /// <summary>
-        /// The Body Text One element
-        /// </summary>
-        public IWebElement BodyTextTen => RightSection.FindElementByTagName("div").FindElementsByTagName("p").ToList()[2];
-
-        /// <summary>
-        /// The Title One element
-        /// </summary>
-        public IWebElement TitleEleven => RightSection.FindElementByTagName("div").FindElementsByTagName("h3").ToList()[3];
-
-        /// <summary>
-        /// The Body Text One element
-        /// </summary>
-        public IWebElement BodyTextEleven => RightSection.FindElementByTagName("div").FindElementsByTagName("p").ToList()[3];
-
-        /// <summary>
-        /// The Title One element
-        /// </summary>
-        public IWebElement TitleTwelve => RightSection.FindElementByTagName("div").FindElementsByTagName("h3").ToList()[4];
-
-        /// <summary>
-        /// The Body Text One element
-        /// </summary>
-        public IWebElement BodyTextTwelve => RightSection.FindElementByTagName("div").FindElementsByTagName("p").ToList()[4];
-
-        /// <summary>
-        /// The Title One element
-        /// </summary>
-        public IWebElement TitleThirteen => RightSection.FindElementByTagName("div").FindElementsByTagName("h3").ToList()[5];
-
-        /// <summary>
-        /// The Body Text One element
-        /// </summary>
-        public IWebElement BodyTextThirteen => RightSection.FindElementByTagName("div").FindElementsByTagName("p").ToList()[5];
-
-        /// <summary>
-        /// The Title One element
-        /// </summary>
-        public IWebElement TitleFourteen => RightSection.FindElementByTagName("div").FindElementsByTagName("h3").ToList()[6];
-
-        /// <summary>
-        /// The Body Text One element
-        /// </summary>
-        public IWebElement BodyTextFourteen => RightSection.FindElementByTagName("div").FindElementsByTagName("p").ToList()[6];
-
-        /// <summary>
-        /// The Title One element
-        /// </summary>
-        public IWebElement TitleFifteen => RightSection.FindElementByTagName("div").FindElementsByTagName("h3").ToList()[7];
-
-        /// <summary>
-        /// The Body Text One element
-        /// </summary>
-        public IWebElement BodyTextFifteen => RightSection.FindElementByTagName("div").FindElementsByTagName("p").ToList()[7];
+        public List<IWebElement> RightBodies => driver.FindElementsByXPath("//*[@id='block-156845d943225c44b8dd']/div/p").ToList();
 
         #endregion Elements
+
+        #region Methods
+
+        /// <summary>
+        /// Get a collection of Faq Page Titles
+        /// </summary>
+        /// <returns></returns>
+        public static List<string> GetFaqPageTitles()
+        {
+            var faqPageActualTitles = new List<string>();
+            
+            foreach (var title in Page.Faq.LeftTitles)
+            {
+                faqPageActualTitles.Add(title.GetInnertext());
+            }
+
+            foreach (var title in Page.Faq.RightTitles)
+            {
+                faqPageActualTitles.Add(title.GetInnertext());
+            }
+            
+            return faqPageActualTitles;
+        }
+
+        /// <summary>
+        /// Get a collection of Faq Page Bodies
+        /// </summary>
+        /// <returns></returns>
+        public static List<string> GetFaqPageBodies()
+        {
+            var faqPageActualBodies = new List<string>();
+            
+            foreach (var body in Page.Faq.LeftBodies)
+            {
+                faqPageActualBodies.Add(body.GetInnertext());
+            }
+
+            foreach (var body in Page.Faq.RightBodies)
+            {
+                faqPageActualBodies.Add(body.GetInnertext());
+            }
+
+            return faqPageActualBodies;
+        }
+
+        #endregion Methods
     }
 }

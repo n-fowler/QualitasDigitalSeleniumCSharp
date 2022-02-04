@@ -1969,19 +1969,24 @@
             The About Us Header Title element
             </summary>
         </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.AboutUsPage.AboutUsTextSection">
-            <summary>
-            The About Us Text Subsection
-            </summary>
-        </member>
         <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.AboutUsPage.Title">
             <summary>
             The About Us SubSection Title element
             </summary>
         </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.AboutUsPage.Sidebar">
+            <summary>
+            The About Us Sidebar element
+            </summary>
+        </member>
         <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.AboutUsPage.BodyText">
             <summary>
             The About Us Body element
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.AboutUsPage.SidebarLinks">
+            <summary>
+            The SideBar Links element
             </summary>
         </member>
         <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.AboutUsPage.OurServicesLink">
@@ -2019,24 +2024,19 @@
             The Logo Image element
             </summary>
         </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.ContactUsPage.HeaderSection">
-            <summary>
-            Header Section element
-            </summary>
-        </member>
         <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.ContactUsPage.HeaderContent">
             <summary>
             Header Content element
             </summary>
         </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.ContactUsPage.LeftSection">
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.ContactUsPage.SidebarContent">
             <summary>
-            Left Section element
+            Sidebar Content element
             </summary>
         </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.ContactUsPage.LeftContent">
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.ContactUsPage.SidebarLinks">
             <summary>
-            Left Content element
+            Sidebar Links element
             </summary>
         </member>
         <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.ContactUsPage.OurCommitmentLink">
@@ -2104,24 +2104,19 @@
             The Logo Image element
             </summary>
         </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.HeaderSection">
-            <summary>
-            The Header section element
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.HeaderTitle">
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.HeaderContent">
             <summary>
             The Header Title element
             </summary>
         </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.LeftSection">
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.SidebarContent">
             <summary>
-            The Left Section element
+            The Sidebar Content element
             </summary>
         </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.Subtitle">
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.SidebarLinks">
             <summary>
-            The Left Subtitle element
+            The Sidebar Links Element
             </summary>
         </member>
         <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.ContactUsLink">
@@ -2134,160 +2129,37 @@
             The Center Section element
             </summary>
         </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.TitleOne">
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.LeftTitles">
             <summary>
-            The Title One element
+            The left title elements
             </summary>
         </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.BodyTextOne">
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.LeftBodies">
             <summary>
-            The Body Text One element
+            The left body elements
             </summary>
         </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.TitleTwo">
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.RightTitles">
             <summary>
-            The Title One element
+            The right title elements
             </summary>
         </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.BodyTextTwo">
+        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.RightBodies">
             <summary>
-            The Body Text One element
+            The right body elements
             </summary>
         </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.TitleThree">
+        <member name="M:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.GetFaqPageTitles">
             <summary>
-            The Title One element
+            Get a collection of Faq Page Titles
             </summary>
+            <returns></returns>
         </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.BodyTextThree">
+        <member name="M:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.GetFaqPageBodies">
             <summary>
-            The Body Text One element
+            Get a collection of Faq Page Bodies
             </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.TitleFour">
-            <summary>
-            The Title One element
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.BodyTextFour">
-            <summary>
-            The Body Text One element
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.TitleFive">
-            <summary>
-            The Title One element
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.BodyTextFive">
-            <summary>
-            The Body Text One element
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.TitleSix">
-            <summary>
-            The Title One element
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.BodyTextSix">
-            <summary>
-            The Body Text One element
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.TitleSeven">
-            <summary>
-            The Title One element
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.BodyTextSeven">
-            <summary>
-            The Body Text One element
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.RightSection">
-            <summary>
-            The Right Section element
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.TitleEight">
-            <summary>
-            The Title One element
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.BodyTextEight">
-            <summary>
-            The Body Text One element
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.TitleNine">
-            <summary>
-            The Title One element
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.BodyTextNine">
-            <summary>
-            The Body Text One element
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.TitleTen">
-            <summary>
-            The Title One element
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.BodyTextTen">
-            <summary>
-            The Body Text One element
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.TitleEleven">
-            <summary>
-            The Title One element
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.BodyTextEleven">
-            <summary>
-            The Body Text One element
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.TitleTwelve">
-            <summary>
-            The Title One element
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.BodyTextTwelve">
-            <summary>
-            The Body Text One element
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.TitleThirteen">
-            <summary>
-            The Title One element
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.BodyTextThirteen">
-            <summary>
-            The Body Text One element
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.TitleFourteen">
-            <summary>
-            The Title One element
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.BodyTextFourteen">
-            <summary>
-            The Body Text One element
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.TitleFifteen">
-            <summary>
-            The Title One element
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.FaqPage.BodyTextFifteen">
-            <summary>
-            The Body Text One element
-            </summary>
+            <returns></returns>
         </member>
         <member name="T:QualitasDigitalSeleniumCSharp.PageObjects.HomePage">
             <summary>

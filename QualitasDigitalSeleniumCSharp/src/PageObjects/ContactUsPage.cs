@@ -2,6 +2,7 @@
 using QualitasDigitalSeleniumCSharp.Extensions;
 using QualitasDigitalSeleniumCSharp.src.LocalConfiguration;
 using QualitasDigitalSeleniumCSharp.WrapperFactory;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace QualitasDigitalSeleniumCSharp.PageObjects
@@ -26,39 +27,34 @@ namespace QualitasDigitalSeleniumCSharp.PageObjects
         public IWebElement LogoImage => driver.FindElementByClassName("logo-image");
 
         /// <summary>
-        /// Header Section element
-        /// </summary>
-        public IWebElement HeaderSection => driver.FindElementById("block-66e658da5d8a61ea0d14");
-
-        /// <summary>
         /// Header Content element
         /// </summary>
-        public IWebElement HeaderContent => HeaderSection.FindElementByTagName("div").FindElementByTagName("h1");
+        public IWebElement HeaderContent => driver.FindElementByXPath("//*[@id='block-66e658da5d8a61ea0d14']/div/h1");
 
         /// <summary>
-        /// Left Section element
+        /// Sidebar Content element
         /// </summary>
-        public IWebElement LeftSection => driver.FindElementById("block-ef19513355911ef99e33");
+        public IWebElement SidebarContent => driver.FindElementByXPath("//*[@id='block-ef19513355911ef99e33']/div/h2");
 
         /// <summary>
-        /// Left Content element
+        /// Sidebar Links element
         /// </summary>
-        public IWebElement LeftContent => LeftSection.FindElementByTagName("div").FindElementByTagName("h2");
+        public List<IWebElement> SidebarLinks => driver.FindElementsByXPath("//*[@id='block-ef19513355911ef99e33']/div/p/a").ToList();
 
         /// <summary>
         /// Our Commitment Link element
         /// </summary>
-        public IWebElement OurCommitmentLink => LeftSection.FindElementByTagName("div").FindElementByTagName("p").FindElementsByTagName("a").ToList()[0];
+        public IWebElement OurCommitmentLink => SidebarLinks[0];
 
         /// <summary>
         /// Faq Link element
         /// </summary>
-        public IWebElement FaqLink => LeftSection.FindElementByTagName("div").FindElementByTagName("p").FindElementsByTagName("a").ToList()[1];
+        public IWebElement FaqLink => SidebarLinks[1];
 
         /// <summary>
         /// Terms And Conditions Link element
         /// </summary>
-        public IWebElement TermsAndConditionsLink => LeftSection.FindElementByTagName("div").FindElementByTagName("p").FindElementsByTagName("a").ToList()[2];
+        public IWebElement TermsAndConditionsLink => SidebarLinks[2];
 
         /// <summary>
         /// Form Section element
