@@ -3061,6 +3061,12 @@
             </summary>
             <param name="webDriver">The Browser enum</param>
         </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.InitBrowserHeadless(QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.WebDriver)">
+            <summary>
+            Initializes the driver based on the supplied WebDriver enum
+            </summary>
+            <param name="webDriver">The Browser enum</param>
+        </member>
         <member name="M:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.ReportTestStatus(NUnit.Framework.TestContext)">
             <summary>
             Report the test failure to the logging system
@@ -3273,7 +3279,7 @@
             Accept all certificates for chrome
             </summary>
         </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.SetChromeOptions">
+        <member name="M:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.SetChromeOptions(System.String)">
             <summary>
             Set Chrome options, currently not implemented
             </summary>

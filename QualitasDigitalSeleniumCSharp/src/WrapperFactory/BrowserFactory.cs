@@ -90,6 +90,38 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         }
 
         /// <summary>
+        /// Initializes the driver based on the supplied WebDriver enum
+        /// </summary>
+        /// <param name="webDriver">The Browser enum</param>
+        public static void InitBrowserHeadless(WebDriver webDriver)
+        {
+            string path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+
+            switch (webDriver)
+            {
+                case WebDriver.Chrome:
+                    Driver = new ChromeDriver(path, SetChromeOptions("headless"));
+                    Drivers.Add("Chrome", Driver);
+                    break;
+                case WebDriver.Firefox:
+                    throw new NotSupportedException();
+                case WebDriver.InternetExplorer:
+                    throw new NotSupportedException();
+                case WebDriver.Edge:
+                    throw new NotSupportedException();
+                case WebDriver.Opera:
+                    throw new NotSupportedException();
+                case WebDriver.Safari:
+                    throw new NotSupportedException();
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(webDriver), webDriver, null);
+            }
+
+            MaximizeWindow();
+            SetImplicitWait(30);
+        }
+
+        /// <summary>
         /// Report the test failure to the logging system
         /// </summary>
         /// <param name="testContext"></param>
@@ -494,9 +526,11 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         /// <summary>
         /// Set Chrome options, currently not implemented
         /// </summary>
-        public static void SetChromeOptions()
+        public static ChromeOptions SetChromeOptions(string args)
         {
-            throw new NotImplementedException();
+            var chromeOptions = new ChromeOptions();
+            chromeOptions.AddArguments(args);
+            return chromeOptions;
         }
 
         /// <summary>
