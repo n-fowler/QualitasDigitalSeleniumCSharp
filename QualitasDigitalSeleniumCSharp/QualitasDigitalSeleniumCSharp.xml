@@ -1309,7 +1309,7 @@
         </member>
         <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.AboutUsPageTestData.HeaderTitle">
             <summary>
-              Looks up a localized string similar to Let’s Build Something Together.
+              Looks up a localized string similar to Let Us Build Something Together.
             </summary>
         </member>
         <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.AboutUsPageTestData.OurServicesLink">

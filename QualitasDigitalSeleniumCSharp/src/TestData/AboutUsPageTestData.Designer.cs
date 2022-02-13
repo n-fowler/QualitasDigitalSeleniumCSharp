@@ -88,7 +88,7 @@ namespace QualitasDigitalSeleniumCSharp.src.TestData {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Let’s Build Something Together.
+        ///   Looks up a localized string similar to Let Us Build Something Together.
         /// </summary>
         internal static string HeaderTitle {
             get {
