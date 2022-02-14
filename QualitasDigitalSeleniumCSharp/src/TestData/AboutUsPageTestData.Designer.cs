@@ -70,7 +70,7 @@ namespace QualitasDigitalSeleniumCSharp.src.TestData {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to https://images.squarespace-cdn.com/content/v1/5dcc96767c939351951d2987/1574119738736-UM33SG724YZEW3FB5PLU/laptop-remote-working-writing-typing-7114.jpg?format=1500w.
+        ///   Looks up a localized string similar to https://images.squarespace-cdn.com/content/v1/5dcc96767c939351951d2987/1574119738736-UM33SG724YZEW3FB5PLU/laptop-remote-working-writing-typing-7114.jpg.
         /// </summary>
         internal static string AboutUsImageSrc {
             get {

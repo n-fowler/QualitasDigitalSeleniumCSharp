@@ -28,7 +28,7 @@ namespace QualitasDigitalSeleniumCSharp.TestCases
         [OneTimeSetUp]
         public void OneTimeSetUp()
         {
-            BrowserFactory.InitBrowser(webDriverEnum);
+            BrowserFactory.InitBrowserHeadless(webDriverEnum);
         }
 
         /// <summary>

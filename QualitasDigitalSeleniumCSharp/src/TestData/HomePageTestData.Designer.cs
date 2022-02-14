@@ -179,7 +179,7 @@ namespace QualitasDigitalSeleniumCSharp.src.TestData {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to https://images.squarespace-cdn.com/content/v1/5dcc96767c939351951d2987/1574109947938-NXBEY5PQVS6J657XS2DN/grayscale-photo-of-computer-laptop-near-white-notebook-and-169573.jpg?format=2500w.
+        ///   Looks up a localized string similar to https://images.squarespace-cdn.com/content/v1/5dcc96767c939351951d2987/1574109947938-NXBEY5PQVS6J657XS2DN/grayscale-photo-of-computer-laptop-near-white-notebook-and-169573.jpg?.
         /// </summary>
         internal static string PrimarySectionImageSrc {
             get {
@@ -224,7 +224,7 @@ namespace QualitasDigitalSeleniumCSharp.src.TestData {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to https://images.squarespace-cdn.com/content/v1/5dcc96767c939351951d2987/1574110334562-ACRRQK9X5RP0PMALKYYB/man-holding-laptop-and-smartphone-2726478.jpg?format=1500w.
+        ///   Looks up a localized string similar to https://images.squarespace-cdn.com/content/v1/5dcc96767c939351951d2987/1574110334562-ACRRQK9X5RP0PMALKYYB/man-holding-laptop-and-smartphone-2726478.jpg.
         /// </summary>
         internal static string SecondarySectionImageSrc {
             get {
@@ -260,7 +260,7 @@ namespace QualitasDigitalSeleniumCSharp.src.TestData {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to https://images.squarespace-cdn.com/content/v1/5dcc96767c939351951d2987/1574112242271-KTTBY3ZBBRVYURATJN31/20130731_Trade+100_0202.jpg?format=1500w.
+        ///   Looks up a localized string similar to https://images.squarespace-cdn.com/content/v1/5dcc96767c939351951d2987/1574112242271-KTTBY3ZBBRVYURATJN31/20130731_Trade+100_0202.jpg.
         /// </summary>
         internal static string TertiarySectionImageSrc {
             get {

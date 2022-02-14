@@ -28,7 +28,7 @@ namespace QualitasDigitalSeleniumCSharp.TestCases
         [OneTimeSetUp]
         public void OneTimeSetUp()
         {
-            BrowserFactory.InitBrowser(webDriverEnum);
+            BrowserFactory.InitBrowserHeadless(webDriverEnum);
         }
 
         /// <summary>
@@ -120,7 +120,7 @@ namespace QualitasDigitalSeleniumCSharp.TestCases
             Assert.AreEqual(expectedNavigationBodyText, Page.Home.NavBodyText.GetInnertext());
 
             //Verify navigation schedule button
-            Assert.IsTrue(Page.Home.NavScheduleButton.IsDisplayed(), "Page.Home.NavScheduleButton.IsDisplayed()");
+            Assert.IsTrue(Page.Home.NavScheduleButton.Displayed, "Page.Home.NavScheduleButton.Displayed");
         }
 
         /// <summary></summary>
@@ -158,7 +158,7 @@ namespace QualitasDigitalSeleniumCSharp.TestCases
 
             //Validate primary section
             Assert.AreEqual(HomePageTestData.PrimarySectionTitle, Page.Home.PrimarySectionTitle.GetInnertext());
-            Assert.AreEqual(HomePageTestData.PrimarySectionImageSrc, Page.Home.PrimarySectionImage.GetSrc());
+            StringAssert.Contains(HomePageTestData.PrimarySectionImageSrc, Page.Home.PrimarySectionImage.GetSrc());
             Assert.AreEqual(HomePageTestData.PrimarySectionBodyText, Page.Home.PrimarySectionBodyText.GetInnertext());
             Assert.AreEqual(HomePageTestData.PrimarySectionScheduleButtonLink, Page.Home.PrimarySectionScheduleButton.GetHref());
 
@@ -179,7 +179,7 @@ namespace QualitasDigitalSeleniumCSharp.TestCases
 
             //Validate secondary section
             Assert.AreEqual(HomePageTestData.SecondarySectionTitle, Page.Home.SecondarySectionTitle.GetInnertext());
-            Assert.AreEqual(HomePageTestData.SecondarySectionImageSrc, Page.Home.SecondarySectionImage.GetSrc());
+            StringAssert.Contains(HomePageTestData.SecondarySectionImageSrc, Page.Home.SecondarySectionImage.GetSrc());
             Assert.AreEqual(HomePageTestData.SecondarySectionBodyText, Page.Home.SecondarySectionBodyText.GetInnertext().Replace("\r", "").Replace("\n", ""));
             Assert.AreEqual(HomePageTestData.SecondarySectionAboutUsButtonLink, Page.Home.SecondarySectionAboutUsButton.GetHref());
 
@@ -188,7 +188,7 @@ namespace QualitasDigitalSeleniumCSharp.TestCases
 
             //Validate tertiary section
             Assert.AreEqual(HomePageTestData.TertiarySectionTitle, Page.Home.TertiarySectionTitle.GetInnertext());
-            Assert.AreEqual(HomePageTestData.TertiarySectionImageSrc, Page.Home.TertiarySectionImage.GetSrc());
+            StringAssert.Contains(HomePageTestData.TertiarySectionImageSrc, Page.Home.TertiarySectionImage.GetSrc());
             Assert.AreEqual(HomePageTestData.TertiarySectionBodyText, Page.Home.TertiarySectionBodyText.GetInnertext());
             Assert.AreEqual(HomePageTestData.TertiarySectionClientTestimonialsButtonLink, Page.Home.TertiarySectionClientTestimonialsButton.GetHref());
 

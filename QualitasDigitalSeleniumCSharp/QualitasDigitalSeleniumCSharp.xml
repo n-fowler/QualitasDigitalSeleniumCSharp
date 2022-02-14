@@ -1299,7 +1299,7 @@
         </member>
         <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.AboutUsPageTestData.AboutUsImageSrc">
             <summary>
-              Looks up a localized string similar to https://images.squarespace-cdn.com/content/v1/5dcc96767c939351951d2987/1574119738736-UM33SG724YZEW3FB5PLU/laptop-remote-working-writing-typing-7114.jpg?format=1500w.
+              Looks up a localized string similar to https://images.squarespace-cdn.com/content/v1/5dcc96767c939351951d2987/1574119738736-UM33SG724YZEW3FB5PLU/laptop-remote-working-writing-typing-7114.jpg.
             </summary>
         </member>
         <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.AboutUsPageTestData.AboutUsTitle">
@@ -1628,7 +1628,7 @@
         </member>
         <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.PrimarySectionImageSrc">
             <summary>
-              Looks up a localized string similar to https://images.squarespace-cdn.com/content/v1/5dcc96767c939351951d2987/1574109947938-NXBEY5PQVS6J657XS2DN/grayscale-photo-of-computer-laptop-near-white-notebook-and-169573.jpg?format=2500w.
+              Looks up a localized string similar to https://images.squarespace-cdn.com/content/v1/5dcc96767c939351951d2987/1574109947938-NXBEY5PQVS6J657XS2DN/grayscale-photo-of-computer-laptop-near-white-notebook-and-169573.jpg?.
             </summary>
         </member>
         <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.PrimarySectionScheduleButtonLink">
@@ -1653,7 +1653,7 @@
         </member>
         <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.SecondarySectionImageSrc">
             <summary>
-              Looks up a localized string similar to https://images.squarespace-cdn.com/content/v1/5dcc96767c939351951d2987/1574110334562-ACRRQK9X5RP0PMALKYYB/man-holding-laptop-and-smartphone-2726478.jpg?format=1500w.
+              Looks up a localized string similar to https://images.squarespace-cdn.com/content/v1/5dcc96767c939351951d2987/1574110334562-ACRRQK9X5RP0PMALKYYB/man-holding-laptop-and-smartphone-2726478.jpg.
             </summary>
         </member>
         <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.SecondarySectionTitle">
@@ -1673,7 +1673,7 @@
         </member>
         <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.TertiarySectionImageSrc">
             <summary>
-              Looks up a localized string similar to https://images.squarespace-cdn.com/content/v1/5dcc96767c939351951d2987/1574112242271-KTTBY3ZBBRVYURATJN31/20130731_Trade+100_0202.jpg?format=1500w.
+              Looks up a localized string similar to https://images.squarespace-cdn.com/content/v1/5dcc96767c939351951d2987/1574112242271-KTTBY3ZBBRVYURATJN31/20130731_Trade+100_0202.jpg.
             </summary>
         </member>
         <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.TertiarySectionTitle">
@@ -3279,7 +3279,7 @@
             Accept all certificates for chrome
             </summary>
         </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.SetChromeOptions(System.String)">
+        <member name="M:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.SetChromeOptions(System.Collections.Generic.List{System.String})">
             <summary>
             Set Chrome options, currently not implemented
             </summary>

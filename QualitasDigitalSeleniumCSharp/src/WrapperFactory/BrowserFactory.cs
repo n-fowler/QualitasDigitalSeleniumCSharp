@@ -100,7 +100,8 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
             switch (webDriver)
             {
                 case WebDriver.Chrome:
-                    Driver = new ChromeDriver(path, SetChromeOptions("headless"));
+                    List<string> args = new List<string> { "headless", "window-size=1920,1080" };
+                    Driver = new ChromeDriver(path, SetChromeOptions(args));
                     Drivers.Add("Chrome", Driver);
                     break;
                 case WebDriver.Firefox:
@@ -526,10 +527,13 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         /// <summary>
         /// Set Chrome options, currently not implemented
         /// </summary>
-        public static ChromeOptions SetChromeOptions(string args)
+        public static ChromeOptions SetChromeOptions(List<string> args)
         {
             var chromeOptions = new ChromeOptions();
-            chromeOptions.AddArguments(args);
+            foreach (var arg in args)
+            {
+                chromeOptions.AddArgument(arg);
+            }
             return chromeOptions;
         }
 

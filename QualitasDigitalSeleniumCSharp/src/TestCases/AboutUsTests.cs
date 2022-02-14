@@ -26,7 +26,7 @@ namespace QualitasDigitalSeleniumCSharp.TestCases
         [OneTimeSetUp]
         public void OneTimeSetUp()
         {
-            BrowserFactory.InitBrowser(webDriverEnum);
+            BrowserFactory.InitBrowserHeadless(webDriverEnum);
         }
 
         /// <summary>
@@ -81,7 +81,7 @@ namespace QualitasDigitalSeleniumCSharp.TestCases
             //Validate About Us Section
             Assert.AreEqual(AboutUsPageTestData.HeaderTitle, Page.AboutUs.HeaderTitle.GetInnertext());
             Assert.AreEqual(AboutUsPageTestData.AboutUsTitle, Page.AboutUs.Title.GetInnertext());
-            Assert.AreEqual(AboutUsPageTestData.AboutUsImageSrc, Page.AboutUs.Image.GetSrc());
+            StringAssert.Contains(AboutUsPageTestData.AboutUsImageSrc, Page.AboutUs.Image.GetSrc());
             Assert.AreEqual(AboutUsPageTestData.AboutUsBodyText, Page.AboutUs.BodyText.GetInnertext());
             Assert.AreEqual(AboutUsPageTestData.OurServicesLink, Page.AboutUs.OurServicesLink.GetHref());
             Assert.AreEqual(AboutUsPageTestData.ScheduleConsultationLink, Page.AboutUs.ScheduleConsultationLink.GetHref());

@@ -79,7 +79,7 @@ namespace QualitasDigitalSeleniumCSharp.PageObjects
         /// <summary>
         /// Primary section Image
         /// </summary>
-        public IWebElement PrimarySectionImage => driver.GetElementsWithTagAndAttributeStartAndEndingWithValues("div", "id", Configuration.SitePrefix, "66").First().FindElementByTagName("img");
+        public IWebElement PrimarySectionImage => driver.GetElementsWithTagAndAttributeStartAndEndingWithValues("div", "id", Configuration.SitePrefix, "67").First().FindElementByTagName("img");
 
         /// <summary>
         /// Primary section body text
@@ -89,7 +89,7 @@ namespace QualitasDigitalSeleniumCSharp.PageObjects
         /// <summary>
         /// Primary section schedule a free consultation button
         /// </summary>
-        public IWebElement PrimarySectionScheduleButton => driver.GetElementsWithTagAndAttributeStartAndEndingWithValues("div", "id", Configuration.SitePrefix, "132").First().FindElementByTagName("a");
+        public IWebElement PrimarySectionScheduleButton => driver.GetElementsWithTagAndAttributeStartAndEndingWithValues("div", "id", Configuration.SitePrefix, "133").First().FindElementByTagName("a");
 
         /// <summary>
         /// Our services section
@@ -164,7 +164,7 @@ namespace QualitasDigitalSeleniumCSharp.PageObjects
         /// <summary>
         /// Secondary section image
         /// </summary>
-        public IWebElement SecondarySectionImage => SecondarySection.GetElementsWithTagAndAttributeStartAndEndingWithValues("div", "id", Configuration.SitePrefix, "87").First().FindElementByTagName("img");
+        public IWebElement SecondarySectionImage => SecondarySection.GetElementsWithTagAndAttributeStartAndEndingWithValues("div", "id", Configuration.SitePrefix, "88").First().FindElementByTagName("img");
 
         /// <summary>
         /// Secondary section body text
@@ -194,7 +194,7 @@ namespace QualitasDigitalSeleniumCSharp.PageObjects
         /// <summary>
         /// Tertiary section image
         /// </summary>
-        public IWebElement TertiarySectionImage => TertiarySection.GetElementsWithTagAndAttributeStartAndEndingWithValues("div", "id", Configuration.SitePrefix, "105").First().FindElementByTagName("img");
+        public IWebElement TertiarySectionImage => TertiarySection.GetElementsWithTagAndAttributeStartAndEndingWithValues("div", "id", Configuration.SitePrefix, "106").First().FindElementByTagName("img");
 
         /// <summary>
         /// Tertiary section body text
@@ -214,7 +214,7 @@ namespace QualitasDigitalSeleniumCSharp.PageObjects
         /// <summary>
         /// Footer schedule button
         /// </summary>
-        public IWebElement FooterScheduleButton => driver.GetElementsWithTagAndAttributeStartAndEndingWithValues("div", "id", Configuration.SitePrefix, "139").First().FindElementByTagName("a");
+        public IWebElement FooterScheduleButton => driver.GetElementsWithTagAndAttributeStartAndEndingWithValues("div", "id", Configuration.SitePrefix, "140").First().FindElementByTagName("a");
 
         /// <summary>
         /// Footer section navigation
