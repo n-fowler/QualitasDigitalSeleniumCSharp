@@ -74,7 +74,7 @@ namespace QualitasDigitalSeleniumCSharp.PageObjects
         /// <summary>
         /// Primary section title text
         /// </summary>
-        public IWebElement PrimarySectionTitle => driver.FindElementById("block-a50c2484babd68ea94ea").FindElementByTagName("div").FindElementByTagName("h1");
+        public IWebElement PrimarySectionTitle => driver.FindElementByXPath("//*[@id='block-a50c2484babd68ea94ea']/div/h1");
 
         /// <summary>
         /// Primary section Image
@@ -84,7 +84,7 @@ namespace QualitasDigitalSeleniumCSharp.PageObjects
         /// <summary>
         /// Primary section body text
         /// </summary>
-        public IWebElement PrimarySectionBodyText => driver.FindElementById("block-f99a4c371dd091271df7").FindElementByTagName("div").FindElementByTagName("p");
+        public IWebElement PrimarySectionBodyText => driver.FindElementByXPath("//*[@id='block-f99a4c371dd091271df7']/div/p");
 
         /// <summary>
         /// Primary section schedule a free consultation button
@@ -92,64 +92,49 @@ namespace QualitasDigitalSeleniumCSharp.PageObjects
         public IWebElement PrimarySectionScheduleButton => driver.GetElementsWithTagAndAttributeStartAndEndingWithValues("div", "id", Configuration.SitePrefix, "133").First().FindElementByTagName("a");
 
         /// <summary>
-        /// Our services section
-        /// </summary>
-        public IWebElement OurServicesSection => driver.FindElementById("block-9b7a80e3167ce3d3995a");
-
-        /// <summary>
         /// Our services section title
         /// </summary>
-        public IWebElement OurServicesSectionTitle => OurServicesSection.FindElementByTagName("div").FindElementByTagName("h2");
+        public IWebElement OurServicesSectionTitle => driver.FindElementByXPath("//*[@id='block-9b7a80e3167ce3d3995a']/div/h2");
 
         /// <summary>
         /// Our services section body text
         /// </summary>
-        public IWebElement OurServicesSectionBodyText => OurServicesSection.FindElementByTagName("div").FindElementsByTagName("p").ToList()[0];
+        public IWebElement OurServicesSectionBodyText => driver.FindElementByXPath("//*[@id='block-9b7a80e3167ce3d3995a']/div/p[1]");
 
         /// <summary>
         /// Our services section link
         /// </summary>
-        public IWebElement OurServicesSectionLink => OurServicesSection.FindElementByTagName("div").FindElementsByTagName("p").ToList()[1].FindElementByTagName("a");
-
-        /// <summary>
-        /// Our commitment section
-        /// </summary>
-        public IWebElement OurCommitmentSection => driver.FindElementById("block-2429c8770ce968f657a8");
+        public IWebElement OurServicesSectionLink => driver.FindElementByXPath("//*[@id='block-9b7a80e3167ce3d3995a']/div/p[2]/a");
 
         /// <summary>
         /// Our commitment section title
         /// </summary>
-        public IWebElement OurCommitmentSectionTitle => OurCommitmentSection.FindElementByTagName("div").FindElementByTagName("h2");
+        public IWebElement OurCommitmentSectionTitle => driver.FindElementByXPath("//*[@id='block-2429c8770ce968f657a8']/div/h2");
 
         /// <summary>
         /// Our commitment section body text
         /// </summary>
-        public IWebElement OurCommitmentSectionBodyText => OurCommitmentSection.FindElementByTagName("div").FindElementsByTagName("p").ToList()[0];
+        public IWebElement OurCommitmentSectionBodyText => driver.FindElementByXPath("//*[@id='block-2429c8770ce968f657a8']/div/p[1]");
 
         /// <summary>
         /// Our commitment section link
         /// </summary>
-        public IWebElement OurCommitmentSectionLink => OurCommitmentSection.FindElementByTagName("div").FindElementsByTagName("p").ToList()[1].FindElementByTagName("a");
-
-        /// <summary>
-        /// Monthly articles section
-        /// </summary>
-        public IWebElement MonthlyArticlesSection => driver.FindElementById("block-5c47022b53cd95d3d039");
+        public IWebElement OurCommitmentSectionLink => driver.FindElementByXPath("//*[@id='block-2429c8770ce968f657a8']/div/p[2]/a");        
 
         /// <summary>
         /// Monthly articles section title
         /// </summary>
-        public IWebElement MonthlyArticlesSectionTitle => MonthlyArticlesSection.FindElementByTagName("div").FindElementByTagName("h2");
+        public IWebElement MonthlyArticlesSectionTitle => driver.FindElementByXPath("//*[@id='block-5c47022b53cd95d3d039']/div/h2");
 
         /// <summary>
         /// Monthly articles section body text
         /// </summary>
-        public IWebElement MonthlyArticlesSectionBodyText => MonthlyArticlesSection.FindElementByTagName("div").FindElementsByTagName("p").ToList()[0];
+        public IWebElement MonthlyArticlesSectionBodyText => driver.FindElementByXPath("//*[@id='block-5c47022b53cd95d3d039']/div/p[1]");
 
         /// <summary>
         /// Monthly articles section link
         /// </summary>
-        public IWebElement MonthlyArticlesSectionLink => MonthlyArticlesSection.FindElementByTagName("div").FindElementsByTagName("p").ToList()[1].FindElementByTagName("a");
+        public IWebElement MonthlyArticlesSectionLink => driver.FindElementByXPath("//*[@id='block-5c47022b53cd95d3d039']/div/p[2]/a");
 
         /// <summary>
         /// Secondary section

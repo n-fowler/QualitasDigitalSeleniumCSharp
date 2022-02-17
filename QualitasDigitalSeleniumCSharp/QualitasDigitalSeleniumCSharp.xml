@@ -2241,11 +2241,6 @@
             Primary section schedule a free consultation button
             </summary>
         </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.HomePage.OurServicesSection">
-            <summary>
-            Our services section
-            </summary>
-        </member>
         <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.HomePage.OurServicesSectionTitle">
             <summary>
             Our services section title
@@ -2261,11 +2256,6 @@
             Our services section link
             </summary>
         </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.HomePage.OurCommitmentSection">
-            <summary>
-            Our commitment section
-            </summary>
-        </member>
         <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.HomePage.OurCommitmentSectionTitle">
             <summary>
             Our commitment section title
@@ -2279,11 +2269,6 @@
         <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.HomePage.OurCommitmentSectionLink">
             <summary>
             Our commitment section link
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.HomePage.MonthlyArticlesSection">
-            <summary>
-            Monthly articles section
             </summary>
         </member>
         <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.HomePage.MonthlyArticlesSectionTitle">
