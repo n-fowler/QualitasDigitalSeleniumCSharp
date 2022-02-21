@@ -2458,19 +2458,9 @@
             The Logo Image element
             </summary>
         </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.PricingAndServicesPage.HeaderSection">
-            <summary>
-            The Header section element
-            </summary>
-        </member>
         <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.PricingAndServicesPage.HeaderTitle">
             <summary>
             The Header Title element
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.PricingAndServicesPage.LeftSection">
-            <summary>
-            The Left Section element
             </summary>
         </member>
         <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.PricingAndServicesPage.Subtitle">
@@ -2481,11 +2471,6 @@
         <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.PricingAndServicesPage.OurCommitmentLink">
             <summary>
             The Our Commitment Link element
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.PricingAndServicesPage.CenterSection">
-            <summary>
-            The Center Section element
             </summary>
         </member>
         <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.PricingAndServicesPage.AdditionalTestCoverageTitle">
@@ -2541,11 +2526,6 @@
         <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.PricingAndServicesPage.DashboardsDisclaimerBodyText">
             <summary>
             The Dashboards Disclaimer Body Text element
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.PricingAndServicesPage.RightSection">
-            <summary>
-            The Right Section element
             </summary>
         </member>
         <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.PricingAndServicesPage.TrainingTitle">
