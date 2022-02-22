@@ -2643,11 +2643,6 @@
             The Logo Image element
             </summary>
         </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.TestimonialsPage.HighlightedReviewSection">
-            <summary>
-            Highlighted Review Section element
-            </summary>
-        </member>
         <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.TestimonialsPage.HighlightedReviewContent">
             <summary>
             Highlighted Review Content element
@@ -2658,19 +2653,9 @@
             Highlighted Review Author element
             </summary>
         </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.TestimonialsPage.MidPageTitleSection">
-            <summary>
-            MidPage Title Section element
-            </summary>
-        </member>
         <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.TestimonialsPage.MidPageTitle">
             <summary>
             MidPage Title element
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.TestimonialsPage.ReviewOneSection">
-            <summary>
-            Review One Section element
             </summary>
         </member>
         <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.TestimonialsPage.ReviewOneContent">
@@ -2683,11 +2668,6 @@
             Review One Author element
             </summary>
         </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.TestimonialsPage.ReviewTwoSection">
-            <summary>
-            Review Two Section element
-            </summary>
-        </member>
         <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.TestimonialsPage.ReviewTwoContent">
             <summary>
             Review Two Content element
@@ -2696,11 +2676,6 @@
         <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.TestimonialsPage.ReviewTwoAuthor">
             <summary>
             Review Two Author element
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.TestimonialsPage.ReviewThreeSection">
-            <summary>
-            Review Three Section element
             </summary>
         </member>
         <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.TestimonialsPage.ReviewThreeContent">
@@ -2713,11 +2688,6 @@
             Review Three Author element
             </summary>
         </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.TestimonialsPage.ReviewFourSection">
-            <summary>
-            Review Four Section element
-            </summary>
-        </member>
         <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.TestimonialsPage.ReviewFourContent">
             <summary>
             Review Four Content element
@@ -2726,11 +2696,6 @@
         <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.TestimonialsPage.ReviewFourAuthor">
             <summary>
             Review Four Author element
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.TestimonialsPage.ReviewFiveSection">
-            <summary>
-            Review Five Section element
             </summary>
         </member>
         <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.TestimonialsPage.ReviewFiveContent">

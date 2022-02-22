@@ -24,104 +24,69 @@ namespace QualitasDigitalSeleniumCSharp.PageObjects
         public IWebElement LogoImage => driver.FindElementByClassName("logo-image");
 
         /// <summary>
-        /// Highlighted Review Section element
-        /// </summary>
-        public IWebElement HighlightedReviewSection => driver.FindElementById("block-af6af313004c75816482");
-
-        /// <summary>
         /// Highlighted Review Content element
         /// </summary>
-        public IWebElement HighlightedReviewContent => HighlightedReviewSection.FindElementByTagName("div").FindElementByTagName("figure").FindElementByTagName("blockquote");
+        public IWebElement HighlightedReviewContent => driver.FindElementByXPath("//*[@id='block-af6af313004c75816482']/div/figure/blockquote");
 
         /// <summary>
         /// Highlighted Review Author element
         /// </summary>
-        public IWebElement HighlightedReviewAuthor => HighlightedReviewSection.FindElementByTagName("div").FindElementByTagName("figure").FindElementByTagName("figcaption");
-
-        /// <summary>
-        /// MidPage Title Section element
-        /// </summary>
-        public IWebElement MidPageTitleSection => driver.FindElementById("block-797e974aa3c773f59547");
+        public IWebElement HighlightedReviewAuthor => driver.FindElementByXPath("//*[@id='block-af6af313004c75816482']/div/figure/figcaption");
 
         /// <summary>
         /// MidPage Title element
         /// </summary>
-        public IWebElement MidPageTitle => MidPageTitleSection.FindElementByTagName("div").FindElementByTagName("h1");
-
-        /// <summary>
-        /// Review One Section element
-        /// </summary>
-        public IWebElement ReviewOneSection => driver.FindElementById("block-3f00d4aac80b3b685ab4");
+        public IWebElement MidPageTitle => driver.FindElementByXPath("//*[@id='block-797e974aa3c773f59547']/div/h1");
 
         /// <summary>
         /// Review One Content element
         /// </summary>
-        public IWebElement ReviewOneContent => ReviewOneSection.FindElementByTagName("div").FindElementByTagName("p");
+        public IWebElement ReviewOneContent => driver.FindElementByXPath("//*[@id='block-3f00d4aac80b3b685ab4']/div/p");
 
         /// <summary>
         /// Review One Author element
         /// </summary>
-        public IWebElement ReviewOneAuthor => ReviewOneSection.FindElementByTagName("div").FindElementByTagName("h3");
-
-        /// <summary>
-        /// Review Two Section element
-        /// </summary>
-        public IWebElement ReviewTwoSection => driver.FindElementById("block-d4ed1102416f802aa412");
+        public IWebElement ReviewOneAuthor => driver.FindElementByXPath("//*[@id='block-3f00d4aac80b3b685ab4']/div/h3");
 
         /// <summary>
         /// Review Two Content element
         /// </summary>
-        public IWebElement ReviewTwoContent => ReviewTwoSection.FindElementByTagName("div").FindElementByTagName("p");
+        public IWebElement ReviewTwoContent => driver.FindElementByXPath("//*[@id='block-d4ed1102416f802aa412']/div/p");
 
         /// <summary>
         /// Review Two Author element
         /// </summary>
-        public IWebElement ReviewTwoAuthor => ReviewTwoSection.FindElementByTagName("div").FindElementByTagName("h3");
-
-        /// <summary>
-        /// Review Three Section element
-        /// </summary>
-        public IWebElement ReviewThreeSection => driver.FindElementById("block-21f65fd856a855645486");
+        public IWebElement ReviewTwoAuthor => driver.FindElementByXPath("//*[@id='block-d4ed1102416f802aa412']/div/h3");
 
         /// <summary>
         /// Review Three Content element
         /// </summary>
-        public IWebElement ReviewThreeContent => ReviewThreeSection.FindElementByTagName("div").FindElementByTagName("p");
+        public IWebElement ReviewThreeContent => driver.FindElementByXPath("//*[@id='block-21f65fd856a855645486']/div/p");
 
         /// <summary>
         /// Review Three Author element
         /// </summary>
-        public IWebElement ReviewThreeAuthor => ReviewThreeSection.FindElementByTagName("div").FindElementByTagName("h3");
-
-        /// <summary>
-        /// Review Four Section element
-        /// </summary>
-        public IWebElement ReviewFourSection => driver.FindElementById("block-4e70a0e5d8b1842d6a94");
+        public IWebElement ReviewThreeAuthor => driver.FindElementByXPath("//*[@id='block-21f65fd856a855645486']/div/h3");
 
         /// <summary>
         /// Review Four Content element
         /// </summary>
-        public IWebElement ReviewFourContent => ReviewFourSection.FindElementByTagName("div").FindElementByTagName("p");
+        public IWebElement ReviewFourContent => driver.FindElementByXPath("//*[@id='block-4e70a0e5d8b1842d6a94']/div/p");
 
         /// <summary>
         /// Review Four Author element
         /// </summary>
-        public IWebElement ReviewFourAuthor => ReviewFourSection.FindElementByTagName("div").FindElementByTagName("h3");
-
-        /// <summary>
-        /// Review Five Section element
-        /// </summary>
-        public IWebElement ReviewFiveSection => driver.FindElementById("block-3b57590e10d83c5450ee");
+        public IWebElement ReviewFourAuthor => driver.FindElementByXPath("//*[@id='block-4e70a0e5d8b1842d6a94']/div/h3");
 
         /// <summary>
         /// Review Five Content element
         /// </summary>
-        public IWebElement ReviewFiveContent => ReviewFiveSection.FindElementByTagName("div").FindElementByTagName("p");
+        public IWebElement ReviewFiveContent => driver.FindElementByXPath("//*[@id='block-3b57590e10d83c5450ee']/div/p");
 
         /// <summary>
         /// Review Five Author element
         /// </summary>
-        public IWebElement ReviewFiveAuthor => ReviewFiveSection.FindElementByTagName("div").FindElementByTagName("h3");
+        public IWebElement ReviewFiveAuthor => driver.FindElementByXPath("//*[@id='block-3b57590e10d83c5450ee']/div/h3");
 
         #endregion Elements
     }
