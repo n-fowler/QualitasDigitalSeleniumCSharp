@@ -93,10 +93,10 @@ namespace QualitasDigitalSeleniumCSharp.TestCases
 
             //Validate that the color of linked in review elements isn't the same as the highlighted review
             Assert.AreNotEqual("rgba(0, 221, 85, 1)", Page.Testimonials.ReviewOneContent.GetCssValue("color"));
-            Assert.AreNotEqual("rgba(0, 221, 85, 1)", Page.Testimonials.ReviewOneContent.GetCssValue("color"));
-            Assert.AreNotEqual("rgba(0, 221, 85, 1)", Page.Testimonials.ReviewOneContent.GetCssValue("color"));
-            Assert.AreNotEqual("rgba(0, 221, 85, 1)", Page.Testimonials.ReviewOneContent.GetCssValue("color"));
-            Assert.AreNotEqual("rgba(0, 221, 85, 1)", Page.Testimonials.ReviewOneContent.GetCssValue("color"));
+            Assert.AreNotEqual("rgba(0, 221, 85, 1)", Page.Testimonials.ReviewTwoContent.GetCssValue("color"));
+            Assert.AreNotEqual("rgba(0, 221, 85, 1)", Page.Testimonials.ReviewThreeContent.GetCssValue("color"));
+            Assert.AreNotEqual("rgba(0, 221, 85, 1)", Page.Testimonials.ReviewFourContent.GetCssValue("color"));
+            Assert.AreNotEqual("rgba(0, 221, 85, 1)", Page.Testimonials.ReviewFiveContent.GetCssValue("color"));
 
             //There should be five linked in based reviews that also aren't in green
             Assert.AreEqual(TestimonialsPageData.ReviewOneContent, Page.Testimonials.ReviewOneContent.GetInnertext());
