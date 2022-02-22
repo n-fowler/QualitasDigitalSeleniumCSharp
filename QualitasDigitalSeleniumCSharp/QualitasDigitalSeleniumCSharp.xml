@@ -2593,19 +2593,9 @@
             The Logo Image element
             </summary>
         </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.ScheduleConsultationPage.HeaderSection">
-            <summary>
-            Header Section element
-            </summary>
-        </member>
         <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.ScheduleConsultationPage.HeaderContent">
             <summary>
             Header Content element
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.ScheduleConsultationPage.LeftSection">
-            <summary>
-            Left Section element
             </summary>
         </member>
         <member name="P:QualitasDigitalSeleniumCSharp.PageObjects.ScheduleConsultationPage.LeftContent">

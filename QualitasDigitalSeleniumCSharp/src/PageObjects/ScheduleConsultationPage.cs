@@ -26,39 +26,29 @@ namespace QualitasDigitalSeleniumCSharp.PageObjects
         public IWebElement LogoImage => driver.FindElementByClassName("logo-image");
 
         /// <summary>
-        /// Header Section element
-        /// </summary>
-        public IWebElement HeaderSection => driver.FindElementById("block-540803d1406a17b6338b");
-
-        /// <summary>
         /// Header Content element
         /// </summary>
-        public IWebElement HeaderContent => HeaderSection.FindElementByTagName("div").FindElementByTagName("h1");
-
-        /// <summary>
-        /// Left Section element
-        /// </summary>
-        public IWebElement LeftSection => driver.FindElementById("block-6bcc55f9ff3b7b21fdea");
+        public IWebElement HeaderContent => driver.FindElementByXPath("//*[@id='block-540803d1406a17b6338b']/div/h1");
 
         /// <summary>
         /// Left Content element
         /// </summary>
-        public IWebElement LeftContent => LeftSection.FindElementByTagName("div").FindElementByTagName("h2");
+        public IWebElement LeftContent => driver.FindElementByXPath("//*[@id='block-6bcc55f9ff3b7b21fdea']/div/h2/em");
 
         /// <summary>
         /// Our Commitment Link element
         /// </summary>
-        public IWebElement OurCommitmentLink => LeftSection.FindElementByTagName("div").FindElementByTagName("p").FindElementsByTagName("a").ToList()[0];
+        public IWebElement OurCommitmentLink => driver.FindElementByXPath("//*[@id='block-6bcc55f9ff3b7b21fdea']/div/p/a[1]");
 
         /// <summary>
         /// Faq Link element
         /// </summary>
-        public IWebElement FaqLink => LeftSection.FindElementByTagName("div").FindElementByTagName("p").FindElementsByTagName("a").ToList()[1];
+        public IWebElement FaqLink => driver.FindElementByXPath("//*[@id='block-6bcc55f9ff3b7b21fdea']/div/p/a[2]");
 
         /// <summary>
         /// Terms And Conditions Link element
         /// </summary>
-        public IWebElement TermsAndConditionsLink => LeftSection.FindElementByTagName("div").FindElementByTagName("p").FindElementsByTagName("a").ToList()[2];
+        public IWebElement TermsAndConditionsLink => driver.FindElementByXPath("//*[@id='block-6bcc55f9ff3b7b21fdea']/div/p/a[3]");
 
         /// <summary>
         /// Schedule Consultation Button element
