@@ -1276,6 +1276,31 @@
               Looks up a localized string similar to yui_3_17_2_1.
             </summary>
         </member>
+        <member name="T:QualitasDigitalSeleniumCSharp.src.TestCases.BaseTest">
+            <summary>
+            Base Test Class with setup and teardown
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.src.TestCases.BaseTest.OneTimeSetUp">
+            <summary>
+            The one time test setup method
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.src.TestCases.BaseTest.OneTimeTearDown">
+            <summary>
+            The one time test tear down method
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.src.TestCases.BaseTest.SetUp">
+            <summary>
+            The individual test setup method
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.src.TestCases.BaseTest.TearDown">
+            <summary>
+            The individual test tear down method
+            </summary>
+        </member>
         <member name="T:QualitasDigitalSeleniumCSharp.src.TestData.AboutUsPageTestData">
             <summary>
               A strongly-typed resource class, for looking up localized strings, etc.
@@ -2713,26 +2738,6 @@
             AboutUs Tests
             </summary>
         </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.AboutUsTests.OneTimeSetUp">
-            <summary>
-            The one time test setup method
-            </summary>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.AboutUsTests.OneTimeTearDown">
-            <summary>
-            The one time test tear down method
-            </summary>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.AboutUsTests.SetUp">
-            <summary>
-            The individual test setup method
-            </summary>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.AboutUsTests.TearDown">
-            <summary>
-            The individual test tear down method
-            </summary>
-        </member>
         <member name="M:QualitasDigitalSeleniumCSharp.TestCases.AboutUsTests.AboutUsLoad">
             <summary></summary>
         </member>
@@ -2742,26 +2747,6 @@
         <member name="T:QualitasDigitalSeleniumCSharp.TestCases.ContactUsTests">
             <summary>
             Contact Us Tests
-            </summary>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.ContactUsTests.OneTimeSetUp">
-            <summary>
-            The one time test setup method
-            </summary>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.ContactUsTests.OneTimeTearDown">
-            <summary>
-            The one time test tear down method
-            </summary>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.ContactUsTests.SetUp">
-            <summary>
-            The individual test setup method
-            </summary>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.ContactUsTests.TearDown">
-            <summary>
-            The individual test tear down method
             </summary>
         </member>
         <member name="M:QualitasDigitalSeleniumCSharp.TestCases.ContactUsTests.ContactUsLoad">
@@ -2775,26 +2760,6 @@
             Faq Tests
             </summary>
         </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.FaqTests.OneTimeSetUp">
-            <summary>
-            The one time test setup method
-            </summary>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.FaqTests.OneTimeTearDown">
-            <summary>
-            The one time test tear down method
-            </summary>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.FaqTests.SetUp">
-            <summary>
-            The individual test setup method
-            </summary>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.FaqTests.TearDown">
-            <summary>
-            The individual test tear down method
-            </summary>
-        </member>
         <member name="M:QualitasDigitalSeleniumCSharp.TestCases.FaqTests.FaqLoad">
             <summary></summary>
         </member>
@@ -2804,26 +2769,6 @@
         <member name="T:QualitasDigitalSeleniumCSharp.TestCases.HomeTests">
             <summary>
             HomePage Tests
-            </summary>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.HomeTests.OneTimeSetUp">
-            <summary>
-            The one time test setup method
-            </summary>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.HomeTests.OneTimeTearDown">
-            <summary>
-            The one time test tear down method
-            </summary>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.HomeTests.SetUp">
-            <summary>
-            The individual test setup method
-            </summary>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.HomeTests.TearDown">
-            <summary>
-            The individual test tear down method
             </summary>
         </member>
         <member name="M:QualitasDigitalSeleniumCSharp.TestCases.HomeTests.HomePageLoad">
@@ -2843,26 +2788,6 @@
             NewsAndNotes Tests
             </summary>
         </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.NewsAndNotesTests.OneTimeSetUp">
-            <summary>
-            The one time test setup method
-            </summary>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.NewsAndNotesTests.OneTimeTearDown">
-            <summary>
-            The one time test tear down method
-            </summary>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.NewsAndNotesTests.SetUp">
-            <summary>
-            The individual test setup method
-            </summary>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.NewsAndNotesTests.TearDown">
-            <summary>
-            The individual test tear down method
-            </summary>
-        </member>
         <member name="M:QualitasDigitalSeleniumCSharp.TestCases.NewsAndNotesTests.NewsAndNotesLoad">
             <summary></summary>
         </member>
@@ -2872,26 +2797,6 @@
         <member name="T:QualitasDigitalSeleniumCSharp.TestCases.PricingAndServicesTests">
             <summary>
             PricingAndServices Tests
-            </summary>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.PricingAndServicesTests.OneTimeSetUp">
-            <summary>
-            The one time test setup method
-            </summary>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.PricingAndServicesTests.OneTimeTearDown">
-            <summary>
-            The one time test tear down method
-            </summary>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.PricingAndServicesTests.SetUp">
-            <summary>
-            The individual test setup method
-            </summary>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.PricingAndServicesTests.TearDown">
-            <summary>
-            The individual test tear down method
             </summary>
         </member>
         <member name="M:QualitasDigitalSeleniumCSharp.TestCases.PricingAndServicesTests.PricingAndServicesLoad">
@@ -2905,26 +2810,6 @@
             Schedule Consultation Tests
             </summary>
         </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.ScheduleConsultationTests.OneTimeSetUp">
-            <summary>
-            The one time test setup method
-            </summary>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.ScheduleConsultationTests.OneTimeTearDown">
-            <summary>
-            The one time test tear down method
-            </summary>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.ScheduleConsultationTests.SetUp">
-            <summary>
-            The individual test setup method
-            </summary>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.ScheduleConsultationTests.TearDown">
-            <summary>
-            The individual test tear down method
-            </summary>
-        </member>
         <member name="M:QualitasDigitalSeleniumCSharp.TestCases.ScheduleConsultationTests.ScheduleConsultationLoad">
             <summary></summary>
         </member>
@@ -2934,26 +2819,6 @@
         <member name="T:QualitasDigitalSeleniumCSharp.TestCases.TestimonialsTests">
             <summary>
             Testimonials Tests
-            </summary>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.TestimonialsTests.OneTimeSetUp">
-            <summary>
-            The one time test setup method
-            </summary>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.TestimonialsTests.OneTimeTearDown">
-            <summary>
-            The one time test tear down method
-            </summary>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.TestimonialsTests.SetUp">
-            <summary>
-            The individual test setup method
-            </summary>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.TestCases.TestimonialsTests.TearDown">
-            <summary>
-            The individual test tear down method
             </summary>
         </member>
         <member name="M:QualitasDigitalSeleniumCSharp.TestCases.TestimonialsTests.TestimonialsLoad">
