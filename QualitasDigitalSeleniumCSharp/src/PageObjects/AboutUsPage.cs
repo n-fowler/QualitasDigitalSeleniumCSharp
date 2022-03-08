@@ -74,7 +74,7 @@ namespace QualitasDigitalSeleniumCSharp.PageObjects
         /// <summary>
         /// The About Us Image element
         /// </summary>
-        public IWebElement Image => AboutUsImageSection.GetElementsWithTagAndAttributeStartAndEndingWithValues("div", "id", Configuration.SitePrefix, "67")
+        public IWebElement Image => AboutUsImageSection.GetElementsWithTagAndAttributeStartAndEndingWithValues("div", "id", Configuration.SitePrefix, "68")
             .First().FindElementByTagName("img");
 
         #endregion Elements
