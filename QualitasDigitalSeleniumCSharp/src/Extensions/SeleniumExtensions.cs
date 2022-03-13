@@ -1367,7 +1367,7 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         {
             try
             {
-                var elements = driver.FindElementsByCssSelector($"[{attribute}]");
+                var elements = driver.FindElementsByCssSelector($"['{attribute}']");
                 TestStepLog.GenerateTestStep($"Get Elements With Target Attribute: {attribute}", "Elements retrieved", "Success", BrowserFactory.Stopwatch.Elapsed);
                 return elements;
             }
@@ -1411,7 +1411,7 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         {
             try
             {
-                var elements = driver.FindElementsByCssSelector($"[{attribute}~={value}]");
+                var elements = driver.FindElementsByCssSelector($"[{attribute}~='{value}']");
                 TestStepLog.GenerateTestStep($"Get Elements With Attribute: {attribute} Containing Value: {value}", "Elements retrieved", "Success", BrowserFactory.Stopwatch.Elapsed);
                 return elements;
             }
@@ -1419,6 +1419,29 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
             {
                 Logging.FailureReason = e.Message.Split(":").First();
                 TestStepLog.GenerateTestStep($"Get Elements With Attribute: {attribute} Containing Value: {value}", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// Gets all elements with an attribute containing a specified value
+        /// </summary>
+        /// <param name="driver">The driver for this session</param>
+        /// <param name="attribute">The attribute</param>
+        /// <param name="value">The value</param>
+        /// <returns>Returns a read only collection of selenium web elements</returns>
+        public static IReadOnlyCollection<IWebElement> GetElementsWithAttributeValue(this IWebDriver driver, string attribute, string value)
+        {
+            try
+            {
+                var elements = driver.FindElementsByCssSelector($"[{attribute}='{value}']");
+                TestStepLog.GenerateTestStep($"Get Elements With Attribute: {attribute} Has Value: {value}", "Elements retrieved", "Success", BrowserFactory.Stopwatch.Elapsed);
+                return elements;
+            }
+            catch (Exception e)
+            {
+                Logging.FailureReason = e.Message.Split(":").First();
+                TestStepLog.GenerateTestStep($"Get Elements With Attribute: {attribute} Has Value: {value}", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
                 throw;
             }
         }
@@ -1434,7 +1457,7 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         {
             try
             {
-                var elements = driver.FindElementsByCssSelector($"[{attribute}|={value}]");
+                var elements = driver.FindElementsByCssSelector($"[{attribute}|='{value}']");
                 TestStepLog.GenerateTestStep($"Get Elements With Attribute: {attribute} Starting With Value: {value}", "Elements retrieved", "Success", BrowserFactory.Stopwatch.Elapsed);
                 return elements;
             }
@@ -2284,7 +2307,7 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         {
             try
             {
-                var elements = webElement.FindElementsByCssSelector($"[{attribute}]");
+                var elements = webElement.FindElementsByCssSelector($"['{attribute}']");
                 TestStepLog.GenerateTestStep($"Get Elements With Target Attribute: {attribute}", "Elements retrieved", "Success", BrowserFactory.Stopwatch.Elapsed);
                 return elements;
             }
@@ -2324,11 +2347,34 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         /// <param name="attribute">The attribute</param>
         /// <param name="value">The value</param>
         /// <returns>Returns a read only collection of selenium web elements</returns>
+        public static IReadOnlyCollection<IWebElement> GetElementsWithAttributeValue(this IWebElement webElement, string attribute, string value)
+        {
+            try
+            {
+                var elements = webElement.FindElementsByCssSelector($"[{attribute}='{value}']");
+                TestStepLog.GenerateTestStep($"Get Elements With Attribute: {attribute} Has Value: {value}", "Elements retrieved", "Success", BrowserFactory.Stopwatch.Elapsed);
+                return elements;
+            }
+            catch (Exception e)
+            {
+                Logging.FailureReason = e.Message.Split(":").First();
+                TestStepLog.GenerateTestStep($"Get Elements With Attribute: {attribute} Has Value: {value}", Logging.FailureReason, "Failure", BrowserFactory.Stopwatch.Elapsed);
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// Gets all elements with an attribute containing a specified value
+        /// </summary>
+        /// <param name="webElement">The web element to scope to</param>
+        /// <param name="attribute">The attribute</param>
+        /// <param name="value">The value</param>
+        /// <returns>Returns a read only collection of selenium web elements</returns>
         public static IReadOnlyCollection<IWebElement> GetElementsWithAttributeContainingValue(this IWebElement webElement, string attribute, string value)
         {
             try
             {
-                var elements = webElement.FindElementsByCssSelector($"[{attribute}~={value}]");
+                var elements = webElement.FindElementsByCssSelector($"[{attribute}~='{value}']");
                 TestStepLog.GenerateTestStep($"Get Elements With Attribute: {attribute} Containing Value: {value}", "Elements retrieved", "Success", BrowserFactory.Stopwatch.Elapsed);
                 return elements;
             }
@@ -2351,7 +2397,7 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         {
             try
             {
-                var elements = webElement.FindElementsByCssSelector($"[{attribute}|={value}]");
+                var elements = webElement.FindElementsByCssSelector($"[{attribute}|='{value}']");
                 TestStepLog.GenerateTestStep($"Get Elements With Attribute: {attribute} Starting With Value: {value}", "Elements retrieved", "Success", BrowserFactory.Stopwatch.Elapsed);
                 return elements;
             }
