@@ -1424,7 +1424,7 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         }
 
         /// <summary>
-        /// Gets all elements with an attribute containing a specified value
+        /// Gets all elements with an attribute equal to a specified value
         /// </summary>
         /// <param name="driver">The driver for this session</param>
         /// <param name="attribute">The attribute</param>
@@ -2341,7 +2341,7 @@ namespace QualitasDigitalSeleniumCSharp.Extensions
         }
 
         /// <summary>
-        /// Gets all elements with an attribute containing a specified value
+        /// Gets all elements with an attribute equal to a specified value
         /// </summary>
         /// <param name="webElement">The web element to scope to</param>
         /// <param name="attribute">The attribute</param>
