@@ -1,5 +1,5 @@
 ﻿using NUnit.Framework;
-using QualitasDigitalSeleniumCSharp.Extensions;
+using OpenQA.Selenium;
 using QualitasDigitalSeleniumCSharp.PageObjects;
 using QualitasDigitalSeleniumCSharp.src.TestCases;
 using QualitasDigitalSeleniumCSharp.src.TestData;
@@ -35,13 +35,13 @@ namespace QualitasDigitalSeleniumCSharp.TestCases
             BrowserFactory.WaitForPageLoad(10);
 
             //Validate Title
-            Assert.AreEqual(ContactUsPageData.HeaderContent, Page.ContactUs.HeaderContent.GetInnertext());
+            Assert.AreEqual(ContactUsPageData.HeaderContent, Page.ContactUs.HeaderContent.GetAttribute("innerText"));
 
             //Validate left section
-            Assert.AreEqual(ContactUsPageData.LeftContent, Page.ContactUs.SidebarContent.GetInnertext());
-            Assert.AreEqual(ContactUsPageData.OurCommitmentLink, Page.ContactUs.OurCommitmentLink.GetHref());
-            Assert.AreEqual(ContactUsPageData.FaqLink, Page.ContactUs.FaqLink.GetHref());
-            Assert.AreEqual(ContactUsPageData.TermsAndConditionsLink, Page.ContactUs.TermsAndConditionsLink.GetHref());
+            Assert.AreEqual(ContactUsPageData.LeftContent, Page.ContactUs.SidebarContent.GetAttribute("innerText"));
+            Assert.AreEqual(ContactUsPageData.OurCommitmentLink, Page.ContactUs.OurCommitmentLink.GetAttribute("href"));
+            Assert.AreEqual(ContactUsPageData.FaqLink, Page.ContactUs.FaqLink.GetAttribute("href"));
+            Assert.AreEqual(ContactUsPageData.TermsAndConditionsLink, Page.ContactUs.TermsAndConditionsLink.GetAttribute("href"));
 
             //Validate right section
 
@@ -67,7 +67,7 @@ namespace QualitasDigitalSeleniumCSharp.TestCases
                 Other* (Include additional detail below)
             */
 
-            var options = Page.ContactUs.CheckboxSection.FindElementsByTagName("div").ToList();
+            var options = Page.ContactUs.CheckboxSection.FindElements(By.TagName("div")).ToList();
             var expectedOptions = new List<string>
             {
                 "Additional Test Coverage",
@@ -85,8 +85,8 @@ namespace QualitasDigitalSeleniumCSharp.TestCases
             for (int i = 0; i < options.Count; i++)
             {
                 //Verify the checkbox
-                Assert.AreEqual("checkbox", options[i].FindElementByTagName("label").FindElementByTagName("input").GetDomProperty("type"));
-                Assert.AreEqual(expectedOptions[i], options[i].FindElementByTagName("label").FindElementByTagName("input").GetDomProperty("value"));
+                Assert.AreEqual("checkbox", options[i].FindElement(By.TagName("label")).FindElement(By.TagName("input")).GetDomProperty("type"));
+                Assert.AreEqual(expectedOptions[i], options[i].FindElement(By.TagName("label")).FindElement(By.TagName("input")).GetDomProperty("value"));
             }
 
             //There should be an additional message field

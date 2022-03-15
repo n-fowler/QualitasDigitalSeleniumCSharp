@@ -1,5 +1,4 @@
 ﻿using NUnit.Framework;
-using QualitasDigitalSeleniumCSharp.Extensions;
 using QualitasDigitalSeleniumCSharp.PageObjects;
 using QualitasDigitalSeleniumCSharp.src.TestCases;
 using QualitasDigitalSeleniumCSharp.src.TestData;
@@ -33,16 +32,16 @@ namespace QualitasDigitalSeleniumCSharp.TestCases
             BrowserFactory.WaitForPageLoad(10);
 
             //Validate Title
-            Assert.AreEqual(ScheduleConsultationPageData.HeaderContent, Page.ScheduleConsultation.HeaderContent.GetInnertext());
+            Assert.AreEqual(ScheduleConsultationPageData.HeaderContent, Page.ScheduleConsultation.HeaderContent.GetAttribute("innerText"));
 
             //Validate left section
-            Assert.AreEqual(ScheduleConsultationPageData.LeftContent, Page.ScheduleConsultation.LeftContent.GetInnertext());
-            Assert.AreEqual(ScheduleConsultationPageData.OurCommitmentLink, Page.ScheduleConsultation.OurCommitmentLink.GetHref());
-            Assert.AreEqual(ScheduleConsultationPageData.FaqLink, Page.ScheduleConsultation.FaqLink.GetHref());
-            Assert.AreEqual(ScheduleConsultationPageData.TermsAndConditionsLink, Page.ScheduleConsultation.TermsAndConditionsLink.GetHref());
+            Assert.AreEqual(ScheduleConsultationPageData.LeftContent, Page.ScheduleConsultation.LeftContent.GetAttribute("innerText"));
+            Assert.AreEqual(ScheduleConsultationPageData.OurCommitmentLink, Page.ScheduleConsultation.OurCommitmentLink.GetAttribute("href"));
+            Assert.AreEqual(ScheduleConsultationPageData.FaqLink, Page.ScheduleConsultation.FaqLink.GetAttribute("href"));
+            Assert.AreEqual(ScheduleConsultationPageData.TermsAndConditionsLink, Page.ScheduleConsultation.TermsAndConditionsLink.GetAttribute("href"));
 
             //Validate right section
-            Assert.AreEqual(ScheduleConsultationPageData.ScheduleConsultationButtonLink, Page.ScheduleConsultation.ScheduleConsultationButtonLink.GetHref());
+            Assert.AreEqual(ScheduleConsultationPageData.ScheduleConsultationButtonLink, Page.ScheduleConsultation.ScheduleConsultationButtonLink.GetAttribute("href"));
         }
 
         //Due to the lack of test environments, there aren't any tests for scheduling the consultation on calendly, and their tests cover that anyway.

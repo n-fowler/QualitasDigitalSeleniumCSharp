@@ -1,5 +1,4 @@
 ﻿using NUnit.Framework;
-using QualitasDigitalSeleniumCSharp.Extensions;
 using QualitasDigitalSeleniumCSharp.PageObjects;
 using QualitasDigitalSeleniumCSharp.src.TestCases;
 using QualitasDigitalSeleniumCSharp.src.TestData;
@@ -34,11 +33,11 @@ namespace QualitasDigitalSeleniumCSharp.TestCases
             BrowserFactory.WaitForPageLoad(10);
 
             //Validate header
-            Assert.AreEqual(FaqPageTestData.FaqTitle, Page.Faq.HeaderContent.GetInnertext());
+            Assert.AreEqual(FaqPageTestData.FaqTitle, Page.Faq.HeaderContent.GetAttribute("innerText"));
 
             //Validate left subsection
-            Assert.AreEqual(FaqPageTestData.FaqSubtitle, Page.Faq.SidebarContent.GetInnertext());
-            Assert.AreEqual(FaqPageTestData.ContactUsLink, Page.Faq.ContactUsLink.GetHref());
+            Assert.AreEqual(FaqPageTestData.FaqSubtitle, Page.Faq.SidebarContent.GetAttribute("innerText"));
+            Assert.AreEqual(FaqPageTestData.ContactUsLink, Page.Faq.ContactUsLink.GetAttribute("href"));
 
             //Validate middle subsection
             var faqPageExpectedTitles = new List<string>

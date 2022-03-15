@@ -1,5 +1,4 @@
 ﻿using NUnit.Framework;
-using QualitasDigitalSeleniumCSharp.Extensions;
 using QualitasDigitalSeleniumCSharp.PageObjects;
 using QualitasDigitalSeleniumCSharp.src.TestCases;
 using QualitasDigitalSeleniumCSharp.src.TestData;
@@ -33,12 +32,12 @@ namespace QualitasDigitalSeleniumCSharp.TestCases
             BrowserFactory.WaitForPageLoad(10);
 
             //Validate About Us Section
-            Assert.AreEqual(AboutUsPageTestData.HeaderTitle, Page.AboutUs.HeaderTitle.GetInnertext());
-            Assert.AreEqual(AboutUsPageTestData.AboutUsTitle, Page.AboutUs.Title.GetInnertext());
-            StringAssert.Contains(AboutUsPageTestData.AboutUsImageSrc, Page.AboutUs.Image.GetSrc());
-            Assert.AreEqual(AboutUsPageTestData.AboutUsBodyText, Page.AboutUs.BodyText.GetInnertext());
-            Assert.AreEqual(AboutUsPageTestData.OurServicesLink, Page.AboutUs.OurServicesLink.GetHref());
-            Assert.AreEqual(AboutUsPageTestData.ScheduleConsultationLink, Page.AboutUs.ScheduleConsultationLink.GetHref());
+            Assert.AreEqual(AboutUsPageTestData.HeaderTitle, Page.AboutUs.HeaderTitle.GetAttribute("innerText"));
+            Assert.AreEqual(AboutUsPageTestData.AboutUsTitle, Page.AboutUs.Title.GetAttribute("innerText"));
+            StringAssert.Contains(AboutUsPageTestData.AboutUsImageSrc, Page.AboutUs.Image.GetAttribute("src"));
+            Assert.AreEqual(AboutUsPageTestData.AboutUsBodyText, Page.AboutUs.BodyText.GetAttribute("innerText"));
+            Assert.AreEqual(AboutUsPageTestData.OurServicesLink, Page.AboutUs.OurServicesLink.GetAttribute("href"));
+            Assert.AreEqual(AboutUsPageTestData.ScheduleConsultationLink, Page.AboutUs.ScheduleConsultationLink.GetAttribute("href"));
         }
 
         #endregion Tests

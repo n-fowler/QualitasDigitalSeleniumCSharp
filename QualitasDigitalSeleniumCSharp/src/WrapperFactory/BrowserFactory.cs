@@ -8,8 +8,6 @@ using OpenQA.Selenium.IE;
 using OpenQA.Selenium.Opera;
 using OpenQA.Selenium.Safari;
 using OpenQA.Selenium.Support.UI;
-using QualitasDigitalSeleniumCSharp.Extensions;
-using QualitasDigitalSeleniumCSharp.src.LocalConfiguration;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -123,31 +121,6 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         }
 
         /// <summary>
-        /// Report the test failure to the logging system
-        /// </summary>
-        /// <param name="testContext"></param>
-        public static void ReportTestStatus(TestContext testContext)
-        {
-            if (testContext.Result.Outcome.Status != ResultState.Failure.Status)
-            {
-                Logging.ReportTestSuccess();
-                return;
-            }
-
-            string directory = $"{Configuration.LocalTestResultsPath}\\{Logging.TestRunId}";
-            Directory.CreateDirectory(directory);
-
-            string fileName = "\\FailureScreenshot.png";
-            string path = directory + fileName;
-
-            Screenshot screenshot = ((ITakesScreenshot)Driver).GetScreenshot();
-            screenshot.SaveAsFile(path, ScreenshotImageFormat.Png);
-
-            Logging.SetFailureScreenshotPath(path);
-            Logging.ReportTestFailure(testContext.Result.Message.Replace("\r", "").Replace("\n", ""), testContext.Result.StackTrace);
-        }
-
-        /// <summary>
         /// Close all active drivers for the session
         /// </summary>
         public static void CloseAllDrivers()
@@ -189,7 +162,6 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         public static void GoToPage(string url)
         {
             _driver.Navigate().GoToUrl(url);
-            TestStepLog.GenerateTestStep($"Go to page: {url}", $"Browser navigated to url: {url}", "Success", Stopwatch.Elapsed);
         }
 
         /// <summary>
@@ -230,7 +202,6 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         {
             IAlert alert = _driver.SwitchTo().Alert();
             alert.Accept();
-            TestStepLog.GenerateTestStep("Accept the popup", "Browser accepted popup", "Success", Stopwatch.Elapsed);
         }
 
         /// <summary>
@@ -240,7 +211,6 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         {
             IAlert alert = _driver.SwitchTo().Alert();
             alert.Dismiss();
-            TestStepLog.GenerateTestStep("Dismiss the popup", "Browser dismissed popup", "Success", Stopwatch.Elapsed);
         }
 
         /// <summary>
@@ -251,7 +221,6 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
             ReadOnlyCollection<string> windowHandles = _driver.WindowHandles;
             string firstTab = windowHandles.First();
             _driver.SwitchTo().Window(firstTab);
-            TestStepLog.GenerateTestStep("Switch to the first tab", "Browser switched to first tab", "Success", Stopwatch.Elapsed);
         }
 
         /// <summary>
@@ -262,7 +231,6 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
             ReadOnlyCollection<string> windowHandles = _driver.WindowHandles;
             string lastTab = windowHandles.Last();
             _driver.SwitchTo().Window(lastTab);
-            TestStepLog.GenerateTestStep("Switch to last tab", "Browser switched to last tab", "Success", Stopwatch.Elapsed);
         }
 
         /// <summary>
@@ -277,8 +245,6 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
             {
                 _driver.SwitchTo().Window(windowHandles[currentIndex + 1]);
             }
-
-            TestStepLog.GenerateTestStep("Switch to the next tab", "Browser switched to next tab", "Success", Stopwatch.Elapsed);
         }
 
         /// <summary>
@@ -293,8 +259,6 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
             {
                 _driver.SwitchTo().Window(windowHandles[currentIndex - 1]);
             }
-
-            TestStepLog.GenerateTestStep("Switch to previous tab", "Browser switched to previous tab", "Success", Stopwatch.Elapsed);
         }
 
         /// <summary>
@@ -303,7 +267,6 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         public static void GoBack()
         {
             _driver.Navigate().Back();
-            TestStepLog.GenerateTestStep("Use the browser back button", "Browser navigated back", "Success", Stopwatch.Elapsed);
         }
 
         /// <summary>
@@ -312,7 +275,6 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         public static void GoForward()
         {
             _driver.Navigate().Forward();
-            TestStepLog.GenerateTestStep("Use the browser forward button", "Browser navigated forward", "Success", Stopwatch.Elapsed);
         }
 
         /// <summary>
@@ -321,7 +283,6 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         public static void Refresh()
         {
             _driver.Navigate().Refresh();
-            TestStepLog.GenerateTestStep("Use the browser refresh button", "Browser refreshed", "Success", Stopwatch.Elapsed);
         }
 
         /// <summary>
@@ -331,7 +292,6 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         public static void FocusLink(string link)
         {
             ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].focus();", link);
-            TestStepLog.GenerateTestStep($"Focus the link: {link}", $"Browser focused a link: {link}", "Success", Stopwatch.Elapsed);
         }
 
         /// <summary>
@@ -340,7 +300,6 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         private static void MaximizeWindow()
         {
             _driver.Manage().Window.Maximize();
-            TestStepLog.GenerateTestStep("Maximize the browser window", "Browser was maximized", "Success", Stopwatch.Elapsed);
         }
 
         /// <summary>
@@ -361,7 +320,6 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         {
             Cookie cookie = new Cookie("key", "value");
             _driver.Manage().Cookies.AddCookie(cookie);
-            TestStepLog.GenerateTestStep($"Add a cookie with the key: {key} and value: {value}", $"Browser added a cookie with key: {key} and value: {value}", "Success", Stopwatch.Elapsed);
         }
 
         /// <summary>
@@ -380,7 +338,6 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         public static void DeleteCookie(string name)
         {
             _driver.Manage().Cookies.DeleteCookieNamed(name);
-            TestStepLog.GenerateTestStep($"Delete a cookie with the name: {name}", $"Browser deleted a cookie by name: {name}", "Success", Stopwatch.Elapsed);
         }
 
         /// <summary>
@@ -389,7 +346,6 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         public static void DeleteCookies()
         {
             _driver.Manage().Cookies.DeleteAllCookies();
-            TestStepLog.GenerateTestStep("Delete all cookies", "Browser deleted all cookies", "Success", Stopwatch.Elapsed);
         }
 
         /// <summary>
@@ -400,7 +356,6 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         {
             Screenshot screenshot = ((ITakesScreenshot)_driver).GetScreenshot();
             screenshot.SaveAsFile(path, ScreenshotImageFormat.Png);
-            TestStepLog.GenerateTestStep($"Take a screenshot and save it at path: {path}", $"Browser took a screenshot and saved it at path: {path}", "Success", Stopwatch.Elapsed);
         }
 
         /// <summary>
@@ -411,7 +366,6 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         {
             WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(timeout));
             wait.Until((x) => ((IJavaScriptExecutor)_driver).ExecuteScript("return document.readyState").Equals("complete"));
-            TestStepLog.GenerateTestStep("Wait for the page to load", "Browser waited for page load", "Success", Stopwatch.Elapsed);
         }
 
         /// <summary>
@@ -421,7 +375,6 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         public static void SwitchToFrameByIndex(int index)
         {
             _driver.SwitchTo().Frame(index);
-            TestStepLog.GenerateTestStep($"Switch to the frame with index: {index}", $"Browser switched to frame by index: {index}", "Success", Stopwatch.Elapsed);
         }
 
         /// <summary>
@@ -431,7 +384,6 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         public static void SwitchToFrameByName(string name)
         {
             _driver.SwitchTo().Frame(name);
-            TestStepLog.GenerateTestStep($"Switch to the frame with name: {name}", $"Browser switched to frame by name: {name}", "Success", Stopwatch.Elapsed);
         }
 
         /// <summary>
@@ -441,7 +393,6 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         public static void SwitchToFrameByElement(IWebElement element)
         {
             _driver.SwitchTo().Frame(element);
-            TestStepLog.GenerateTestStep($"Switch to the frame with element: {element}", $"Browser switched to frame by element: {element}", "Success", Stopwatch.Elapsed);
         }
 
         /// <summary>
@@ -450,7 +401,6 @@ namespace QualitasDigitalSeleniumCSharp.WrapperFactory
         public static void SwitchToDefaultFrame()
         {
             _driver.SwitchTo().DefaultContent();
-            TestStepLog.GenerateTestStep("Switch to the default frame", "Browser switched to default frame", "Success", Stopwatch.Elapsed);
         }
 
         #endregion Advanced Browser Operations

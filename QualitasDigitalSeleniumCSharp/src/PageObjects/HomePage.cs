@@ -1,6 +1,4 @@
 ﻿using OpenQA.Selenium;
-using QualitasDigitalSeleniumCSharp.Extensions;
-using QualitasDigitalSeleniumCSharp.src.LocalConfiguration;
 using QualitasDigitalSeleniumCSharp.WrapperFactory;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,197 +22,197 @@ namespace QualitasDigitalSeleniumCSharp.PageObjects
         /// <summary>
         /// The Logo Image element
         /// </summary>
-        public IWebElement LogoImage => driver.FindElementByClassName("logo-image");
+        public IWebElement LogoImage => driver.FindElement(By.ClassName("logo-image"));
 
         /// <summary>
         /// Navigation section expansion toggle open
         /// </summary>
-        public IWebElement NavToggle => driver.FindElementById("navToggle");
+        public IWebElement NavToggle => driver.FindElement(By.Id("navToggle"));
 
         /// <summary>
         /// Navigation section side tray
         /// </summary>
-        public IWebElement NavTray => driver.FindElementById("sideTrayWrapper");
+        public IWebElement NavTray => driver.FindElement(By.Id("sideTrayWrapper"));
 
         /// <summary>
         /// Navigation section parent
         /// </summary>
-        public IWebElement NavSection => NavTray.FindElementById("mainNavigation");
+        public IWebElement NavSection => NavTray.FindElement(By.Id("mainNavigation"));
 
         /// <summary>
         /// Navigation section link collection
         /// </summary>
-        public List<IWebElement> NavCollection => NavSection.FindElementsByClassName("nav-link--collection").ToList();
+        public List<IWebElement> NavCollection => NavSection.FindElements(By.ClassName("nav-link--collection")).ToList();
 
         /// <summary>
         /// Navigation section body text
         /// </summary>
-        public IWebElement NavBodyText => driver.FindElementById("block-5aa025203dc65c6e55e9");
+        public IWebElement NavBodyText => driver.FindElement(By.Id("block-5aa025203dc65c6e55e9"));
 
         /// <summary>
         /// Navigation section schedule button
         /// </summary>
-        public IWebElement NavScheduleButton => driver.FindElementById("block-d013aff45daaf1868f5b");
+        public IWebElement NavScheduleButton => driver.FindElement(By.Id("block-d013aff45daaf1868f5b"));
 
         /// <summary>
         /// Home Page search button
         /// </summary>
-        public IWebElement SearchButton => driver.FindElementByClassName("header-search");
+        public IWebElement SearchButton => driver.FindElement(By.ClassName("header-search"));
 
         /// <summary>
         /// Home Page search text box
         /// </summary>
-        public IWebElement SearchTextBox => driver.FindElementByClassName("header-search-form-input");
+        public IWebElement SearchTextBox => driver.FindElement(By.ClassName("header-search-form-input"));
 
         /// <summary>
         /// Home Page search result text
         /// </summary>
-        public IWebElement SearchResultText => driver.FindElementByClassName("sqs-search-page-notice");
+        public IWebElement SearchResultText => driver.FindElement(By.ClassName("sqs-search-page-notice"));
 
         /// <summary>
         /// Primary section title text
         /// </summary>
-        public IWebElement PrimarySectionTitle => driver.FindElementByXPath("//*[@id='block-a50c2484babd68ea94ea']/div/h1");
+        public IWebElement PrimarySectionTitle => driver.FindElement(By.XPath("//*[@id='block-a50c2484babd68ea94ea']/div/h1"));
 
         /// <summary>
         /// Primary section Image
         /// </summary>
-        public IWebElement PrimarySectionImage => driver.GetElementsWithTagAndAttributeStartAndEndingWithValues("div", "id", Configuration.SitePrefix, "68").First().FindElementByTagName("img");
+        public IWebElement PrimarySectionImage => driver.FindElements(By.CssSelector("div[id^='yui_3_17_2_1'][id$='68']")).First().FindElement(By.TagName("img"));
 
         /// <summary>
         /// Primary section body text
         /// </summary>
-        public IWebElement PrimarySectionBodyText => driver.FindElementByXPath("//*[@id='block-f99a4c371dd091271df7']/div/p");
+        public IWebElement PrimarySectionBodyText => driver.FindElement(By.XPath("//*[@id='block-f99a4c371dd091271df7']/div/p"));
 
         /// <summary>
         /// Primary section schedule a free consultation button
         /// </summary>
-        public IWebElement PrimarySectionScheduleButton => driver.GetElementsWithTagAndAttributeStartAndEndingWithValues("div", "id", Configuration.SitePrefix, "134").First().FindElementByTagName("a");
+        public IWebElement PrimarySectionScheduleButton => driver.FindElements(By.CssSelector("div[id^='yui_3_17_2_1'][id$='134']")).First().FindElement(By.TagName("a"));
 
         /// <summary>
         /// Our services section title
         /// </summary>
-        public IWebElement OurServicesSectionTitle => driver.FindElementByXPath("//*[@id='block-9b7a80e3167ce3d3995a']/div/h2");
+        public IWebElement OurServicesSectionTitle => driver.FindElement(By.XPath("//*[@id='block-9b7a80e3167ce3d3995a']/div/h2"));
 
         /// <summary>
         /// Our services section body text
         /// </summary>
-        public IWebElement OurServicesSectionBodyText => driver.FindElementByXPath("//*[@id='block-9b7a80e3167ce3d3995a']/div/p[1]");
+        public IWebElement OurServicesSectionBodyText => driver.FindElement(By.XPath("//*[@id='block-9b7a80e3167ce3d3995a']/div/p[1]"));
 
         /// <summary>
         /// Our services section link
         /// </summary>
-        public IWebElement OurServicesSectionLink => driver.FindElementByXPath("//*[@id='block-9b7a80e3167ce3d3995a']/div/p[2]/a");
+        public IWebElement OurServicesSectionLink => driver.FindElement(By.XPath("//*[@id='block-9b7a80e3167ce3d3995a']/div/p[2]/a"));
 
         /// <summary>
         /// Our commitment section title
         /// </summary>
-        public IWebElement OurCommitmentSectionTitle => driver.FindElementByXPath("//*[@id='block-2429c8770ce968f657a8']/div/h2");
+        public IWebElement OurCommitmentSectionTitle => driver.FindElement(By.XPath("//*[@id='block-2429c8770ce968f657a8']/div/h2"));
 
         /// <summary>
         /// Our commitment section body text
         /// </summary>
-        public IWebElement OurCommitmentSectionBodyText => driver.FindElementByXPath("//*[@id='block-2429c8770ce968f657a8']/div/p[1]");
+        public IWebElement OurCommitmentSectionBodyText => driver.FindElement(By.XPath("//*[@id='block-2429c8770ce968f657a8']/div/p[1]"));
 
         /// <summary>
         /// Our commitment section link
         /// </summary>
-        public IWebElement OurCommitmentSectionLink => driver.FindElementByXPath("//*[@id='block-2429c8770ce968f657a8']/div/p[2]/a");        
+        public IWebElement OurCommitmentSectionLink => driver.FindElement(By.XPath("//*[@id='block-2429c8770ce968f657a8']/div/p[2]/a"));        
 
         /// <summary>
         /// Monthly articles section title
         /// </summary>
-        public IWebElement MonthlyArticlesSectionTitle => driver.FindElementByXPath("//*[@id='block-5c47022b53cd95d3d039']/div/h2");
+        public IWebElement MonthlyArticlesSectionTitle => driver.FindElement(By.XPath("//*[@id='block-5c47022b53cd95d3d039']/div/h2"));
 
         /// <summary>
         /// Monthly articles section body text
         /// </summary>
-        public IWebElement MonthlyArticlesSectionBodyText => driver.FindElementByXPath("//*[@id='block-5c47022b53cd95d3d039']/div/p[1]");
+        public IWebElement MonthlyArticlesSectionBodyText => driver.FindElement(By.XPath("//*[@id='block-5c47022b53cd95d3d039']/div/p[1]"));
 
         /// <summary>
         /// Monthly articles section link
         /// </summary>
-        public IWebElement MonthlyArticlesSectionLink => driver.FindElementByXPath("//*[@id='block-5c47022b53cd95d3d039']/div/p[2]/a");
+        public IWebElement MonthlyArticlesSectionLink => driver.FindElement(By.XPath("//*[@id='block-5c47022b53cd95d3d039']/div/p[2]/a"));
 
         /// <summary>
         /// Secondary section
         /// </summary>
-        public IWebElement SecondarySection => driver.FindElementById("block-98c1d846f408c7fae1f8");
+        public IWebElement SecondarySection => driver.FindElement(By.Id("block-98c1d846f408c7fae1f8"));
 
         /// <summary>
         /// Secondary section title
         /// </summary>
-        public IWebElement SecondarySectionTitle => SecondarySection.FindElementByClassName("image-title-wrapper");
+        public IWebElement SecondarySectionTitle => SecondarySection.FindElement(By.ClassName("image-title-wrapper"));
 
         /// <summary>
         /// Secondary section image
         /// </summary>
-        public IWebElement SecondarySectionImage => SecondarySection.GetElementsWithTagAndAttributeStartAndEndingWithValues("div", "id", Configuration.SitePrefix, "89").First().FindElementByTagName("img");
+        public IWebElement SecondarySectionImage => SecondarySection.FindElements(By.CssSelector("div[id^='yui_3_17_2_1'][id$='89']")).First().FindElement(By.TagName("img"));
 
         /// <summary>
         /// Secondary section body text
         /// </summary>
-        public IWebElement SecondarySectionBodyText => SecondarySection.FindElementByClassName("image-subtitle-wrapper");
+        public IWebElement SecondarySectionBodyText => SecondarySection.FindElement(By.ClassName("image-subtitle-wrapper"));
 
         /// <summary>
         /// Secondary section about us button
         /// </summary>
-        public IWebElement SecondarySectionAboutUsButton => SecondarySection.FindElementByClassName("image-button-wrapper").FindElementByTagName("div").FindElementByTagName("div").FindElementByTagName("a");
+        public IWebElement SecondarySectionAboutUsButton => SecondarySection.FindElement(By.ClassName("image-button-wrapper")).FindElement(By.TagName("div")).FindElement(By.TagName("div")).FindElement(By.TagName("a"));
 
         /// <summary>
         /// Mid page title
         /// </summary>
-        public IWebElement MidPageTitle => driver.FindElementById("block-036c44c036644d931bc6").FindElementByTagName("div").FindElementByTagName("h1");
+        public IWebElement MidPageTitle => driver.FindElement(By.Id("block-036c44c036644d931bc6")).FindElement(By.TagName("div")).FindElement(By.TagName("h1"));
 
         /// <summary>
         /// Tertiary section
         /// </summary>
-        public IWebElement TertiarySection => driver.FindElementById("block-6863d26509d4596a922e");
+        public IWebElement TertiarySection => driver.FindElement(By.Id("block-6863d26509d4596a922e"));
 
         /// <summary>
         /// Tertiary section title
         /// </summary>
-        public IWebElement TertiarySectionTitle => TertiarySection.FindElementByClassName("image-title-wrapper");
+        public IWebElement TertiarySectionTitle => TertiarySection.FindElement(By.ClassName("image-title-wrapper"));
 
         /// <summary>
         /// Tertiary section image
         /// </summary>
-        public IWebElement TertiarySectionImage => TertiarySection.GetElementsWithTagAndAttributeStartAndEndingWithValues("div", "id", Configuration.SitePrefix, "107").First().FindElementByTagName("img");
+        public IWebElement TertiarySectionImage => TertiarySection.FindElements(By.CssSelector("div[id^='yui_3_17_2_1'][id$='107']")).First().FindElement(By.TagName("img"));
 
         /// <summary>
         /// Tertiary section body text
         /// </summary>
-        public IWebElement TertiarySectionBodyText => TertiarySection.FindElementByClassName("image-subtitle-wrapper");
+        public IWebElement TertiarySectionBodyText => TertiarySection.FindElement(By.ClassName("image-subtitle-wrapper"));
 
         /// <summary>
         /// Tertiary section client testimonials button
         /// </summary>
-        public IWebElement TertiarySectionClientTestimonialsButton => TertiarySection.FindElementByClassName("image-button-wrapper").FindElementByTagName("div").FindElementByTagName("div").FindElementByTagName("a");
+        public IWebElement TertiarySectionClientTestimonialsButton => TertiarySection.FindElement(By.ClassName("image-button-wrapper")).FindElement(By.TagName("div")).FindElement(By.TagName("div")).FindElement(By.TagName("a"));
 
         /// <summary>
         /// Footer title
         /// </summary>
-        public IWebElement FooterTitle => driver.FindElementById("block-5694a211d5b58deead3e").FindElementByTagName("div").FindElementByTagName("h1");
+        public IWebElement FooterTitle => driver.FindElement(By.Id("block-5694a211d5b58deead3e")).FindElement(By.TagName("div")).FindElement(By.TagName("h1"));
 
         /// <summary>
         /// Footer schedule button
         /// </summary>
-        public IWebElement FooterScheduleButton => driver.GetElementsWithTagAndAttributeStartAndEndingWithValues("div", "id", Configuration.SitePrefix, "141").First().FindElementByTagName("a");
+        public IWebElement FooterScheduleButton => driver.FindElements(By.CssSelector("div[id^='yui_3_17_2_1'][id$='141']")).First().FindElement(By.TagName("a"));
 
         /// <summary>
         /// Footer section navigation
         /// </summary>
-        public IWebElement FooterNav => driver.FindElementById("footerNavWrapper");
+        public IWebElement FooterNav => driver.FindElement(By.Id("footerNavWrapper"));
 
         /// <summary>
         /// Footer links section
         /// </summary>
-        public IWebElement FooterLinksSection => FooterNav.FindElementById("mainNavigation");
+        public IWebElement FooterLinksSection => FooterNav.FindElement(By.Id("mainNavigation"));
 
         /// <summary>
         /// Footer links collection
         /// </summary>
-        public List<IWebElement> FooterLinksCollection => FooterLinksSection.FindElementsByClassName("nav-link--collection").ToList();
+        public List<IWebElement> FooterLinksCollection => FooterLinksSection.FindElements(By.ClassName("nav-link--collection")).ToList();
 
         #endregion Elements
 
@@ -230,7 +228,7 @@ namespace QualitasDigitalSeleniumCSharp.PageObjects
 
             foreach (IWebElement webElement in linkElements)
             {
-                string text = webElement.FindElementByTagName("a").FindElementByTagName("span").GetInnertext();
+                string text = webElement.FindElement(By.TagName("a")).FindElement(By.TagName("span")).GetAttribute("innerText");
 
                 if (!string.IsNullOrEmpty(text))
                 {
@@ -251,7 +249,7 @@ namespace QualitasDigitalSeleniumCSharp.PageObjects
 
             foreach (IWebElement webElement in linkElements)
             {
-                string text = webElement.FindElementByTagName("a").GetHref();
+                string text = webElement.FindElement(By.TagName("a")).GetAttribute("href");
 
                 if (!string.IsNullOrEmpty(text))
                 {

@@ -1,5 +1,4 @@
 ﻿using NUnit.Framework;
-using QualitasDigitalSeleniumCSharp.Extensions;
 using QualitasDigitalSeleniumCSharp.WrapperFactory;
 using System;
 
@@ -42,8 +41,6 @@ namespace QualitasDigitalSeleniumCSharp.src.TestCases
         [SetUp]
         public void SetUp()
         {
-            Logging.SetTestRunId();
-            Logging.TestStartTime = DateTime.Now;
         }
 
         /// <summary>
@@ -52,8 +49,6 @@ namespace QualitasDigitalSeleniumCSharp.src.TestCases
         [TearDown]
         public void TearDown()
         {
-            Logging.TestEndTime = DateTime.Now;
-            BrowserFactory.ReportTestStatus(TestContext.CurrentContext);
         }
 
         #endregion Shared

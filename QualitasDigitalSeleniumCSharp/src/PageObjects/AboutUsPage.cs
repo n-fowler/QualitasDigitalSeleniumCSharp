@@ -1,6 +1,4 @@
 ﻿using OpenQA.Selenium;
-using QualitasDigitalSeleniumCSharp.Extensions;
-using QualitasDigitalSeleniumCSharp.src.LocalConfiguration;
 using QualitasDigitalSeleniumCSharp.WrapperFactory;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,27 +22,27 @@ namespace QualitasDigitalSeleniumCSharp.PageObjects
         /// <summary>
         /// The Logo Image element
         /// </summary>
-        public IWebElement LogoImage => driver.FindElementByClassName("logo-image");
+        public IWebElement LogoImage => driver.FindElement(By.ClassName("logo-image"));
 
         /// <summary>
         /// The About Us Header section
         /// </summary>
-        public IWebElement HeaderSection => driver.FindElementById("block-8d07de855042f0a5360c");
+        public IWebElement HeaderSection => driver.FindElement(By.Id("block-8d07de855042f0a5360c"));
 
         /// <summary>
         /// The About Us Header Title element
         /// </summary>
-        public IWebElement HeaderTitle => driver.FindElementByXPath("//*[@id='block-8d07de855042f0a5360c']/div/h1");
+        public IWebElement HeaderTitle => driver.FindElement(By.XPath("//*[@id='block-8d07de855042f0a5360c']/div/h1"));
 
         /// <summary>
         /// The About Us SubSection Title element
         /// </summary>
-        public IWebElement Title => driver.FindElementByXPath("//*[@id='block-54dfc3255ea4a1352072']/div/h2");
+        public IWebElement Title => driver.FindElement(By.XPath("//*[@id='block-54dfc3255ea4a1352072']/div/h2"));
 
         /// <summary>
         /// The About Us Sidebar element
         /// </summary>
-        public List<IWebElement> Sidebar => driver.FindElementsByXPath("//*[@id='block-54dfc3255ea4a1352072']/div/p").ToList();
+        public List<IWebElement> Sidebar => driver.FindElements(By.XPath("//*[@id='block-54dfc3255ea4a1352072']/div/p")).ToList();
 
         /// <summary>
         /// The About Us Body element
@@ -54,7 +52,7 @@ namespace QualitasDigitalSeleniumCSharp.PageObjects
         /// <summary>
         /// The SideBar Links element
         /// </summary>
-        public List<IWebElement> SidebarLinks => Sidebar[1].FindElementsByTagName("a").ToList();
+        public List<IWebElement> SidebarLinks => Sidebar[1].FindElements(By.TagName("a")).ToList();
 
         /// <summary>
         /// The About Us Our Services Link element
@@ -69,14 +67,12 @@ namespace QualitasDigitalSeleniumCSharp.PageObjects
         /// <summary>
         /// The About Us Image Subsection
         /// </summary>
-        public IWebElement AboutUsImageSection => driver.FindElementById("block-5347679b4da120838be3");
+        public IWebElement AboutUsImageSection => driver.FindElement(By.Id("block-5347679b4da120838be3"));
 
         /// <summary>
         /// The About Us Image element
         /// </summary>
-        public IWebElement Image => AboutUsImageSection.GetElementsWithTagAndAttributeStartAndEndingWithValues("div", "id", Configuration.SitePrefix, "68")
-            .First().FindElementByTagName("img");
-
+        public IWebElement Image => AboutUsImageSection.FindElements(By.CssSelector("div[id^='yui_3_17_2_1'][id$='68']")).First().FindElement(By.TagName("img"));
         #endregion Elements
     }
 }

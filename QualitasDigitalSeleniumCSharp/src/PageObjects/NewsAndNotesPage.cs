@@ -1,5 +1,4 @@
 ﻿using OpenQA.Selenium;
-using QualitasDigitalSeleniumCSharp.Extensions;
 using QualitasDigitalSeleniumCSharp.WrapperFactory;
 using System.Collections.Generic;
 
@@ -22,12 +21,12 @@ namespace QualitasDigitalSeleniumCSharp.PageObjects
         /// <summary>
         /// The Logo Image element
         /// </summary>
-        public IWebElement LogoImage => driver.FindElementByClassName("logo-image");
+        public IWebElement LogoImage => driver.FindElement(By.ClassName("logo-image"));
 
         /// <summary>
         /// The article entry element
         /// </summary>
-        public IReadOnlyCollection<IWebElement> Entries => driver.FindElementsByClassName("entry");
+        public IReadOnlyCollection<IWebElement> Entries => driver.FindElements(By.ClassName("entry"));
 
         #endregion Elements
     }

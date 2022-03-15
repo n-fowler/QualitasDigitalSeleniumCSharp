@@ -1,5 +1,5 @@
 ﻿using NUnit.Framework;
-using QualitasDigitalSeleniumCSharp.Extensions;
+using OpenQA.Selenium;
 using QualitasDigitalSeleniumCSharp.PageObjects;
 using QualitasDigitalSeleniumCSharp.src.TestCases;
 using QualitasDigitalSeleniumCSharp.WrapperFactory;
@@ -38,25 +38,25 @@ namespace QualitasDigitalSeleniumCSharp.TestCases
             Assert.IsTrue(Page.NewsAndNotes.Entries.Count >= 1, "Page.NewsAndNotes.Entries.Count >= 1");
 
             //It should have a date
-            Assert.IsNotNull(Page.NewsAndNotes.Entries.First().FindElementByClassName("date-wrapper"),
+            Assert.IsNotNull(Page.NewsAndNotes.Entries.First().FindElement(By.ClassName("date-wrapper")),
                 "Page.NewsAndNotes.Entries.First().FindElementByClassName('date-wrapper') != null");
 
             //It should have clickable title
-            var entryLink = Page.NewsAndNotes.Entries.First().FindElementByClassName("entry-title").FindElementByTagName("a");
+            var entryLink = Page.NewsAndNotes.Entries.First().FindElement(By.ClassName("entry-title")).FindElement(By.TagName("a"));
             Assert.IsNotNull(entryLink, "entryLink != null");
-            Assert.AreNotEqual("", entryLink.GetHref(), "The entry article link was empty but shouldn't have been");
-            Assert.AreNotEqual("", entryLink.GetInnertext(), "The entry article text was empty but shouldn't have been");
+            Assert.AreNotEqual("", entryLink.GetAttribute("href"), "The entry article link was empty but shouldn't have been");
+            Assert.AreNotEqual("", entryLink.GetAttribute("innerText"), "The entry article text was empty but shouldn't have been");
 
             //It should have a clickable category
-            var entryCategory = Page.NewsAndNotes.Entries.First().FindElementByClassName("blog-categories").FindElementByTagName("a");
+            var entryCategory = Page.NewsAndNotes.Entries.First().FindElement(By.ClassName("blog-categories")).FindElement(By.TagName("a"));
             Assert.IsNotNull(entryCategory, "entryCategory != null");
-            Assert.AreNotEqual("", entryCategory.GetHref(), "The entry category link was empty but shouldn't have been");
-            Assert.AreNotEqual("", entryCategory.GetInnertext(), "The entry category text was empty but shouldn't have been");
+            Assert.AreNotEqual("", entryCategory.GetAttribute("href"), "The entry category link was empty but shouldn't have been");
+            Assert.AreNotEqual("", entryCategory.GetAttribute("innerText"), "The entry category text was empty but shouldn't have been");
 
             //It should have a summary body
-            var entryExcerpt = Page.NewsAndNotes.Entries.First().FindElementByClassName("entry-excerpt").FindElementByTagName("p");
+            var entryExcerpt = Page.NewsAndNotes.Entries.First().FindElement(By.ClassName("entry-excerpt")).FindElement(By.TagName("p"));
             Assert.IsNotNull(entryExcerpt, "entryExcerpt != null");
-            Assert.AreNotEqual("", entryExcerpt.GetInnertext(), "The entry excerpt text was empty but shouldn't have been");
+            Assert.AreNotEqual("", entryExcerpt.GetAttribute("innerText"), "The entry excerpt text was empty but shouldn't have been");
         }
 
         #endregion Tests

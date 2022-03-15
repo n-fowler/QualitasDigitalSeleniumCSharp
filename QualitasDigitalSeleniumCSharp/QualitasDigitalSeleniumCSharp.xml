@@ -4,1989 +4,6 @@
         <name>QualitasDigitalSeleniumCSharp</name>
     </assembly>
     <members>
-        <member name="T:QualitasDigitalSeleniumCSharp.Extensions.EventLogger">
-            <summary>
-            The Event Logger for the local machine
-            </summary>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.EventLogger.GetEventLog(QualitasDigitalSeleniumCSharp.Extensions.EventType,System.DateTime,System.DateTime)">
-            <summary>
-            Gets a list of event log entries for the source specified
-            </summary>
-            <param name="eventType">The event log source</param>
-            <param name="startTime">The test start time</param>
-            <param name="endTime">The test end time</param>
-            <returns></returns>
-        </member>
-        <member name="T:QualitasDigitalSeleniumCSharp.Extensions.EventType">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:QualitasDigitalSeleniumCSharp.Extensions.EventType.Critical">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:QualitasDigitalSeleniumCSharp.Extensions.EventType.Error">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:QualitasDigitalSeleniumCSharp.Extensions.EventType.Warning">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="F:QualitasDigitalSeleniumCSharp.Extensions.EventType.Information">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="T:QualitasDigitalSeleniumCSharp.Extensions.Logging">
-            <summary>
-            Test Logging class for test run data, and failure details
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.Extensions.Logging.FailureReason">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.Extensions.Logging.FailureStacktrace">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.Extensions.Logging.FailureScreenshotPath">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.Extensions.Logging.TestRunId">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.Extensions.Logging.TestStartTime">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.Extensions.Logging.TestEndTime">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.Logging.SetFailureScreenshotPath(System.String)">
-            <summary>
-            Retrieves the failure screenshot path
-            </summary>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.Logging.PopulateEventLoggingContent">
-            <summary>
-            Retrieves the event logs for the current test
-            </summary>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.Logging.GenerateHtmlReport">
-            <summary>
-            Generates the html report for the current test
-            </summary>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.Logging.ReportTestSuccess">
-            <summary>
-            Reports the test success to the logging system and clears the step log
-            </summary>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.Logging.ReportTestFailure(System.String,System.String)">
-            <summary>
-            Reports the test failure to the logging system
-            </summary>
-            <param name="failureReason"></param>
-            <param name="stackTrace"></param>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.Logging.SetTestRunId">
-            <summary>
-            Sets the test run id
-            </summary>
-        </member>
-        <member name="T:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions">
-            <summary>
-            Extends the functionality of the driver and web element classes
-            </summary>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.FindElementByClassName(OpenQA.Selenium.IWebDriver,System.String)">
-            <summary>
-            Uses the driver to find an element by class name
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <param name="className">The class name</param>
-            <returns>Returns a selenium web element</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.FindElementByCssSelector(OpenQA.Selenium.IWebDriver,System.String)">
-            <summary>
-            Uses the driver to find an element by css selector string
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <param name="cssSelector">The css selector string</param>
-            <returns>Returns a selenium web element</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.FindElementById(OpenQA.Selenium.IWebDriver,System.String)">
-            <summary>
-            Uses the driver to find an element by id
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <param name="id">The id</param>
-            <returns>Returns a selenium web element</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.FindElementByLinkText(OpenQA.Selenium.IWebDriver,System.String)">
-            <summary>
-            Uses the driver to find an element by link text
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <param name="linkText">The link text</param>
-            <returns>Returns a selenium web element</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.FindElementByName(OpenQA.Selenium.IWebDriver,System.String)">
-            <summary>
-            Uses the driver to find an element by name
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <param name="name">The name</param>
-            <returns>Returns a selenium web element</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.FindElementByPartialLinkText(OpenQA.Selenium.IWebDriver,System.String)">
-            <summary>
-            Uses the driver to find an element containing the link text
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <param name="partialLinkText">The partial link text</param>
-            <returns>Returns a selenium web element</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.FindElementByTagName(OpenQA.Selenium.IWebDriver,System.String)">
-            <summary>
-            Uses the driver to find an element by tag name
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <param name="tagName">The tag name</param>
-            <returns>Returns a selenium web element</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.FindElementByXPath(OpenQA.Selenium.IWebDriver,System.String)">
-            <summary>
-            Uses the driver to find an element by xpath
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <param name="xPath">The xpath</param>
-            <returns>Returns a selenium web element</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.FindElementByClassName(OpenQA.Selenium.IWebElement,System.String)">
-            <summary>
-            Uses the driver to find an element by class name
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <param name="className">The class name</param>
-            <returns>Returns a selenium web element</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.FindElementByCssSelector(OpenQA.Selenium.IWebElement,System.String)">
-            <summary>
-            Uses the driver to find an element by css selector string
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <param name="cssSelector">The css selector string</param>
-            <returns>Returns a selenium web element</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.FindElementById(OpenQA.Selenium.IWebElement,System.String)">
-            <summary>
-            Uses the driver to find an element by id
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <param name="id">The id</param>
-            <returns>Returns a selenium web element</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.FindElementByLinkText(OpenQA.Selenium.IWebElement,System.String)">
-            <summary>
-            Uses the driver to find an element by link text
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <param name="linkText">The link text</param>
-            <returns>Returns a selenium web element</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.FindElementByName(OpenQA.Selenium.IWebElement,System.String)">
-            <summary>
-            Uses the driver to find an element by name
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <param name="name">The name</param>
-            <returns>Returns a selenium web element</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.FindElementByPartialLinkText(OpenQA.Selenium.IWebElement,System.String)">
-            <summary>
-            Uses the driver to find an element containing the link text
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <param name="partialLinkText">The partial link text</param>
-            <returns>Returns a selenium web element</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.FindElementByTagName(OpenQA.Selenium.IWebElement,System.String)">
-            <summary>
-            Uses the driver to find an element by tag name
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <param name="tagName">The tag name</param>
-            <returns>Returns a selenium web element</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.FindElementByXPath(OpenQA.Selenium.IWebElement,System.String)">
-            <summary>
-            Uses the driver to find an element by xpath
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <param name="xPath">The xpath</param>
-            <returns>Returns a selenium web element</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.FindElementsByClassName(OpenQA.Selenium.IWebDriver,System.String)">
-            <summary>
-            Uses the driver to find elements by the class name
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <param name="className">The class name</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.FindElementsByCssSelector(OpenQA.Selenium.IWebDriver,System.String)">
-            <summary>
-            Uses the driver to find elements by the css selector string
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <param name="cssSelector">The css selector string</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.FindElementsById(OpenQA.Selenium.IWebDriver,System.String)">
-            <summary>
-            Uses the driver to find elements by the id
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <param name="id">The id</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.FindElementsByLinkText(OpenQA.Selenium.IWebDriver,System.String)">
-            <summary>
-            Uses the driver to find elements by the link text
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <param name="linkText">The link text</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.FindElementsByName(OpenQA.Selenium.IWebDriver,System.String)">
-            <summary>
-            Uses the driver to find elements by the name
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <param name="name">The name</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.FindElementsByPartialLinkText(OpenQA.Selenium.IWebDriver,System.String)">
-            <summary>
-            Uses the driver to find elements containing the link text
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <param name="partialLinkText">The partial link text</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.FindElementsByTagName(OpenQA.Selenium.IWebDriver,System.String)">
-            <summary>
-            Uses the driver to find elements by the tag name
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <param name="tagName">The tag name</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.FindElementsByXPath(OpenQA.Selenium.IWebDriver,System.String)">
-            <summary>
-            Uses the driver to find elements by the xpath
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <param name="xPath">The xpath</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.FindElementsByClassName(OpenQA.Selenium.IWebElement,System.String)">
-            <summary>
-            Uses the driver to find elements by the class name
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <param name="className">The class name</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.FindElementsByCssSelector(OpenQA.Selenium.IWebElement,System.String)">
-            <summary>
-            Uses the driver to find elements by the css selector string
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <param name="cssSelector">The css selector string</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.FindElementsById(OpenQA.Selenium.IWebElement,System.String)">
-            <summary>
-            Uses the driver to find elements by the id
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <param name="id">The id</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.FindElementsByLinkText(OpenQA.Selenium.IWebElement,System.String)">
-            <summary>
-            Uses the driver to find elements by the link text
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <param name="linkText">The link text</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.FindElementsByName(OpenQA.Selenium.IWebElement,System.String)">
-            <summary>
-            Uses the driver to find elements by the name
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <param name="name">The name</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.FindElementsByPartialLinkText(OpenQA.Selenium.IWebElement,System.String)">
-            <summary>
-            Uses the driver to find elements containing the link text
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <param name="partialLinkText">The partial link text</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.FindElementsByTagName(OpenQA.Selenium.IWebElement,System.String)">
-            <summary>
-            Uses the driver to find elements by the tag name
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <param name="tagName">The tag name</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.FindElementsByXPath(OpenQA.Selenium.IWebElement,System.String)">
-            <summary>
-            Uses the driver to find elements by the xpath
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <param name="xPath">The xpath</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.ClickWhenReady(OpenQA.Selenium.IWebElement)">
-            <summary>
-            Clicks the web element.
-            </summary>
-            <param name="element">The web element</param>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.EnterText(OpenQA.Selenium.IWebElement,System.String)">
-            <summary>
-            Enters text into supported elements
-            </summary>
-            <param name="element">The web element</param>
-            <param name="value">The value</param>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.ClearElement(OpenQA.Selenium.IWebElement)">
-            <summary>
-            Clears the content of the element
-            </summary>
-            <param name="element">The web element</param>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.SubmitElement(OpenQA.Selenium.IWebElement)">
-            <summary>
-            Performs a submit operation for the element
-            </summary>
-            <param name="element">The web element</param>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetInnertext(OpenQA.Selenium.IWebElement)">
-            <summary>
-            Gets the innertext of the element
-            </summary>
-            <param name="element">The web element</param>
-            <returns>returns a string with innertext</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetHref(OpenQA.Selenium.IWebElement)">
-            <summary>
-            Gets the href of the element
-            </summary>
-            <param name="element">The web element</param>
-            <returns></returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetSrc(OpenQA.Selenium.IWebElement)">
-            <summary>
-            Gets the src of the element
-            </summary>
-            <param name="element">The web element</param>
-            <returns></returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.IsEnabled(OpenQA.Selenium.IWebElement)">
-            <summary>
-            Gets the enabled state of the element
-            </summary>
-            <param name="element">The web element</param>
-            <returns>returns a boolean for enabled state</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.IsDisplayed(OpenQA.Selenium.IWebElement)">
-            <summary>
-            Gets the displayed state of the element
-            </summary>
-            <param name="element">The web element</param>
-            <returns>returns a boolean for displayed state</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.IsSelected(OpenQA.Selenium.IWebElement)">
-            <summary>
-            Gets the selected state of the element
-            </summary>
-            <param name="element">The web element</param>
-            <returns>returns a boolean for selected state</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.SelectByIndex(OpenQA.Selenium.IWebElement,System.Int32)">
-            <summary>
-            Selects an option from a Select Element by index
-            </summary>
-            <param name="element">The web element</param>
-            <param name="index">The index</param>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.DeselectByIndex(OpenQA.Selenium.IWebElement,System.Int32)">
-            <summary>
-            Deselects an option from a Select Element by index
-            </summary>
-            <param name="element">The web element</param>
-            <param name="index">The index</param>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.SelectByText(OpenQA.Selenium.IWebElement,System.String)">
-            <summary>
-            Selects an option from a Select Element by text
-            </summary>
-            <param name="element">The web element</param>
-            <param name="text">The option text value</param>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.DeselectByText(OpenQA.Selenium.IWebElement,System.String)">
-            <summary>
-            Deselects an option from a Select Element by text
-            </summary>
-            <param name="element">The web element</param>
-            <param name="text">The option text value</param>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.SelectByValue(OpenQA.Selenium.IWebElement,System.String)">
-            <summary>
-            Selects an option from a Select Element by value
-            </summary>
-            <param name="element">The web element</param>
-            <param name="value">The value</param>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.DeselectByValue(OpenQA.Selenium.IWebElement,System.String)">
-            <summary>
-            Deslects an option from a Select Element by value
-            </summary>
-            <param name="element">The web element</param>
-            <param name="value">The value</param>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.DeselectAll(OpenQA.Selenium.IWebElement)">
-            <summary>
-            Deselects all options from a Select Element
-            </summary>
-            <param name="element">The web element</param>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetSelectedOption(OpenQA.Selenium.IWebElement)">
-            <summary>
-            Gets the currently selected option from a Select Element
-            </summary>
-            <param name="element">The web element</param>
-            <returns>returns a Select web element</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetAllSelectedOptions(OpenQA.Selenium.IWebElement)">
-            <summary>
-            Gets all currently selected options from a Select Element
-            </summary>
-            <param name="element">The web element</param>
-            <returns>returns a list of Select web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.IsMultipleSelect(OpenQA.Selenium.IWebElement)">
-            <summary>
-            Gets the multiple select state of the Select Element
-            </summary>
-            <param name="element">The web element</param>
-            <returns>returns a bool for the multiple select state</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.DragAndDrop(OpenQA.Selenium.IWebElement,System.Int32,System.Int32)">
-            <summary>
-            Drags and Drops an element to a position on the screen
-            </summary>
-            <param name="element">The web element</param>
-            <param name="xPos">the x coordinate</param>
-            <param name="yPos">the y coordinate</param>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.ScrollTo(OpenQA.Selenium.IWebElement)">
-            <summary>
-            Scrolls to a web element using javascript
-            </summary>
-            <param name="element">The web element</param>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.ClickWithJavascriptById(OpenQA.Selenium.IWebElement)">
-            <summary>
-            Clicks an element using javascript and the element id
-            </summary>
-            <param name="element">The web element</param>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.WaitForVisibility(OpenQA.Selenium.IWebElement,System.String,System.Int32)">
-            <summary>
-            Wait for the visibility of an element
-            </summary>
-            <param name="element">The web element</param>
-            <param name="cssSelector">The css selector string</param>
-            <param name="timeLimit">the time limit in seconds</param>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.WaitForClickable(OpenQA.Selenium.IWebElement,System.Int32)">
-            <summary>
-            Wait for the visibility of an element
-            </summary>
-            <param name="element">The web element</param>
-            <param name="timeLimit">the time limit in seconds</param>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetAllElementProperties(OpenQA.Selenium.IWebElement)">
-            <summary>
-            Gets all Element properties, useful for logging
-            </summary>
-            <param name="element">The web element</param>
-            <returns></returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementIdentifierForTestLog(System.Collections.Generic.Dictionary{System.String,System.Object})">
-            <summary>
-            Gets an element identifier for the test log test steps
-            </summary>
-            <param name="propertyDictionary">The property dictionary retrieved from GetAllElementProperties</param>
-            <returns></returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetAllElements(OpenQA.Selenium.IWebDriver)">
-            <summary>
-            Gets all elements by css selector
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsByTagHierarchy(OpenQA.Selenium.IWebDriver,System.String)">
-            <summary>
-            Gets all elements by hierarchy using a css selector.  EX: div, p | div p | div > p | div + p | p ~ ul
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <param name="hierarchy">The hierarchy string</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithTargetAttribute(OpenQA.Selenium.IWebDriver,System.String)">
-            <summary>
-            Gets all elements with a target attribute
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <param name="attribute">the target attribute</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithBlankTargetAttribute(OpenQA.Selenium.IWebDriver)">
-            <summary>
-            Gets all elements with the blank target attribute
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithAttributeContainingValue(OpenQA.Selenium.IWebDriver,System.String,System.String)">
-            <summary>
-            Gets all elements with an attribute containing a specified value
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <param name="attribute">The attribute</param>
-            <param name="value">The value</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithAttributeValue(OpenQA.Selenium.IWebDriver,System.String,System.String)">
-            <summary>
-            Gets all elements with an attribute equal to a specified value
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <param name="attribute">The attribute</param>
-            <param name="value">The value</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithAttributeStartingWithValue(OpenQA.Selenium.IWebDriver,System.String,System.String)">
-            <summary>
-            Gets all elements with an attribute starting with a specified value
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <param name="attribute">The attribute</param>
-            <param name="value">The value</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithTagAndAttributeStartingWithValue(OpenQA.Selenium.IWebDriver,System.String,System.String,System.String)">
-            <summary>
-            Gets all elements with a tag and attribute starting with a specified value
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <param name="tag">the tag</param>
-            <param name="attribute">The attribute</param>
-            <param name="value">The value</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithTagAndAttributeEndingWithValue(OpenQA.Selenium.IWebDriver,System.String,System.String,System.String)">
-            <summary>
-            Gets all elements with a tag and attribute ending with a specified value
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <param name="tag">The tag</param>
-            <param name="attribute">The attribute</param>
-            <param name="value">The value</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithTagAndAttributeStartAndEndingWithValues(OpenQA.Selenium.IWebDriver,System.String,System.String,System.String,System.String)">
-            <summary>
-            Gets all elements with a tag and attribute starting with one value and ending with a second value
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <param name="tag">The tag</param>
-            <param name="attribute">The attribute</param>
-            <param name="startsWith">The beginning of the value</param>
-            <param name="endsWith">The end of the value</param>
-            <returns></returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithTagAndAttributeContainingValue(OpenQA.Selenium.IWebDriver,System.String,System.String,System.String)">
-            <summary>
-            Gets all elements with a tag and attribute containing a specified value
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <param name="tag">The tag</param>
-            <param name="attribute">The attribute</param>
-            <param name="value">The value</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetActiveWebLinks(OpenQA.Selenium.IWebDriver)">
-            <summary>
-            Gets all elements that are active web links
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithCheckedState(OpenQA.Selenium.IWebDriver)">
-            <summary>
-            Gets all elements that have a checked state
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithDefaultState(OpenQA.Selenium.IWebDriver)">
-            <summary>
-            Gets all elements that have a default state
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithDisabledState(OpenQA.Selenium.IWebDriver)">
-            <summary>
-            Gets all elements that have a disabled state
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsByTagAndNoChildren(OpenQA.Selenium.IWebDriver,System.String)">
-            <summary>
-            Gets all elements by tag that have no children
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <param name="tag">The tag</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithEnabledState(OpenQA.Selenium.IWebDriver)">
-            <summary>
-            Gets all elements with an enabled state
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsByTagAndFirstChild(OpenQA.Selenium.IWebDriver,System.String)">
-            <summary>
-            Gets all elements by tag that have a first child
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <param name="tag"></param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsByTagAndFirstTypeOfParent(OpenQA.Selenium.IWebDriver,System.String)">
-            <summary>
-            Gets all elements by tag that have a first of type parent
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <param name="tag">The tag</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsByFocus(OpenQA.Selenium.IWebDriver)">
-            <summary>
-            Gets all elements that are focused
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithValueInRange(OpenQA.Selenium.IWebDriver)">
-            <summary>
-            Gets all elements with a value that's in range
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithIndeterminateState(OpenQA.Selenium.IWebDriver)">
-            <summary>
-            Gets all elements with an indeterminate state
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithInvalidValue(OpenQA.Selenium.IWebDriver)">
-            <summary>
-            Gets all elements with an invalid value
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsByTagAndLastChild(OpenQA.Selenium.IWebDriver,System.String)">
-            <summary>
-            Gets all elements by tag that have a last child
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <param name="tag">The tag</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsByTagAndLastTypeOfParent(OpenQA.Selenium.IWebDriver,System.String)">
-            <summary>
-            Gets all elements by tag that have a last of type
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <param name="tag">The tag</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetUnvisitedLinks(OpenQA.Selenium.IWebDriver)">
-            <summary>
-            Gets all elements that are links with an unvisited state
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsByNotTag(OpenQA.Selenium.IWebDriver,System.String)">
-            <summary>
-            Gets all elements that lack a specific tag
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <param name="tag">The tag</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsByTagAndChildIndex(OpenQA.Selenium.IWebDriver,System.String)">
-            <summary>
-            Gets all elements by tag and child index
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <param name="tag">The tag</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsByTagAndReversedChildIndex(OpenQA.Selenium.IWebDriver,System.String)">
-            <summary>
-            Gets all elements by tag and the index of the reversed child
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <param name="tag">The tag</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsBySameTagAndChildIndex(OpenQA.Selenium.IWebDriver,System.String)">
-            <summary>
-            Gets all elements by tag and the index of the child of type
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <param name="tag">The tag</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsBySameTagAndReversedChildIndex(OpenQA.Selenium.IWebDriver,System.String)">
-            <summary>
-            Gets all elements by tag and the index of the last child of type
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <param name="tag">The tag</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsBySameTagAndOnlyChildOfType(OpenQA.Selenium.IWebDriver,System.String)">
-            <summary>
-            Gets all elements by tag and the index of the only child of type
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <param name="tag">The tag</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsByTagAndOnlyChild(OpenQA.Selenium.IWebDriver,System.String)">
-            <summary>
-            Gets all elements by tag that have an only child
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <param name="tag">The tag</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithoutRequiredAttribute(OpenQA.Selenium.IWebDriver)">
-            <summary>
-            Gets all elements without the required attribute
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithValueOutOfRange(OpenQA.Selenium.IWebDriver)">
-            <summary>
-            Gets all elements that have an out of range value
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithPlaceholderValue(OpenQA.Selenium.IWebDriver)">
-            <summary>
-            Gets all elements that have a placeholder value
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithReadOnlyAttribute(OpenQA.Selenium.IWebDriver)">
-            <summary>
-            Gets all elements that have the read only attribute
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithoutReadOnlyAttribute(OpenQA.Selenium.IWebDriver)">
-            <summary>
-            Gets all elements thatlack the read only attribute
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithRequiredAttribute(OpenQA.Selenium.IWebDriver)">
-            <summary>
-            Gets all elements with the required attribute
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementAtRoot(OpenQA.Selenium.IWebDriver)">
-            <summary>
-            Gets all elements at the root
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsSelectedByUser(OpenQA.Selenium.IWebDriver)">
-            <summary>
-            Gets all elements selected by the user
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithValidValue(OpenQA.Selenium.IWebDriver)">
-            <summary>
-            Gets all elements with a valid value
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetVisitedWebLinks(OpenQA.Selenium.IWebDriver)">
-            <summary>
-            Gets all visited web links
-            </summary>
-            <param name="driver">The driver for this session</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetAllElements(OpenQA.Selenium.IWebElement)">
-            <summary>
-            Gets all elements by css selector
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsByTagHierarchy(OpenQA.Selenium.IWebElement,System.String)">
-            <summary>
-            Gets all elements by hierarchy using a css selector.  EX: div, p | div p | div > p | div + p | p ~ ul
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <param name="hierarchy">The hierarchy string</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithTargetAttribute(OpenQA.Selenium.IWebElement,System.String)">
-            <summary>
-            Gets all elements with a target attribute
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <param name="attribute">the target attribute</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithBlankTargetAttribute(OpenQA.Selenium.IWebElement)">
-            <summary>
-            Gets all elements with the blank target attribute
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithAttributeValue(OpenQA.Selenium.IWebElement,System.String,System.String)">
-            <summary>
-            Gets all elements with an attribute equal to a specified value
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <param name="attribute">The attribute</param>
-            <param name="value">The value</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithAttributeContainingValue(OpenQA.Selenium.IWebElement,System.String,System.String)">
-            <summary>
-            Gets all elements with an attribute containing a specified value
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <param name="attribute">The attribute</param>
-            <param name="value">The value</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithAttributeStartingWithValue(OpenQA.Selenium.IWebElement,System.String,System.String)">
-            <summary>
-            Gets all elements with an attribute starting with a specified value
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <param name="attribute">The attribute</param>
-            <param name="value">The value</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithTagAndAttributeStartingWithValue(OpenQA.Selenium.IWebElement,System.String,System.String,System.String)">
-            <summary>
-            Gets all elements with a tag and attribute starting with a specified value
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <param name="tag">the tag</param>
-            <param name="attribute">The attribute</param>
-            <param name="value">The value</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithTagAndAttributeEndingWithValue(OpenQA.Selenium.IWebElement,System.String,System.String,System.String)">
-            <summary>
-            Gets all elements with a tag and attribute ending with a specified value
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <param name="tag">The tag</param>
-            <param name="attribute">The attribute</param>
-            <param name="value">The value</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithTagAndAttributeStartAndEndingWithValues(OpenQA.Selenium.IWebElement,System.String,System.String,System.String,System.String)">
-            <summary>
-            Gets all elements with a tag and attribute starting with one value and ending with a second value
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <param name="tag">The tag</param>
-            <param name="attribute">The attribute</param>
-            <param name="startsWith">The beginning of the value</param>
-            <param name="endsWith">The end of the value</param>
-            <returns></returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithTagAndAttributeContainingValue(OpenQA.Selenium.IWebElement,System.String,System.String,System.String)">
-            <summary>
-            Gets all elements with a tag and attribute containing a specified value
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <param name="tag">The tag</param>
-            <param name="attribute">The attribute</param>
-            <param name="value">The value</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetActiveWebLinks(OpenQA.Selenium.IWebElement)">
-            <summary>
-            Gets all elements that are active web links
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithCheckedState(OpenQA.Selenium.IWebElement)">
-            <summary>
-            Gets all elements that have a checked state
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithDefaultState(OpenQA.Selenium.IWebElement)">
-            <summary>
-            Gets all elements that have a default state
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithDisabledState(OpenQA.Selenium.IWebElement)">
-            <summary>
-            Gets all elements that have a disabled state
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsByTagAndNoChildren(OpenQA.Selenium.IWebElement,System.String)">
-            <summary>
-            Gets all elements by tag that have no children
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <param name="tag">The tag</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithEnabledState(OpenQA.Selenium.IWebElement)">
-            <summary>
-            Gets all elements with an enabled state
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsByTagAndFirstChild(OpenQA.Selenium.IWebElement,System.String)">
-            <summary>
-            Gets all elements by tag that have a first child
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <param name="tag"></param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsByTagAndFirstTypeOfParent(OpenQA.Selenium.IWebElement,System.String)">
-            <summary>
-            Gets all elements by tag that have a first of type parent
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <param name="tag">The tag</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsByFocus(OpenQA.Selenium.IWebElement)">
-            <summary>
-            Gets all elements that are focused
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithValueInRange(OpenQA.Selenium.IWebElement)">
-            <summary>
-            Gets all elements with a value that's in range
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithIndeterminateState(OpenQA.Selenium.IWebElement)">
-            <summary>
-            Gets all elements with an indeterminate state
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithInvalidValue(OpenQA.Selenium.IWebElement)">
-            <summary>
-            Gets all elements with an invalid value
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsByTagAndLastChild(OpenQA.Selenium.IWebElement,System.String)">
-            <summary>
-            Gets all elements by tag that have a last child
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <param name="tag">The tag</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsByTagAndLastTypeOfParent(OpenQA.Selenium.IWebElement,System.String)">
-            <summary>
-            Gets all elements by tag that have a last of type
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <param name="tag">The tag</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetUnvisitedLinks(OpenQA.Selenium.IWebElement)">
-            <summary>
-            Gets all elements that are links with an unvisited state
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsByNotTag(OpenQA.Selenium.IWebElement,System.String)">
-            <summary>
-            Gets all elements that lack a specific tag
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <param name="tag">The tag</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsByTagAndChildIndex(OpenQA.Selenium.IWebElement,System.String)">
-            <summary>
-            Gets all elements by tag and child index
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <param name="tag">The tag</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsByTagAndReversedChildIndex(OpenQA.Selenium.IWebElement,System.String)">
-            <summary>
-            Gets all elements by tag and the index of the reversed child
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <param name="tag">The tag</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsBySameTagAndChildIndex(OpenQA.Selenium.IWebElement,System.String)">
-            <summary>
-            Gets all elements by tag and the index of the child of type
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <param name="tag">The tag</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsBySameTagAndReversedChildIndex(OpenQA.Selenium.IWebElement,System.String)">
-            <summary>
-            Gets all elements by tag and the index of the last child of type
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <param name="tag">The tag</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsBySameTagAndOnlyChildOfType(OpenQA.Selenium.IWebElement,System.String)">
-            <summary>
-            Gets all elements by tag and the index of the only child of type
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <param name="tag">The tag</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsByTagAndOnlyChild(OpenQA.Selenium.IWebElement,System.String)">
-            <summary>
-            Gets all elements by tag that have an only child
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <param name="tag">The tag</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithoutRequiredAttribute(OpenQA.Selenium.IWebElement)">
-            <summary>
-            Gets all elements without the required attribute
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithValueOutOfRange(OpenQA.Selenium.IWebElement)">
-            <summary>
-            Gets all elements that have an out of range value
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithPlaceholderValue(OpenQA.Selenium.IWebElement)">
-            <summary>
-            Gets all elements that have a placeholder value
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithReadOnlyAttribute(OpenQA.Selenium.IWebElement)">
-            <summary>
-            Gets all elements that have the read only attribute
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithoutReadOnlyAttribute(OpenQA.Selenium.IWebElement)">
-            <summary>
-            Gets all elements thatlack the read only attribute
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithRequiredAttribute(OpenQA.Selenium.IWebElement)">
-            <summary>
-            Gets all elements with the required attribute
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementAtRoot(OpenQA.Selenium.IWebElement)">
-            <summary>
-            Gets all elements at the root
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsSelectedByUser(OpenQA.Selenium.IWebElement)">
-            <summary>
-            Gets all elements selected by the user
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetElementsWithValidValue(OpenQA.Selenium.IWebElement)">
-            <summary>
-            Gets all elements with a valid value
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.SeleniumExtensions.GetVisitedWebLinks(OpenQA.Selenium.IWebElement)">
-            <summary>
-            Gets all visited web links
-            </summary>
-            <param name="webElement">The web element to scope to</param>
-            <returns>Returns a read only collection of selenium web elements</returns>
-        </member>
-        <member name="T:QualitasDigitalSeleniumCSharp.Extensions.TestStep">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.Extensions.TestStep.StepDescription">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.Extensions.TestStep.StepResult">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.Extensions.TestStep.StepStatus">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.Extensions.TestStep.Time">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="T:QualitasDigitalSeleniumCSharp.Extensions.TestStepLog">
-            <summary>
-            a log entry for a test step
-            </summary>
-        </member>
-        <member name="F:QualitasDigitalSeleniumCSharp.Extensions.TestStepLog.TestSteps">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.Extensions.TestStepLog.GenerateTestStep(System.String,System.String,System.String,System.TimeSpan)">
-            <summary>
-            
-            </summary>
-            <param name="stepDescription"></param>
-            <param name="stepResult"></param>
-            <param name="stepStatus"></param>
-            <param name="time"></param>
-        </member>
-        <member name="T:QualitasDigitalSeleniumCSharp.src.LocalConfiguration.Configuration">
-            <summary>
-              A strongly-typed resource class, for looking up localized strings, etc.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.LocalConfiguration.Configuration.ResourceManager">
-            <summary>
-              Returns the cached ResourceManager instance used by this class.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.LocalConfiguration.Configuration.Culture">
-            <summary>
-              Overrides the current thread's CurrentUICulture property for all
-              resource lookups using this strongly typed resource class.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.LocalConfiguration.Configuration.LocalTestResultsPath">
-            <summary>
-              Looks up a localized string similar to E:\ProgramData\TestResults.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.LocalConfiguration.Configuration.SitePrefix">
-            <summary>
-              Looks up a localized string similar to yui_3_17_2_1.
-            </summary>
-        </member>
-        <member name="T:QualitasDigitalSeleniumCSharp.src.TestCases.BaseTest">
-            <summary>
-            Base Test Class with setup and teardown
-            </summary>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.src.TestCases.BaseTest.OneTimeSetUp">
-            <summary>
-            The one time test setup method
-            </summary>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.src.TestCases.BaseTest.OneTimeTearDown">
-            <summary>
-            The one time test tear down method
-            </summary>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.src.TestCases.BaseTest.SetUp">
-            <summary>
-            The individual test setup method
-            </summary>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.src.TestCases.BaseTest.TearDown">
-            <summary>
-            The individual test tear down method
-            </summary>
-        </member>
-        <member name="T:QualitasDigitalSeleniumCSharp.src.TestData.AboutUsPageTestData">
-            <summary>
-              A strongly-typed resource class, for looking up localized strings, etc.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.AboutUsPageTestData.ResourceManager">
-            <summary>
-              Returns the cached ResourceManager instance used by this class.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.AboutUsPageTestData.Culture">
-            <summary>
-              Overrides the current thread's CurrentUICulture property for all
-              resource lookups using this strongly typed resource class.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.AboutUsPageTestData.AboutUsBodyText">
-            <summary>
-              Looks up a localized string similar to My name is Nicholas Fowler.  I founded Qualitas Digital in 2019 in Wilmington, North Carolina with the mission of bringing affordable, high quality automation to any company looking to elevate their products to the next level.  I have over 15 years experience in the industry at companies large and small, designing solutions that let you scale.  Whether your contract is serviced by myself or other engineers, you can rest easy with the knowledge that solutions will be well researched and implemented with care [rest of string was truncated]&quot;;.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.AboutUsPageTestData.AboutUsImageSrc">
-            <summary>
-              Looks up a localized string similar to https://images.squarespace-cdn.com/content/v1/5dcc96767c939351951d2987/1574119738736-UM33SG724YZEW3FB5PLU/laptop-remote-working-writing-typing-7114.jpg.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.AboutUsPageTestData.AboutUsTitle">
-            <summary>
-              Looks up a localized string similar to A word from our Founder.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.AboutUsPageTestData.HeaderTitle">
-            <summary>
-              Looks up a localized string similar to Let Us Build Something Together.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.AboutUsPageTestData.OurServicesLink">
-            <summary>
-              Looks up a localized string similar to https://www.qualitasdigital.com/pricing-services.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.AboutUsPageTestData.ScheduleConsultationLink">
-            <summary>
-              Looks up a localized string similar to https://www.qualitasdigital.com/schedule-consultation.
-            </summary>
-        </member>
-        <member name="T:QualitasDigitalSeleniumCSharp.src.TestData.ContactUsPageData">
-            <summary>
-              A strongly-typed resource class, for looking up localized strings, etc.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.ContactUsPageData.ResourceManager">
-            <summary>
-              Returns the cached ResourceManager instance used by this class.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.ContactUsPageData.Culture">
-            <summary>
-              Overrides the current thread's CurrentUICulture property for all
-              resource lookups using this strongly typed resource class.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.ContactUsPageData.FaqLink">
-            <summary>
-              Looks up a localized string similar to https://www.qualitasdigital.com/faq.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.ContactUsPageData.HeaderContent">
-            <summary>
-              Looks up a localized string similar to How Can We Help?.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.ContactUsPageData.LeftContent">
-            <summary>
-              Looks up a localized string similar to We want to hear from you.  Use the form on the right to request additional information about the services we offer..
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.ContactUsPageData.OurCommitmentLink">
-            <summary>
-              Looks up a localized string similar to https://www.qualitasdigital.com/our-commitment.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.ContactUsPageData.TermsAndConditionsLink">
-            <summary>
-              Looks up a localized string similar to https://www.qualitasdigital.com/terms-conditions.
-            </summary>
-        </member>
-        <member name="T:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData">
-            <summary>
-              A strongly-typed resource class, for looking up localized strings, etc.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.ResourceManager">
-            <summary>
-              Returns the cached ResourceManager instance used by this class.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.Culture">
-            <summary>
-              Overrides the current thread's CurrentUICulture property for all
-              resource lookups using this strongly typed resource class.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.BodyEight">
-            <summary>
-              Looks up a localized string similar to We believe we are.  Our solutions reduce future costs as a result of increasing headcounts, increase the value of your employees through training, we even provide direction and structure which increase productivity..
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.BodyEleven">
-            <summary>
-              Looks up a localized string similar to We are able to send samples that show an understanding of technologies we use, or training courses we conduct.  In order to protect the Intellectual Property of our clients, we don’t share code or documentation from their projects..
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.BodyFifteen">
-            <summary>
-              Looks up a localized string similar to Qualitas is latin for Quality.  We put quality in our name as it’s at the core of what we do.  We strive to provide efficient and high quality services that stand the test of time..
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.BodyFive">
-            <summary>
-              Looks up a localized string similar to We start with a free consultation by phone where we talk about the problems facing your company.  We ask clarifying questions to frame the problem and determine whether or not we’re the right choice for you.  Depending on your needs we have one or more follow up meetings where we go into detail about our services, and sign a consulting contract..
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.BodyFour">
-            <summary>
-              Looks up a localized string similar to The value of our services.  We have the know-how and experience to assess your business, ask the right questions, and build a custom tailored solution that works for you..
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.BodyFourteen">
-            <summary>
-              Looks up a localized string similar to We have references available, once we’ve reached the final phase of contract negotiation..
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.BodyNine">
-            <summary>
-              Looks up a localized string similar to Once services have been rendered they are non-refundable.  Regular check ins throughout the project ensure that our work meets your standards so that there are no surprises when the invoice arrives..
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.BodyOne">
-            <summary>
-              Looks up a localized string similar to We provide Quality Automation solutions that scale with your business.  Whether you’re creating something from scratch, reworking an existing automation program, or adding to what you have, we work with you to create a customized plan and implement it throughout your business..
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.BodySeven">
-            <summary>
-              Looks up a localized string similar to We pride ourselves on the speed with which we design and implement solutions.  In order to maintain the longevity of the solutions we provide, we work at a pace that avoids sacrificing quality or accuracy..
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.BodySix">
-            <summary>
-              Looks up a localized string similar to The contract length is entirely dependent on your needs.  Whether you need a consultant for a couple weeks to add tests for a critical feature, or you need a corporate trainer for a year, we’re ready..
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.BodyTen">
-            <summary>
-              Looks up a localized string similar to Our consulting agreement includes a defacto Non-Disclosure Agreement.  We value your intellectual property and privacy and protect it the same as our own..
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.BodyThirteen">
-            <summary>
-              Looks up a localized string similar to Our consultants are experts with industry experience at companies both big and small.  We’ve worked with a variety of technology stacks and continued education is a requirement.  It’s not enough for us to be proficient at one set of technologies, we are continuously evolving what we know so that we remain able to offer the best solutions possible..
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.BodyThree">
-            <summary>
-              Looks up a localized string similar to The two main reasons are time and experience.  It takes time to recruit and train a new employee and verifying they have the experience you need for your business is a constant challenge.  It takes months to recoup the initial recruitment costs.  We deliver value from day one..
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.BodyTwelve">
-            <summary>
-              Looks up a localized string similar to We’re located just outside of Downtown Wilmington in North Carolina.  We use phone and video calls for meetings as needed.  We drive or fly to clients outside of Wilmington regularly to complete work.  We offer a 25% discount on our rates for fully telecommuted work in addition to the money saved on travel expenses..
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.BodyTwo">
-            <summary>
-              Looks up a localized string similar to We specialize within the niche of Software Quality Automation.  We have some overlap with traditional Software Automation due to the similarities between disciplines.  We can also automate your workflows and free up time that your employees can use elsewhere..
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.ContactUsLink">
-            <summary>
-              Looks up a localized string similar to https://www.qualitasdigital.com/contact-us.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.FaqSubtitle">
-            <summary>
-              Looks up a localized string similar to You’ve got questions, we’ve got answers..
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.FaqTitle">
-            <summary>
-              Looks up a localized string similar to Frequently Asked Questions.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.TitleEight">
-            <summary>
-              Looks up a localized string similar to ARE YOU WORTH THE MONEY?.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.TitleEleven">
-            <summary>
-              Looks up a localized string similar to CAN YOU SEND US SAMPLES OF YOUR WORK?.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.TitleFifteen">
-            <summary>
-              Looks up a localized string similar to WHAT IS THE ORIGIN OF QUALITAS DIGITAL’S NAME?.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.TitleFive">
-            <summary>
-              Looks up a localized string similar to WHAT DOES THE CONSULTING PROCESS LOOK LIKE?.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.TitleFour">
-            <summary>
-              Looks up a localized string similar to WHAT MAKES YOUR BUSINESS SPECIAL?.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.TitleFourteen">
-            <summary>
-              Looks up a localized string similar to DO YOU HAVE REFERENCES?.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.TitleNine">
-            <summary>
-              Looks up a localized string similar to WHAT IS YOUR REFUND POLICY?.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.TitleOne">
-            <summary>
-              Looks up a localized string similar to WHAT DOES QUALITAS DIGITAL DO?.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.TitleSeven">
-            <summary>
-              Looks up a localized string similar to CAN YOU WORK ANY FASTER?.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.TitleSix">
-            <summary>
-              Looks up a localized string similar to HOW LONG IS A TYPICAL CONTRACT?.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.TitleTen">
-            <summary>
-              Looks up a localized string similar to WILL YOU SIGN A NON-DISCLOSURE AGREEMENT?.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.TitleThirteen">
-            <summary>
-              Looks up a localized string similar to WHAT ARE YOUR QUALIFICATIONS?.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.TitleThree">
-            <summary>
-              Looks up a localized string similar to WHY SHOULD WE HIRE A CONSULTANT INSTEAD OF DOING IT ALL OURSELVES?.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.TitleTwelve">
-            <summary>
-              Looks up a localized string similar to WHERE ARE YOU LOCATED, AND HOW DO YOU WORK WITH CLIENTS OUTSIDE OF YOUR LOCAL AREA?.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.TitleTwo">
-            <summary>
-              Looks up a localized string similar to WHAT INDUSTRIES DO YOU SPECIALIZE IN?.
-            </summary>
-        </member>
-        <member name="T:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData">
-            <summary>
-              A strongly-typed resource class, for looking up localized strings, etc.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.ResourceManager">
-            <summary>
-              Returns the cached ResourceManager instance used by this class.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.Culture">
-            <summary>
-              Overrides the current thread's CurrentUICulture property for all
-              resource lookups using this strongly typed resource class.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.FooterScheduleButtonLink">
-            <summary>
-              Looks up a localized string similar to https://www.qualitasdigital.com/schedule-consultation.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.FooterTitle">
-             <summary>
-               Looks up a localized string similar to Let’s talk!
-            Your first consultation is free..
-             </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.MidPageTitle">
-            <summary>
-              Looks up a localized string similar to Quality Automation shouldn’t be costly or difficult.  Let our Consultants create a road-map for your company that saves you money year after year.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.MonthlyArticlesSectionBodyText">
-            <summary>
-              Looks up a localized string similar to Keep up with the latest industry trends and discoveries by checking out our blog..
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.MonthlyArticlesSectionLink">
-            <summary>
-              Looks up a localized string similar to https://www.qualitasdigital.com/news-notes-qualitas.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.MonthlyArticlesSectionTitle">
-            <summary>
-              Looks up a localized string similar to Monthly Articles.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.OurCommitmentSectionBodyText">
-            <summary>
-              Looks up a localized string similar to We’re committed to giving you the tools you need to create and scale an automation program that reduces long term headcount, increases the quality and confidence levels of your products, at a price companies large and small can afford..
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.OurCommitmentSectionLink">
-            <summary>
-              Looks up a localized string similar to https://www.qualitasdigital.com/our-commitment.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.OurCommitmentSectionTitle">
-            <summary>
-              Looks up a localized string similar to Our Commitment to You.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.OurServicesSectionBodyText">
-            <summary>
-              Looks up a localized string similar to We offer training, coaching, and solutions that save you time and money.  Whether your company has a manual approach, a fully established automation program, or something in between, work with us and gain a competitive advantage..
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.OurServicesSectionLink">
-            <summary>
-              Looks up a localized string similar to https://www.qualitasdigital.com/pricing-services.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.OurServicesSectionTitle">
-            <summary>
-              Looks up a localized string similar to Our Services.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.PrimarySectionBodyText">
-            <summary>
-              Looks up a localized string similar to Qualitas Digital brings Software Quality Automation within reach. Our solutions help you bridge the gap between where you are and where you want to be. We help you create Quality Automation programs that scale without the high overhead of a purely manual approach. Whether you need training, coaching, or additional engineers to aid your testing efforts, we have a solution for you. Take advantage of one of our free consultations and learn more about how Qualitas Digital puts the Quality in Software Quality Au [rest of string was truncated]&quot;;.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.PrimarySectionImageSrc">
-            <summary>
-              Looks up a localized string similar to https://images.squarespace-cdn.com/content/v1/5dcc96767c939351951d2987/1574109947938-NXBEY5PQVS6J657XS2DN/grayscale-photo-of-computer-laptop-near-white-notebook-and-169573.jpg?.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.PrimarySectionScheduleButtonLink">
-            <summary>
-              Looks up a localized string similar to https://www.qualitasdigital.com/schedule-consultation.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.PrimarySectionTitle">
-            <summary>
-              Looks up a localized string similar to Putting the Quality in Software Quality Automation.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.SecondarySectionAboutUsButtonLink">
-            <summary>
-              Looks up a localized string similar to https://www.qualitasdigital.com/about-us.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.SecondarySectionBodyText">
-            <summary>
-              Looks up a localized string similar to Qualitas Digital was founded to bring scaleable and efficient software quality automation programs to companies large or small. Click the about us link to learn more.Photo by Adil Gökkaya from Pexels.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.SecondarySectionImageSrc">
-            <summary>
-              Looks up a localized string similar to https://images.squarespace-cdn.com/content/v1/5dcc96767c939351951d2987/1574110334562-ACRRQK9X5RP0PMALKYYB/man-holding-laptop-and-smartphone-2726478.jpg.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.SecondarySectionTitle">
-            <summary>
-              Looks up a localized string similar to Our Firm.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.TertiarySectionBodyText">
-            <summary>
-              Looks up a localized string similar to We have the experience and know-how to help you grow your automation programs. Don’t just take our word for it, see for yourself!.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.TertiarySectionClientTestimonialsButtonLink">
-            <summary>
-              Looks up a localized string similar to https://www.qualitasdigital.com/testimonials.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.TertiarySectionImageSrc">
-            <summary>
-              Looks up a localized string similar to https://images.squarespace-cdn.com/content/v1/5dcc96767c939351951d2987/1574112242271-KTTBY3ZBBRVYURATJN31/20130731_Trade+100_0202.jpg.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.TertiarySectionTitle">
-            <summary>
-              Looks up a localized string similar to A High Quality Service.
-            </summary>
-        </member>
-        <member name="T:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData">
-            <summary>
-              A strongly-typed resource class, for looking up localized strings, etc.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.ResourceManager">
-            <summary>
-              Returns the cached ResourceManager instance used by this class.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.Culture">
-            <summary>
-              Overrides the current thread's CurrentUICulture property for all
-              resource lookups using this strongly typed resource class.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.AdditionalTestCoverageBodyText">
-            <summary>
-              Looks up a localized string similar to $100/hour- We work within your existing workflow to add additional test coverage.  This is a simple no frills option that adds immediate value to your organization..
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.AdditionalTestCoverageTitle">
-            <summary>
-              Looks up a localized string similar to Additional Test Coverage.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.CoachingBodyText">
-            <summary>
-              Looks up a localized string similar to $100/hour- We meet with your team and identify areas of growth, pain points, and blockers.  We then work with your team to resolve these issues now and in the future..
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.CoachingTitle">
-            <summary>
-              Looks up a localized string similar to Coaching.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.DashboardsDisclaimerBodyText">
-            <summary>
-              Looks up a localized string similar to *The SaaS Dashboard product is not publicly available at this time.  Keep an eye out for the Beta announcement!.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.DashboardsOnPremiseBodyText">
-            <summary>
-              Looks up a localized string similar to On Premise: $100/hour- We create a custom tailored dashboard that shows the business value and status of your tests.  Depending on the framework and language, we also extend your ‘out of the box’ solutions with additional functionality and value..
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.DashboardsSaasBodyText">
-            <summary>
-              Looks up a localized string similar to Software as a Service*: variable cost per user- Sign up for our SaaS Dashboard and enjoy an easy setup and always on functionality at a low cost to you..
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.DashboardsTitle">
-            <summary>
-              Looks up a localized string similar to Dashboards.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.FrameworkUpdatesCustomTailoredBodyText">
-            <summary>
-              Looks up a localized string similar to Custom Tailored: $150/hour- We create a framework that meets your needs.  This often includes an extensive amount of system specific logging, as well as extensions and documentation that make the framework easy for your engineers to use compared with other frameworks in the industry..
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.FrameworkUpdatesTitle">
-            <summary>
-              Looks up a localized string similar to Framework Updates.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.FrameworkUpdatesUpgradesBodyText">
-            <summary>
-              Looks up a localized string similar to Upgrades/Replacement: $100/hour- Covers all upgrades and updates to existing frameworks such as updating automation to use functionality from a new version or replacing one framework with a different one.  We even perform language changes within existing frameworks such as moving automation from Selenium Java to Selenium C# without the loss of existing tests..
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.OurCommitmentLink">
-            <summary>
-              Looks up a localized string similar to https://www.qualitasdigital.com/our-commitment.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.PricingAndServicesSubtitle">
-            <summary>
-              Looks up a localized string similar to Software Quality Automation services starting at $100/hour..
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.PricingAndServicesTitle">
-            <summary>
-              Looks up a localized string similar to Pricing + Services.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.ProcessAutomationBodyText">
-            <summary>
-              Looks up a localized string similar to $125/hour- We analyze your workflows and processes to identify ‘time wasters’ and repetitive tasks that make good candidates for automation.  We document and automate those processes so that your engineers can focus on the things that matter most to you..
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.ProcessAutomationTitle">
-            <summary>
-              Looks up a localized string similar to Process Automation.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.RoadmapsBodyText">
-            <summary>
-              Looks up a localized string similar to $125/hour- We create a 1,3,5 year plan that accomplishes your business objectives.  These plans include multiple versions for Management, and Engineers.  Combined with our other services, this is an effective way to realize your business objectives and communicate them throughout the company..
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.RoadmapsTitle">
-            <summary>
-              Looks up a localized string similar to Road maps.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.TechnicalCoFounderBodyText">
-            <summary>
-              Looks up a localized string similar to $250/hour- Our founder helps you create your own startup.  This includes policies and procedures for attracting and hiring talent, the selection and use of initial automation frameworks that match your desired tech stack, training for your senior executives, and quality standards that allow you to maintain a competitive advantage..
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.TechnicalCoFounderTitle">
-            <summary>
-              Looks up a localized string similar to Technical Co-Founder.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.TrainingBodyText">
-            <summary>
-              Looks up a localized string similar to $100/hour- Personalized training that meets your needs.  Whether you need one on one training, group based training, or a combination of the two, we offer hands on labs and classroom style instruction that brings your engineers up to speed quickly..
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.TrainingTitle">
-            <summary>
-              Looks up a localized string similar to Training.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.TrustedAdvisorBodyText">
-            <summary>
-              Looks up a localized string similar to $200/hour- Our Founder works alongside your senior executives to scale your software quality operations.  This covers how to attract talent, the technical interview process, and managing your teams..
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.TrustedAdvisorTitle">
-            <summary>
-              Looks up a localized string similar to Trusted Advisor.
-            </summary>
-        </member>
-        <member name="T:QualitasDigitalSeleniumCSharp.src.TestData.ScheduleConsultationPageData">
-            <summary>
-              A strongly-typed resource class, for looking up localized strings, etc.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.ScheduleConsultationPageData.ResourceManager">
-            <summary>
-              Returns the cached ResourceManager instance used by this class.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.ScheduleConsultationPageData.Culture">
-            <summary>
-              Overrides the current thread's CurrentUICulture property for all
-              resource lookups using this strongly typed resource class.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.ScheduleConsultationPageData.FaqLink">
-            <summary>
-              Looks up a localized string similar to https://www.qualitasdigital.com/faq.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.ScheduleConsultationPageData.HeaderContent">
-            <summary>
-              Looks up a localized string similar to Schedule A Consultation.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.ScheduleConsultationPageData.LeftContent">
-            <summary>
-              Looks up a localized string similar to During your thirty minute consultation we’ll go over the problems facing your company and talk about the services you’re interested in.  We’ll identify whether we’re well suited for providing them to you and talk about next steps..
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.ScheduleConsultationPageData.OurCommitmentLink">
-            <summary>
-              Looks up a localized string similar to https://www.qualitasdigital.com/our-commitment.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.ScheduleConsultationPageData.ScheduleConsultationButtonLink">
-            <summary>
-              Looks up a localized string similar to https://calendly.com/qualitasdigital/free-consultation.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.ScheduleConsultationPageData.TermsAndConditionsLink">
-            <summary>
-              Looks up a localized string similar to https://www.qualitasdigital.com/terms-conditions.
-            </summary>
-        </member>
-        <member name="T:QualitasDigitalSeleniumCSharp.src.TestData.TestimonialsPageData">
-            <summary>
-              A strongly-typed resource class, for looking up localized strings, etc.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.TestimonialsPageData.ResourceManager">
-            <summary>
-              Returns the cached ResourceManager instance used by this class.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.TestimonialsPageData.Culture">
-            <summary>
-              Overrides the current thread's CurrentUICulture property for all
-              resource lookups using this strongly typed resource class.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.TestimonialsPageData.HighlightedReviewAuthor">
-            <summary>
-              Looks up a localized string similar to — Cy James.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.TestimonialsPageData.HighlightedReviewContent">
-            <summary>
-              Looks up a localized string similar to Qualitas Digital created an automation program for our mobile game. We needed something fast so we could develop it with confidence and they really delivered. I was impressed with the attention to detail and how they met with us every step of the way. I can’t recommend them enough!.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.TestimonialsPageData.MidPageTitle">
-            <summary>
-              Looks up a localized string similar to Others have had this to say….
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.TestimonialsPageData.ReviewFiveAuthor">
-            <summary>
-              Looks up a localized string similar to — CHARLEY SHAMALY.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.TestimonialsPageData.ReviewFiveContent">
-            <summary>
-              Looks up a localized string similar to Nick is one of those rare, detail and data oriented managers that has the wherewithal to think short term yet conceive and execute the vision to think and adapt in to the future. He is exceptionally effective at extracting value adds out of minutia to construct more streamlined processes. His managerial intelligence isn&apos;t limited to &quot;hard science&quot; so-to-speak. He has a deep and genuine concern for his people, their well-being and overall happiness whilst maintaining a fair atmosphere. He can&apos;t be recommende [rest of string was truncated]&quot;;.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.TestimonialsPageData.ReviewFourAuthor">
-            <summary>
-              Looks up a localized string similar to — MICHELLE KLEEM.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.TestimonialsPageData.ReviewFourContent">
-            <summary>
-              Looks up a localized string similar to Nick is one of those rare managers who also naturally serves as an inspiring mentor for the whole staff. He is dedicated to his work. With a background in computer science and over 2 years worth of experience as an researcher and adjudications team lead, Nick exhibits strong interpersonal skills and aptitude for accuracy. Nick is the go-to person for conflict resolution and problem solving; when issues arise in the team, he does his best to come up with a successful conclusion. Nick always has respect for o [rest of string was truncated]&quot;;.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.TestimonialsPageData.ReviewOneAuthor">
-            <summary>
-              Looks up a localized string similar to — ALEXANDRA WELCH.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.TestimonialsPageData.ReviewOneContent">
-            <summary>
-              Looks up a localized string similar to Nick was the best manager/team lead I have ever worked for. He was always willing to listen to my concerns with protocols/tasks and work toward a solution that worked for everyone. Every issue that came up was addressed quickly and professionally no matter what it was. He has creative problem solving skills that set him apart from other managers. I cannot stress enough how great it was working with Nick; he was the reason I stayed with the company for as long as I did..
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.TestimonialsPageData.ReviewThreeAuthor">
-            <summary>
-              Looks up a localized string similar to — SHRUTI PANDEY.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.TestimonialsPageData.ReviewThreeContent">
-            <summary>
-              Looks up a localized string similar to Nick is a great team player, he hit the ground running as he joined our team and has been a great addition. He is well-focused, patient, and gives a 100% to any task assigned to him. There were many occasions where his exceptional problem-solving skills and technical sharpness helped immensely. He is always prompt in responding to any situation and proactive in helping out the team mates. Nick&apos;s ability to perform well under pressure, and his willingness to learn and collaborate on any tasks that come his w [rest of string was truncated]&quot;;.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.TestimonialsPageData.ReviewTwoAuthor">
-            <summary>
-              Looks up a localized string similar to — JASON LONSBERRY.
-            </summary>
-        </member>
-        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.TestimonialsPageData.ReviewTwoContent">
-            <summary>
-              Looks up a localized string similar to Nick is great to work with. Not only is he a nice guy but he&apos;s intelligent and hard-working. He picks up new concepts quickly. He&apos;s inquisitive and self-motivated. I knew if Nick was given a problem, it would be thoroughly researched and the solution carefully considered. He was an integral part of our team..
-            </summary>
-        </member>
         <member name="T:QualitasDigitalSeleniumCSharp.PageObjects.AboutUsPage">
             <summary>
             The AboutUs Page Object
@@ -2845,6 +862,699 @@
         <member name="M:QualitasDigitalSeleniumCSharp.TestCases.TestimonialsTests.TestimonialsContent">
             <summary></summary>
         </member>
+        <member name="T:QualitasDigitalSeleniumCSharp.src.TestCases.BaseTest">
+            <summary>
+            Base Test Class with setup and teardown
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.src.TestCases.BaseTest.OneTimeSetUp">
+            <summary>
+            The one time test setup method
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.src.TestCases.BaseTest.OneTimeTearDown">
+            <summary>
+            The one time test tear down method
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.src.TestCases.BaseTest.SetUp">
+            <summary>
+            The individual test setup method
+            </summary>
+        </member>
+        <member name="M:QualitasDigitalSeleniumCSharp.src.TestCases.BaseTest.TearDown">
+            <summary>
+            The individual test tear down method
+            </summary>
+        </member>
+        <member name="T:QualitasDigitalSeleniumCSharp.src.TestData.AboutUsPageTestData">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.AboutUsPageTestData.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.AboutUsPageTestData.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.AboutUsPageTestData.AboutUsBodyText">
+            <summary>
+              Looks up a localized string similar to My name is Nicholas Fowler.  I founded Qualitas Digital in 2019 in Wilmington, North Carolina with the mission of bringing affordable, high quality automation to any company looking to elevate their products to the next level.  I have over 15 years experience in the industry at companies large and small, designing solutions that let you scale.  Whether your contract is serviced by myself or other engineers, you can rest easy with the knowledge that solutions will be well researched and implemented with care [rest of string was truncated]&quot;;.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.AboutUsPageTestData.AboutUsImageSrc">
+            <summary>
+              Looks up a localized string similar to https://images.squarespace-cdn.com/content/v1/5dcc96767c939351951d2987/1574119738736-UM33SG724YZEW3FB5PLU/laptop-remote-working-writing-typing-7114.jpg.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.AboutUsPageTestData.AboutUsTitle">
+            <summary>
+              Looks up a localized string similar to A word from our Founder.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.AboutUsPageTestData.HeaderTitle">
+            <summary>
+              Looks up a localized string similar to Let Us Build Something Together.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.AboutUsPageTestData.OurServicesLink">
+            <summary>
+              Looks up a localized string similar to https://www.qualitasdigital.com/pricing-services.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.AboutUsPageTestData.ScheduleConsultationLink">
+            <summary>
+              Looks up a localized string similar to https://www.qualitasdigital.com/schedule-consultation.
+            </summary>
+        </member>
+        <member name="T:QualitasDigitalSeleniumCSharp.src.TestData.ContactUsPageData">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.ContactUsPageData.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.ContactUsPageData.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.ContactUsPageData.FaqLink">
+            <summary>
+              Looks up a localized string similar to https://www.qualitasdigital.com/faq.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.ContactUsPageData.HeaderContent">
+            <summary>
+              Looks up a localized string similar to How Can We Help?.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.ContactUsPageData.LeftContent">
+            <summary>
+              Looks up a localized string similar to We want to hear from you.  Use the form on the right to request additional information about the services we offer..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.ContactUsPageData.OurCommitmentLink">
+            <summary>
+              Looks up a localized string similar to https://www.qualitasdigital.com/our-commitment.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.ContactUsPageData.TermsAndConditionsLink">
+            <summary>
+              Looks up a localized string similar to https://www.qualitasdigital.com/terms-conditions.
+            </summary>
+        </member>
+        <member name="T:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.BodyEight">
+            <summary>
+              Looks up a localized string similar to We believe we are.  Our solutions reduce future costs as a result of increasing headcounts, increase the value of your employees through training, we even provide direction and structure which increase productivity..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.BodyEleven">
+            <summary>
+              Looks up a localized string similar to We are able to send samples that show an understanding of technologies we use, or training courses we conduct.  In order to protect the Intellectual Property of our clients, we don’t share code or documentation from their projects..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.BodyFifteen">
+            <summary>
+              Looks up a localized string similar to Qualitas is latin for Quality.  We put quality in our name as it’s at the core of what we do.  We strive to provide efficient and high quality services that stand the test of time..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.BodyFive">
+            <summary>
+              Looks up a localized string similar to We start with a free consultation by phone where we talk about the problems facing your company.  We ask clarifying questions to frame the problem and determine whether or not we’re the right choice for you.  Depending on your needs we have one or more follow up meetings where we go into detail about our services, and sign a consulting contract..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.BodyFour">
+            <summary>
+              Looks up a localized string similar to The value of our services.  We have the know-how and experience to assess your business, ask the right questions, and build a custom tailored solution that works for you..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.BodyFourteen">
+            <summary>
+              Looks up a localized string similar to We have references available, once we’ve reached the final phase of contract negotiation..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.BodyNine">
+            <summary>
+              Looks up a localized string similar to Once services have been rendered they are non-refundable.  Regular check ins throughout the project ensure that our work meets your standards so that there are no surprises when the invoice arrives..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.BodyOne">
+            <summary>
+              Looks up a localized string similar to We provide Quality Automation solutions that scale with your business.  Whether you’re creating something from scratch, reworking an existing automation program, or adding to what you have, we work with you to create a customized plan and implement it throughout your business..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.BodySeven">
+            <summary>
+              Looks up a localized string similar to We pride ourselves on the speed with which we design and implement solutions.  In order to maintain the longevity of the solutions we provide, we work at a pace that avoids sacrificing quality or accuracy..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.BodySix">
+            <summary>
+              Looks up a localized string similar to The contract length is entirely dependent on your needs.  Whether you need a consultant for a couple weeks to add tests for a critical feature, or you need a corporate trainer for a year, we’re ready..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.BodyTen">
+            <summary>
+              Looks up a localized string similar to Our consulting agreement includes a defacto Non-Disclosure Agreement.  We value your intellectual property and privacy and protect it the same as our own..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.BodyThirteen">
+            <summary>
+              Looks up a localized string similar to Our consultants are experts with industry experience at companies both big and small.  We’ve worked with a variety of technology stacks and continued education is a requirement.  It’s not enough for us to be proficient at one set of technologies, we are continuously evolving what we know so that we remain able to offer the best solutions possible..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.BodyThree">
+            <summary>
+              Looks up a localized string similar to The two main reasons are time and experience.  It takes time to recruit and train a new employee and verifying they have the experience you need for your business is a constant challenge.  It takes months to recoup the initial recruitment costs.  We deliver value from day one..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.BodyTwelve">
+            <summary>
+              Looks up a localized string similar to We’re located just outside of Downtown Wilmington in North Carolina.  We use phone and video calls for meetings as needed.  We drive or fly to clients outside of Wilmington regularly to complete work.  We offer a 25% discount on our rates for fully telecommuted work in addition to the money saved on travel expenses..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.BodyTwo">
+            <summary>
+              Looks up a localized string similar to We specialize within the niche of Software Quality Automation.  We have some overlap with traditional Software Automation due to the similarities between disciplines.  We can also automate your workflows and free up time that your employees can use elsewhere..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.ContactUsLink">
+            <summary>
+              Looks up a localized string similar to https://www.qualitasdigital.com/contact-us.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.FaqSubtitle">
+            <summary>
+              Looks up a localized string similar to You’ve got questions, we’ve got answers..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.FaqTitle">
+            <summary>
+              Looks up a localized string similar to Frequently Asked Questions.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.TitleEight">
+            <summary>
+              Looks up a localized string similar to ARE YOU WORTH THE MONEY?.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.TitleEleven">
+            <summary>
+              Looks up a localized string similar to CAN YOU SEND US SAMPLES OF YOUR WORK?.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.TitleFifteen">
+            <summary>
+              Looks up a localized string similar to WHAT IS THE ORIGIN OF QUALITAS DIGITAL’S NAME?.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.TitleFive">
+            <summary>
+              Looks up a localized string similar to WHAT DOES THE CONSULTING PROCESS LOOK LIKE?.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.TitleFour">
+            <summary>
+              Looks up a localized string similar to WHAT MAKES YOUR BUSINESS SPECIAL?.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.TitleFourteen">
+            <summary>
+              Looks up a localized string similar to DO YOU HAVE REFERENCES?.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.TitleNine">
+            <summary>
+              Looks up a localized string similar to WHAT IS YOUR REFUND POLICY?.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.TitleOne">
+            <summary>
+              Looks up a localized string similar to WHAT DOES QUALITAS DIGITAL DO?.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.TitleSeven">
+            <summary>
+              Looks up a localized string similar to CAN YOU WORK ANY FASTER?.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.TitleSix">
+            <summary>
+              Looks up a localized string similar to HOW LONG IS A TYPICAL CONTRACT?.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.TitleTen">
+            <summary>
+              Looks up a localized string similar to WILL YOU SIGN A NON-DISCLOSURE AGREEMENT?.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.TitleThirteen">
+            <summary>
+              Looks up a localized string similar to WHAT ARE YOUR QUALIFICATIONS?.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.TitleThree">
+            <summary>
+              Looks up a localized string similar to WHY SHOULD WE HIRE A CONSULTANT INSTEAD OF DOING IT ALL OURSELVES?.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.TitleTwelve">
+            <summary>
+              Looks up a localized string similar to WHERE ARE YOU LOCATED, AND HOW DO YOU WORK WITH CLIENTS OUTSIDE OF YOUR LOCAL AREA?.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.FaqPageTestData.TitleTwo">
+            <summary>
+              Looks up a localized string similar to WHAT INDUSTRIES DO YOU SPECIALIZE IN?.
+            </summary>
+        </member>
+        <member name="T:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.FooterScheduleButtonLink">
+            <summary>
+              Looks up a localized string similar to https://www.qualitasdigital.com/schedule-consultation.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.FooterTitle">
+             <summary>
+               Looks up a localized string similar to Let’s talk!
+            Your first consultation is free..
+             </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.MidPageTitle">
+            <summary>
+              Looks up a localized string similar to Quality Automation shouldn’t be costly or difficult.  Let our Consultants create a road-map for your company that saves you money year after year.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.MonthlyArticlesSectionBodyText">
+            <summary>
+              Looks up a localized string similar to Keep up with the latest industry trends and discoveries by checking out our blog..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.MonthlyArticlesSectionLink">
+            <summary>
+              Looks up a localized string similar to https://www.qualitasdigital.com/news-notes-qualitas.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.MonthlyArticlesSectionTitle">
+            <summary>
+              Looks up a localized string similar to Monthly Articles.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.OurCommitmentSectionBodyText">
+            <summary>
+              Looks up a localized string similar to We’re committed to giving you the tools you need to create and scale an automation program that reduces long term headcount, increases the quality and confidence levels of your products, at a price companies large and small can afford..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.OurCommitmentSectionLink">
+            <summary>
+              Looks up a localized string similar to https://www.qualitasdigital.com/our-commitment.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.OurCommitmentSectionTitle">
+            <summary>
+              Looks up a localized string similar to Our Commitment to You.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.OurServicesSectionBodyText">
+            <summary>
+              Looks up a localized string similar to We offer training, coaching, and solutions that save you time and money.  Whether your company has a manual approach, a fully established automation program, or something in between, work with us and gain a competitive advantage..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.OurServicesSectionLink">
+            <summary>
+              Looks up a localized string similar to https://www.qualitasdigital.com/pricing-services.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.OurServicesSectionTitle">
+            <summary>
+              Looks up a localized string similar to Our Services.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.PrimarySectionBodyText">
+            <summary>
+              Looks up a localized string similar to Qualitas Digital brings Software Quality Automation within reach. Our solutions help you bridge the gap between where you are and where you want to be. We help you create Quality Automation programs that scale without the high overhead of a purely manual approach. Whether you need training, coaching, or additional engineers to aid your testing efforts, we have a solution for you. Take advantage of one of our free consultations and learn more about how Qualitas Digital puts the Quality in Software Quality Au [rest of string was truncated]&quot;;.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.PrimarySectionImageSrc">
+            <summary>
+              Looks up a localized string similar to https://images.squarespace-cdn.com/content/v1/5dcc96767c939351951d2987/1574109947938-NXBEY5PQVS6J657XS2DN/grayscale-photo-of-computer-laptop-near-white-notebook-and-169573.jpg?.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.PrimarySectionScheduleButtonLink">
+            <summary>
+              Looks up a localized string similar to https://www.qualitasdigital.com/schedule-consultation.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.PrimarySectionTitle">
+            <summary>
+              Looks up a localized string similar to Putting the Quality in Software Quality Automation.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.SecondarySectionAboutUsButtonLink">
+            <summary>
+              Looks up a localized string similar to https://www.qualitasdigital.com/about-us.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.SecondarySectionBodyText">
+            <summary>
+              Looks up a localized string similar to Qualitas Digital was founded to bring scaleable and efficient software quality automation programs to companies large or small. Click the about us link to learn more.Photo by Adil Gökkaya from Pexels.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.SecondarySectionImageSrc">
+            <summary>
+              Looks up a localized string similar to https://images.squarespace-cdn.com/content/v1/5dcc96767c939351951d2987/1574110334562-ACRRQK9X5RP0PMALKYYB/man-holding-laptop-and-smartphone-2726478.jpg.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.SecondarySectionTitle">
+            <summary>
+              Looks up a localized string similar to Our Firm.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.TertiarySectionBodyText">
+            <summary>
+              Looks up a localized string similar to We have the experience and know-how to help you grow your automation programs. Don’t just take our word for it, see for yourself!.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.TertiarySectionClientTestimonialsButtonLink">
+            <summary>
+              Looks up a localized string similar to https://www.qualitasdigital.com/testimonials.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.TertiarySectionImageSrc">
+            <summary>
+              Looks up a localized string similar to https://images.squarespace-cdn.com/content/v1/5dcc96767c939351951d2987/1574112242271-KTTBY3ZBBRVYURATJN31/20130731_Trade+100_0202.jpg.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.HomePageTestData.TertiarySectionTitle">
+            <summary>
+              Looks up a localized string similar to A High Quality Service.
+            </summary>
+        </member>
+        <member name="T:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.AdditionalTestCoverageBodyText">
+            <summary>
+              Looks up a localized string similar to $100/hour- We work within your existing workflow to add additional test coverage.  This is a simple no frills option that adds immediate value to your organization..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.AdditionalTestCoverageTitle">
+            <summary>
+              Looks up a localized string similar to Additional Test Coverage.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.CoachingBodyText">
+            <summary>
+              Looks up a localized string similar to $100/hour- We meet with your team and identify areas of growth, pain points, and blockers.  We then work with your team to resolve these issues now and in the future..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.CoachingTitle">
+            <summary>
+              Looks up a localized string similar to Coaching.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.DashboardsDisclaimerBodyText">
+            <summary>
+              Looks up a localized string similar to *The SaaS Dashboard product is not publicly available at this time.  Keep an eye out for the Beta announcement!.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.DashboardsOnPremiseBodyText">
+            <summary>
+              Looks up a localized string similar to On Premise: $100/hour- We create a custom tailored dashboard that shows the business value and status of your tests.  Depending on the framework and language, we also extend your ‘out of the box’ solutions with additional functionality and value..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.DashboardsSaasBodyText">
+            <summary>
+              Looks up a localized string similar to Software as a Service*: variable cost per user- Sign up for our SaaS Dashboard and enjoy an easy setup and always on functionality at a low cost to you..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.DashboardsTitle">
+            <summary>
+              Looks up a localized string similar to Dashboards.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.FrameworkUpdatesCustomTailoredBodyText">
+            <summary>
+              Looks up a localized string similar to Custom Tailored: $150/hour- We create a framework that meets your needs.  This often includes an extensive amount of system specific logging, as well as extensions and documentation that make the framework easy for your engineers to use compared with other frameworks in the industry..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.FrameworkUpdatesTitle">
+            <summary>
+              Looks up a localized string similar to Framework Updates.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.FrameworkUpdatesUpgradesBodyText">
+            <summary>
+              Looks up a localized string similar to Upgrades/Replacement: $100/hour- Covers all upgrades and updates to existing frameworks such as updating automation to use functionality from a new version or replacing one framework with a different one.  We even perform language changes within existing frameworks such as moving automation from Selenium Java to Selenium C# without the loss of existing tests..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.OurCommitmentLink">
+            <summary>
+              Looks up a localized string similar to https://www.qualitasdigital.com/our-commitment.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.PricingAndServicesSubtitle">
+            <summary>
+              Looks up a localized string similar to Software Quality Automation services starting at $100/hour..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.PricingAndServicesTitle">
+            <summary>
+              Looks up a localized string similar to Pricing + Services.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.ProcessAutomationBodyText">
+            <summary>
+              Looks up a localized string similar to $125/hour- We analyze your workflows and processes to identify ‘time wasters’ and repetitive tasks that make good candidates for automation.  We document and automate those processes so that your engineers can focus on the things that matter most to you..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.ProcessAutomationTitle">
+            <summary>
+              Looks up a localized string similar to Process Automation.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.RoadmapsBodyText">
+            <summary>
+              Looks up a localized string similar to $125/hour- We create a 1,3,5 year plan that accomplishes your business objectives.  These plans include multiple versions for Management, and Engineers.  Combined with our other services, this is an effective way to realize your business objectives and communicate them throughout the company..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.RoadmapsTitle">
+            <summary>
+              Looks up a localized string similar to Road maps.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.TechnicalCoFounderBodyText">
+            <summary>
+              Looks up a localized string similar to $250/hour- Our founder helps you create your own startup.  This includes policies and procedures for attracting and hiring talent, the selection and use of initial automation frameworks that match your desired tech stack, training for your senior executives, and quality standards that allow you to maintain a competitive advantage..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.TechnicalCoFounderTitle">
+            <summary>
+              Looks up a localized string similar to Technical Co-Founder.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.TrainingBodyText">
+            <summary>
+              Looks up a localized string similar to $100/hour- Personalized training that meets your needs.  Whether you need one on one training, group based training, or a combination of the two, we offer hands on labs and classroom style instruction that brings your engineers up to speed quickly..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.TrainingTitle">
+            <summary>
+              Looks up a localized string similar to Training.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.TrustedAdvisorBodyText">
+            <summary>
+              Looks up a localized string similar to $200/hour- Our Founder works alongside your senior executives to scale your software quality operations.  This covers how to attract talent, the technical interview process, and managing your teams..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.PricingAndServicesPageTestData.TrustedAdvisorTitle">
+            <summary>
+              Looks up a localized string similar to Trusted Advisor.
+            </summary>
+        </member>
+        <member name="T:QualitasDigitalSeleniumCSharp.src.TestData.ScheduleConsultationPageData">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.ScheduleConsultationPageData.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.ScheduleConsultationPageData.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.ScheduleConsultationPageData.FaqLink">
+            <summary>
+              Looks up a localized string similar to https://www.qualitasdigital.com/faq.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.ScheduleConsultationPageData.HeaderContent">
+            <summary>
+              Looks up a localized string similar to Schedule A Consultation.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.ScheduleConsultationPageData.LeftContent">
+            <summary>
+              Looks up a localized string similar to During your thirty minute consultation we’ll go over the problems facing your company and talk about the services you’re interested in.  We’ll identify whether we’re well suited for providing them to you and talk about next steps..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.ScheduleConsultationPageData.OurCommitmentLink">
+            <summary>
+              Looks up a localized string similar to https://www.qualitasdigital.com/our-commitment.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.ScheduleConsultationPageData.ScheduleConsultationButtonLink">
+            <summary>
+              Looks up a localized string similar to https://calendly.com/qualitasdigital/free-consultation.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.ScheduleConsultationPageData.TermsAndConditionsLink">
+            <summary>
+              Looks up a localized string similar to https://www.qualitasdigital.com/terms-conditions.
+            </summary>
+        </member>
+        <member name="T:QualitasDigitalSeleniumCSharp.src.TestData.TestimonialsPageData">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.TestimonialsPageData.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.TestimonialsPageData.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.TestimonialsPageData.HighlightedReviewAuthor">
+            <summary>
+              Looks up a localized string similar to — Cy James.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.TestimonialsPageData.HighlightedReviewContent">
+            <summary>
+              Looks up a localized string similar to Qualitas Digital created an automation program for our mobile game. We needed something fast so we could develop it with confidence and they really delivered. I was impressed with the attention to detail and how they met with us every step of the way. I can’t recommend them enough!.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.TestimonialsPageData.MidPageTitle">
+            <summary>
+              Looks up a localized string similar to Others have had this to say….
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.TestimonialsPageData.ReviewFiveAuthor">
+            <summary>
+              Looks up a localized string similar to — CHARLEY SHAMALY.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.TestimonialsPageData.ReviewFiveContent">
+            <summary>
+              Looks up a localized string similar to Nick is one of those rare, detail and data oriented managers that has the wherewithal to think short term yet conceive and execute the vision to think and adapt in to the future. He is exceptionally effective at extracting value adds out of minutia to construct more streamlined processes. His managerial intelligence isn&apos;t limited to &quot;hard science&quot; so-to-speak. He has a deep and genuine concern for his people, their well-being and overall happiness whilst maintaining a fair atmosphere. He can&apos;t be recommende [rest of string was truncated]&quot;;.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.TestimonialsPageData.ReviewFourAuthor">
+            <summary>
+              Looks up a localized string similar to — MICHELLE KLEEM.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.TestimonialsPageData.ReviewFourContent">
+            <summary>
+              Looks up a localized string similar to Nick is one of those rare managers who also naturally serves as an inspiring mentor for the whole staff. He is dedicated to his work. With a background in computer science and over 2 years worth of experience as an researcher and adjudications team lead, Nick exhibits strong interpersonal skills and aptitude for accuracy. Nick is the go-to person for conflict resolution and problem solving; when issues arise in the team, he does his best to come up with a successful conclusion. Nick always has respect for o [rest of string was truncated]&quot;;.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.TestimonialsPageData.ReviewOneAuthor">
+            <summary>
+              Looks up a localized string similar to — ALEXANDRA WELCH.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.TestimonialsPageData.ReviewOneContent">
+            <summary>
+              Looks up a localized string similar to Nick was the best manager/team lead I have ever worked for. He was always willing to listen to my concerns with protocols/tasks and work toward a solution that worked for everyone. Every issue that came up was addressed quickly and professionally no matter what it was. He has creative problem solving skills that set him apart from other managers. I cannot stress enough how great it was working with Nick; he was the reason I stayed with the company for as long as I did..
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.TestimonialsPageData.ReviewThreeAuthor">
+            <summary>
+              Looks up a localized string similar to — SHRUTI PANDEY.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.TestimonialsPageData.ReviewThreeContent">
+            <summary>
+              Looks up a localized string similar to Nick is a great team player, he hit the ground running as he joined our team and has been a great addition. He is well-focused, patient, and gives a 100% to any task assigned to him. There were many occasions where his exceptional problem-solving skills and technical sharpness helped immensely. He is always prompt in responding to any situation and proactive in helping out the team mates. Nick&apos;s ability to perform well under pressure, and his willingness to learn and collaborate on any tasks that come his w [rest of string was truncated]&quot;;.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.TestimonialsPageData.ReviewTwoAuthor">
+            <summary>
+              Looks up a localized string similar to — JASON LONSBERRY.
+            </summary>
+        </member>
+        <member name="P:QualitasDigitalSeleniumCSharp.src.TestData.TestimonialsPageData.ReviewTwoContent">
+            <summary>
+              Looks up a localized string similar to Nick is great to work with. Not only is he a nice guy but he&apos;s intelligent and hard-working. He picks up new concepts quickly. He&apos;s inquisitive and self-motivated. I knew if Nick was given a problem, it would be thoroughly researched and the solution carefully considered. He was an integral part of our team..
+            </summary>
+        </member>
         <member name="T:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory">
             <summary>
             The Browser Factory for easy driver initialization
@@ -2869,12 +1579,6 @@
             Initializes the driver based on the supplied WebDriver enum
             </summary>
             <param name="webDriver">The Browser enum</param>
-        </member>
-        <member name="M:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.ReportTestStatus(NUnit.Framework.TestContext)">
-            <summary>
-            Report the test failure to the logging system
-            </summary>
-            <param name="testContext"></param>
         </member>
         <member name="M:QualitasDigitalSeleniumCSharp.WrapperFactory.BrowserFactory.CloseAllDrivers">
             <summary>
